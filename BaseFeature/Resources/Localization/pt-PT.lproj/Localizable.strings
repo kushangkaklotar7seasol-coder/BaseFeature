@@ -1,0 +1,222 @@
+/* 
+  Localizable.strings
+  Movie Box
+
+  Created by Kushang kaklotar on 24/07/26.
+  
+*/
+
+// MARK: - Language Screen -
+"CHOOSE_LANGUAGE" = "Escolher Idioma";
+"DONE" = "Concluído";
+
+// MARK: - Intro Screen -
+"PAGE1_TITLE" = "Descobre Histórias";
+"PAGE1_INFO" = "Explore milhares de filmes com informações detalhadas, classificações, géneros e datas de lançamento.";
+"PAGE2_TITLE" = "Feito Só para Ti";
+"PAGE2_INFO" = "Navegue por género, popularidade ou pesquise para descobrir filmes que correspondam aos seus interesses.";
+"PAGE3_TITLE" = "Informações de filmes";
+"PAGE3_INFO" = "Explore classificações, elenco, críticas, trailers e tudo o que precisa antes de assistir.";
+"PAGE4_TITLE" = "O seu guia de entretenimento";
+"PAGE4_INFO" = "Descubra filmes, séries, trailers, classificações e onde assistir.";
+"GOOD_TO_KNOW" = "Útil saber";
+"GOOD_TO_KNOW_INFO" = "Não transmitimos nem alojamos filmes ou séries. Disponibilizamos informações, classificações e opções legais de visualização.";
+"NEXT" = "Seguinte";
+"GET_STATED" = "Começar";
+
+// MARK: - Home Screen -
+"WELCOME_BACK" = "Bem-vindo de volta,";
+"QUICK_DISCOVER" = "Descoberta Rápida";
+"COMPASS" = "Bússola";
+"PHOTO_EDIT" = "Editor de Fotos";
+"EDIT_PHOTO" = "Editar Fotos";
+"NAV_TOOL" = "Ferramenta de Navegação";
+"PHOTO_CLEANER" = "Limpador de Fotos";
+"FIND_DUBLICATE" = "Encontrar Duplicados";
+"SOUND_METER" = "Medidor de Som";
+"MEASURE_NOICE" = "Medir Ruído";
+"SPOTLIGHT_ARTIST" = "Artista em Destaque";
+"NEW_RELEASE" = "Nova Estreia";
+
+// MARK: - Compass Screen -
+"HIGH_PRECISION" = "Alta Precisão";
+"CALIBRATING" = "A calibrar…";
+"LATITUDE" = "Latitude";
+"LONGITUDE" = "Longitude";
+"DIR_N" = "Norte";
+"DIR_NNE" = "Norte-Nordeste";
+"DIR_NE" = "Nordeste";
+"DIR_ENE" = "Este-Nordeste";
+"DIR_E" = "Este";
+"DIR_ESE" = "Este-Sudeste";
+"DIR_SE" = "Sudeste";
+"DIR_SSE" = "Sul-Sudeste";
+"DIR_S" = "Sul";
+"DIR_SSW" = "Sul-Sudoeste";
+"DIR_SW" = "Sudoeste";
+"DIR_WSW" = "Oeste-Sudoeste";
+"DIR_W" = "Oeste";
+"DIR_WNW" = "Oeste-Noroeste";
+"DIR_NW" = "Noroeste";
+"DIR_NNW" = "Norte-Noroeste";
+
+// MARK: - Photo Cleaner Screen -
+"DUBLICATE_PHOTO_FOUND" = "Fotos Duplicadas Encontradas";
+"GROUP" = "Grupo";
+"NO_DUBLICATE_PIC" = "Nenhuma Foto Duplicada Encontrada";
+"NO_DUBLICATE_PIC_INFO" = "Ótimo! A tua biblioteca de fotos já está organizada. Não foram encontradas fotos duplicadas.";
+"SCANING" = "A analisar...";
+"PERMISSION_NOTE" = "Não temos permissão para verificar a tua biblioteca de fotos.....";
+"DELETE_MEDIA" = "Eliminar Média Selecionada";
+"SELECT_ALL" = "Selecionar Tudo";
+"REMOVE_ALL" = "Remover Tudo";
+"PHOTO_ACCESS" = "Acesso à App Fotos Necessário";
+"ALLOW_PHOTO_ACCESS" = "Por favor, permite o acesso a Fotos nas Definições para usar esta funcionalidade.";
+
+// MARK: - Sound Meter Screen -
+"DECIBELS" = "DECIBÉIS (dB)";
+"AVG" = "MÉDIA";
+"MIN" = "MÍNIMO";
+"MAX" = "MÁXIMO";
+"STOP" = "Parar";
+"START" = "Iniciar";
+"RESTART" = "Reiniciar";
+"MICROPHONE_ACCESS" = "Acesso ao Microfone Necessário";
+"OPEN_SETTINGS" = "Abrir Definições";
+"ALLOW_MICROPHONE_ACCESS" = "Por favor, permite o acesso ao microfone nas Definições para usar esta funcionalidade.";
+"CANCEL" = "Cancelar";
+
+// MARK: - Artist Detail -
+"BIOGRAPHY" = "Biografia";
+"MOVIE" = "Filmes";
+"TVSHOW" = "Séries";
+"BIRTHDAY" = "Aniversário";
+"BIRTHPLACE" = "Local de Nascimento";
+"AGE" = "Idade";
+"DEPARTMENT" = "Departamento";
+"PERSONAL_INFO" = "Informações Pessoais";
+
+// MARK: - Search Screen -
+"SEARCH_MEDIA" = "Pesquisar Filmes e Séries";
+"NEWEARCH_PLACEHOLDER" = "Encontra os teus filmes ou séries favoritos pesquisando por título, ator ou género.";
+"NO_SEARCH_DATA" = "Nenhum dado encontrado";
+"NO_SEARCH_DATA_FOUND" = "Nenhum dado encontrado para";
+"TOP_RATED" = "Melhor Avaliados";
+"MOST_POPULAR" = "Mais Populares";
+"ARRIVING_TODAY" = "A Estrear Hoje";
+"SEE_ALL" = "Ver Tudo";
+
+// MARK: - Movie Detail screen -
+"TOP_CAST" = "Elenco Principal";
+"CORE_CREW" = "Equipa Principal";
+"STATUS" = "Estado";
+"LANGUAGE" = "Idioma";
+"RUNTIME" = "Duração";
+"REVENUE" = "Receita";
+"SHARE_TEXT1" = "Olha! Vê";
+"SHARE_TEXT2" = "achei que ias gostar deste 🎬";
+"OVERVIEW" = "Resumo";
+"MOVIE_INFO" = "Informações do filme";
+"CREW" = "Equipa";
+"POSTERS" = "Cartazes";
+"VIDEOS" = "Vídeos";
+"SEASON" = "Temporada";
+"POSTER" = "Cartaz";
+"SHOW_MORE" = "Mostrar mais...";
+"SHOW_LESS" = "Mostrar menos...";
+
+// MARK: - Like -
+"FAVORITE" = "Favorito";
+"NO_FAVORITE" = "Ainda Não Há Nada Aqui";
+"NO_MOVIE_TAGLINE" = "Os teus filmes favoritos aparecerão aqui.";
+"NO_SERIES_TAGLINE" = "As tuas séries favoritas aparecerão aqui.";
+
+// MARK: - Notes -
+"NOTES" = "Notas";
+"ADD_NOTES" = "Adicionar Notas";
+"EDIT_NOTES" = "Editar Notas";
+"DELETE_NOTES" = "Eliminar Notas";
+"NO" = "Não";
+"DELETE" = "Eliminar";
+"DELETE_INFO" = "Tens a certeza de que queres eliminar esta nota?";
+"NO_NOTES" = "Ainda Sem Notas";
+"NO_NOTES_INFO" = "Toca no botão Adicionar Nota abaixo para criar a tua primeira nota.";
+
+// MARK: - Add Note -
+"NOTE_TITLE" = "Título da Nota";
+"START_TYPING" = "Começa a escrever...";
+"UPDATE_NOTE" = "Atualizar Nota";
+"SAVE_NOTE" = "Guardar Nota";
+
+// MARK: - Pinned Notes -
+"PINNED_NOTES" = "Notas Fixadas";
+"UNPIN" = "Desafixar";
+"PIN" = "Fixar";
+"SHARE" = "Partilhar";
+"NO_PINNED_NOTES" = "Ainda Sem Notas Fixadas";
+"NO_PINNED_NOTES_INFO" = "Toca no ícone de fixar em qualquer nota para a adicionar aqui.";
+
+// MARK: - Setting -
+"SETTING" = "Definições";
+"SHARE_APP" = "Partilhar Aplicação";
+"RATE_US" = "Avalia-nos";
+"PRIVECY_POLICY" = "Política de Privacidade";
+"TERMS_USE" = "Termos de Utilização";
+"ABOUT_US" = "Sobre Nós";
+
+// MARK: - Photo Edit -
+"SELECT_PHOTO" = "Seleciona uma foto para editar";
+"CROP" = "Cortar";
+"FILTER" = "Filtro";
+"ADJUST" = "Ajustar";
+
+"CONTRAST" = "Contraste";
+"LIGHT" = "Luz";
+"DARK" = "Escuro";
+"HUE" = "Matiz";
+"SATURATION" = "Saturação";
+"TEMP" = "Temperatura";
+"VIGNETTE" = "Vinheta";
+
+"ORIGINAL" = "Original";
+"SEPIA" = "Sépia";
+"MONO" = "Mono";
+"NORI" = "Noir";
+"FADE" = "Desvanecido";
+"CHROME" = "Chrome";
+"VINTAGE" = "Vintage";
+"DRAMATIC" = "Dramático";
+"COOL" = "Frio";
+"WARM" = "Quente";
+"BOOST" = "Impulso";
+"VIVID" = "Vívido";
+"VIVID_WARM" = "Vívido Quente";
+"VIVID_COOL" = "Vívido Frio";
+"PROCESS" = "Processo";
+"TRANSFER" = "Transferência";
+"INSTANT" = "Instantâneo";
+"TONAL" = "Tonal";
+"BLOOM" = "Bloom";
+"GLOOM" = "Sombrio";
+"SHARPEN" = "Nitidez";
+"CRYSTALLIZE" = "Cristalizar";
+"PIXELATE" = "Pixelizar";
+"COMIC" = "Banda Desenhada";
+"EDGES" = "Contornos";
+"POSTERIZE" = "Posterizar";
+"VIGNETTE" = "Vinheta";
+
+"DOWNLOAD_SUCCESS" = "Exportado com Sucesso!";
+"CHECK_PHOTO_APP" = "A foto foi guardada com sucesso na aplicação Fotos!";
+"PERMISSION_ACCESS" = "Acesso a Permissões";
+"CANCEL" = "Cancelar";
+"ALLOW_PHOTO_DOWNLOAD" = "Por favor, permite o acesso à biblioteca de fotos nas Definições para exportar fotos.";
+"OK" = "OK";
+
+"PLAY_TRAILER" = "Ver trailer";
+"MANAGE" = "Gerir";
+"CHANGE_SETTING" = "Dar acesso total";
+"SELECT_PHOTO_SIMPLE" = "Selecionar foto";
+"YOUR_GIVEN" = "Concedeu";
+"ACCESS_NUBERS_PHOTO" = "acesso a um número selecionado de fotos.";
+"NO_PIC" = "Nenhuma foto encontrada";

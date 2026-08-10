@@ -1,0 +1,222 @@
+/* 
+  Localizable.strings
+  Movie Box
+
+  Created by Kushang kaklotar on 24/07/26.
+  
+*/
+
+// MARK: - Language Screen -
+"CHOOSE_LANGUAGE" = "Dil Seç";
+"DONE" = "Tamam";
+
+// MARK: - Intro Screen -
+"PAGE1_TITLE" = "Hikayeleri Keşfet";
+"PAGE1_INFO" = "Detaylı bilgiler, puanlar, türler ve yayın tarihleriyle binlerce filmi keşfedin.";
+"PAGE2_TITLE" = "Sadece Sizin İçin";
+"PAGE2_INFO" = "İlgi alanlarınıza uygun filmleri keşfetmek için türe, popülerliğe göre göz atın veya arama yapın.";
+"PAGE3_TITLE" = "Film Detayları";
+"PAGE3_INFO" = "İzlemeden önce derecelendirmeleri, oyuncu kadrosunu, incelemeleri, fragmanları ve ihtiyacınız olan her şeyi keşfedin.";
+"PAGE4_TITLE" = "Eğlence Rehberiniz";
+"PAGE4_INFO" = "Filmleri, TV dizilerini, fragmanları, puanları ve nerede izleyeceğinizi keşfedin.";
+"GOOD_TO_KNOW" = "Bilmenizde fayda var";
+"GOOD_TO_KNOW_INFO" = "Filmleri veya TV dizilerini yayınlamıyor ya da barındırmıyoruz. Yalnızca bilgi, derecelendirme ve yasal izleme seçenekleri sunuyoruz.";
+"NEXT" = "İleri";
+"GET_STATED" = "Başlayın";
+
+// MARK: - Home Screen -
+"WELCOME_BACK" = "Tekrar hoş geldin,";
+"QUICK_DISCOVER" = "Hızlı Keşif";
+"COMPASS" = "Pusula";
+"PHOTO_EDIT" = "Fotoğraf Düzenleyici";
+"EDIT_PHOTO" = "Fotoğrafları Düzenle";
+"NAV_TOOL" = "Navigasyon Aracı";
+"PHOTO_CLEANER" = "Fotoğraf Temizleyici";
+"FIND_DUBLICATE" = "Kopyaları Bul";
+"SOUND_METER" = "Ses Ölçer";
+"MEASURE_NOICE" = "Gürültüyü Ölç";
+"SPOTLIGHT_ARTIST" = "Öne Çıkan Sanatçı";
+"NEW_RELEASE" = "Yeni Çıkan";
+
+// MARK: - Compass Screen -
+"HIGH_PRECISION" = "Yüksek Hassasiyet";
+"CALIBRATING" = "Kalibre ediliyor…";
+"LATITUDE" = "Enlem";
+"LONGITUDE" = "Boylam";
+"DIR_N" = "Kuzey";
+"DIR_NNE" = "Kuzey-Kuzeydoğu";
+"DIR_NE" = "Kuzeydoğu";
+"DIR_ENE" = "Doğu-Kuzeydoğu";
+"DIR_E" = "Doğu";
+"DIR_ESE" = "Doğu-Güneydoğu";
+"DIR_SE" = "Güneydoğu";
+"DIR_SSE" = "Güney-Güneydoğu";
+"DIR_S" = "Güney";
+"DIR_SSW" = "Güney-Güneybatı";
+"DIR_SW" = "Güneybatı";
+"DIR_WSW" = "Batı-Güneybatı";
+"DIR_W" = "Batı";
+"DIR_WNW" = "Batı-Kuzeybatı";
+"DIR_NW" = "Kuzeybatı";
+"DIR_NNW" = "Kuzey-Kuzeybatı";
+
+// MARK: - Photo Cleaner Screen -
+"DUBLICATE_PHOTO_FOUND" = "Kopya Fotoğraflar Bulundu";
+"GROUP" = "Grup";
+"NO_DUBLICATE_PIC" = "Kopya Fotoğraf Bulunamadı";
+"NO_DUBLICATE_PIC_INFO" = "Harika! Fotoğraf kitaplığınız zaten temiz. Kopya fotoğraf bulunamadı.";
+"SCANING" = "Taranıyor...";
+"PERMISSION_NOTE" = "Fotoğraf kitaplığınızı kontrol etme iznimiz yok.....";
+"DELETE_MEDIA" = "Seçili Medyayı Sil";
+"SELECT_ALL" = "Tümünü Seç";
+"REMOVE_ALL" = "Tümünü Kaldır";
+"PHOTO_ACCESS" = "Fotoğraflar Uygulaması Erişimi Gerekli";
+"ALLOW_PHOTO_ACCESS" = "Bu özelliği kullanmak için lütfen Ayarlar'dan Fotoğraflar erişimine izin verin.";
+
+// MARK: - Sound Meter Screen -
+"DECIBELS" = "DESİBEL (dB)";
+"AVG" = "ORTALAMA";
+"MIN" = "MİNİMUM";
+"MAX" = "MAKSİMUM";
+"STOP" = "Durdur";
+"START" = "Başlat";
+"RESTART" = "Sıfırla";
+"MICROPHONE_ACCESS" = "Mikrofon Erişimi Gerekli";
+"OPEN_SETTINGS" = "Ayarları Aç";
+"ALLOW_MICROPHONE_ACCESS" = "Bu özelliği kullanmak için lütfen Ayarlar'dan mikrofon erişimine izin verin.";
+"CANCEL" = "İptal";
+
+// MARK: - Artist Detail -
+"BIOGRAPHY" = "Biyografi";
+"MOVIE" = "Filmler";
+"TVSHOW" = "Diziler";
+"BIRTHDAY" = "Doğum Günü";
+"BIRTHPLACE" = "Doğum Yeri";
+"AGE" = "Yaş";
+"DEPARTMENT" = "Departman";
+"PERSONAL_INFO" = "Kişisel Bilgiler";
+
+// MARK: - Search Screen -
+"SEARCH_MEDIA" = "Film ve Dizi Ara";
+"NEWEARCH_PLACEHOLDER" = "Başlık, oyuncu veya tür arayarak favori filmlerinizi veya dizilerinizi bulun.";
+"NO_SEARCH_DATA" = "Veri bulunamadı";
+"NO_SEARCH_DATA_FOUND" = "Şunun için veri bulunamadı";
+"TOP_RATED" = "En Çok Puan Alanlar";
+"MOST_POPULAR" = "En Popüler";
+"ARRIVING_TODAY" = "Bugün Yayınlanıyor";
+"SEE_ALL" = "Tümünü Gör";
+
+// MARK: - Movie Detail screen -
+"TOP_CAST" = "Başrol Oyuncuları";
+"CORE_CREW" = "Ana Ekip";
+"STATUS" = "Durum";
+"LANGUAGE" = "Dil";
+"RUNTIME" = "Süre";
+"REVENUE" = "Hasılat";
+"SHARE_TEXT1" = "Hey! Şuna bir bak";
+"SHARE_TEXT2" = "bunu beğenebileceğini düşündüm 🎬";
+"OVERVIEW" = "Genel Bakış";
+"MOVIE_INFO" = "Film bilgisi";
+"CREW" = "Ekip";
+"POSTERS" = "Afişler";
+"VIDEOS" = "Videolar";
+"SEASON" = "Sezon";
+"POSTER" = "Afiş";
+"SHOW_MORE" = "Daha fazla göster...";
+"SHOW_LESS" = "Daha az göster...";
+
+// MARK: - Like -
+"FAVORITE" = "Favori";
+"NO_FAVORITE" = "Henüz Bir Şey Yok";
+"NO_MOVIE_TAGLINE" = "Favori filmlerin burada görünecek.";
+"NO_SERIES_TAGLINE" = "Favori dizilerin burada görünecek.";
+
+// MARK: - Notes -
+"NOTES" = "Notlar";
+"ADD_NOTES" = "Not Ekle";
+"EDIT_NOTES" = "Notları Düzenle";
+"DELETE_NOTES" = "Notları Sil";
+"NO" = "Hayır";
+"DELETE" = "Sil";
+"DELETE_INFO" = "Bu notu silmek istediğinizden emin misiniz?";
+"NO_NOTES" = "Henüz Not Yok";
+"NO_NOTES_INFO" = "İlk notunuzu oluşturmak için aşağıdaki Not Ekle düğmesine dokunun.";
+
+// MARK: - Add Note -
+"NOTE_TITLE" = "Not Başlığı";
+"START_TYPING" = "Yazmaya başla...";
+"UPDATE_NOTE" = "Notu Güncelle";
+"SAVE_NOTE" = "Notu Kaydet";
+
+// MARK: - Pinned Notes -
+"PINNED_NOTES" = "Sabitlenmiş Notlar";
+"UNPIN" = "Sabitlemeyi Kaldır";
+"PIN" = "Sabitle";
+"SHARE" = "Paylaş";
+"NO_PINNED_NOTES" = "Henüz Sabitlenmiş Not Yok";
+"NO_PINNED_NOTES_INFO" = "Buraya eklemek için herhangi bir nottaki sabitleme simgesine dokunun.";
+
+// MARK: - Setting -
+"SETTING" = "Ayarlar";
+"SHARE_APP" = "Uygulamayı Paylaş";
+"RATE_US" = "Bizi Değerlendirin";
+"PRIVECY_POLICY" = "Gizlilik Politikası";
+"TERMS_USE" = "Kullanım Şartları";
+"ABOUT_US" = "Hakkımızda";
+
+// MARK: - Photo Edit -
+"SELECT_PHOTO" = "Düzenlemek için bir fotoğraf seçin";
+"CROP" = "Kırp";
+"FILTER" = "Filtre";
+"ADJUST" = "Ayarla";
+
+"CONTRAST" = "Kontrast";
+"LIGHT" = "Işık";
+"DARK" = "Koyu";
+"HUE" = "Ton";
+"SATURATION" = "Doygunluk";
+"TEMP" = "Sıcaklık";
+"VIGNETTE" = "Vinyet";
+
+"ORIGINAL" = "Orijinal";
+"SEPIA" = "Sepya";
+"MONO" = "Mono";
+"NORI" = "Noir";
+"FADE" = "Solma";
+"CHROME" = "Chrome";
+"VINTAGE" = "Vintage";
+"DRAMATIC" = "Dramatik";
+"COOL" = "Soğuk";
+"WARM" = "Sıcak";
+"BOOST" = "Güçlendir";
+"VIVID" = "Canlı";
+"VIVID_WARM" = "Canlı Sıcak";
+"VIVID_COOL" = "Canlı Soğuk";
+"PROCESS" = "İşlem";
+"TRANSFER" = "Aktarım";
+"INSTANT" = "Anlık";
+"TONAL" = "Tonal";
+"BLOOM" = "Bloom";
+"GLOOM" = "Kasvetli";
+"SHARPEN" = "Keskinleştir";
+"CRYSTALLIZE" = "Kristalleştir";
+"PIXELATE" = "Pikselleştir";
+"COMIC" = "Çizgi Roman";
+"EDGES" = "Kenarlar";
+"POSTERIZE" = "Posterize";
+"VIGNETTE" = "Vinyet";
+
+"DOWNLOAD_SUCCESS" = "Başarıyla Dışa Aktarıldı!";
+"CHECK_PHOTO_APP" = "Fotoğraf, Fotoğraflar uygulamasına başarıyla kaydedildi!";
+"PERMISSION_ACCESS" = "İzin Erişimi";
+"CANCEL" = "İptal";
+"ALLOW_PHOTO_DOWNLOAD" = "Fotoğrafları dışa aktarmak için lütfen Ayarlar'dan fotoğraf kitaplığı erişimine izin verin.";
+"OK" = "Tamam";
+
+"PLAY_TRAILER" = "Fragmanı Oynat";
+"MANAGE" = "Yönet";
+"CHANGE_SETTING" = "Tam Erişim Ver";
+"SELECT_PHOTO_SIMPLE" = "Fotoğraf Seç";
+"YOUR_GIVEN" = "Izin verdiniz:";
+"ACCESS_NUBERS_PHOTO" = "seçilen sayıda fotoğrafa erişim.";
+"NO_PIC" = "Fotoğraf Bulunamadı";

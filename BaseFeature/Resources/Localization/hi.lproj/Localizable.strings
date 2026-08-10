@@ -1,0 +1,222 @@
+/* 
+  Localizable.strings
+  Movie Box
+
+  Created by Kushang kaklotar on 24/07/26.
+  
+*/
+
+// MARK: - Language Screen -
+"CHOOSE_LANGUAGE" = "भाषा चुनें";
+"DONE" = "पूर्ण";
+
+// MARK: - Intro Screen -
+"PAGE1_TITLE" = "कहानियां खोजें";
+"PAGE1_INFO" = "विस्तृत जानकारी, रेटिंग, शैली और रिलीज़ की तारीखों के साथ हजारों फ़िल्मों का पता लगाएं।";
+"PAGE2_TITLE" = "सिर्फ आपके लिए बनाया गया";
+"PAGE2_INFO" = "अपनी पसंद की फ़िल्में खोजने के लिए शैली, लोकप्रियता के आधार पर ब्राउज़ करें या खोजें।";
+"PAGE3_TITLE" = "मूवी जानकारी";
+"PAGE3_INFO" = "देखने से पहले रेटिंग, स्टार कास्ट, समीक्षाएं, ट्रेलर और वह सब कुछ देखें जो आपको चाहिए।";
+"PAGE4_TITLE" = "आपकी मनोरंजन गाइड";
+"PAGE4_INFO" = "फ़िल्में, टीवी शो, ट्रेलर, रेटिंग और उन्हें कहाँ देखें, यह सब खोजें।";
+"GOOD_TO_KNOW" = "जानना उपयोगी है";
+"GOOD_TO_KNOW_INFO" = "हम फ़िल्में या टीवी शो स्ट्रीम या होस्ट नहीं करते हैं। हम जानकारी, रेटिंग और देखने की कानूनी उपलब्धता प्रदान करते हैं।";
+"NEXT" = "अगला";
+"GET_STATED" = "शुरू करें";
+
+// MARK: - Home Screen -
+"WELCOME_BACK" = "वापसी पर स्वागत है,";
+"QUICK_DISCOVER" = "क्विक डिस्कवर";
+"COMPASS" = "कंपास";
+"PHOTO_EDIT" = "फोटो एडिटर";
+"EDIT_PHOTO" = "फोटो एडिट करें";
+"NAV_TOOL" = "नेविगेशन टूल";
+"PHOTO_CLEANER" = "फोटो क्लीनर";
+"FIND_DUBLICATE" = "डुप्लीकेट खोजें";
+"SOUND_METER" = "साउंड मीटर";
+"MEASURE_NOICE" = "शोर मापें";
+"SPOTLIGHT_ARTIST" = "स्पॉटलाइट आर्टिस्ट";
+"NEW_RELEASE" = "नई रिलीज़";
+
+// MARK: - Compass Screen -
+"HIGH_PRECISION" = "उच्च सटीकता";
+"CALIBRATING" = "कैलिब्रेट हो रहा है…";
+"LATITUDE" = "अक्षांश";
+"LONGITUDE" = "देशांतर";
+"DIR_N" = "उत्तर";
+"DIR_NNE" = "उत्तर-उत्तरपूर्व";
+"DIR_NE" = "उत्तरपूर्व";
+"DIR_ENE" = "पूर्व-उत्तरपूर्व";
+"DIR_E" = "पूर्व";
+"DIR_ESE" = "पूर्व-दक्षिणपूर्व";
+"DIR_SE" = "दक्षिणपूर्व";
+"DIR_SSE" = "दक्षिण-दक्षिणपूर्व";
+"DIR_S" = "दक्षिण";
+"DIR_SSW" = "दक्षिण-दक्षिणपश्चिम";
+"DIR_SW" = "दक्षिणपश्चिम";
+"DIR_WSW" = "पश्चिम-दक्षिणपश्चिम";
+"DIR_W" = "पश्चिम";
+"DIR_WNW" = "पश्चिम-उत्तरपश्चिम";
+"DIR_NW" = "उत्तरपश्चिम";
+"DIR_NNW" = "उत्तर-उत्तरपश्चिम";
+
+// MARK: - Photo Cleaner Screen -
+"DUBLICATE_PHOTO_FOUND" = "डुप्लीकेट फोटो मिलीं";
+"GROUP" = "समूह";
+"NO_DUBLICATE_PIC" = "कोई डुप्लीकेट मीडिया नहीं मिला";
+"NO_DUBLICATE_PIC_INFO" = "आपके फोन पर कोई डुप्लीकेट आइटम नहीं मिला...";
+"SCANING" = "स्कैन हो रहा है...";
+"PERMISSION_NOTE" = "हमारे पास आपकी फोटो लाइब्रेरी जांचने की अनुमति नहीं है.....";
+"DELETE_MEDIA" = "चयनित मीडिया हटाएं";
+"SELECT_ALL" = "सभी चुनें";
+"REMOVE_ALL" = "सभी हटाएं";
+"PHOTO_ACCESS" = "फोटोज़ ऐप एक्सेस आवश्यक";
+"ALLOW_PHOTO_ACCESS" = "इस फीचर का उपयोग करने के लिए कृपया सेटिंग्स में फोटोज़ एक्सेस की अनुमति दें।";
+
+// MARK: - Sound Meter Screen -
+"DECIBELS" = "डेसिबल (dB)";
+"AVG" = "औसत";
+"MIN" = "न्यूनतम";
+"MAX" = "अधिकतम";
+"STOP" = "रोकें";
+"START" = "शुरू करें";
+"RESTART" = "रीसेट करें";
+"MICROPHONE_ACCESS" = "माइक्रोफ़ोन एक्सेस आवश्यक";
+"OPEN_SETTINGS" = "सेटिंग्स खोलें";
+"ALLOW_MICROPHONE_ACCESS" = "इस फीचर का उपयोग करने के लिए कृपया सेटिंग्स में माइक्रोफ़ोन एक्सेस की अनुमति दें।";
+"CANCEL" = "रद्द करें";
+
+// MARK: - Artist Detail -
+"BIOGRAPHY" = "जीवनी";
+"MOVIE" = "मूवीज़";
+"TVSHOW" = "टीवी शो";
+"BIRTHDAY" = "जन्मदिन";
+"BIRTHPLACE" = "जन्मस्थान";
+"AGE" = "उम्र";
+"DEPARTMENT" = "विभाग";
+"PERSONAL_INFO" = "व्यक्तिगत जानकारी";
+
+// MARK: - Search Screen -
+"SEARCH_MEDIA" = "मूवीज़ और टीवी शो खोजें";
+"NEWEARCH_PLACEHOLDER" = "टाइटल, एक्टर या जॉनर खोजकर अपनी पसंदीदा मूवीज़ या सीरीज़ खोजें।";
+"NO_SEARCH_DATA" = "कोई डेटा नहीं मिला";
+"NO_SEARCH_DATA_FOUND" = "इसके लिए कोई डेटा नहीं मिला";
+"TOP_RATED" = "टॉप रेटेड";
+"MOST_POPULAR" = "सबसे लोकप्रिय";
+"ARRIVING_TODAY" = "आज प्रसारित हो रहा है";
+"SEE_ALL" = "सभी देखें";
+
+// MARK: - Movie Detail screen -
+"TOP_CAST" = "मुख्य कलाकार";
+"CORE_CREW" = "मुख्य क्रू";
+"STATUS" = "स्थिति";
+"LANGUAGE" = "भाषा";
+"RUNTIME" = "अवधि";
+"REVENUE" = "राजस्व";
+"SHARE_TEXT1" = "अरे! इसे देखो";
+"SHARE_TEXT2" = "सोचा तुम्हें यह पसंद आएगा 🎬";
+"OVERVIEW" = "अवलोकन";
+"MOVIE_INFO" = "मूवी जानकारी";
+"CREW" = "क्रू";
+"POSTERS" = "पोस्टर";
+"VIDEOS" = "वीडियो";
+"SEASON" = "सीज़न";
+"POSTER" = "पोस्टर";
+"SHOW_MORE" = "और दिखाएं...";
+"SHOW_LESS" = "कम दिखाएं...";
+
+// MARK: - Like -
+"FAVORITE" = "पसंदीदा";
+"NO_FAVORITE" = "अभी तक कुछ नहीं है";
+"NO_MOVIE_TAGLINE" = "आपकी पसंदीदा मूवीज़ यहां दिखाई देंगी।";
+"NO_SERIES_TAGLINE" = "आपके पसंदीदा टीवी शो यहां दिखाई देंगे।";
+
+// MARK: - Notes -
+"NOTES" = "नोट्स";
+"ADD_NOTES" = "नोट्स जोड़ें";
+"EDIT_NOTES" = "नोट्स संपादित करें";
+"DELETE_NOTES" = "नोट्स हटाएं";
+"NO" = "नहीं";
+"DELETE" = "हटाएं";
+"DELETE_INFO" = "क्या आप वाकई इस नोट को हटाना चाहते हैं?";
+"NO_NOTES" = "अभी तक कोई नोट्स नहीं";
+"NO_NOTES_INFO" = "अपना पहला नोट बनाने के लिए नीचे दिए गए नोट जोड़ें बटन पर टैप करें।";
+
+// MARK: - Add Note -
+"NOTE_TITLE" = "नोट शीर्षक";
+"START_TYPING" = "टाइप करना शुरू करें...";
+"UPDATE_NOTE" = "नोट अपडेट करें";
+"SAVE_NOTE" = "नोट सेव करें";
+
+// MARK: - Pinned Notes -
+"PINNED_NOTES" = "पिन किए गए नोट्स";
+"UNPIN" = "अनपिन करें";
+"PIN" = "पिन करें";
+"SHARE" = "शेयर करें";
+"NO_PINNED_NOTES" = "अभी तक कोई पिन किया गया नोट नहीं";
+"NO_PINNED_NOTES_INFO" = "इसे यहां जोड़ने के लिए किसी भी नोट पर पिन आइकन पर टैप करें।";
+
+// MARK: - Setting -
+"SETTING" = "सेटिंग";
+"SHARE_APP" = "ऐप शेयर करें";
+"RATE_US" = "हमें रेट करें";
+"PRIVECY_POLICY" = "गोपनीयता नीति";
+"TERMS_USE" = "उपयोग की शर्तें";
+"ABOUT_US" = "हमारे बारे में";
+
+// MARK: - Photo Edit -
+"SELECT_PHOTO" = "एडिट के लिए एक फोटो चुनें";
+"CROP" = "क्रॉप";
+"FILTER" = "फ़िल्टर";
+"ADJUST" = "समायोजित करें";
+
+"CONTRAST" = "कंट्रास्ट";
+"LIGHT" = "लाइट";
+"DARK" = "डार्क";
+"HUE" = "ह्यू";
+"SATURATION" = "सैचुरेशन";
+"TEMP" = "टेम्प";
+"VIGNETTE" = "विनेट";
+
+"ORIGINAL" = "ओरिजिनल";
+"SEPIA" = "सीपिया";
+"MONO" = "मोनो";
+"NORI" = "नॉयर";
+"FADE" = "फेड";
+"CHROME" = "क्रोम";
+"VINTAGE" = "विंटेज";
+"DRAMATIC" = "ड्रामैटिक";
+"COOL" = "कूल";
+"WARM" = "वार्म";
+"BOOST" = "बूस्ट";
+"VIVID" = "विविड";
+"VIVID_WARM" = "विविड वार्म";
+"VIVID_COOL" = "विविड कूल";
+"PROCESS" = "प्रोसेस";
+"TRANSFER" = "ट्रांसफर";
+"INSTANT" = "इंस्टेंट";
+"TONAL" = "टोनल";
+"BLOOM" = "ब्लूम";
+"GLOOM" = "ग्लूम";
+"SHARPEN" = "शार्पन";
+"CRYSTALLIZE" = "क्रिस्टलाइज़";
+"PIXELATE" = "पिक्सलेट";
+"COMIC" = "कॉमिक";
+"EDGES" = "एजेस";
+"POSTERIZE" = "पोस्टराइज़";
+"VIGNETTE" = "विनेट";
+
+"DOWNLOAD_SUCCESS" = "सफलतापूर्वक एक्सपोर्ट हो गया!";
+"CHECK_PHOTO_APP" = "फोटो सफलतापूर्वक फोटो ऐप में सेव हो गई!";
+"PERMISSION_ACCESS" = "अनुमति पहुंच";
+"CANCEL" = "रद्द करें";
+"ALLOW_PHOTO_DOWNLOAD" = "फोटो एक्सपोर्ट करने के लिए कृपया सेटिंग्स में फोटो लाइब्रेरी की अनुमति दें।";
+"OK" = "ठीक है";
+
+"PLAY_TRAILER" = "ट्रेलर चलाएं";
+"MANAGE" = "प्रबंधित करें";
+"CHANGE_SETTING" = "पूर्ण पहुँच दें";
+"SELECT_PHOTO_SIMPLE" = "फ़ोटो चुनें";
+"YOUR_GIVEN" = "आपने अनुमति दी है";
+"ACCESS_NUBERS_PHOTO" = "चुनिंदा फ़ोटो तक पहुँचने की।";
+"NO_PIC" = "कोई फ़ोटो नहीं मिला";

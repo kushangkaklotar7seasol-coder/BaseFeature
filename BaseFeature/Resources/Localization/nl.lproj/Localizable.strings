@@ -1,0 +1,222 @@
+/* 
+  Localizable.strings
+  Movie Box
+
+  Created by Kushang kaklotar on 24/07/26.
+  
+*/
+
+// MARK: - Language Screen -
+"CHOOSE_LANGUAGE" = "Taal Kiezen";
+"DONE" = "Klaar";
+
+// MARK: - Intro Screen -
+"PAGE1_TITLE" = "Ontdek Verhalen";
+"PAGE1_INFO" = "Ontdek duizenden films met gedetailleerde informatie, beoordelingen, genres en releasedatums.";
+"PAGE2_TITLE" = "Speciaal voor Jou Gemaakt";
+"PAGE2_INFO" = "Blader op genre, populariteit of zoek om films te ontdekken die bij jouw interesses passen.";
+"PAGE3_TITLE" = "Filminzichten";
+"PAGE3_INFO" = "Ontdek beoordelingen, cast, recensies, trailers en alles wat je nodig hebt voordat je gaat kijken.";
+"PAGE4_TITLE" = "Jouw entertainmentgids";
+"PAGE4_INFO" = "Ontdek films, tv-shows, trailers, beoordelingen en waar je ze kunt kijken.";
+"GOOD_TO_KNOW" = "Goed om te weten";
+"GOOD_TO_KNOW_INFO" = "Wij streamen of hosten geen films of tv-shows. Wij bieden informatie, beoordelingen en legale kijkopties.";
+"NEXT" = "Volgende";
+"GET_STATED" = "Aan de Slag";
+
+// MARK: - Home Screen -
+"WELCOME_BACK" = "Welkom terug,";
+"QUICK_DISCOVER" = "Snel Ontdekken";
+"COMPASS" = "Kompas";
+"PHOTO_EDIT" = "Foto-editor";
+"EDIT_PHOTO" = "Foto's Bewerken";
+"NAV_TOOL" = "Navigatietool";
+"PHOTO_CLEANER" = "Foto Opschoner";
+"FIND_DUBLICATE" = "Dubbele Bestanden Zoeken";
+"SOUND_METER" = "Geluidsmeter";
+"MEASURE_NOICE" = "Geluid Meten";
+"SPOTLIGHT_ARTIST" = "Uitgelichte Artiest";
+"NEW_RELEASE" = "Nieuwe Release";
+
+// MARK: - Compass Screen -
+"HIGH_PRECISION" = "Hoge Precisie";
+"CALIBRATING" = "Kalibreren…";
+"LATITUDE" = "Breedtegraad";
+"LONGITUDE" = "Lengtegraad";
+"DIR_N" = "Noord";
+"DIR_NNE" = "Noord-Noordoost";
+"DIR_NE" = "Noordoost";
+"DIR_ENE" = "Oost-Noordoost";
+"DIR_E" = "Oost";
+"DIR_ESE" = "Oost-Zuidoost";
+"DIR_SE" = "Zuidoost";
+"DIR_SSE" = "Zuid-Zuidoost";
+"DIR_S" = "Zuid";
+"DIR_SSW" = "Zuid-Zuidwest";
+"DIR_SW" = "Zuidwest";
+"DIR_WSW" = "West-Zuidwest";
+"DIR_W" = "West";
+"DIR_WNW" = "West-Noordwest";
+"DIR_NW" = "Noordwest";
+"DIR_NNW" = "Noord-Noordwest";
+
+// MARK: - Photo Cleaner Screen -
+"DUBLICATE_PHOTO_FOUND" = "Dubbele Foto's Gevonden";
+"GROUP" = "Groep";
+"NO_DUBLICATE_PIC" = "Geen Dubbele Foto's Gevonden";
+"NO_DUBLICATE_PIC_INFO" = "Geweldig! Je fotobibliotheek is al opgeruimd. Er zijn geen dubbele foto's gevonden.";
+"SCANING" = "Scannen...";
+"PERMISSION_NOTE" = "We hebben geen toestemming om je fotobibliotheek te controleren.....";
+"DELETE_MEDIA" = "Geselecteerde Media Verwijderen";
+"SELECT_ALL" = "Alles Selecteren";
+"REMOVE_ALL" = "Alles Verwijderen";
+"PHOTO_ACCESS" = "Toegang tot Foto's-app Vereist";
+"ALLOW_PHOTO_ACCESS" = "Sta toegang tot Foto's toe in Instellingen om deze functie te gebruiken.";
+
+// MARK: - Sound Meter Screen -
+"DECIBELS" = "DECIBEL (dB)";
+"AVG" = "GEMIDDELDE";
+"MIN" = "MINIMUM";
+"MAX" = "MAXIMUM";
+"STOP" = "Stoppen";
+"START" = "Starten";
+"RESTART" = "Resetten";
+"MICROPHONE_ACCESS" = "Toegang tot Microfoon Vereist";
+"OPEN_SETTINGS" = "Instellingen Openen";
+"ALLOW_MICROPHONE_ACCESS" = "Sta toegang tot de microfoon toe in Instellingen om deze functie te gebruiken.";
+"CANCEL" = "Annuleren";
+
+// MARK: - Artist Detail -
+"BIOGRAPHY" = "Biografie";
+"MOVIE" = "Films";
+"TVSHOW" = "Series";
+"BIRTHDAY" = "Verjaardag";
+"BIRTHPLACE" = "Geboorteplaats";
+"AGE" = "Leeftijd";
+"DEPARTMENT" = "Afdeling";
+"PERSONAL_INFO" = "Persoonlijke Informatie";
+
+// MARK: - Search Screen -
+"SEARCH_MEDIA" = "Films & Series Zoeken";
+"NEWEARCH_PLACEHOLDER" = "Vind je favoriete films of series door te zoeken op titel, acteur of genre.";
+"NO_SEARCH_DATA" = "Geen gegevens gevonden";
+"NO_SEARCH_DATA_FOUND" = "Geen gegevens gevonden voor";
+"TOP_RATED" = "Best Beoordeeld";
+"MOST_POPULAR" = "Meest Populair";
+"ARRIVING_TODAY" = "Vandaag Te Zien";
+"SEE_ALL" = "Alles Bekijken";
+
+// MARK: - Movie Detail screen -
+"TOP_CAST" = "Hoofdrolspelers";
+"CORE_CREW" = "Kernteam";
+"STATUS" = "Status";
+"LANGUAGE" = "Taal";
+"RUNTIME" = "Speelduur";
+"REVENUE" = "Opbrengst";
+"SHARE_TEXT1" = "Hé! Bekijk";
+"SHARE_TEXT2" = "dacht dat je deze wel zou willen zien 🎬";
+"OVERVIEW" = "Overzicht";
+"MOVIE_INFO" = "Filminformatie";
+"CREW" = "Crew";
+"POSTERS" = "Posters";
+"VIDEOS" = "Video's";
+"SEASON" = "Seizoen";
+"POSTER" = "Poster";
+"SHOW_MORE" = "Meer tonen...";
+"SHOW_LESS" = "Minder tonen...";
+
+// MARK: - Like -
+"FAVORITE" = "Favoriet";
+"NO_FAVORITE" = "Hier Nog Niets";
+"NO_MOVIE_TAGLINE" = "Je favoriete films verschijnen hier.";
+"NO_SERIES_TAGLINE" = "Je favoriete series verschijnen hier.";
+
+// MARK: - Notes -
+"NOTES" = "Notities";
+"ADD_NOTES" = "Notities Toevoegen";
+"EDIT_NOTES" = "Notities Bewerken";
+"DELETE_NOTES" = "Notities Verwijderen";
+"NO" = "Nee";
+"DELETE" = "Verwijderen";
+"DELETE_INFO" = "Weet je zeker dat je deze notitie wilt verwijderen?";
+"NO_NOTES" = "Nog Geen Notities";
+"NO_NOTES_INFO" = "Tik op de knop Notitie Toevoegen hieronder om je eerste notitie te maken.";
+
+// MARK: - Add Note -
+"NOTE_TITLE" = "Notitietitel";
+"START_TYPING" = "Begin met typen...";
+"UPDATE_NOTE" = "Notitie Bijwerken";
+"SAVE_NOTE" = "Notitie Opslaan";
+
+// MARK: - Pinned Notes -
+"PINNED_NOTES" = "Vastgezette Notities";
+"UNPIN" = "Losmaken";
+"PIN" = "Vastzetten";
+"SHARE" = "Delen";
+"NO_PINNED_NOTES" = "Nog Geen Vastgezette Notities";
+"NO_PINNED_NOTES_INFO" = "Tik op het pin-icoon bij een notitie om deze hier toe te voegen.";
+
+// MARK: - Setting -
+"SETTING" = "Instellingen";
+"SHARE_APP" = "App Delen";
+"RATE_US" = "Beoordeel Ons";
+"PRIVECY_POLICY" = "Privacybeleid";
+"TERMS_USE" = "Gebruiksvoorwaarden";
+"ABOUT_US" = "Over Ons";
+
+// MARK: - Photo Edit -
+"SELECT_PHOTO" = "Selecteer een foto om te bewerken";
+"CROP" = "Bijsnijden";
+"FILTER" = "Filter";
+"ADJUST" = "Aanpassen";
+
+"CONTRAST" = "Contrast";
+"LIGHT" = "Licht";
+"DARK" = "Donker";
+"HUE" = "Tint";
+"SATURATION" = "Verzadiging";
+"TEMP" = "Temperatuur";
+"VIGNETTE" = "Vignet";
+
+"ORIGINAL" = "Origineel";
+"SEPIA" = "Sepia";
+"MONO" = "Mono";
+"NORI" = "Noir";
+"FADE" = "Vervagen";
+"CHROME" = "Chrome";
+"VINTAGE" = "Vintage";
+"DRAMATIC" = "Dramatisch";
+"COOL" = "Koel";
+"WARM" = "Warm";
+"BOOST" = "Boost";
+"VIVID" = "Levendig";
+"VIVID_WARM" = "Levendig Warm";
+"VIVID_COOL" = "Levendig Koel";
+"PROCESS" = "Proces";
+"TRANSFER" = "Overdracht";
+"INSTANT" = "Instant";
+"TONAL" = "Tonaal";
+"BLOOM" = "Bloom";
+"GLOOM" = "Somber";
+"SHARPEN" = "Verscherpen";
+"CRYSTALLIZE" = "Kristalliseren";
+"PIXELATE" = "Pixeleren";
+"COMIC" = "Strip";
+"EDGES" = "Randen";
+"POSTERIZE" = "Posteriseren";
+"VIGNETTE" = "Vignet";
+
+"DOWNLOAD_SUCCESS" = "Succesvol Geëxporteerd!";
+"CHECK_PHOTO_APP" = "Foto is succesvol opgeslagen in de Foto's-app!";
+"PERMISSION_ACCESS" = "Toegangsrechten";
+"CANCEL" = "Annuleren";
+"ALLOW_PHOTO_DOWNLOAD" = "Sta toegang tot de fotobibliotheek toe in Instellingen om foto's te exporteren.";
+"OK" = "OK";
+
+"PLAY_TRAILER" = "Trailer afspelen";
+"MANAGE" = "Beheren";
+"CHANGE_SETTING" = "Geef volledige toegang";
+"SELECT_PHOTO_SIMPLE" = "Selecteer foto";
+"YOUR_GIVEN" = "Je hebt toegang gegeven";
+"ACCESS_NUBERS_PHOTO" = "tot een beperkt aantal foto's.";
+"NO_PIC" = "Geen foto's gevonden";
