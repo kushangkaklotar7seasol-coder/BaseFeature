@@ -6,21 +6,38 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct Splash: View {
     @StateObject var viewModel = SplashViewModel()
     
     var body: some View {
         ZStack {
+            Image("img_splash")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Image("app_icon")
+                    .resizable()
+                    .frame(width: 110, height: 110, alignment: .center)
+                
+                Text("Cinevora")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.whiteColour)
+            }
+            
+            
             VStack {
                 Spacer()
-                HStack {
-                    Spacer()
-                    Text("Hello splash")
-                    Spacer()
-                }
-                Spacer()
+                
+                LottieView(animation: .named("loading_lottie"))
+                    .looping()
+                    .resizable()
+                    .frame(width: 100, height: 100)
             }
+            .padding(.vertical, 50)
         }
         .defaultPage()
         .onAppear() {
@@ -99,6 +116,26 @@ class DefaultDesign {
                     .background(.leftTorightGradient)
                     .cornerRadius(10)
             }
+        }
+    }
+    
+    struct GradientBullet: View {
+        var body: some View {
+            ZStack { }
+                .frame(width: 8, height: 8, alignment: .center)
+                .background(.strongPrimeGradient)
+                .cornerRadius(8)
+        }
+    }
+    
+    struct CustomBullet: View {
+        let Color: Color
+        
+        var body: some View {
+            ZStack { }
+                .frame(width: 8, height: 8, alignment: .center)
+                .background(Color)
+                .cornerRadius(8)
         }
     }
 }

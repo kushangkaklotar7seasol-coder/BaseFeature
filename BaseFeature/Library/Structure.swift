@@ -30,3 +30,10 @@ struct Notes: Codable, Identifiable, Hashable {
     var notes: String
     var isPined: Bool
 }
+
+struct StrogeInfo {
+    var id: Int
+    var name: String
+    var storage: String
+    var percent: Int
+}

@@ -20,4 +20,8 @@ extension ShapeStyle where Self == LinearGradient {
     static var grayGradient: LinearGradient {
         LinearGradient(colors: [.grayColour, .grayColour], startPoint: .top, endPoint: .bottom)
     }
+    
+    static var strongPrimeGradient: LinearGradient {
+        LinearGradient(colors: [.skyBlueColour, .blueColour, .lightPinkColour], startPoint: .top, endPoint: .bottom)
+    }
 }
