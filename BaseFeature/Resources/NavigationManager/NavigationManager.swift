@@ -20,6 +20,8 @@ func destination(for route: Route) -> some View {
         IntoScreen()
     case .tab:
         TabBar()
+    case .storageOverview:
+        StorageOverviewScreen()
     }
 }
 
@@ -28,6 +30,8 @@ enum Route: Hashable {
     case language(isShowBackButton: Bool)
     case intro
     case tab
+    
+    case storageOverview
 }
 
 final class Router: ObservableObject {

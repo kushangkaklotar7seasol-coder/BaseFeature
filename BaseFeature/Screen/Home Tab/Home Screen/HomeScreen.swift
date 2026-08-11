@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
     @State private var progress: Double = 0.77
     @StateObject var viewModel = HomeViewModel()
+    @StateObject var storageManager = StorageManager()
     
     var columns: [GridItem] {
         let count = Device.isIpad ? 4 : 2
@@ -45,7 +46,7 @@ struct HomeScreen: View {
                                         .font(.system(size: 20, weight: .bold))
                                         .foregroundColor(.whiteColour)
                                     
-                                    Text("\(viewModel.totalSpace) Total")
+                                    Text("\(storageManager.totalSpace) Total")
                                         .font(.system(size: 14, weight: .regular))
                                         .foregroundColor(.grayColour)
                                 }
@@ -67,7 +68,6 @@ struct HomeScreen: View {
                             HStack(spacing: 10) {
                                 VStack {
                                     CircularProgressView(progress: progress)
-                                        .padding(8)
                                     
                                     HStack(spacing: 0) {
                                         VStack(alignment: .leading, spacing: 3) {
@@ -82,7 +82,7 @@ struct HomeScreen: View {
                                             HStack {
                                                 DefaultDesign.CustomBullet(Color: .clear)
                                                 
-                                                Text(viewModel.usedSpace)
+                                                Text(storageManager.usedSpace)
                                                     .font(.system(size: 12, weight: .semibold))
                                             }
                                         }
@@ -101,7 +101,7 @@ struct HomeScreen: View {
                                             HStack {
                                                 DefaultDesign.CustomBullet(Color: .clear)
                                                 
-                                                Text(viewModel.freeSpace)
+                                                Text(storageManager.freeSpace)
                                                     .font(.system(size: 12, weight: .semibold))
                                             }
                                         }
@@ -112,7 +112,7 @@ struct HomeScreen: View {
                                 
                                 ZStack {
                                     LazyVGrid(columns: storageColumns, spacing: 5) {
-                                        ForEach(viewModel.storageInfo, id: \.id) { info in
+                                        ForEach(storageManager.storageInfo, id: \.id) { info in
 //                                            let item = viewModel.storageInfo[info]
                                             
                                             ZStack {
@@ -151,6 +151,9 @@ struct HomeScreen: View {
                     .overlay {
                         RoundedRectangle(cornerRadius: 12)
                             .strokeBorder(.whiteColour.opacity(0.2))
+                    }
+                    .onTapGesture {
+                        Router.shared.push(.storageOverview)
                     }
                     
                     HStack() {
@@ -194,10 +197,6 @@ struct HomeScreen: View {
             .padding(.horizontal, 16)
         }
         .defaultPage()
-        .onAppear() {
-            viewModel.fetchStorageInfo()
-            viewModel.scanPhotoLibrary()
-        }
     }
 }
 
@@ -206,9 +205,8 @@ struct HomeScreen: View {
 }
 
 struct CircularProgressView: View {
-    var progress: Double // 0.0 to 1.0
+    var progress: Double
     var lineWidth: CGFloat = 18
-//    var size: CGFloat = 150
 
     var body: some View {
         ZStack {
@@ -224,10 +222,7 @@ struct CircularProgressView: View {
                 .rotationEffect(.degrees(-90))
                 .animation(.easeInOut(duration: 0.6), value: progress)
 
-//            Text("\(Int(progress * 100))%")
-//                .font(.system(size: size * 0.2, weight: .bold, design: .rounded))
-//                .foregroundColor(.white)
         }
-//        .frame(width: size, height: size)
+        .padding()
     }
 }
