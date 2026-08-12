@@ -35,5 +35,5 @@ struct StrogeInfo {
     var id: Int
     var name: String
     var storage: String
-    var percent: Int
+    var percent: Double
 }

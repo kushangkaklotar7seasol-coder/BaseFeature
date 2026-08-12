@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @State private var progress: Double = 0.77
     @StateObject var viewModel = HomeViewModel()
     @StateObject var storageManager = StorageManager()
     
@@ -18,8 +17,7 @@ struct HomeScreen: View {
     }
     
     var storageColumns: [GridItem] {
-        let count = Device.isIpad ? 4 : 2
-        return Array(repeating: GridItem(.flexible(), spacing: 5), count: count)
+        return Array(repeating: GridItem(.flexible(), spacing: 5), count: 2)
     }
     
     var body: some View {
@@ -67,7 +65,7 @@ struct HomeScreen: View {
                             
                             HStack(spacing: 10) {
                                 VStack {
-                                    CircularProgressView(progress: progress)
+                                    CircularProgressView(progress: storageManager.usedStoragePercent)
                                     
                                     HStack(spacing: 0) {
                                         VStack(alignment: .leading, spacing: 3) {
@@ -111,32 +109,18 @@ struct HomeScreen: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 
                                 ZStack {
-                                    LazyVGrid(columns: storageColumns, spacing: 5) {
-                                        ForEach(storageManager.storageInfo, id: \.id) { info in
-//                                            let item = viewModel.storageInfo[info]
-                                            
-                                            ZStack {
-                                                VStack(alignment: .leading) {
-                                                    ZStack { }
-                                                        .frame(width: 28, height: 28, alignment: .center)
-                                                        .background()
-                                                    
-                                                    Text(info.name)
-                                                        .font(.system(size: 14, weight: .semibold))
-                                                    
-                                                    Text(info.storage)
-                                                        .font(.system(size: 12, weight: .regular))
-                                                    
-                                                    ZStack { }
-                                                        .frame(maxWidth: .infinity, maxHeight: 8)
-                                                        .background()
-                                                        .padding(.vertical, 5)
-                                                }
+                                    VStack(spacing: 5) {
+                                        // Pehla 2 items - 2 column grid
+                                        LazyVGrid(columns: storageColumns, spacing: 5) {
+                                            ForEach(storageManager.storageInfo.prefix(2), id: \.id) { info in
+                                                storageCard(info: info)
                                             }
-                                            .padding(6)
-                                            .frame(maxWidth: .infinity, minHeight: 130)
-                                            .background(.whiteColour.opacity(0.08))
-                                            .cornerRadius(12)
+                                        }
+                                        
+                                        // 3rd item - full width
+                                        if let lastItem = storageManager.storageInfo.dropFirst(2).first {
+                                            storageCard(info: lastItem)
+                                                .frame(maxWidth: .infinity)
                                         }
                                     }
                                 }
@@ -225,4 +209,37 @@ struct CircularProgressView: View {
         }
         .padding()
     }
+}
+
+@ViewBuilder
+func storageCard(info: StrogeInfo) -> some View {
+    ZStack {
+        VStack(alignment: .leading) {
+            ZStack { }
+                .frame(width: 28, height: 28, alignment: .center)
+                .background()
+            
+            Text(info.name)
+                .font(.system(size: 14, weight: .semibold))
+            
+            Text(info.storage)
+                .font(.system(size: 12, weight: .regular))
+            
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .fill(.grayColour.opacity(0.5))
+                    .frame(height: 8)
+                
+                Rectangle()
+                    .fill(.red)
+                    .frame(width: info.percent, height: 8)
+            }
+            .frame(height: 8)
+            .cornerRadius(8)
+        }
+    }
+    .padding(6)
+    .frame(maxWidth: .infinity, minHeight: 130)
+    .background(.whiteColour.opacity(0.08))
+    .cornerRadius(12)
 }

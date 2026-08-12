@@ -22,6 +22,6 @@ extension ShapeStyle where Self == LinearGradient {
     }
     
     static var strongPrimeGradient: LinearGradient {
-        LinearGradient(colors: [.skyBlueColour, .blueColour, .lightPinkColour], startPoint: .top, endPoint: .bottom)
+        LinearGradient(colors: [.skyBlueColour, .blueColour, .lightPinkColour], startPoint: .leading, endPoint: .trailing)
     }
 }

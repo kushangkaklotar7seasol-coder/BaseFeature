@@ -10,11 +10,14 @@ import Combine
 import Photos
 
 class StorageManager: ObservableObject {
-    @Published var freeSpace: String = "Calculating..."
-    @Published var totalSpace: String = "Calculating..."
-    @Published var usedSpace: String = "Calculating..."
+    @Published var freeSpace: String = ""
+    @Published var totalSpace: String = ""
+    @Published var usedSpace: String = ""
     @Published var storageInfo: [StrogeInfo] = []
     @Published var photoStatus: PHAuthorizationStatus = .denied
+    @Published var usedStoragePercent: Double = 0.0
+    
+    var usedSize: Int = 0
     
     init() {
         self.fetchStorageInfo()
@@ -30,7 +33,7 @@ class StorageManager: ObservableObject {
             if let freeSize = systemAttributes[.systemFreeSize] as? Int64,
                let totalSize = systemAttributes[.systemSize] as? Int64 {
                 
-                let usedSize = totalSize - freeSize
+                self.usedSize = Int(totalSize - freeSize)
                 
                 let formatter = ByteCountFormatter()
                 formatter.allowedUnits = [.useGB, .useMB]
@@ -38,7 +41,12 @@ class StorageManager: ObservableObject {
                 
                 self.freeSpace = formatter.string(fromByteCount: freeSize)
                 self.totalSpace = formatter.string(fromByteCount: totalSize)
-                self.usedSpace = formatter.string(fromByteCount: usedSize)
+                self.usedSpace = formatter.string(fromByteCount: Int64(self.usedSize))
+                
+                // Percent calculate karo
+                if totalSize > 0 {
+                    self.usedStoragePercent = Double(usedSize) / Double(totalSize)
+                }
             }
         } catch {
             print("Error retrieving storage info: \(error.localizedDescription)")
@@ -55,11 +63,15 @@ class StorageManager: ObservableObject {
              case .denied:
                  self?.photoStatus = .denied
              case .authorized:
-                 self?.photoStatus = .authorized
-                 self?.calculateSizes()
+                 DispatchQueue.main.async {
+                     self?.photoStatus = .authorized
+                     self?.calculateSizes()
+                 }
              case .limited:
-                 self?.photoStatus = .limited
-                 self?.calculateSizes()
+                 DispatchQueue.main.async {
+                     self?.photoStatus = .limited
+                     self?.calculateSizes()
+                 }
              @unknown default:
                  self?.photoStatus = .denied
              }
@@ -96,8 +108,23 @@ class StorageManager: ObservableObject {
                  let photosSize = formatter.string(fromByteCount: totalPhotosBytes)
                  let videosSize = formatter.string(fromByteCount: totalVideosBytes)
                  
-                 self.storageInfo.append(StrogeInfo(id: 0, name: "Photo", storage: photosSize, percent: 0))
-                 self.storageInfo.append(StrogeInfo(id: 1, name: "Video", storage: videosSize, percent: 0))
+                 let other = (self.usedSize - Int(totalPhotosBytes)) - Int(totalVideosBytes)
+                 let otherSize = formatter.string(fromByteCount: Int64(other))
+                 
+                 if totalPhotosBytes > 0 {
+                     let precent = Double(totalPhotosBytes) / Double(self.usedSize) * 100
+                     self.storageInfo.append(StrogeInfo(id: 0, name: "Photo", storage: photosSize, percent: precent))
+                 }
+                 
+                 if totalVideosBytes > 0 {
+                     let precent = Double(totalVideosBytes) / Double(self.usedSize) * 100
+                     self.storageInfo.append(StrogeInfo(id: 1, name: "Video", storage: videosSize, percent: precent))
+                 }
+                 
+                 if other > 0 {
+                     let precent = Double(other) / Double(self.usedSize) * 100
+                     self.storageInfo.append(StrogeInfo(id: 2, name: "Other", storage: otherSize, percent: precent))
+                 }
              }
          }
      }

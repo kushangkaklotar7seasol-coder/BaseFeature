@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StorageOverviewScreen: View {
     @State private var progress: Double = 0.77
+    @StateObject var storageManager = StorageManager()
     
     var body: some View {
         ZStack {
