@@ -1,0 +1,87 @@
+//
+//  MovieViewModel.swift
+//  BaseFeature
+//
+//  Created by Kushang kaklotar on 13/08/26.
+//
+
+import Foundation
+import Combine
+
+class MovieViewModel: ObservableObject {
+    @Published var topRatedMovie: [Movie] = []
+    @Published var celebrity: CelebrityResponse?
+    @Published var moviesBunch: MediaBunch?
+    @Published var moviesBunchUpcoming: MediaBunch?
+    @Published var moviesBunchOnAir: MediaBunch?
+
+    init() {
+        self.topRatedMovieAPI()
+    }
+    
+    // MARK: - API Call's -
+    func topRatedMovieAPI() {
+        if Utility.isInternetAvailable() {
+            HomeServices.shared.topRatedAPI { statusCode, response in
+                let movieData = response.results.prefix(5)
+                self.topRatedMovie = Array(repeating: movieData, count: 100).flatMap { $0 }
+                self.upcomingMovieAPI()
+            } failure: { error in
+                print(error)
+            }
+        } else {
+            Toast.shared.show(message: noInternet, type: .error)
+        }
+    }
+    
+    func celebrityAPI() {
+        if Utility.isInternetAvailable() {
+            HomeServices.shared.celecrityAPI(page: 1) { statusCode, response in
+                self.celebrity = response
+                self.newReleaseAPI()
+            } failure: { error in
+                print(error)
+            }
+        } else {
+            Toast.shared.show(message: noInternet, type: .error)
+        }
+    }
+    
+    func newReleaseAPI() {
+        if Utility.isInternetAvailable() {
+            DiscoverService.shared.newReleaseAPI { statusCode, response in
+                self.moviesBunch = MediaBunch(id: 0, name: "New Relese", type: .NewRelesesMovie, media: response)
+                self.onTheAirSeriesAPI()
+            } failure: { error in
+                print(error)
+            }
+        } else {
+            Toast.shared.show(message: noInternet, type: .error)
+        }
+    }
+    
+    func upcomingMovieAPI() {
+        if Utility.isInternetAvailable() {
+            HomeServices.shared.upCommingdAPI { statusCode, response in
+                self.moviesBunchUpcoming = MediaBunch(id: 0, name: "Upcoming", type: .upcommingMovie, media: response)
+                self.celebrityAPI()
+            } failure: { error in
+                print(error)
+            }
+        } else {
+            Toast.shared.show(message: noInternet, type: .error)
+        }
+    }
+    
+    func onTheAirSeriesAPI() {
+        if Utility.isInternetAvailable() {
+            HomeServices.shared.onTheAirAPI { statusCode, response in
+                self.moviesBunchOnAir = MediaBunch(id: 1, name: "On AIR", type: .onTheAirSeries, media: response)
+            } failure: { error in
+                print(error)
+            }
+        } else {
+            Toast.shared.show(message: noInternet, type: .error)
+        }
+    }
+}

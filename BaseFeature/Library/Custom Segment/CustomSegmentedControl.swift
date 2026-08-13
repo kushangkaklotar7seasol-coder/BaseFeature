@@ -4,57 +4,68 @@
 //
 //  Created by Kushang  on 14/12/25.
 //
-
 import SwiftUI
 
 struct CustomSegmentedControl: View {
     @Binding var preselectedIndex: Int
-    var options: [String]
+    var options: [String] = ["MOVIES", "TV SHOW"]
     var onSelect: ((Int) -> Void)? = nil
     
+    private let icons = ["ic_camara_roal", "ic_camara_series"]
+    
     var body: some View {
-        GeometryReader { geo in
-            let segmentWidth = geo.size.width / CGFloat(options.count)
-            
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .fill(.clear)
+        HStack(spacing: 24) { // બંને ઓપ્શન વચ્ચેનું સ્પષ્ટ અંતર
+            ForEach(options.indices, id: \.self) { index in
+                let isSelected = preselectedIndex == index
                 
-                RoundedRectangle(cornerRadius: 50)
-                    .fill(
-                        LinearGradient(colors: [.red, .yellow], startPoint: .top, endPoint: .bottom)
-                    )
-                    .frame(width: segmentWidth - 12, height: 50 - 7)
-                    .offset(x: segmentWidth * CGFloat(preselectedIndex) + 6, y: 0)
-                
-                HStack() {
-                    ForEach(options.indices, id: \.self) { index in
-                        Text(options[index])
-                            .fontWeight(.medium)
-                            .foregroundColor(
-                                preselectedIndex == index ? .green : .blue
-                            )
-                            .frame(width: segmentWidth)
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                withAnimation(.interactiveSpring(
-                                    response: 0.4,
-                                    dampingFraction: 0.8,
-                                    blendDuration: 0.6
-                                )) {
-                                    preselectedIndex = index
-                                    onSelect?(index)
-                                }
-                            }
+                HStack(spacing: 8) {
+                    // Icon
+                    Image(icons[index < icons.count ? index : 0])
+                        .renderingMode(.template)
+                        .foregroundColor(isSelected ? .whiteColour : .grayColour)
+                        .font(.system(size: 24, weight: .bold))
+                    
+                    // Title Text
+                    Text(options[index])
+                        .font(.system(size: 14, weight: .bold))
+                        .tracking(1)
+                }
+                .foregroundColor(isSelected ? .whiteColour : .grayColour)
+                // 🔥 ફક્ત પર્ટીક્યુલર બટન માટેનું Inner Padding
+                .padding(.vertical, 10)
+                .padding(.horizontal, 16)
+                // 🔥 બેકગ્રાઉન્ડ ફક્ત ટેક્સ્ટ/આઈકનની સાઈઝ મુજબ જ દેખાશે
+                .background(
+                    ZStack {
+                        if isSelected {
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(
+                                    LinearGradient(
+                                        colors: [.blueColour, .purpleColour],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                // સ્મૂથ સિલેક્શન ટ્રાન્ઝિશન
+                                .matchedGeometryEffect(id: "selectedSegment", in: animationNamespace)
+                        }
+                    }
+                )
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    withAnimation(
+                        .interactiveSpring(
+                            response: 0.35,
+                            dampingFraction: 0.8,
+                            blendDuration: 0.5
+                        )
+                    ) {
+                        preselectedIndex = index
+                        onSelect?(index)
                     }
                 }
             }
         }
-        .frame(height: 55)
-        .clipShape(RoundedRectangle(cornerRadius: 55))
-        .overlay {
-            RoundedRectangle(cornerRadius: 55)
-                .strokeBorder(.yellow, lineWidth: 0.5)
-        }
     }
+    @Namespace private var animationNamespace
 }

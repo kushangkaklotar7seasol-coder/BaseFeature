@@ -1,6 +1,24 @@
 {
-  "originHash" : "0a79f2009ea5ba6a9e7c2c6471d05458a7ac9a981d2fd7ab914f1eb741af1ea1",
+  "originHash" : "182b3b3e3f19496599e06e911d08c41f3eba1bdb99893499987c80719d88bcef",
   "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "7595cbcf59809f9977c5f6378500de2ad73b7ddb",
+        "version" : "5.12.0"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/kingfisher",
+      "state" : {
+        "revision" : "410984bf301f4fa224fe56277b3f8672cc465c79",
+        "version" : "8.11.0"
+      }
+    },
     {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",

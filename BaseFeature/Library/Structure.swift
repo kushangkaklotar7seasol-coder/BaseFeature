@@ -34,6 +34,7 @@ struct Notes: Codable, Identifiable, Hashable {
 struct StrogeInfo {
     var id: Int
     var name: String
+    var image: String
     var storage: String
     var percent: Double
 }

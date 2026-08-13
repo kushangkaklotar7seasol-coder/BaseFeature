@@ -113,17 +113,17 @@ class StorageManager: ObservableObject {
                  
                  if totalPhotosBytes > 0 {
                      let precent = Double(totalPhotosBytes) / Double(self.usedSize) * 100
-                     self.storageInfo.append(StrogeInfo(id: 0, name: "Photo", storage: photosSize, percent: precent))
+                     self.storageInfo.append(StrogeInfo(id: 0, name: "Photo", image: "ic_photo", storage: photosSize, percent: precent))
                  }
                  
                  if totalVideosBytes > 0 {
                      let precent = Double(totalVideosBytes) / Double(self.usedSize) * 100
-                     self.storageInfo.append(StrogeInfo(id: 1, name: "Video", storage: videosSize, percent: precent))
+                     self.storageInfo.append(StrogeInfo(id: 1, name: "Video", image: "ic_video", storage: videosSize, percent: precent))
                  }
                  
                  if other > 0 {
                      let precent = Double(other) / Double(self.usedSize) * 100
-                     self.storageInfo.append(StrogeInfo(id: 2, name: "Other", storage: otherSize, percent: precent))
+                     self.storageInfo.append(StrogeInfo(id: 2, name: "Other", image: "ic_documents", storage: otherSize, percent: precent))
                  }
              }
          }

@@ -33,29 +33,26 @@ struct TabBar: View {
         VStack(spacing: 0) {
             // Main Active View Container using ZStack
             ZStack {
-//                FScreen1()
                 if loadedTabs.contains(.home) {
-                    HomeScreen()
+                    MovieScreen()
                         .opacity(selectedTab == .home ? 1 : 0)
                         .allowsHitTesting(selectedTab == .home)
                 }
                 
                 if loadedTabs.contains(.movies) {
-                    MovieScreen()
+                    HomeScreen()
                         .opacity(selectedTab == .movies ? 1 : 0)
                         .allowsHitTesting(selectedTab == .movies)
                 }
                 
                 if loadedTabs.contains(.search) {
                     SearchScreen()
-                    //   FScreen3()
                         .opacity(selectedTab == .search ? 1 : 0)
                         .allowsHitTesting(selectedTab == .search)
                 }
                 
                 if loadedTabs.contains(.setting) {
                     SettingScreen()
-                    //    FScreen4()
                         .opacity(selectedTab == .setting ? 1 : 0)
                         .allowsHitTesting(selectedTab == .setting)
                 }
@@ -65,7 +62,6 @@ struct TabBar: View {
             Divider()
                 .background(Color.blackColour)
             
-            // Custom TabBar
             CustomTabBar(selectedTab: $selectedTab, loadedTabs: $loadedTabs)
                 .background(Color.backgroundColour)
         }

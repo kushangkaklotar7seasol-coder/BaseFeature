@@ -13,6 +13,8 @@ let serverUrl = proxiUrl + "https://api.themoviedb.org/3/"
 //  MARK: - Home -
 let topRatedMovieUrl = serverUrl + "movie/top_rated"
 let celebrityUrl = serverUrl + "person/popular&page="
+let upcommingMovieUrl = serverUrl + "movie/upcoming&page="
+let onTheAirUrl = serverUrl + "tv/on_the_air&page="
 let celebeityDetailUrl = serverUrl + "person/"
 let celebrityMovieUrl = "movie_credits"
 let celebritySeriesUrl = "tv_credits"

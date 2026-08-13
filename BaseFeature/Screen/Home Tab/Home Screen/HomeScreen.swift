@@ -215,12 +215,14 @@ struct CircularProgressView: View {
 func storageCard(info: StrogeInfo) -> some View {
     ZStack {
         VStack(alignment: .leading) {
-            ZStack { }
+            Image(info.image)
+                .resizable()
+                .scaledToFill()
                 .frame(width: 28, height: 28, alignment: .center)
-                .background()
             
             Text(info.name)
                 .font(.system(size: 14, weight: .semibold))
+                .padding(.top, 2)
             
             Text(info.storage)
                 .font(.system(size: 12, weight: .regular))
@@ -229,10 +231,14 @@ func storageCard(info: StrogeInfo) -> some View {
                 Rectangle()
                     .fill(.grayColour.opacity(0.5))
                     .frame(height: 8)
+                    .cornerRadius(8)
                 
                 Rectangle()
-                    .fill(.red)
+                    .fill(
+                        LinearGradient(colors: [.lightPurple, .purpleColour], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
                     .frame(width: info.percent, height: 8)
+                    .cornerRadius(8)
             }
             .frame(height: 8)
             .cornerRadius(8)
