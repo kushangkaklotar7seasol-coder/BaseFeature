@@ -8,7 +8,7 @@
 import Foundation
 
 enum DiscoverAPIType {
-    case NewRelesesMovie, TopRatedMovie, MostPopulerMovie, airingTodaySeries, topRatedSeries, mostPopulerSeries, upcommingMovie, onTheAirSeries
+    case NewRelesesMovie, TopRatedMovie, MostPopulerMovie, airingTodaySeries, topRatedSeries, mostPopulerSeries, upcommingMovie, onTheAirSeries, nothing
 }
 
 struct MediaBunch: Hashable {

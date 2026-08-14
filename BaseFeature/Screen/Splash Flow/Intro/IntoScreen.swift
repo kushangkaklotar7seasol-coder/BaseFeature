@@ -125,7 +125,7 @@ struct IntoScreen: View {
             }
             .padding(.horizontal,16)
         }
-        .defaultPage(true)
+        .defaultPage()
         .background(.blackColour)
 
     }

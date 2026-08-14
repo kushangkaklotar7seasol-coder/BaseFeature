@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension View {
-    func defaultPage(_ isSwapBack: Bool = true) -> some View {
+    func defaultPage() -> some View {
         self
             .background (
                 ZStack {
@@ -32,7 +32,7 @@ extension View {
                 .ignoresSafeArea(.all)
             )
             .navigationBarBackButtonHidden(true)
-            .foregroundColor(.white)
+            .foregroundColor(.whiteColour)
     }
     
     func hideKeyboard() {

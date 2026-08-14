@@ -22,6 +22,20 @@ func destination(for route: Route) -> some View {
         TabBar()
     case .storageOverview:
         StorageOverviewScreen()
+    case .movieDetail(let movieId, let isMovie):
+        MovieDetailScreen(viewModel: MovieDetailViewModel(movieId: movieId, isMovie: isMovie))
+    case .castDetail(let celebrityId):
+        PersonDetailScreen(viewModel: PersonDetailViewModel(celebrityId: celebrityId))
+    case .movieListing(let mediaBunch):
+        MovieListingScreen(viewModel: MovieListingViewModel(media: mediaBunch))
+    case .personListing(personDetail: let person):
+        PersonListingScreen(viewModel: PersonListingViewModel(person: person))
+    case .castCrewListing(cast: let cast, header: let header):
+        CastCrewListingScreen(cast: cast, header: header)
+    case .videoListing(videos: let videos,header: let header):
+        VideoListingScreen(videos: videos, header: header)
+    case .favouriteScreen:
+        FavouriteScreen()
     }
 }
 
@@ -32,6 +46,13 @@ enum Route: Hashable {
     case tab
     
     case storageOverview
+    case movieDetail(movieId: Int, isMovie: Bool)
+    case castDetail(celebrityId: Int)
+    case movieListing(movieBunch: MediaBunch?)
+    case personListing(personDetail: CelebrityResponse?)
+    case castCrewListing(cast: [CastMember], header: String)
+    case videoListing(videos: [Video], header: String)
+    case favouriteScreen
 }
 
 final class Router: ObservableObject {

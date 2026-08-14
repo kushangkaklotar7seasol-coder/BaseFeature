@@ -114,9 +114,53 @@ class DefaultDesign {
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.whiteColour)
                     .frame(maxWidth: .infinity)
+                    .frame(maxHeight: 44)
                     .background(.leftTorightGradient)
                     .cornerRadius(10)
             }
+        }
+    }
+    
+    struct IconButton: View {
+        var icon: String
+        var systemImage: String = ""
+        var onClick: (()->Void?)
+        
+        var body: some View {
+            Button {
+                self.onClick()
+            } label: {
+                if !icon.isEmpty {
+                    Image(icon)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 24, height: 24)
+                } else {
+                    Image(systemName: systemImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 24, height: 24)
+                }
+            }
+            .frame(width: 44, height: 44)
+            .background(.iconBackgroundColour)
+            .cornerRadius(12)
+        }
+    }
+    
+    struct InformationBlock: View {
+        var text: String
+        
+        var body: some View {
+            HStack(spacing: 4) {
+                Text(text)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(.whiteColour)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Color.white.opacity(0.2))
+            .clipShape(Capsule())
         }
     }
     
@@ -173,15 +217,16 @@ class DefaultDesign {
                         .onFailure { _ in
                             isFailed = true
                         }
-                        .placeholder {
-                            ZStack {
-                                Color(.grayColour.opacity(0.5))
-                                ProgressView()
-                            }
-                        }
+//                        .placeholder {
+//                            ZStack {
+//                                Color(.grayColour.opacity(0.5))
+//                                ProgressView()
+//                            }
+//                        }
                         .fade(duration: 0.25)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
+                        .shimmer()
                 }
             }
             .frame(width: width, height: height)
@@ -194,33 +239,37 @@ class DefaultDesign {
     struct SectionHeader: View {
         var name: String = ""
         var buttonName: String = "See All"
+        var isShowButton: Bool  = true
         var onClick: (()->Void)?
         
         var body: some View {
             HStack {
                 Text(name.localized())
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(.whiteColour)
                 
                 Spacer()
                 
-                Button {
-                    self.onClick?()
-                } label: {
-                    HStack(spacing: 4) {
-                        Text(buttonName)
-                            .font(.system(size: 13, weight: .semibold))
-                        
-                        Image(systemName: "chevron.right")
-                            .font(.system(size: 12, weight: .semibold))
-                    }
+                if isShowButton {
+                    Button {
+                        self.onClick?()
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(buttonName)
+                                .font(.system(size: 13, weight: .semibold))
+                            
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 12, weight: .semibold))
+                        }
                         .foregroundColor(.grayColour)
+                    }
                 }
             }
         }
     }
     
     struct PersonPoster: View {
+        var id: Int
         var url: String = ""
         var name: String = ""
         
@@ -238,7 +287,7 @@ class DefaultDesign {
             VStack(spacing: 8) {
                 ZStack {
                     ZStack {
-                        DefaultDesign.ImageView(url: imageUrl+url, width: posterSize-10, height: posterSize-10, placeholderImage: "ic_noImage")
+                        DefaultDesign.ImageView(url: imageUrl+url, width: posterSize-10, height: posterSize-10, placeholderHeight: 50, placeholderImage: "ic_no_person")
                     }
                     .frame(maxWidth: posterSize, maxHeight: posterSize)
                     .background(.whiteColour)
@@ -255,6 +304,9 @@ class DefaultDesign {
                     .multilineTextAlignment(.leading)
             }
             .frame(width: posterSize)
+            .onTapGesture {
+                Router.shared.push(.castDetail(celebrityId: id))
+            }
         }
     }
     
@@ -281,9 +333,38 @@ class DefaultDesign {
         
         var body: some View {
             VStack(alignment: .leading) {
-                
                 ZStack {
-                    DefaultDesign.ImageView(url: imageUrl+(movies.posterPath ?? ""), width: width, height: height)
+                    DefaultDesign.ImageView(url: imageUrl+(movies.posterPath ?? ""), width: width, height: height, placeholderHeight: 50, placeholderImage: "ic_no_movie")
+                    
+                    VStack {
+                        
+                        HStack {
+                            Spacer()
+                            
+                            Button {
+                                Utility.addHaptics()
+                                if self.isLiked {
+                                    database.removeMovie(id: movies.id)
+                                } else {
+                                    database.addMovie(movies)
+                                }
+                                
+                                self.isLiked.toggle()
+                                
+                                onLike?(self.movies)
+                            } label: {
+                                Image(self.isLiked ? "ic_Heart_fill" : "ic_heart")
+                                    .resizable()
+                                    .frame(width: 15, height: 15, alignment: .center)
+                                    .padding(10)
+                                    .background(.iconBackgroundColour)
+                                    .cornerRadius(30)
+                            }
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding(10)
                 }
                 .frame(width: width, height: height, alignment: .center)
                 .cornerRadius(8)
@@ -317,8 +398,7 @@ class DefaultDesign {
             .onTapGesture {
                 onClick?()
                 Utility.closeKeyboard()
-//                Router.shared.push(.movieDetail(movieId: movies.id, isMovie: movies.title != nil ? true : false))
-//                movieDetail
+                Router.shared.push(.movieDetail(movieId: movies.id, isMovie: movies.title != nil ? true : false))
             }
             .onAppear() {
                 self.isLiked = database.isMovieLiked(id: movies.id)
@@ -354,4 +434,66 @@ class DefaultDesign {
         }
     }
     
+    
+    struct ExpandableTextView: View {
+        let text: String
+        
+        @State private var isExpanded = false
+        @State private var isTruncated = false
+        
+        var body: some View {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(text)
+                    .foregroundColor(.gray)
+                    .lineLimit(isExpanded ? nil : 3)
+                    .multilineTextAlignment(.leading)
+                    .background(
+                        Text(text)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .hidden()
+                            .background(
+                                GeometryReader { fullGeometry in
+                                    Color.clear
+                                        .onAppear {
+                                            checkTruncation(fullHeight: fullGeometry.size.height)
+                                        }
+                                }
+                            )
+                    )
+                    .animation(.easeInOut, value: isExpanded)
+                
+                if isTruncated {
+                    
+                    Button {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
+                    } label: {
+                        HStack(spacing: 5) {
+                            Text(isExpanded ? "Show Less" : "Show More")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundColor(.whiteColour)
+                            
+                            Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                                .resizable()
+                                .frame(width: 12, height: 8, alignment: .center)
+                        }
+                    }
+                }
+            }
+            .onChange(of: text) { _ in
+                isExpanded = false
+                isTruncated = false
+            }
+        }
+        
+        private func checkTruncation(fullHeight: CGFloat) {
+            let lineHeight = UIFont.systemFont(ofSize: 17).lineHeight
+            let calculatedTruncated = fullHeight > lineHeight * 3.2
+            if calculatedTruncated != isTruncated {
+                isTruncated = calculatedTruncated
+            }
+        }
+    }
 }

@@ -11,9 +11,10 @@ import Combine
 class MovieViewModel: ObservableObject {
     @Published var topRatedMovie: [Movie] = []
     @Published var celebrity: CelebrityResponse?
-    @Published var moviesBunch: MediaBunch?
+    @Published var moviesBunchNewRelease: MediaBunch?
     @Published var moviesBunchUpcoming: MediaBunch?
     @Published var moviesBunchOnAir: MediaBunch?
+    @Published var moviesBunchAiringToday: MediaBunch?
 
     init() {
         self.topRatedMovieAPI()
@@ -50,7 +51,7 @@ class MovieViewModel: ObservableObject {
     func newReleaseAPI() {
         if Utility.isInternetAvailable() {
             DiscoverService.shared.newReleaseAPI { statusCode, response in
-                self.moviesBunch = MediaBunch(id: 0, name: "New Relese", type: .NewRelesesMovie, media: response)
+                self.moviesBunchNewRelease = MediaBunch(id: 0, name: "New Relese", type: .NewRelesesMovie, media: response)
                 self.onTheAirSeriesAPI()
             } failure: { error in
                 print(error)
@@ -77,11 +78,24 @@ class MovieViewModel: ObservableObject {
         if Utility.isInternetAvailable() {
             HomeServices.shared.onTheAirAPI { statusCode, response in
                 self.moviesBunchOnAir = MediaBunch(id: 1, name: "On AIR", type: .onTheAirSeries, media: response)
+                self.airingTodayAPI()
             } failure: { error in
                 print(error)
             }
         } else {
             Toast.shared.show(message: noInternet, type: .error)
+        }
+    }
+    
+    func airingTodayAPI() {
+        if Utility.isInternetAvailable() {
+            DiscoverService.shared.airingTodayAPI { statusCode, response in
+                self.moviesBunchAiringToday = MediaBunch(id: 0, name: "Airing Today", type: .airingTodaySeries, media: response)
+            } failure: { error in
+                print(error)
+            }
+        } else {
+            print("No internet connected")
         }
     }
 }
