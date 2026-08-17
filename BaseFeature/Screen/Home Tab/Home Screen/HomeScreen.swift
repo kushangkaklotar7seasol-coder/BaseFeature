@@ -153,26 +153,51 @@ struct HomeScreen: View {
                     }
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(0...3, id: \.self) { person in
+                        ForEach(viewModel.quickTool, id: \.id) { tool in
                             ZStack {
                                 VStack(alignment: .leading) {
-                                    ZStack { }
-                                        .frame(width: 50, height: 50, alignment: .center)
-                                        .background()
-                                        .cornerRadius(25)
+                                    ZStack {
+                                        Image(tool.image)
+                                            .resizable()
+                                            .frame(width: 50, height: 50, alignment: .center)
+                                    }
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                    .cornerRadius(25)
                                     
-                                    Text("Goal Tracker")
+                                    Text(tool.name)
                                         .font(.system(size: 14, weight: .semibold))
                                     
-                                    Text("Set goals, track progress and achieve more.")
+                                    Text(tool.info)
                                         .font(.system(size: 12, weight: .regular))
                                         .padding(.top, 1)
+                                        .foregroundColor(.grayColour)
+                                }
+                                .padding(8)
+                                
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        
+                                        Image("ic_right_arrow")
+                                            .resizable()
+                                            .frame(width: 20, height: 20, alignment: .center)
+                                            .padding(10)
+                                            .overlay {
+                                                RoundedRectangle(cornerRadius: 30)
+                                                    .strokeBorder(.whiteColour.opacity(0.2))
+                                            }
+                                    }
+                                    
+                                    Spacer()
                                 }
                                 .padding(8)
                             }
                             .frame(width: toolwidth, height: 130, alignment: .center)
                             .background(.whiteColour.opacity(0.08))
                             .cornerRadius(12)
+                            .onTapGesture {
+                                viewModel.onQuickTool(tool)
+                            }
                         }
                     }
                     .padding(.bottom)

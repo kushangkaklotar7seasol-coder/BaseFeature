@@ -34,13 +34,13 @@ struct TabBar: View {
             // Main Active View Container using ZStack
             ZStack {
                 if loadedTabs.contains(.home) {
-                    MovieScreen()
+                    HomeScreen()
                         .opacity(selectedTab == .home ? 1 : 0)
                         .allowsHitTesting(selectedTab == .home)
                 }
                 
                 if loadedTabs.contains(.movies) {
-                    HomeScreen()
+                    MovieScreen()
                         .opacity(selectedTab == .movies ? 1 : 0)
                         .allowsHitTesting(selectedTab == .movies)
                 }

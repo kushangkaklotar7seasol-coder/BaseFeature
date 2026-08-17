@@ -17,3 +17,10 @@ struct MediaBunch: Hashable {
     var type: DiscoverAPIType
     var media: MediaCredits
 }
+
+struct QuichToolsModel {
+    let id: Int
+    var name: String
+    var image: String
+    var info: String
+}

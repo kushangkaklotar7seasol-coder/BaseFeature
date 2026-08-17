@@ -36,6 +36,14 @@ func destination(for route: Route) -> some View {
         VideoListingScreen(videos: videos, header: header)
     case .favouriteScreen:
         FavouriteScreen()
+    case .notesScreen:
+        NotesScreen()
+    case .addNote(let note):
+        AddNoteScreen(viewModel: AddNoteViewModel(oldNote: note))
+    case .notesDisplay(let index, let allNote):
+        DisplayNoteScreen(viewModel: DisplayNotesViewModel(notesIndex: index, allNotes: allNote))
+    case .calculator:
+        CalculatorScreen()
     }
 }
 
@@ -53,6 +61,10 @@ enum Route: Hashable {
     case castCrewListing(cast: [CastMember], header: String)
     case videoListing(videos: [Video], header: String)
     case favouriteScreen
+    case notesScreen
+    case addNote(note: Notes?)
+    case notesDisplay(index: Int, allNote: [Notes])
+    case calculator
 }
 
 final class Router: ObservableObject {

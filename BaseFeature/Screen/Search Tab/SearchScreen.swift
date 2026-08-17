@@ -56,7 +56,7 @@ struct SearchScreen: View {
                     }
                 }
                 .frame(width: screenWidth, height: screenHeight/4.5, alignment: .center)
-                .background(.leftTorightGradient)
+                .background(.strongPrimeGradient)
                 
                 
                 let array = viewModel.selectedIndex == 0 ? viewModel.movies : viewModel.series
@@ -103,12 +103,12 @@ struct SearchScreen: View {
                                     .resizable()
                                     .frame(width: 93, height: 120, alignment: .center)
                                 
-                                Text("Strings.searchMoviePlaceholder")
+                                Text("Search Movies & TV Shows")
                                     .font(.system(size: 18, weight: .semibold))
                                     .foregroundColor(.whiteColour)
                                     .multilineTextAlignment(.center)
                                 
-                                Text("Strings.newSearchPlaceholder")
+                                Text("Find your favorite movies or series by searching for a title, actor, or genre.")
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
                                     .multilineTextAlignment(.center)
@@ -118,12 +118,12 @@ struct SearchScreen: View {
                                     .resizable()
                                     .frame(width: 93, height: 120, alignment: .center)
                                 
-                                Text("Strings.noSearchData")
+                                Text("No data found")
                                     .font(.system(size: 18, weight: .semibold))
                                     .foregroundColor(.whiteColour)
                                     .multilineTextAlignment(.center)
                                 
-                                Text("\("Strings.noSearchDataFor") \(viewModel.searchTextField)")
+                                Text("\("No data found for") \(viewModel.searchTextField)")
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
                                     .multilineTextAlignment(.center)
