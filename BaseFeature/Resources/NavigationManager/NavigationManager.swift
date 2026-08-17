@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import Photos
 
 @ViewBuilder
 func destination(for route: Route) -> some View {
@@ -44,6 +45,12 @@ func destination(for route: Route) -> some View {
         DisplayNoteScreen(viewModel: DisplayNotesViewModel(notesIndex: index, allNotes: allNote))
     case .calculator:
         CalculatorScreen()
+    case .imageToPDF:
+        ImageToPDFScreen()
+    case .selectImage:
+        SelectImageScreen()
+    case .arrangeImage(let images):
+        ArrangePageScreen(viewModel: ArrangePageViewModel(selectedAssets: images))
     }
 }
 
@@ -65,6 +72,9 @@ enum Route: Hashable {
     case addNote(note: Notes?)
     case notesDisplay(index: Int, allNote: [Notes])
     case calculator
+    case imageToPDF
+    case selectImage
+    case arrangeImage(images: [PHAsset])
 }
 
 final class Router: ObservableObject {
