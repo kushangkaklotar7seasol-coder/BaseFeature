@@ -36,6 +36,8 @@ class HomeViewModel: ObservableObject {
     
     func onQuickTool(_ item: QuichToolsModel){
         switch item.id {
+        case 0:
+            Router.shared.push(.myGoal)
         case 1:
             Router.shared.push(.imageToPDF)
         case 2:

@@ -341,19 +341,74 @@ struct SelectedThumbnailView: View {
     }
 }
  
+import SwiftUI
+
 struct ProgressOverlay: View {
+    @State private var isAnimating = false
+    
     var body: some View {
         ZStack {
-            Color.black.opacity(0.5).ignoresSafeArea()
-                VStack(spacing: 12) {
-                    ProgressView()
-                        .tint(.white)
-                    Text("Creating PDF...")
-                        .foregroundColor(.white)
+            // Semi-transparent background dimming
+            Color.black.opacity(0.4)
+                .ignoresSafeArea()
+            
+            // Card Container
+            VStack(spacing: 20) {
+                // Animated Visual Header
+                ZStack {
+                    // Outer pulsing ring
+                    Circle()
+                        .stroke(Color.blue.opacity(0.3), lineWidth: 2)
+                        .frame(width: 80, height: 80)
+                        .scaleEffect(isAnimating ? 1.2 : 0.8)
+                        .opacity(isAnimating ? 0.0 : 1.0)
+                    
+                    // Inner glowing background
+                    Circle()
+                        .fill(Color.blue.opacity(0.15))
+                        .frame(width: 64, height: 64)
+                    
+                    // Floating Document Icon
+                    Image(systemName: "doc.richtext.fill")
+                        .font(.system(size: 28, weight: .semibold))
+                        .foregroundColor(.blue)
+                        .offset(y: isAnimating ? -4 : 4)
                 }
-            .padding(24)
-            .background(Color.black.opacity(0.8))
-            .cornerRadius(12)
+                
+                // Text & Subtitle
+                VStack(spacing: 6) {
+                    Text("Generating PDF")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                    
+                    Text("Compiling document layout...")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                
+                // Sleek Progress Indicator
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(1.1)
+            }
+            .padding(.vertical, 28)
+            .padding(.horizontal, 32)
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color(UIColor.systemBackground))
+                    .shadow(color: Color.black.opacity(0.15), radius: 20, x: 0, y: 10)
+            )
+            .padding(40)
+        }
+        .onAppear {
+            withAnimation(
+                Animation
+                    .easeInOut(duration: 1.2)
+                    .repeatForever(autoreverses: true)
+            ) {
+                isAnimating = true
+            }
         }
     }
 }

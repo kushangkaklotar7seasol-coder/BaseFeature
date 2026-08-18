@@ -11,7 +11,7 @@ struct CustomSegmentedControl: View {
     var options: [String] = ["MOVIES", "TV SHOW"]
     var onSelect: ((Int) -> Void)? = nil
     
-    private let icons = ["ic_camara_roal", "ic_camara_series"]
+    var icons = ["ic_camara_roal", "ic_camara_series"]
     
     var body: some View {
         HStack(spacing: 24) { // બંને ઓપ્શન વચ્ચેનું સ્પષ્ટ અંતર

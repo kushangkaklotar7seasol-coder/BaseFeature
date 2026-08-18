@@ -29,7 +29,6 @@ struct Splash: View {
                     .foregroundColor(.whiteColour)
             }
             
-            
             VStack {
                 Spacer()
                 

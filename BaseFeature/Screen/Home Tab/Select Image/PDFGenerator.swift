@@ -1,7 +1,15 @@
 import UIKit
+import Photos
+
+
+struct PDFSummary {
+    let totalPages: Int
+    let sizeInMB: Double
+    let sizeFormatted: String   // e.g. "5.7 MB"
+}
+ 
 
 enum PDFGenerator {
-
     /// Generates one PDF containing all given images in order (one image per page, in sequence)
     static func generatePDF(from images: [UIImage], fileName: String = "Photos") -> URL? {
         guard !images.isEmpty else { return nil }
@@ -52,4 +60,23 @@ enum PDFGenerator {
             return nil
         }
     }
+    
+   /// Call this from any screen with the generated PDF's URL and the selected assets array.
+    static func getPDFSummary(pdfURL: URL) -> PDFSummary? {
+       guard let document = CGPDFDocument(pdfURL as CFURL) else { return nil }
+       let totalPages = document.numberOfPages
+    
+       let attributes = try? FileManager.default.attributesOfItem(atPath: pdfURL.path)
+       let sizeBytes = (attributes?[.size] as? Int64) ?? 0
+       let sizeInMB = Double(sizeBytes) / (1024 * 1024)
+       let sizeFormatted = ByteCountFormatter.string(fromByteCount: sizeBytes, countStyle: .file)
+    
+       return PDFSummary(
+           totalPages: totalPages,
+           sizeInMB: sizeInMB,
+           sizeFormatted: sizeFormatted
+       )
+   }
 }
+
+ 

@@ -49,6 +49,7 @@ struct ArrangePageScreen: View {
                         viewModel.isRemoveMode = false
                     } else {
                         onNext?(viewModel.selectedAssets)
+                        Router.shared.push(.rotateImage(images: viewModel.selectedAssets))
                     }
                 }
                 .font(.subheadline.bold())

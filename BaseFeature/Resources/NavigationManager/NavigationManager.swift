@@ -51,6 +51,18 @@ func destination(for route: Route) -> some View {
         SelectImageScreen()
     case .arrangeImage(let images):
         ArrangePageScreen(viewModel: ArrangePageViewModel(selectedAssets: images))
+    case .rotateImage(images: let images):
+        RotateImage(viewModel: RotateViewModel(selectedAssets: images))
+    case .pdfCreated(url: let url, images: let images):
+        PDFCreatedScreen(generatedPDFURL: url, selectedAssets: images)
+    case .myGoal:
+        MyGoalScreen()
+    case .newGoal:
+        NewGoalScreen()
+    case .goalList:
+        GoalListScreen()
+    case .goalDetail(goal: let goal):
+        GoalDetailScreen(viewModel: GoalDetailViewModel(goal: goal))
     }
 }
 
@@ -75,6 +87,12 @@ enum Route: Hashable {
     case imageToPDF
     case selectImage
     case arrangeImage(images: [PHAsset])
+    case rotateImage(images: [PHAsset])
+    case pdfCreated(url: URL?, images: [PHAsset])
+    case myGoal
+    case newGoal
+    case goalList
+    case goalDetail(goal: Goal)
 }
 
 final class Router: ObservableObject {
@@ -102,6 +120,8 @@ final class Router: ObservableObject {
     }
 }
 
+var isSwipeBackenable = true
+
 extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
     
     override open func viewDidLoad() {
@@ -110,6 +130,10 @@ extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
     }
     
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 1
+        if isSwipeBackenable {
+            return viewControllers.count > 1
+        }
+        
+        return false
     }
 }
