@@ -17,6 +17,7 @@ class PersonDetailViewModel: ObservableObject {
     @Published var seriesCredits: MediaBunch?
     @Published var moviesBunch: [MediaBunch] = []
     @Published var isViewAllSheet: Bool = false
+    @Published var selectedSegment = 0
     @Published var type: Int = 0 //0=Movie, 1=Series
     
     var celebrityId: Int
@@ -63,7 +64,11 @@ class PersonDetailViewModel: ObservableObject {
             CelebrityService.shared.celebrityMovieAPI(personId: self.celebrityId) { statusCode, response in
                 self.isLoading = false
 //                self.movieCredits = response
-                self.movieCredits = MediaBunch(id: 0, name: "Movie", type: .nothing, media: MediaCredits(page: 0, totalPages: 0, totalResults: 0, results: response.cast))
+                if !response.cast.isEmpty {
+                    self.movieCredits = MediaBunch(id: 0, name: "MOVIE", type: .nothing, media: MediaCredits(page: 0, totalPages: 0, totalResults: 0, results: response.cast))
+                } else {
+                    self.selectedSegment = 1
+                }
                 self.tvShowAPI()
             } failure: { error in
                 self.isLoading = false
@@ -81,7 +86,9 @@ class PersonDetailViewModel: ObservableObject {
                 self.isLoading = false
 //                self.seriesCredits = response
 //                self.moviesBunchNewRelease = MediaBunch(id: 0, name: "New Relese", type: .NewRelesesMovie, media: response)
-                self.seriesCredits = MediaBunch(id: 0, name: "Series", type: .nothing, media: MediaCredits(page: 0, totalPages: 0, totalResults: 0, results: response.cast))
+                if !response.cast.isEmpty {
+                    self.seriesCredits = MediaBunch(id: 0, name: "SERIES", type: .nothing, media: MediaCredits(page: 0, totalPages: 0, totalResults: 0, results: response.cast))
+                }
             } failure: { error in
                 self.isLoading = false
                 print(error)

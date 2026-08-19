@@ -95,27 +95,40 @@ class RotateViewModel: ObservableObject {
     // MARK: - Convert To PDF tapped
     // Fetches each asset's full-size image, applies whatever rotation the user chose,
     // then builds one PDF (in array order) using PDFGenerator.
-    func generateFinalPDF(completion: @escaping (URL?) -> Void) {
-        let assets = selectedAssets
-        var indexedImages: [Int: UIImage] = [:]
-        let group = DispatchGroup()
-        
-        for (index, asset) in assets.enumerated() {
-            group.enter()
-            requestFullImage(for: asset) { [weak self] image in
-                defer { group.leave() }
-                guard let self, let image else { return }
-                let angle = self.rotationAngle(for: asset)
-                indexedImages[index] = image.rotated(byDegrees: angle)
+    func generateFinalPDF(fileName: String? = nil, completion: @escaping (URL?, PDFGenerator.PDFStats?) -> Void) {
+            let assets = selectedAssets
+            var indexedImages: [Int: UIImage] = [:]
+            let group = DispatchGroup()
+     
+            for (index, asset) in assets.enumerated() {
+                group.enter()
+                requestFullImage(for: asset) { [weak self] image in
+                    defer { group.leave() }
+                    guard let self, let image else { return }
+                    let angle = self.rotationAngle(for: asset)
+                    indexedImages[index] = image.rotated(byDegrees: angle)
+                }
+            }
+     
+            group.notify(queue: .main) {
+                let orderedImages = (0..<assets.count).compactMap { indexedImages[$0] }
+     
+                guard let tempURL = PDFGenerator.generatePDF(from: orderedImages) else {
+                    completion(nil, nil)
+                    return
+                }
+     
+                // Move it out of the temp folder into Documents (permanent storage)
+                let finalName = fileName ?? "Document_\(Int(Date().timeIntervalSince1970)).pdf"
+                guard let savedURL = savePDFToDocuments(from: tempURL, fileName: finalName) else {
+                    completion(nil, nil)
+                    return
+                }
+     
+                let stats = PDFGenerator.stats(for: savedURL)
+                completion(savedURL, stats)
             }
         }
-        
-        group.notify(queue: .main) {
-            let orderedImages = (0..<assets.count).compactMap { indexedImages[$0] }
-            let url = PDFGenerator.generatePDF(from: orderedImages)
-            completion(url)
-        }
-    }
 }
   
  // MARK: - Rotates pixel data itself (not just a visual transform), so the rotation is baked into the PDF

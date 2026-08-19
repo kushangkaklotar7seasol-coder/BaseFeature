@@ -23,7 +23,8 @@ class LanguageViewModel: ObservableObject {
                                                 LanguageItem(code: "nl"),
                                                 LanguageItem(code: "ko"),
                                                 LanguageItem(code: "zh-Hans"),
-                                                LanguageItem(code: "ru")]
+                                                LanguageItem(code: "ru"),
+                                                LanguageItem(code: "de")]
     
     init(isShowBack: Bool = true){
         self.isShowBack = isShowBack

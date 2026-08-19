@@ -28,6 +28,37 @@ func savePDFToDocuments(from tempURL: URL, fileName: String = "Document.pdf") ->
 // }
 
 
+// MARK: - Fetch all PDFs previously saved to Documents (newest first)
+func fetchSavedPDFs() -> [URL] {
+    guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+        return []
+    }
+
+    do {
+        let files = try FileManager.default.contentsOfDirectory(
+            at: documentsURL,
+            includingPropertiesForKeys: [.creationDateKey],
+            options: .skipsHiddenFiles
+        )
+
+        let pdfFiles = files.filter { $0.pathExtension.lowercased() == "pdf" }
+
+        return pdfFiles.sorted { lhs, rhs in
+            let lhsDate = (try? lhs.resourceValues(forKeys: [.creationDateKey]))?.creationDate ?? .distantPast
+            let rhsDate = (try? rhs.resourceValues(forKeys: [.creationDateKey]))?.creationDate ?? .distantPast
+            return lhsDate > rhsDate
+        }
+    } catch {
+        print("Failed to list saved PDFs: \(error)")
+        return []
+    }
+}
+
+// Usage from any screen:
+// let allPDFs = fetchSavedPDFs()
+// for url in allPDFs { print(url.lastPathComponent) }
+
+
 // MARK: - 2. Let the user save to the Files app (their choice of folder / iCloud Drive)
 // This is what "Save PDF to Files" normally means on iOS, since Photos doesn't accept PDFs.
 struct SaveToFilesPicker: UIViewControllerRepresentable {

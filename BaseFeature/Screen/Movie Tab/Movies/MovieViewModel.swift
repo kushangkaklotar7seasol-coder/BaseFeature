@@ -51,7 +51,7 @@ class MovieViewModel: ObservableObject {
     func newReleaseAPI() {
         if Utility.isInternetAvailable() {
             DiscoverService.shared.newReleaseAPI { statusCode, response in
-                self.moviesBunchNewRelease = MediaBunch(id: 0, name: "New Relese", type: .NewRelesesMovie, media: response)
+                self.moviesBunchNewRelease = MediaBunch(id: 0, name: "NEW_RELESE", type: .NewRelesesMovie, media: response)
                 self.onTheAirSeriesAPI()
             } failure: { error in
                 print(error)
@@ -64,7 +64,7 @@ class MovieViewModel: ObservableObject {
     func upcomingMovieAPI() {
         if Utility.isInternetAvailable() {
             HomeServices.shared.upCommingdAPI { statusCode, response in
-                self.moviesBunchUpcoming = MediaBunch(id: 0, name: "Upcoming", type: .upcommingMovie, media: response)
+                self.moviesBunchUpcoming = MediaBunch(id: 0, name: "UPCOMING", type: .upcommingMovie, media: response)
                 self.celebrityAPI()
             } failure: { error in
                 print(error)
@@ -77,7 +77,7 @@ class MovieViewModel: ObservableObject {
     func onTheAirSeriesAPI() {
         if Utility.isInternetAvailable() {
             HomeServices.shared.onTheAirAPI { statusCode, response in
-                self.moviesBunchOnAir = MediaBunch(id: 1, name: "On AIR", type: .onTheAirSeries, media: response)
+                self.moviesBunchOnAir = MediaBunch(id: 1, name: "ON_AIR", type: .onTheAirSeries, media: response)
                 self.airingTodayAPI()
             } failure: { error in
                 print(error)
@@ -90,7 +90,7 @@ class MovieViewModel: ObservableObject {
     func airingTodayAPI() {
         if Utility.isInternetAvailable() {
             DiscoverService.shared.airingTodayAPI { statusCode, response in
-                self.moviesBunchAiringToday = MediaBunch(id: 0, name: "Airing Today", type: .airingTodaySeries, media: response)
+                self.moviesBunchAiringToday = MediaBunch(id: 0, name: "AIRING_TODAY", type: .airingTodaySeries, media: response)
             } failure: { error in
                 print(error)
             }

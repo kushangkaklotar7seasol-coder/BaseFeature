@@ -7,216 +7,197 @@
 */
 
 // MARK: - Language Screen -
-"CHOOSE_LANGUAGE" = "언어 선택";
+"LANGUAGE" = "언어";
 "DONE" = "완료";
+"SELECT_LANGUAGE" = "언어 선택";
+"CHOOSE_LANGUAGE" = "선호하는 언어를 선택하세요";
+"CONTINUE" = "계속하기";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "이야기를 발견하세요";
-"PAGE1_INFO" = "상세 정보, 평점, 장르, 개봉일 등 수천 편의 영화를 탐색해 보세요.";
-"PAGE2_TITLE" = "오직 당신을 위해";
-"PAGE2_INFO" = "장르, 인기순으로 찾아보거나 검색을 통해 취향에 딱 맞는 영화를 탐색해 보세요.";
-"PAGE3_TITLE" = "영화 상세 정보";
-"PAGE3_INFO" = "시청 전에 평점, 출연진, 리뷰, 예고편 등 필요한 모든 정보를 확인해 보세요.";
-"PAGE4_TITLE" = "엔터테인먼트 가이드";
-"PAGE4_INFO" = "영화, TV 프로그램, 예고편, 평점 및 시청 가능한 플랫폼을 확인하세요.";
-"GOOD_TO_KNOW" = "유용한 정보";
-"GOOD_TO_KNOW_INFO" = "본 앱은 영화나 TV 프로그램을 스트리밍하거나 저장하지 않습니다. 정보, 평점 및 합법적인 시청 플랫폼 정보를 제공합니다.";
+"PAGE1_TITLE" = "이미지를 ";
+"PAGE1_LIGHT_TITLE" = "PDF로 변환";
+"PAGE1_INFO" = "몇 초 만에 이미지를 고품질 PDF로 변환하세요. 빠르고 안전하며 쉽게 공유할 수 있습니다.";
+
+"PAGE2_TITLE" = "저장 공간";
+"PAGE2_LIGHT_TITLE" = "관리";
+"PAGE2_INFO" = "기기 저장 공간을 모니터링하고 정리하여 중요한 콘텐츠를 더 많이 보관하세요.";
+
+"PAGE3_TITLE" = "모든 목표";
+"PAGE3_LIGHT_TITLE" = "달성";
+"PAGE3_INFO" = "습관, 할 일, 마일스톤을 추적하세요. 집중력을 유지하고 더 많은 것을 이루세요.";
+
+"PAGE4_TITLE" = "다양한 ";
+"PAGE4_LIGHT_TITLE" = "영화 및 TV 프로그램";
+"PAGE4_INFO" = "참고: 즐겨찾는 콘텐츠를 시청하기 전에 예고편과 스트리밍 정보를 확인하세요.";
+
+"DID_YOU_NOW" = "혹시 알고";
+"DID_YOU_NOW2" = "계셨나요";
+
 "NEXT" = "다음";
 "GET_STATED" = "시작하기";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "다시 오신 것을 환영합니다,";
-"QUICK_DISCOVER" = "빠른 탐색";
-"COMPASS" = "나침반";
-"PHOTO_EDIT" = "사진 편집기";
-"EDIT_PHOTO" = "사진 편집";
-"NAV_TOOL" = "내비게이션 도구";
-"PHOTO_CLEANER" = "사진 정리";
-"FIND_DUBLICATE" = "중복 항목 찾기";
-"SOUND_METER" = "소음 측정기";
-"MEASURE_NOICE" = "소음 측정";
-"SPOTLIGHT_ARTIST" = "주목받는 아티스트";
-"NEW_RELEASE" = "신작";
+"All" = "전체";
+"TOOLS" = "도구";
+"STORAGE" = "저장 공간";
+"TOTAL" = "전체";
+"USED" = "사용 중";
+"FREE" = "여유 공간";
+"QUICK_TOOL" = "빠른 도구";
+"GOAL_TRACKER" = "목표 트래커";
+"GOAL_TRACKER_INFO" = "목표를 설정하고 진행 상황을 추적하여 더 많이 달성하세요";
+"IMAGE_TO_PDF" = "이미지를 PDF로";
+"IMAGE_TO_PDF_INFO" = "한 번의 터치로 이미지를 PDF로 변환합니다.";
+"NOTES" = "노트";
+"NOTES_INFO" = "노트를 작성하고 정리하며 안전하게 보관하세요.";
+"PERCENTAGE_CALCULATOR" = "퍼센트 계산기";
+"PERCENTAGE_CALCULATOR_INFO" = "백분율을 쉽고 빠르게 계산하세요.";
+"PHOTO" = "사진";
+"VIDEO" = "동영상";
+"OTHER" = "기타";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "고정밀도";
-"CALIBRATING" = "보정 중…";
-"LATITUDE" = "위도";
-"LONGITUDE" = "경도";
-"DIR_N" = "북";
-"DIR_NNE" = "북북동";
-"DIR_NE" = "북동";
-"DIR_ENE" = "동북동";
-"DIR_E" = "동";
-"DIR_ESE" = "동남동";
-"DIR_SE" = "남동";
-"DIR_SSE" = "남남동";
-"DIR_S" = "남";
-"DIR_SSW" = "남남서";
-"DIR_SW" = "남서";
-"DIR_WSW" = "서남서";
-"DIR_W" = "서";
-"DIR_WNW" = "서북서";
-"DIR_NW" = "북서";
-"DIR_NNW" = "북북서";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "저장 공간 개요";
+"STORAGE_DETAIL" = "저장 공간 상세";
+"CALCULATING_STORAGE" = "저장 공간 계산 중…";
+"OF_TOTAL_STORAGE" = "전체 저장 공간 중";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "중복된 사진 발견";
-"GROUP" = "그룹";
-"NO_DUBLICATE_PIC" = "중복된 사진이 없습니다";
-"NO_DUBLICATE_PIC_INFO" = "훌륭해요! 사진 보관함이 이미 깨끗합니다. 중복된 사진이 발견되지 않았습니다.";
-"SCANING" = "스캔 중...";
-"PERMISSION_NOTE" = "사진 보관함을 확인할 권한이 없습니다.....";
-"DELETE_MEDIA" = "선택한 미디어 삭제";
-"SELECT_ALL" = "전체 선택";
-"REMOVE_ALL" = "전체 삭제";
-"PHOTO_ACCESS" = "사진 앱 접근 권한 필요";
-"ALLOW_PHOTO_ACCESS" = "이 기능을 사용하려면 설정에서 사진 접근을 허용해 주세요.";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "목표 트래커";
+"TOTAL_GOALS" = "전체 목표";
+"COMPLETED" = "달성 완료";
+"IN_PROGRESS" = "진행 중";
+"MY_GOALS" = "내 목표";
+"YOUR_FIRST_GOAL" = "첫 번째 목표를 설정해 보세요";
+"KEEP_GOING" = "계속 도전하세요";
+"YOU_MAKING_GREAT_PROGRESS" = "잘하고 계십니다!";
+"SEE_ALL" = "전체 보기";
+"DONE" = "완료";
 
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "데시벨 (dB)";
-"AVG" = "평균";
-"MIN" = "최소";
-"MAX" = "최대";
-"STOP" = "중지";
-"START" = "시작";
-"RESTART" = "재설정";
-"MICROPHONE_ACCESS" = "마이크 접근 권한 필요";
-"OPEN_SETTINGS" = "설정 열기";
-"ALLOW_MICROPHONE_ACCESS" = "이 기능을 사용하려면 설정에서 마이크 접근을 허용해 주세요.";
-"CANCEL" = "취소";
+// MARK: - Goal List -
+"DONE_GOAL" = "완료된 목표";
+"INPROGRESS_GOAL" = "진행 중인 목표";
 
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "약력";
-"MOVIE" = "영화";
-"TVSHOW" = "TV 프로그램";
-"BIRTHDAY" = "생일";
-"BIRTHPLACE" = "출생지";
-"AGE" = "나이";
-"DEPARTMENT" = "분야";
-"PERSONAL_INFO" = "개인 정보";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "영화 및 TV 프로그램 검색";
-"NEWEARCH_PLACEHOLDER" = "제목, 배우 또는 장르로 검색하여 좋아하는 영화나 시리즈를 찾아보세요.";
-"NO_SEARCH_DATA" = "데이터를 찾을 수 없습니다";
-"NO_SEARCH_DATA_FOUND" = "에 대한 데이터를 찾을 수 없습니다";
-"TOP_RATED" = "최고 평점";
-"MOST_POPULAR" = "가장 인기 있는";
-"ARRIVING_TODAY" = "오늘 방영";
-"SEE_ALL" = "모두 보기";
-
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "주요 출연진";
-"CORE_CREW" = "핵심 제작진";
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "새 목표 추가";
+"CREATE" = "만들기";
+"CHOOSE_CATEGORY" = "카테고리 선택";
+"GOAL_TITLE" = "목표 제목";
+"EG_RUN" = "예: 마라톤 완주하기";
+"DESCRIPTION" = "설명";
+"DESCRIPTION_INFO" = "이 목표를 달성하면 어떤 모습일까요?";
+"PRIORITY" = "우선순위";
+"DATES" = "날짜";
+"START_DATE" = "시작일";
+"TARGET_DATE" = "목표일";
+"WORK" = "업무";
+"PERSONAL" = "개인";
+"HEALTH" = "건강";
+"STUDY" = "공부";
+"GYM" = "운동";
+"SPORTS" = "스포츠";
+"HOME" = "집";
+"MONEY" = "자산";
+"BOOK" = "독서";
+"GOAL_DETAILS" = "목표 상세";
 "STATUS" = "상태";
-"LANGUAGE" = "언어";
-"RUNTIME" = "상영 시간";
-"REVENUE" = "수익";
-"SHARE_TEXT1" = "이봐! 이거 한번 봐봐";
-"SHARE_TEXT2" = "네가 좋아할 것 같아서 🎬";
-"OVERVIEW" = "개요";
-"MOVIE_INFO" = "영화 정보";
-"CREW" = "제작진";
-"POSTERS" = "포스터";
-"VIDEOS" = "동영상";
-"SEASON" = "시즌";
-"POSTER" = "포스터";
-"SHOW_MORE" = "더 보기...";
-"SHOW_LESS" = "간단히 보기...";
+"ENTER_GOAL_TITLE" = "목표 제목을 입력하세요";
+"TARGET_DATE_ERROR" = "목표일은 시작일과 같거나 그 이후여야 합니다";
+"GOAL_NOT_SAVED" = "목표 저장 중 오류가 발생했습니다. 다시 시도해 주세요.";
 
-// MARK: - Like -
-"FAVORITE" = "즐겨찾기";
-"NO_FAVORITE" = "아직 아무것도 없습니다";
-"NO_MOVIE_TAGLINE" = "즐겨찾는 영화가 여기에 표시됩니다.";
-"NO_SERIES_TAGLINE" = "즐겨찾는 TV 프로그램이 여기에 표시됩니다.";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "이미지를 PDF로";
+"CONVERT_IMAGE_TO_PDF" = "이미지를 PDF로 변환";
+"CONVERT_IMAGE_TO_PDF_INFO" = "몇 초 만에 고품질 PDF 문서를 만들어 보세요.";
+"SELECT_IMAGE" = "이미지 선택";
+"RECENT_FILE" = "최근 파일";
+"PHOTO_ACCESS_DENIED" = "사진 접근 권한 거부됨";
+"PHOTO_ACCESS_DENIED_INFO" = "이미지를 선택하려면 설정에서 사진 접근 권한을 허용해 주세요.";
+"OPEN_SETTING" = "설정 열기";
+"MANAGE_ACCESS" = "권한 관리";
+"LOADING_PHOTOS" = "사진 불러오는 중...";
+"DISSELECT_ALL" = "전체 선택 해제";
+"SELECT_ALL" = "전체 선택";
+"SELECTED" = "선택됨";
+"CONTINUE" = "계속하기";
+"GENERATING_PDF" = "PDF 생성 중";
+"DOC_LAYOUT_COMP" = "문서 레이아웃 구성 중...";
+"ARRANGE_PAGE" = "페이지 정렬";
+
+// MARK: - Arrange page
+"NO_PAGE" = "아직 페이지가 없습니다";
+"TAP_ADD_IMG" = "시작하려면 '이미지 추가'를 누르세요";
+"ADD_IMAGE" = "이미지 추가";
+"REMOVE" = "삭제";
+"CONVERT_TO_PDF" = "PDF로 변환";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF가 성공적으로 생성되었습니다!";
+"IMAGES" = "이미지";
+"PAGES" = "페이지";
+"OPEN_PDF" = "PDF 열기";
+"SHARE_PDF" = "PDF 공유";
+"SEE_ALL_PDF" = "저장된 PDF 보기";
+"BACK_TO_HOME" = "홈으로 돌아가기";
 
 // MARK: - Notes -
-"NOTES" = "메모";
-"ADD_NOTES" = "메모 추가";
-"EDIT_NOTES" = "메모 편집";
-"DELETE_NOTES" = "메모 삭제";
-"NO" = "아니요";
-"DELETE" = "삭제";
-"DELETE_INFO" = "이 메모를 삭제하시겠습니까?";
-"NO_NOTES" = "아직 메모가 없습니다";
-"NO_NOTES_INFO" = "아래 메모 추가 버튼을 눌러 첫 메모를 작성하세요.";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "메모 제목";
-"START_TYPING" = "입력을 시작하세요...";
-"UPDATE_NOTE" = "메모 업데이트";
-"SAVE_NOTE" = "메모 저장";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "고정된 메모";
-"UNPIN" = "고정 해제";
-"PIN" = "고정";
+"NOTES" = "노트";
+"NO_NOTES" = "아직 작성된 노트가 없습니다";
+"NO_NOTES_INFO" = "첫 번째 노트를 작성하여 시작해 보세요.";
+"EDIT_NOTES" = "노트 수정";
+"NEW_NOTES" = "새 노트";
+"ENTER_NOTE_TITLE" = "노트 제목 입력";
+"START_TYPING" = "내용을 입력해 보세요";
+"UPDATE" = "업데이트";
+"DONE" = "완료";
+"NO_TITLE" = "제목 없음";
+"EDIT" = "수정";
 "SHARE" = "공유";
-"NO_PINNED_NOTES" = "고정된 메모가 없습니다";
-"NO_PINNED_NOTES_INFO" = "메모의 핀 아이콘을 눌러 여기에 추가하세요.";
+"DELETE" = "삭제";
+"NOTES_SHARE" = "안녕하세요,\n중요한 노트 내용을 공유해 드립니다.";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "퍼센트 계산기";
+
+// MARK: - Movies -
+"CELEBRITY" = "유명인";
+"MOVIES_BIG" = "영화";
+"TV_SHOW_BIG" = "TV 프로그램";
+"NEW_RELESE" = "최신 개봉";
+"UPCOMING" = "개봉 예정";
+"ON_AIR" = "방영 중";
+"AIRING_TODAY" = "오늘 방영";
+"WATCH_TRAILER" = "예고편 보기";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "개요";
+"SHOW_LESS" = "접기";
+"SHOW_MORE" = "더 보기";
+"TOP_CAST" = "주요 출연진";
+"TRAILER_CLIPS" = "예고편 및 클립";
+
+// MARK: - Person Detail -
+"ABOUT" = "소개";
+"MOVIE" = "영화";
+"SERIES" = "시리즈";
+
+// MARK: - Favourite -
+"FAVOURITE" = "즐겨찾기";
+"NO_FAVOURITE" = "아직 추가된 항목이 없습니다";
+"NO_FAVOURITE_INFO" = "즐겨찾는 영화가 여기에 표시됩니다.";
+"NO_FAVOURITE_INFO_SHOW" = "즐겨찾는 TV 프로그램이 여기에 표시됩니다.";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "영화/TV 프로그램 검색";
+"EMPTY_SCREEN" = "영화 및 TV 프로그램 검색";
+"EMPTY_SCREEN_INFO" = "제목, 배우, 장르를 검색하여 좋아하는 영화나 시리즈를 찾아보세요.";
+"NO_SEARCH_FOUND" = "검색 결과가 없습니다";
+"NO_SEARCH_FOUND_FOR" = "다음 항목에 대한 검색 결과가 없습니다:";
 
 // MARK: - Setting -
+"SETTING_INFO" = "사용자의 개인정보 보호와 사용 경험은 저희에게 매우 중요합니다.";
 "SETTING" = "설정";
-"SHARE_APP" = "앱 공유";
-"RATE_US" = "평가하기";
+"RATE_US" = "앱 평가하기";
+"SHARE_APP" = "앱 공유하기";
 "PRIVECY_POLICY" = "개인정보 처리방침";
-"TERMS_USE" = "이용 약관";
-"ABOUT_US" = "회사 소개";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "편집할 사진을 선택하세요";
-"CROP" = "자르기";
-"FILTER" = "필터";
-"ADJUST" = "조정";
-
-"CONTRAST" = "대비";
-"LIGHT" = "밝기";
-"DARK" = "어둡게";
-"HUE" = "색조";
-"SATURATION" = "채도";
-"TEMP" = "색온도";
-"VIGNETTE" = "비네트";
-
-"ORIGINAL" = "원본";
-"SEPIA" = "세피아";
-"MONO" = "모노";
-"NORI" = "느와르";
-"FADE" = "페이드";
-"CHROME" = "크롬";
-"VINTAGE" = "빈티지";
-"DRAMATIC" = "드라마틱";
-"COOL" = "쿨톤";
-"WARM" = "웜톤";
-"BOOST" = "부스트";
-"VIVID" = "비비드";
-"VIVID_WARM" = "비비드 웜";
-"VIVID_COOL" = "비비드 쿨";
-"PROCESS" = "프로세스";
-"TRANSFER" = "트랜스퍼";
-"INSTANT" = "인스턴트";
-"TONAL" = "토널";
-"BLOOM" = "블룸";
-"GLOOM" = "글룸";
-"SHARPEN" = "선명하게";
-"CRYSTALLIZE" = "크리스탈라이즈";
-"PIXELATE" = "픽셀화";
-"COMIC" = "코믹";
-"EDGES" = "윤곽선";
-"POSTERIZE" = "포스터화";
-"VIGNETTE" = "비네트";
-
-"DOWNLOAD_SUCCESS" = "내보내기 완료!";
-"CHECK_PHOTO_APP" = "사진이 사진 앱에 성공적으로 저장되었습니다!";
-"PERMISSION_ACCESS" = "권한 접근";
-"CANCEL" = "취소";
-"ALLOW_PHOTO_DOWNLOAD" = "사진을 내보내려면 설정에서 사진 보관함 접근을 허용해 주세요.";
-"OK" = "확인";
-
-"PLAY_TRAILER" = "예고편 재생";
-"MANAGE" = "관리";
-"CHANGE_SETTING" = "전체 접근 허용";
-"SELECT_PHOTO_SIMPLE" = "사진 선택";
-"YOUR_GIVEN" = "다음 권한을 허용했습니다:";
-"ACCESS_NUBERS_PHOTO" = "선택한 일부 사진에 대한 접근 권한.";
-"NO_PIC" = "사진을 찾을 수 없음";
+"TERMS_USE" = "이용약관";

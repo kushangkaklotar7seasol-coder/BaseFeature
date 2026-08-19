@@ -16,7 +16,7 @@ struct NewGoalScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Add New Goal")
+                DefaultDesign.Header(name: "ADD_NEW_GOAL")
                     .padding(.horizontal, 16)
 
                 ScrollView(showsIndicators: false) {
@@ -32,7 +32,7 @@ struct NewGoalScreen: View {
                         datesSection
                             .padding(.horizontal, 16)
                         
-                        DefaultDesign.FullScreenButton(name: "Create", onClick: {
+                        DefaultDesign.FullScreenButton(name: "CREATE", onClick: {
                             if let newId = viewModel.createGoal() {
                                 onGoalCreated?(newId)
                                 Router.shared.pop()
@@ -54,7 +54,7 @@ struct NewGoalScreen: View {
     // MARK: - Choose Category
     private var categorySection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Choose Category")
+            Text("CHOOSE_CATEGORY".localized())
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding(.horizontal, 16)
@@ -80,11 +80,11 @@ struct NewGoalScreen: View {
     // MARK: - Goal Title
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Goal Title")
+            Text("GOAL_TITLE".localized())
                 .font(.headline)
                 .foregroundColor(.white)
 
-            TextField("", text: $viewModel.title, prompt: Text("e.g., Run a Marathon").foregroundColor(.gray))
+            TextField("", text: $viewModel.title, prompt: Text("EG_RUN".localized()).foregroundColor(.gray))
                 .foregroundColor(.white)
                 .padding(14)
                 .background(Color.white.opacity(0.08))
@@ -95,13 +95,13 @@ struct NewGoalScreen: View {
     // MARK: - Description
     private var descriptionSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Description")
+            Text("DESCRIPTION".localized())
                 .font(.headline)
                 .foregroundColor(.white)
 
             ZStack(alignment: .topLeading) {
                 if viewModel.description.isEmpty {
-                    Text("What does success look like for this goal?")
+                    Text("DESCRIPTION_INFO".localized())
                         .foregroundColor(.gray)
                         .padding(.horizontal, 18)
                         .padding(.vertical, 20)
@@ -121,7 +121,7 @@ struct NewGoalScreen: View {
     // MARK: - Priority (custom segmented control, not a slider)
     private var prioritySection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Priority")
+            Text("PRIORITY".localized())
                 .font(.headline)
                 .foregroundColor(.white)
             
@@ -151,13 +151,13 @@ struct NewGoalScreen: View {
     // MARK: - Dates
     private var datesSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Dates")
+            Text("DATES".localized())
                 .font(.headline)
                 .foregroundColor(.white)
 
             HStack(spacing: 12) {
-                DateBox(title: "Start Date", date: $viewModel.startDate)
-                DateBox(title: "Target Date", date: $viewModel.targetDate)
+                DateBox(title: "START_DATE", date: $viewModel.startDate)
+                DateBox(title: "TARGET_DATE", date: $viewModel.targetDate)
             }
         }
     }
@@ -193,7 +193,7 @@ struct CategoryIconView: View {
             }
             .frame(width: 58, height: 58)
 
-            Text(category.title)
+            Text(category.title.localized())
                 .font(.caption2)
                 .foregroundColor(.white.opacity(0.85))
         }
@@ -217,7 +217,7 @@ struct DateBox: View {
             showPicker = true
         } label: {
             VStack(alignment: .leading, spacing: 6) {
-                Text(title)
+                Text(title.localized())
                     .font(.caption)
                     .foregroundColor(.gray)
 

@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Photos
 
 struct HomeScreen: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var storageManager = StorageManager()
+    @EnvironmentObject var localization: LocalizationManager
     
     var columns: [GridItem] {
         let count = Device.isIpad ? 4 : 2
@@ -24,27 +26,29 @@ struct HomeScreen: View {
         ZStack {
             VStack {
                 HStack {
-                    Text("All")
+                    Text("All".localized())
                         .foregroundColor(.whiteColour)
                         .font(.system(size: 30, weight: .bold))
-                        
-                   + Text(" Tools")
+                    + Text(" ")
+                    + Text("TOOLS".localized())
                         .foregroundColor(.lightPurple)
                         .font(.system(size: 30, weight: .bold))
                  
                     Spacer()
                 }
+                .id(localization.selectedLanguage)
                 
                 ScrollView(showsIndicators: false) {
                     ZStack {
                         VStack {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Text("Storage")
+                                    Text("STORAGE".localized())
                                         .font(.system(size: 20, weight: .bold))
                                         .foregroundColor(.whiteColour)
                                     
-                                    Text("\(storageManager.totalSpace) Total")
+                                    let total = "TOTAL".localized()
+                                    Text("\(storageManager.totalSpace) \(total)")
                                         .font(.system(size: 14, weight: .regular))
                                         .foregroundColor(.grayColour)
                                 }
@@ -66,13 +70,24 @@ struct HomeScreen: View {
                             HStack(spacing: 10) {
                                 VStack {
                                     CircularProgressView(progress: storageManager.usedStoragePercent)
+                                        .overlay {
+                                            VStack {
+                                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
+                                                    .font(.system(size: 22, weight: .bold))
+                                                
+                                                Text("USED".localized())
+                                                    .font(.system(size: 12, weight: .semibold))
+                                                    .foregroundColor(.whiteColour)
+                                            }
+                                        }
                                     
                                     HStack(spacing: 0) {
+                                        
                                         VStack(alignment: .leading, spacing: 3) {
                                             HStack {
                                                 DefaultDesign.GradientBullet()
                                                 
-                                                Text("Used")
+                                                Text("USED".localized())
                                                     .font(.system(size: 10, weight: .semibold))
                                                     .foregroundColor(.grayColour)
                                             }
@@ -91,7 +106,7 @@ struct HomeScreen: View {
                                             HStack {
                                                 DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
                                                 
-                                                Text("Free")
+                                                Text("FREE".localized())
                                                     .font(.system(size: 10, weight: .semibold))
                                                     .foregroundColor(.grayColour)
                                             }
@@ -103,12 +118,17 @@ struct HomeScreen: View {
                                                     .font(.system(size: 12, weight: .semibold))
                                             }
                                         }
+                                        
+                                        //} else {
+                                        //  deniedAccessView
+                                        //}
                                     }
                                     .padding(.top, 10)
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 
-                                ZStack {
+                                if storageManager.photoStatus == .authorized || storageManager.photoStatus == .limited {
+                                    ZStack {
                                     VStack(spacing: 5) {
                                         // Pehla 2 items - 2 column grid
                                         LazyVGrid(columns: storageColumns, spacing: 5) {
@@ -124,7 +144,10 @@ struct HomeScreen: View {
                                         }
                                     }
                                 }
-                                .frame(maxWidth: (screenWidth-60)/2)
+                                    .frame(maxWidth: (screenWidth-60)/2)
+                                } else {
+                                    deniedAccessView
+                                }
                             }
                             .padding(.horizontal, 12)
                             .padding(.bottom)
@@ -139,14 +162,16 @@ struct HomeScreen: View {
                     .onTapGesture {
                         Router.shared.push(.storageOverview)
                     }
+                    .id(localization.selectedLanguage)
                     
                     HStack() {
-                        Text("Quick Tools")
+                        Text("QUICK_TOOL".localized())
                             .font(.system(size: 18, weight: .bold))
                         
                         Spacer()
                     }
                     .padding(.vertical, 10)
+                    .id(localization.selectedLanguage)
                     
                     var toolwidth: CGFloat {
                         return (screenWidth-36)/2
@@ -164,15 +189,18 @@ struct HomeScreen: View {
                                     .frame(width: 50, height: 50, alignment: .center)
                                     .cornerRadius(25)
                                     
-                                    Text(tool.name)
+                                    Text(tool.name.localized())
                                         .font(.system(size: 14, weight: .semibold))
+                                        .lineLimit(1)
                                     
-                                    Text(tool.info)
+                                    Text(tool.info.localized())
                                         .font(.system(size: 12, weight: .regular))
                                         .padding(.top, 1)
+                                        .lineLimit(2)
                                         .foregroundColor(.grayColour)
                                 }
                                 .padding(8)
+                                .frame(width: toolwidth, height: 130, alignment: .center)
                                 
                                 VStack {
                                     HStack {
@@ -201,11 +229,34 @@ struct HomeScreen: View {
                         }
                     }
                     .padding(.bottom)
+                    .id(localization.selectedLanguage)
                 }
             }
             .padding(.horizontal, 16)
         }
         .defaultPage()
+    }
+    
+    private var deniedAccessView: some View {
+        VStack(spacing: 16) {
+            Text("PHOTO_ACCESS_DENIED".localized())
+                .font(.headline)
+                .foregroundColor(.white)
+            
+            Button {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                Text("OPEN_SETTING".localized())
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 10)
+                    .background(Color.purple)
+                    .cornerRadius(8)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
@@ -245,7 +296,7 @@ func storageCard(info: StrogeInfo) -> some View {
                 .scaledToFill()
                 .frame(width: 28, height: 28, alignment: .center)
             
-            Text(info.name)
+            Text(info.name.localized())
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.top, 2)
             

@@ -7,216 +7,197 @@
 */
 
 // MARK: - Language Screen -
-"CHOOSE_LANGUAGE" = "Scegli Lingua";
-"DONE" = "Fine";
+"LANGUAGE" = "Lingue";
+"DONE" = "Fatto";
+"SELECT_LANGUAGE" = "Seleziona lingua";
+"CHOOSE_LANGUAGE" = "Scegli la tua lingua preferita";
+"CONTINUE" = "Continua";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "Scopri Storie";
-"PAGE1_INFO" = "Esplora migliaia di film con informazioni dettagliate, valutazioni, generi e date di uscita.";
-"PAGE2_TITLE" = "Fatto Apposta per Te";
-"PAGE2_INFO" = "Sfoglia per genere, popolarità o cerca per scoprire i film più adatti ai tuoi gusti.";
-"PAGE3_TITLE" = "Dettagli sul film";
-"PAGE3_INFO" = "Esplora valutazioni, cast, recensioni, trailer e tutto ciò di cui hai bisogno prima della visione.";
-"PAGE4_TITLE" = "La tua guida all'intrattenimento";
-"PAGE4_INFO" = "Scopri film, serie TV, trailer, valutazioni e dove guardarli.";
-"GOOD_TO_KNOW" = "Buono a sapersi";
-"GOOD_TO_KNOW_INFO" = "Non trasmettiamo né ospitiamo film o serie TV. Forniamo informazioni, valutazioni e opzioni di visione legali.";
+"PAGE1_TITLE" = "Converti immagini ";
+"PAGE1_LIGHT_TITLE" = "in PDF";
+"PAGE1_INFO" = "Trasforma le tue immagini in PDF ad alta qualità in pochi secondi. Veloce, sicuro e facile da condividere.";
+
+"PAGE2_TITLE" = "Gestisci il tuo";
+"PAGE2_LIGHT_TITLE" = "spazio di archiviazione";
+"PAGE2_INFO" = "Monitora e pulisci la memoria del tuo dispositivo per conservare ciò che conta davvero.";
+
+"PAGE3_TITLE" = "Raggiungi ogni";
+"PAGE3_LIGHT_TITLE" = "obiettivo";
+"PAGE3_INFO" = "Traccia le tue abitudini, i tuoi impegni e i tuoi traguardi. Mantieni la concentrazione e ottieni di più.";
+
+"PAGE4_TITLE" = "Scopri ";
+"PAGE4_LIGHT_TITLE" = "film e serie TV";
+"PAGE4_INFO" = "Nota: Guarda i trailer e scopri dove guardare i tuoi contenuti preferiti prima di iniziare.";
+
+"DID_YOU_NOW" = "Hai";
+"DID_YOU_NOW2" = "notato";
+
 "NEXT" = "Avanti";
 "GET_STATED" = "Inizia";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "Bentornato,";
-"QUICK_DISCOVER" = "Scoperta Rapida";
-"COMPASS" = "Bussola";
-"PHOTO_EDIT" = "Editor Foto";
-"EDIT_PHOTO" = "Modifica Foto";
-"NAV_TOOL" = "Strumento di Navigazione";
-"PHOTO_CLEANER" = "Pulitore Foto";
-"FIND_DUBLICATE" = "Trova Duplicati";
-"SOUND_METER" = "Fonometro";
-"MEASURE_NOICE" = "Misura il Rumore";
-"SPOTLIGHT_ARTIST" = "Artista in Evidenza";
-"NEW_RELEASE" = "Nuova Uscita";
+"All" = "Tutti";
+"TOOLS" = "Strumenti";
+"STORAGE" = "Spazio";
+"TOTAL" = "Totale";
+"USED" = "Usato";
+"FREE" = "Libero";
+"QUICK_TOOL" = "Strumenti rapidi";
+"GOAL_TRACKER" = "Monitoraggio obiettivi";
+"GOAL_TRACKER_INFO" = "Imposta obiettivi, traccia i progressi e ottieni di più";
+"IMAGE_TO_PDF" = "Da immagine a PDF";
+"IMAGE_TO_PDF_INFO" = "Converti le tue immagini in PDF con un solo tocco.";
+"NOTES" = "Note";
+"NOTES_INFO" = "Scrivi, organizza e conserva le tue note in sicurezza.";
+"PERCENTAGE_CALCULATOR" = "Calcolatore di percentuale";
+"PERCENTAGE_CALCULATOR_INFO" = "Calcola le percentuali in modo semplice e immediato.";
+"PHOTO" = "Foto";
+"VIDEO" = "Video";
+"OTHER" = "Altro";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "Alta Precisione";
-"CALIBRATING" = "Calibrazione in corso…";
-"LATITUDE" = "Latitudine";
-"LONGITUDE" = "Longitudine";
-"DIR_N" = "Nord";
-"DIR_NNE" = "Nord-Nordest";
-"DIR_NE" = "Nordest";
-"DIR_ENE" = "Est-Nordest";
-"DIR_E" = "Est";
-"DIR_ESE" = "Est-Sudest";
-"DIR_SE" = "Sudest";
-"DIR_SSE" = "Sud-Sudest";
-"DIR_S" = "Sud";
-"DIR_SSW" = "Sud-Sudovest";
-"DIR_SW" = "Sudovest";
-"DIR_WSW" = "Ovest-Sudovest";
-"DIR_W" = "Ovest";
-"DIR_WNW" = "Ovest-Nordovest";
-"DIR_NW" = "Nordovest";
-"DIR_NNW" = "Nord-Nordovest";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "Panoramica memoria";
+"STORAGE_DETAIL" = "Dettagli memoria";
+"CALCULATING_STORAGE" = "Calcolo dello spazio utilizzato…";
+"OF_TOTAL_STORAGE" = "dello spazio totale";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "Foto Duplicate Trovate";
-"GROUP" = "Gruppo";
-"NO_DUBLICATE_PIC" = "Nessuna Foto Duplicata Trovata";
-"NO_DUBLICATE_PIC_INFO" = "Ottimo! La tua libreria foto è già pulita. Nessuna foto duplicata trovata.";
-"SCANING" = "Scansione in corso...";
-"PERMISSION_NOTE" = "Non abbiamo l'autorizzazione per controllare la tua libreria foto.....";
-"DELETE_MEDIA" = "Elimina Media Selezionati";
-"SELECT_ALL" = "Seleziona Tutto";
-"REMOVE_ALL" = "Rimuovi Tutto";
-"PHOTO_ACCESS" = "Accesso all'App Foto Necessario";
-"ALLOW_PHOTO_ACCESS" = "Consenti l'accesso a Foto nelle Impostazioni per usare questa funzione.";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "Monitoraggio obiettivi";
+"TOTAL_GOALS" = "Obiettivi totali";
+"COMPLETED" = "Completati";
+"IN_PROGRESS" = "In corso";
+"MY_GOALS" = "I miei obiettivi";
+"YOUR_FIRST_GOAL" = "Imposta il tuo primo obiettivo";
+"KEEP_GOING" = "Continua così";
+"YOU_MAKING_GREAT_PROGRESS" = "Stai facendo ottimi progressi";
+"SEE_ALL" = "Vedi tutti";
+"DONE" = "Fatto";
 
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "DECIBEL (dB)";
-"AVG" = "MEDIA";
-"MIN" = "MINIMO";
-"MAX" = "MASSIMO";
-"STOP" = "Ferma";
-"START" = "Avvia";
-"RESTART" = "Reimposta";
-"MICROPHONE_ACCESS" = "Accesso al Microfono Necessario";
-"OPEN_SETTINGS" = "Apri Impostazioni";
-"ALLOW_MICROPHONE_ACCESS" = "Consenti l'accesso al microfono nelle Impostazioni per usare questa funzione.";
-"CANCEL" = "Annulla";
+// MARK: - Goal List -
+"DONE_GOAL" = "Obiettivo completato";
+"INPROGRESS_GOAL" = "Obiettivo in corso";
 
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "Biografia";
-"MOVIE" = "Film";
-"TVSHOW" = "Serie TV";
-"BIRTHDAY" = "Compleanno";
-"BIRTHPLACE" = "Luogo di Nascita";
-"AGE" = "Età";
-"DEPARTMENT" = "Reparto";
-"PERSONAL_INFO" = "Informazioni Personali";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "Cerca Film e Serie TV";
-"NEWEARCH_PLACEHOLDER" = "Trova i tuoi film o serie preferiti cercando un titolo, un attore o un genere.";
-"NO_SEARCH_DATA" = "Nessun dato trovato";
-"NO_SEARCH_DATA_FOUND" = "Nessun dato trovato per";
-"TOP_RATED" = "I Più Votati";
-"MOST_POPULAR" = "I Più Popolari";
-"ARRIVING_TODAY" = "In Onda Oggi";
-"SEE_ALL" = "Vedi Tutto";
-
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "Cast Principale";
-"CORE_CREW" = "Troupe Principale";
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "Aggiungi nuovo obiettivo";
+"CREATE" = "Crea";
+"CHOOSE_CATEGORY" = "Scegli categoria";
+"GOAL_TITLE" = "Titolo obiettivo";
+"EG_RUN" = "es. Correre una maratona";
+"DESCRIPTION" = "Descrizione";
+"DESCRIPTION_INFO" = "Che aspetto ha il successo per questo obiettivo?";
+"PRIORITY" = "Priorità";
+"DATES" = "Date";
+"START_DATE" = "Data di inizio";
+"TARGET_DATE" = "Data obiettivo";
+"WORK" = "Lavoro";
+"PERSONAL" = "Personale";
+"HEALTH" = "Salute";
+"STUDY" = "Studio";
+"GYM" = "Palestra";
+"SPORTS" = "Sport";
+"HOME" = "Casa";
+"MONEY" = "Finanze";
+"BOOK" = "Lettura";
+"GOAL_DETAILS" = "Dettagli obiettivo";
 "STATUS" = "Stato";
-"LANGUAGE" = "Lingua";
-"RUNTIME" = "Durata";
-"REVENUE" = "Incassi";
-"SHARE_TEXT1" = "Ehi! Guarda";
-"SHARE_TEXT2" = "ho pensato che ti sarebbe piaciuto 🎬";
-"OVERVIEW" = "Panoramica";
-"MOVIE_INFO" = "Informazioni sul film";
-"CREW" = "Troupe";
-"POSTERS" = "Locandine";
-"VIDEOS" = "Video";
-"SEASON" = "Stagione";
-"POSTER" = "Locandina";
-"SHOW_MORE" = "Mostra altro...";
-"SHOW_LESS" = "Mostra meno...";
+"ENTER_GOAL_TITLE" = "Inserisci il titolo dell'obiettivo";
+"TARGET_DATE_ERROR" = "La data obiettivo deve essere uguale o successiva alla data di inizio";
+"GOAL_NOT_SAVED" = "Si è verificato un errore durante il salvataggio. Riprova.";
 
-// MARK: - Like -
-"FAVORITE" = "Preferiti";
-"NO_FAVORITE" = "Ancora Nulla Qui";
-"NO_MOVIE_TAGLINE" = "I tuoi film preferiti appariranno qui.";
-"NO_SERIES_TAGLINE" = "Le tue serie TV preferite appariranno qui.";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "Da immagine a PDF";
+"CONVERT_IMAGE_TO_PDF" = "Converti immagini in PDF";
+"CONVERT_IMAGE_TO_PDF_INFO" = "Crea PDF di alta qualità dalle tue immagini in pochi secondi.";
+"SELECT_IMAGE" = "Seleziona immagini";
+"RECENT_FILE" = "File recenti";
+"PHOTO_ACCESS_DENIED" = "Accesso alle foto negato";
+"PHOTO_ACCESS_DENIED_INFO" = "Consenti l'accesso alle foto dalle Impostazioni per selezionare le immagini.";
+"OPEN_SETTING" = "Apri Impostazioni";
+"MANAGE_ACCESS" = "Gestisci accesso";
+"LOADING_PHOTOS" = "Caricamento foto...";
+"DISSELECT_ALL" = "Deseleziona tutto";
+"SELECT_ALL" = "Seleziona tutto";
+"SELECTED" = "Selezionato";
+"CONTINUE" = "Continua";
+"GENERATING_PDF" = "Generazione PDF in corso";
+"DOC_LAYOUT_COMP" = "Compilazione layout documento...";
+"ARRANGE_PAGE" = "Organizza pagine";
+
+// MARK: - Arrange page
+"NO_PAGE" = "Ancora nessuna pagina";
+"TAP_ADD_IMG" = "Tocca 'Aggiungi immagini' per iniziare";
+"ADD_IMAGE" = "Aggiungi immagini";
+"REMOVE" = "Rimuovi";
+"CONVERT_TO_PDF" = "Converti in PDF";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF creato con successo!";
+"IMAGES" = "Immagini";
+"PAGES" = "Pagine";
+"OPEN_PDF" = "Apri PDF";
+"SHARE_PDF" = "Condividi PDF";
+"SEE_ALL_PDF" = "Vedi PDF salvati";
+"BACK_TO_HOME" = "Torna alla Home";
 
 // MARK: - Notes -
 "NOTES" = "Note";
-"ADD_NOTES" = "Aggiungi Note";
-"EDIT_NOTES" = "Modifica Note";
-"DELETE_NOTES" = "Elimina Note";
-"NO" = "No";
-"DELETE" = "Elimina";
-"DELETE_INFO" = "Sei sicuro di voler eliminare questa nota?";
-"NO_NOTES" = "Ancora Nessuna Nota";
-"NO_NOTES_INFO" = "Tocca il pulsante Aggiungi Nota qui sotto per creare la tua prima nota.";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "Titolo della Nota";
-"START_TYPING" = "Inizia a digitare...";
-"UPDATE_NOTE" = "Aggiorna Nota";
-"SAVE_NOTE" = "Salva Nota";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "Note Fissate";
-"UNPIN" = "Rimuovi Fissaggio";
-"PIN" = "Fissa";
+"NO_NOTES" = "Ancora nessuna nota";
+"NO_NOTES_INFO" = "Crea la tua prima nota per iniziare.";
+"EDIT_NOTES" = "Modifica note";
+"NEW_NOTES" = "Nuova nota";
+"ENTER_NOTE_TITLE" = "Inserisci titolo della nota";
+"START_TYPING" = "Inizia a digitare";
+"UPDATE" = "Aggiorna";
+"DONE" = "Fatto";
+"NO_TITLE" = "SENZA TITOLO";
+"EDIT" = "Modifica";
 "SHARE" = "Condividi";
-"NO_PINNED_NOTES" = "Ancora Nessuna Nota Fissata";
-"NO_PINNED_NOTES_INFO" = "Tocca l'icona del puntina su qualsiasi nota per aggiungerla qui.";
+"DELETE" = "Elimina";
+"NOTES_SHARE" = "Ciao,\nEcco le note importanti per te";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "Calcolatore di percentuale";
+
+// MARK: - Movies -
+"CELEBRITY" = "Celebrità";
+"MOVIES_BIG" = "FILM";
+"TV_SHOW_BIG" = "SERIE TV";
+"NEW_RELESE" = "Nuove uscite";
+"UPCOMING" = "In arrivo";
+"ON_AIR" = "In onda";
+"AIRING_TODAY" = "In onda oggi";
+"WATCH_TRAILER" = "GUARDA IL TRAILER";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "Panoramica";
+"SHOW_LESS" = "Mostra meno";
+"SHOW_MORE" = "Mostra di più";
+"TOP_CAST" = "Cast principale";
+"TRAILER_CLIPS" = "Trailer e clip";
+
+// MARK: - Person Detail -
+"ABOUT" = "Info";
+"MOVIE" = "Film";
+"SERIES" = "Serie TV";
+
+// MARK: - Favourite -
+"FAVOURITE" = "Preferiti";
+"NO_FAVOURITE" = "Niente qui per ora";
+"NO_FAVOURITE_INFO" = "I tuoi film preferiti appariranno qui.";
+"NO_FAVOURITE_INFO_SHOW" = "Le tue serie TV preferite appariranno qui.";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "Cerca film o serie TV";
+"EMPTY_SCREEN" = "Cerca Film e Serie TV";
+"EMPTY_SCREEN_INFO" = "Trova i tuoi film o serie preferiti cercando per titolo, attore o genere.";
+"NO_SEARCH_FOUND" = "Nessun dato trovato";
+"NO_SEARCH_FOUND_FOR" = "Nessun dato trovato per";
 
 // MARK: - Setting -
+"SETTING_INFO" = "La tua privacy e la tua esperienza sono importanti per noi.";
 "SETTING" = "Impostazioni";
-"SHARE_APP" = "Condividi App";
 "RATE_US" = "Valutaci";
-"PRIVECY_POLICY" = "Informativa sulla Privacy";
-"TERMS_USE" = "Termini di Utilizzo";
-"ABOUT_US" = "Chi Siamo";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "Seleziona una foto da modificare";
-"CROP" = "Ritaglia";
-"FILTER" = "Filtro";
-"ADJUST" = "Regola";
-
-"CONTRAST" = "Contrasto";
-"LIGHT" = "Luce";
-"DARK" = "Scuro";
-"HUE" = "Tonalità";
-"SATURATION" = "Saturazione";
-"TEMP" = "Temperatura";
-"VIGNETTE" = "Vignettatura";
-
-"ORIGINAL" = "Originale";
-"SEPIA" = "Seppia";
-"MONO" = "Mono";
-"NORI" = "Noir";
-"FADE" = "Dissolvenza";
-"CHROME" = "Chrome";
-"VINTAGE" = "Vintage";
-"DRAMATIC" = "Drammatico";
-"COOL" = "Freddo";
-"WARM" = "Caldo";
-"BOOST" = "Potenziamento";
-"VIVID" = "Vivido";
-"VIVID_WARM" = "Vivido Caldo";
-"VIVID_COOL" = "Vivido Freddo";
-"PROCESS" = "Processo";
-"TRANSFER" = "Trasferimento";
-"INSTANT" = "Istantaneo";
-"TONAL" = "Tonale";
-"BLOOM" = "Bloom";
-"GLOOM" = "Cupo";
-"SHARPEN" = "Nitidezza";
-"CRYSTALLIZE" = "Cristallizza";
-"PIXELATE" = "Pixelizza";
-"COMIC" = "Fumetto";
-"EDGES" = "Contorni";
-"POSTERIZE" = "Posterizza";
-"VIGNETTE" = "Vignettatura";
-
-"DOWNLOAD_SUCCESS" = "Esportato con Successo!";
-"CHECK_PHOTO_APP" = "Foto salvata con successo nell'app Foto!";
-"PERMISSION_ACCESS" = "Accesso ai Permessi";
-"CANCEL" = "Annulla";
-"ALLOW_PHOTO_DOWNLOAD" = "Consenti l'accesso alla libreria foto nelle Impostazioni per esportare le foto.";
-"OK" = "OK";
-
-"PLAY_TRAILER" = "Riproduci il trailer";
-"MANAGE" = "Gestisci";
-"CHANGE_SETTING" = "Consenti l'accesso completo";
-"SELECT_PHOTO_SIMPLE" = "Seleziona foto";
-"YOUR_GIVEN" = "Hai consentito";
-"ACCESS_NUBERS_PHOTO" = "l'accesso a un numero limitato di foto.";
-"NO_PIC" = "Nessuna foto trovata";
+"SHARE_APP" = "Condividi app";
+"PRIVECY_POLICY" = "Informativa sulla privacy";
+"TERMS_USE" = "Termini e condizioni";

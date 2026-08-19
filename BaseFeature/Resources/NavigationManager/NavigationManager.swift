@@ -63,6 +63,8 @@ func destination(for route: Route) -> some View {
         GoalListScreen(viewModel: GoalListViewModel(type: displayType))
     case .goalDetail(goal: let goal):
         GoalDetailScreen(viewModel: GoalDetailViewModel(goal: goal))
+    case .recentpdf:
+        RectntPDFScreen()
     }
 }
 
@@ -93,6 +95,7 @@ enum Route: Hashable {
     case newGoal
     case goalList(displayType: Int)
     case goalDetail(goal: Goal)
+    case recentpdf
 }
 
 final class Router: ObservableObject {

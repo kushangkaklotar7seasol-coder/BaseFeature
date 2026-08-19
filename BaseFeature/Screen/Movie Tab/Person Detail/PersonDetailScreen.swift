@@ -10,7 +10,6 @@ import Kingfisher
 
 struct PersonDetailScreen: View {
     @StateObject var viewModel: PersonDetailViewModel
-    @State var selectedSegment = 0
     
     var body: some View {
         ZStack {
@@ -54,7 +53,7 @@ struct PersonDetailScreen: View {
                         
                         if let about = viewModel.celebrityDetail?.biography, about != "" {
                             VStack(spacing: 12) {
-                                DefaultDesign.SectionHeader(name: "About", isShowButton: false)
+                                DefaultDesign.SectionHeader(name: "ABOUT", isShowButton: false)
                                 
                                 DefaultDesign.ExpandableTextView(text: about)
                             }
@@ -62,10 +61,12 @@ struct PersonDetailScreen: View {
                             .padding(.horizontal, 16)
                         }
                         
-                        CustomSegmentedControl(preselectedIndex: $selectedSegment)
-                            .padding(.top, 8)
+                        if !(viewModel.movieCredits?.media.results.isEmpty ?? true) && !(viewModel.seriesCredits?.media.results.isEmpty ?? true)  {
+                            CustomSegmentedControl(preselectedIndex: $viewModel.selectedSegment)
+                                .padding(.top, 8)
+                        }
                         
-                        if self.selectedSegment == 0 {
+                        if viewModel.selectedSegment == 0 {
                             if let movie = viewModel.movieCredits {
                                 DefaultDesign.MoviesBunch(moviedbunch: movie, onViewMore: { media in
                                     Router.shared.push(.movieListing(movieBunch: movie))

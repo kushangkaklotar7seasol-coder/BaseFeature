@@ -14,7 +14,7 @@ struct GoalListScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: viewModel.header)
+                DefaultDesign.Header(name: viewModel.header.localized())
                     .padding(.horizontal, 16)
                 
                 ScrollView(showsIndicators: false) {

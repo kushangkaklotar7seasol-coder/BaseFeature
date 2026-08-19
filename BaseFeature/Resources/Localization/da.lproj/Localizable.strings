@@ -7,216 +7,197 @@
 */
 
 // MARK: - Language Screen -
-"CHOOSE_LANGUAGE" = "Vælg Sprog";
-"DONE" = "Udført";
+"LANGUAGE" = "Sprog";
+"DONE" = "Færdig";
+"SELECT_LANGUAGE" = "Vælg sprog";
+"CHOOSE_LANGUAGE" = "Vælg dit foretrukne sprog";
+"CONTINUE" = "Fortsæt";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "Opdag Historier";
-"PAGE1_INFO" = "Udforsk tusindvis af film med detaljerede oplysninger, bedømmelser, genrer og udgivelsesdatoer.";
-"PAGE2_TITLE" = "Lavet Kun til Dig";
-"PAGE2_INFO" = "Gennemse efter genre, popularitet eller søg for at finde film, der passer til dine interesser.";
-"PAGE3_TITLE" = "Filmindsigter";
-"PAGE3_INFO" = "Udforsk bedømmelser, medvirkende, anmeldelser, trailere og alt, hvad du har brug for, før du ser filmen.";
-"PAGE4_TITLE" = "Din underholdningsguide";
-"PAGE4_INFO" = "Oplev film, serier, trailere, bedømmelser og hvor du kan se dem.";
-"GOOD_TO_KNOW" = "Godt at vide";
-"GOOD_TO_KNOW_INFO" = "Vi streamer eller hoster ikke film eller serier. Vi leverer information, bedømmelser og lovlige visningsmuligheder.";
+"PAGE1_TITLE" = "Konverter billeder ";
+"PAGE1_LIGHT_TITLE" = "til PDF";
+"PAGE1_INFO" = "Forvandl dine billeder til PDF-filer i høj kvalitet på få sekunder. Hurtigt, sikkert og nemt at dele.";
+
+"PAGE2_TITLE" = "Administrer din";
+"PAGE2_LIGHT_TITLE" = "lagring";
+"PAGE2_INFO" = "Overvåg og ryd op i din enheds lagerplads, så du kan beholde mere af det, der betyder noget.";
+
+"PAGE3_TITLE" = "Nå ethvert";
+"PAGE3_LIGHT_TITLE" = "mål";
+"PAGE3_INFO" = "Spor dine vaner, opgaver og milestene. Hold fokus og opnå mere.";
+
+"PAGE4_TITLE" = "Opdag ";
+"PAGE4_LIGHT_TITLE" = "film og serier";
+"PAGE4_INFO" = "Bemærk: Se trailere og streamingoplysninger, før du ser dine favoritter.";
+
+"DID_YOU_NOW" = "Lagde du";
+"DID_YOU_NOW2" = "mærke til";
+
 "NEXT" = "Næste";
-"GET_STATED" = "Kom i Gang";
+"GET_STATED" = "Kom i gang";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "Velkommen tilbage,";
-"QUICK_DISCOVER" = "Hurtig Opdagelse";
-"COMPASS" = "Kompas";
-"PHOTO_EDIT" = "Fotoredigering";
-"EDIT_PHOTO" = "Rediger Billeder";
-"NAV_TOOL" = "Navigationsværktøj";
-"PHOTO_CLEANER" = "Fotorydder";
-"FIND_DUBLICATE" = "Find Dubletter";
-"SOUND_METER" = "Lydmåler";
-"MEASURE_NOICE" = "Mål Støj";
-"SPOTLIGHT_ARTIST" = "Fremhævet Kunstner";
-"NEW_RELEASE" = "Ny Udgivelse";
+"All" = "Alle";
+"TOOLS" = "Værktøjer";
+"STORAGE" = "Lagerplads";
+"TOTAL" = "I alt";
+"USED" = "Brugt";
+"FREE" = "Ledig";
+"QUICK_TOOL" = "Hurtige værktøjer";
+"GOAL_TRACKER" = "Mål-tracker";
+"GOAL_TRACKER_INFO" = "Sæt mål, følg fremskridt og opnå mere";
+"IMAGE_TO_PDF" = "Billede til PDF";
+"IMAGE_TO_PDF_INFO" = "Konverter dine billeder til PDF med et enkelt tryk.";
+"NOTES" = "Noter";
+"NOTES_INFO" = "Skriv, organiser og gem dine noter sikkert.";
+"PERCENTAGE_CALCULATOR" = "Procentberegner";
+"PERCENTAGE_CALCULATOR_INFO" = "Beregn procenter nemt og øjeblikkeligt.";
+"PHOTO" = "Billede";
+"VIDEO" = "Video";
+"OTHER" = "Andet";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "Høj Præcision";
-"CALIBRATING" = "Kalibrerer…";
-"LATITUDE" = "Breddegrad";
-"LONGITUDE" = "Længdegrad";
-"DIR_N" = "Nord";
-"DIR_NNE" = "Nord-Nordøst";
-"DIR_NE" = "Nordøst";
-"DIR_ENE" = "Øst-Nordøst";
-"DIR_E" = "Øst";
-"DIR_ESE" = "Øst-Sydøst";
-"DIR_SE" = "Sydøst";
-"DIR_SSE" = "Syd-Sydøst";
-"DIR_S" = "Syd";
-"DIR_SSW" = "Syd-Sydvest";
-"DIR_SW" = "Sydvest";
-"DIR_WSW" = "Vest-Sydvest";
-"DIR_W" = "Vest";
-"DIR_WNW" = "Vest-Nordvest";
-"DIR_NW" = "Nordvest";
-"DIR_NNW" = "Nord-Nordvest";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "Lageroversigt";
+"STORAGE_DETAIL" = "Lagerdetaljer";
+"CALCULATING_STORAGE" = "Beregner lagerforbrug…";
+"OF_TOTAL_STORAGE" = "af samlet lagerplads";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "Dubletbilleder Fundet";
-"GROUP" = "Gruppe";
-"NO_DUBLICATE_PIC" = "Ingen Dubletbilleder Fundet";
-"NO_DUBLICATE_PIC_INFO" = "Fantastisk! Dit fotobibliotek er allerede rent. Der blev ikke fundet dubletbilleder.";
-"SCANING" = "Scanner...";
-"PERMISSION_NOTE" = "Vi har ikke tilladelse til at tjekke dit fotobibliotek.....";
-"DELETE_MEDIA" = "Slet Valgte Filer";
-"SELECT_ALL" = "Vælg Alle";
-"REMOVE_ALL" = "Fjern Alle";
-"PHOTO_ACCESS" = "Adgang til Fotos-appen Kræves";
-"ALLOW_PHOTO_ACCESS" = "Tillad venligst adgang til Fotos i Indstillinger for at bruge denne funktion.";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "Mål-tracker";
+"TOTAL_GOALS" = "Samlede mål";
+"COMPLETED" = "Gennemført";
+"IN_PROGRESS" = "I gang";
+"MY_GOALS" = "Mine mål";
+"YOUR_FIRST_GOAL" = "Sæt dit første mål";
+"KEEP_GOING" = "Fortsæt det gode arbejde";
+"YOU_MAKING_GREAT_PROGRESS" = "Du gør store fremskridt";
+"SEE_ALL" = "Se alle";
+"DONE" = "Færdig";
 
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "DECIBEL (dB)";
-"AVG" = "GENNEMSNIT";
-"MIN" = "MINIMUM";
-"MAX" = "MAKSIMUM";
-"STOP" = "Stop";
-"START" = "Start";
-"RESTART" = "Nulstil";
-"MICROPHONE_ACCESS" = "Adgang til Mikrofon Kræves";
-"OPEN_SETTINGS" = "Åbn Indstillinger";
-"ALLOW_MICROPHONE_ACCESS" = "Tillad venligst adgang til mikrofonen i Indstillinger for at bruge denne funktion.";
-"CANCEL" = "Annuller";
+// MARK: - Goal List -
+"DONE_GOAL" = "Gennemført mål";
+"INPROGRESS_GOAL" = "I gangværende mål";
 
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "Biografi";
-"MOVIE" = "Film";
-"TVSHOW" = "TV-serier";
-"BIRTHDAY" = "Fødselsdag";
-"BIRTHPLACE" = "Fødested";
-"AGE" = "Alder";
-"DEPARTMENT" = "Afdeling";
-"PERSONAL_INFO" = "Personlige Oplysninger";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "Søg Film og TV-serier";
-"NEWEARCH_PLACEHOLDER" = "Find dine yndlingsfilm eller -serier ved at søge efter en titel, skuespiller eller genre.";
-"NO_SEARCH_DATA" = "Ingen data fundet";
-"NO_SEARCH_DATA_FOUND" = "Ingen data fundet for";
-"TOP_RATED" = "Højest Vurderede";
-"MOST_POPULAR" = "Mest Populære";
-"ARRIVING_TODAY" = "Vises i Dag";
-"SEE_ALL" = "Se Alle";
-
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "Hovedrolleindehavere";
-"CORE_CREW" = "Kernehold";
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "Tilføj nyt mål";
+"CREATE" = "Opret";
+"CHOOSE_CATEGORY" = "Vælg kategori";
+"GOAL_TITLE" = "Måltitel";
+"EG_RUN" = "f.eks. Løb et maraton";
+"DESCRIPTION" = "Beskrivelse";
+"DESCRIPTION_INFO" = "Hvordan ser succes ud for dette mål?";
+"PRIORITY" = "Prioritet";
+"DATES" = "Datoer";
+"START_DATE" = "Startdato";
+"TARGET_DATE" = "Måldato";
+"WORK" = "Arbejde";
+"PERSONAL" = "Personligt";
+"HEALTH" = "Helbred";
+"STUDY" = "Studie";
+"GYM" = "Fitness";
+"SPORTS" = "Sport";
+"HOME" = "Hjem";
+"MONEY" = "Økonomi";
+"BOOK" = "Bog";
+"GOAL_DETAILS" = "Måldetaljer";
 "STATUS" = "Status";
-"LANGUAGE" = "Sprog";
-"RUNTIME" = "Spilletid";
-"REVENUE" = "Indtjening";
-"SHARE_TEXT1" = "Hej! Tjek";
-"SHARE_TEXT2" = "tænkte du ville kunne lide denne 🎬";
-"OVERVIEW" = "Oversigt";
-"MOVIE_INFO" = "Filminfo";
-"CREW" = "Hold";
-"POSTERS" = "Plakater";
-"VIDEOS" = "Videoer";
-"SEASON" = "Sæson";
-"POSTER" = "Plakat";
-"SHOW_MORE" = "Vis mere...";
-"SHOW_LESS" = "Vis mindre...";
+"ENTER_GOAL_TITLE" = "Indtast venligst en måltitel";
+"TARGET_DATE_ERROR" = "Måldatoen skal være på eller efter startdatoen";
+"GOAL_NOT_SAVED" = "Noget gik galt under gemning af målet. Prøv venligst igen.";
 
-// MARK: - Like -
-"FAVORITE" = "Favorit";
-"NO_FAVORITE" = "Intet Her Endnu";
-"NO_MOVIE_TAGLINE" = "Dine yndlingsfilm vil blive vist her.";
-"NO_SERIES_TAGLINE" = "Dine yndlingsserier vil blive vist her.";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "Billede til PDF";
+"CONVERT_IMAGE_TO_PDF" = "Konverter billeder til PDF";
+"CONVERT_IMAGE_TO_PDF_INFO" = "Opret PDF-filer af høj kvalitet fra dine billeder på få sekunder.";
+"SELECT_IMAGE" = "Vælg billeder";
+"RECENT_FILE" = "Seneste filer";
+"PHOTO_ACCESS_DENIED" = "Adgang til billeder nægtet";
+"PHOTO_ACCESS_DENIED_INFO" = "Tillad venligst adgang til billeder i Indstillinger for at vælge billeder.";
+"OPEN_SETTING" = "Åbn Indstillinger";
+"MANAGE_ACCESS" = "Administrer adgang";
+"LOADING_PHOTOS" = "Indlæser billeder...";
+"DISSELECT_ALL" = "Fravælg alle";
+"SELECT_ALL" = "Vælg alle";
+"SELECTED" = "Valgt";
+"CONTINUE" = "Fortsæt";
+"GENERATING_PDF" = "Genererer PDF";
+"DOC_LAYOUT_COMP" = "Sammensætter dokumentlayout...";
+"ARRANGE_PAGE" = "Ranger sider";
+
+// MARK: - Arrange page
+"NO_PAGE" = "Ingen sider endnu";
+"TAP_ADD_IMG" = "Tryk på Tilføj billeder for at komme i gang";
+"ADD_IMAGE" = "Tilføj billeder";
+"REMOVE" = "Fjern";
+"CONVERT_TO_PDF" = "Konverter til PDF";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF oprettet med succes!";
+"IMAGES" = "Billeder";
+"PAGES" = "Sider";
+"OPEN_PDF" = "Åbn PDF";
+"SHARE_PDF" = "Del PDF";
+"SEE_ALL_PDF" = "Se gemte PDF-filer";
+"BACK_TO_HOME" = "Tilbage til start";
 
 // MARK: - Notes -
 "NOTES" = "Noter";
-"ADD_NOTES" = "Tilføj Noter";
-"EDIT_NOTES" = "Rediger Noter";
-"DELETE_NOTES" = "Slet Noter";
-"NO" = "Nej";
-"DELETE" = "Slet";
-"DELETE_INFO" = "Er du sikker på, du vil slette denne note?";
-"NO_NOTES" = "Ingen Noter Endnu";
-"NO_NOTES_INFO" = "Tryk på Tilføj Note-knappen nedenfor for at oprette din første note.";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "Notetitel";
-"START_TYPING" = "Begynd at skrive...";
-"UPDATE_NOTE" = "Opdater Note";
-"SAVE_NOTE" = "Gem Note";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "Fastgjorte Noter";
-"UNPIN" = "Frigør";
-"PIN" = "Fastgør";
+"NO_NOTES" = "Ingen noter endnu";
+"NO_NOTES_INFO" = "Opret din første note for at komme i gang.";
+"EDIT_NOTES" = "Rediger noter";
+"NEW_NOTES" = "Nye noter";
+"ENTER_NOTE_TITLE" = "Indtast notetitel";
+"START_TYPING" = "Begynd at skrive";
+"UPDATE" = "Opdater";
+"DONE" = "Færdig";
+"NO_TITLE" = "INGEN TITEL";
+"EDIT" = "Rediger";
 "SHARE" = "Del";
-"NO_PINNED_NOTES" = "Ingen Fastgjorte Noter Endnu";
-"NO_PINNED_NOTES_INFO" = "Tryk på nåleikonet på en note for at tilføje den her.";
+"DELETE" = "Slet";
+"NOTES_SHARE" = "Hej,\nHer er de vigtige noter til dig";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "Procentberegner";
+
+// MARK: - Movies -
+"CELEBRITY" = "Kendis";
+"MOVIES_BIG" = "FILM";
+"TV_SHOW_BIG" = "SERIER";
+"NEW_RELESE" = "Nyheder";
+"UPCOMING" = "Kommende";
+"ON_AIR" = "Sendes nu";
+"AIRING_TODAY" = "Sendes i dag";
+"WATCH_TRAILER" = "SE TRAILER";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "Oversigt";
+"SHOW_LESS" = "Vis mindre";
+"SHOW_MORE" = "Vis mere";
+"TOP_CAST" = "Medvirkende";
+"TRAILER_CLIPS" = "Trailere og klip";
+
+// MARK: - Person Detail -
+"ABOUT" = "Om";
+"MOVIE" = "Film";
+"SERIES" = "Serie";
+
+// MARK: - Favourite -
+"FAVOURITE" = "Favorit";
+"NO_FAVOURITE" = "Intet her endnu";
+"NO_FAVOURITE_INFO" = "Dine favoritfilm vises her.";
+"NO_FAVOURITE_INFO_SHOW" = "Dine favorit-tv-serier vises her.";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "Søg efter film/serie";
+"EMPTY_SCREEN" = "Søg efter film og serier";
+"EMPTY_SCREEN_INFO" = "Find dine foretrukne film eller serier ved at søge på titel, skuespiller eller genre.";
+"NO_SEARCH_FOUND" = "Ingen data fundet";
+"NO_SEARCH_FOUND_FOR" = "Ingen data fundet for";
 
 // MARK: - Setting -
+"SETTING_INFO" = "Dit privatliv og din oplevelse er vigtig for os.";
 "SETTING" = "Indstillinger";
-"SHARE_APP" = "Del App";
-"RATE_US" = "Bedøm Os";
+"RATE_US" = "Bedøm os";
+"SHARE_APP" = "Del appen";
 "PRIVECY_POLICY" = "Privatlivspolitik";
-"TERMS_USE" = "Brugsvilkår";
-"ABOUT_US" = "Om Os";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "Vælg et billede til redigering";
-"CROP" = "Beskær";
-"FILTER" = "Filter";
-"ADJUST" = "Juster";
-
-"CONTRAST" = "Kontrast";
-"LIGHT" = "Lys";
-"DARK" = "Mørk";
-"HUE" = "Farvetone";
-"SATURATION" = "Mætning";
-"TEMP" = "Temperatur";
-"VIGNETTE" = "Vignet";
-
-"ORIGINAL" = "Original";
-"SEPIA" = "Sepia";
-"MONO" = "Mono";
-"NORI" = "Noir";
-"FADE" = "Udtoning";
-"CHROME" = "Chrome";
-"VINTAGE" = "Vintage";
-"DRAMATIC" = "Dramatisk";
-"COOL" = "Kølig";
-"WARM" = "Varm";
-"BOOST" = "Boost";
-"VIVID" = "Levende";
-"VIVID_WARM" = "Levende Varm";
-"VIVID_COOL" = "Levende Kølig";
-"PROCESS" = "Proces";
-"TRANSFER" = "Overførsel";
-"INSTANT" = "Instant";
-"TONAL" = "Tonal";
-"BLOOM" = "Bloom";
-"GLOOM" = "Dyster";
-"SHARPEN" = "Skærp";
-"CRYSTALLIZE" = "Krystallisér";
-"PIXELATE" = "Pixelér";
-"COMIC" = "Tegneserie";
-"EDGES" = "Kanter";
-"POSTERIZE" = "Posterisér";
-"VIGNETTE" = "Vignet";
-
-"DOWNLOAD_SUCCESS" = "Eksporteret med Succes!";
-"CHECK_PHOTO_APP" = "Foto blev gemt i Fotos-appen!";
-"PERMISSION_ACCESS" = "Adgangstilladelse";
-"CANCEL" = "Annuller";
-"ALLOW_PHOTO_DOWNLOAD" = "Tillad venligst adgang til fotobiblioteket i Indstillinger for at eksportere fotos.";
-"OK" = "OK";
-
-"PLAY_TRAILER" = "Afspil trailer";
-"MANAGE" = "Administrer";
-"CHANGE_SETTING" = "Giv fuld adgang";
-"SELECT_PHOTO_SIMPLE" = "Vælg foto";
-"YOUR_GIVEN" = "Du har givet";
-"ACCESS_NUBERS_PHOTO" = "adgang til et begrænset antal fotos.";
-"NO_PIC" = "Ingen fotos fundet";
+"TERMS_USE" = "Vilkår";

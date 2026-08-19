@@ -59,7 +59,7 @@ struct PersonListingScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Celebrity")
+                DefaultDesign.Header(name: "CELEBRITY")
                     .padding(.horizontal, 16)
                 
                 ScrollView(showsIndicators: false) {

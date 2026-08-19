@@ -15,7 +15,6 @@ struct PDFCreatedScreen: View {
     @State var generatedPDFURL: URL?
     @State var pdfInformation: PDFSummary?
     @State var selectedAssets: [PHAsset] = []
-    @State private var showSaveToFiles = false
     
     var body: some View {
         ZStack {
@@ -26,11 +25,13 @@ struct PDFCreatedScreen: View {
                     .frame(width: screenWidth-100, height: screenWidth-100)
                 
                 VStack(spacing: 16) {
-                    Text("PDF Created Successfully !")
+                    Text("PDF_CREATED_SUCCESS".localized())
                         .font(.system(size: 24, weight: .semibold))
                     
                     VStack(spacing: 5) {
-                        Text("\(selectedAssets.count) Images • \(pdfInformation?.totalPages ?? 0) Pages")
+                        let image = "IMAGES".localized()
+                        let pages = "PAGES".localized()
+                        Text("\(selectedAssets.count) \(image) • \(pdfInformation?.totalPages ?? 0) \(pages)")
                             .font(.system(size: 14, weight: .medium))
                             .foregroundColor(.grayColour)
                         
@@ -39,7 +40,7 @@ struct PDFCreatedScreen: View {
                             .foregroundColor(.grayColour)
                     }
                     
-                    DefaultDesign.FullScreenButton(name: "Open PDF", onClick: {
+                    DefaultDesign.FullScreenButton(name: "OPEN_PDF", onClick: {
                         self.showPreview = true
                     })
                     
@@ -52,7 +53,7 @@ struct PDFCreatedScreen: View {
                                     .resizable()
                                     .frame(width: 20, height: 20, alignment: .center)
                                 
-                                Text("Share PDF")
+                                Text("SHARE_PDF".localized())
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
                             }
@@ -63,14 +64,10 @@ struct PDFCreatedScreen: View {
                         }
                         
                         Button {
-                            showSaveToFiles = true
+                            Router.shared.push(.recentpdf)
                         } label: {
                             HStack {
-                                Image("ic_save_gray")
-                                    .resizable()
-                                    .frame(width: 20, height: 20, alignment: .center)
-                                
-                                Text("Save To Device")
+                                Text("SEE_ALL_PDF".localized())
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
                             }
@@ -92,7 +89,7 @@ struct PDFCreatedScreen: View {
                             .resizable()
                             .frame(width: 12, height: 12, alignment: .center)
                         
-                        Text("Back To Home")
+                        Text("BACK_TO_HOME".localized())
                             .font(.system(size: 14, weight: .medium))
                             .foregroundColor(.grayColour)
                     }
@@ -116,12 +113,6 @@ struct PDFCreatedScreen: View {
                 PDFPreviewScreen(url: url)
             }
         })
-        .sheet(isPresented: $showSaveToFiles) {
-            SaveToFilesPicker(url: generatedPDFURL ?? URL(filePath: "")) {
-                Toast.shared.show(message: "PDF Save successfully!", type: .success)
-                Router.shared.popToRoot()
-            }
-        }
         .onAppear() {
             isSwipeBackenable = false
             if let url = self.generatedPDFURL {

@@ -12,27 +12,25 @@ import MediaPlayer
 
 class HomeViewModel: ObservableObject {
     @Published var quickTool: [QuichToolsModel] = [QuichToolsModel(id: 0,
-                                                                   name: "Goal Tracker",
+                                                                   name: "GOAL_TRACKER",
                                                                    image: "ic_goal",
-                                                                   info: "Set goals, track progress and achieve more"),
+                                                                   info: "GOAL_TRACKER_INFO"),
                                                    
                                                    QuichToolsModel(id: 1,
-                                                                   name: "Image to PDF",
+                                                                   name: "IMAGE_TO_PDF",
                                                                    image: "ic_pdf",
-                                                                   info: "Convert your images to PDF in one tap."),
+                                                                   info: "IMAGE_TO_PDF_INFO"),
                                                    
                                                    QuichToolsModel(id: 2,
-                                                                   name: "Notes",
+                                                                   name: "NOTES",
                                                                    image: "ic_notes",
-                                                                   info: "Write, organize and keep your notes safe."),
+                                                                   info: "NOTES_INFO"),
                                                    
                                                    QuichToolsModel(id: 3,
-                                                                   name: "Percentage Calculator",
+                                                                   name: "PERCENTAGE_CALCULATOR",
                                                                    image: "ic_precentage",
-                                                                   info: "Calculate percentages easily and instantly.")]
+                                                                   info: "PERCENTAGE_CALCULATOR_INFO")]
     
-    init(){
-    }
     
     func onQuickTool(_ item: QuichToolsModel){
         switch item.id {

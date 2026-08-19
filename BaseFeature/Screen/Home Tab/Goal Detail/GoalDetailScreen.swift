@@ -14,7 +14,7 @@ struct GoalDetailScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Goals Details")
+                DefaultDesign.Header(name: "GOAL_DETAILS")
                     .padding(.horizontal, 16)
                 
                 if let goal = viewModel.goal {
@@ -25,7 +25,7 @@ struct GoalDetailScreen: View {
                     VStack {
                         if let myGoal = viewModel.goal {
                             HStack {
-                                Text("Status")
+                                Text("STATUS".localized())
                                     .font(.system(size: 16, weight: .semibold))
                                 
                                 Spacer()
@@ -56,7 +56,7 @@ struct GoalDetailScreen: View {
                         
                         if let statedDate = viewModel.goal?.startDate {
                             HStack {
-                                Text("Start Date")
+                                Text("START_DATE".localized())
                                     .font(.system(size: 16, weight: .semibold))
                                 
                                 Spacer()
@@ -72,7 +72,7 @@ struct GoalDetailScreen: View {
                         
                         if let targetDate = viewModel.goal?.targetDate {
                             HStack {
-                                Text("Start Date")
+                                Text("TARGET_DATE".localized())
                                     .font(.system(size: 16, weight: .semibold))
                                 
                                 Spacer()
@@ -87,7 +87,7 @@ struct GoalDetailScreen: View {
                             .padding(.vertical)
                         
                         HStack {
-                            Text("Priority")
+                            Text("PRIORITY".localized())
                                 .font(.system(size: 16, weight: .semibold))
                             
                             Spacer()
@@ -119,7 +119,7 @@ struct GoalDetailScreen: View {
                                 .padding(.vertical)
                             
                             VStack(alignment: .leading) {
-                                Text("Description")
+                                Text("DESCRIPTION".localized())
                                     .font(.system(size: 16, weight: .semibold))
                                 
                                 Text(desc)

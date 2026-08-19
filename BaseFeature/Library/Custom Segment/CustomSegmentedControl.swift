@@ -8,7 +8,7 @@ import SwiftUI
 
 struct CustomSegmentedControl: View {
     @Binding var preselectedIndex: Int
-    var options: [String] = ["MOVIES", "TV SHOW"]
+    var options: [String] = ["MOVIES_BIG", "TV_SHOW_BIG"]
     var onSelect: ((Int) -> Void)? = nil
     
     var icons = ["ic_camara_roal", "ic_camara_series"]
@@ -26,7 +26,7 @@ struct CustomSegmentedControl: View {
                         .font(.system(size: 24, weight: .bold))
                     
                     // Title Text
-                    Text(options[index])
+                    Text(options[index].localized())
                         .font(.system(size: 14, weight: .bold))
                         .tracking(1)
                 }

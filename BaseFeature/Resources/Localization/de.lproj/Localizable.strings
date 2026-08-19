@@ -1,0 +1,203 @@
+/* 
+  Localizable.strings
+  Movie Box
+
+  Created by Kushang kaklotar on 24/07/26.
+  
+*/
+
+// MARK: - Language Screen -
+"LANGUAGE" = "Sprachen";
+"DONE" = "Fertig";
+"SELECT_LANGUAGE" = "Sprache auswählen";
+"CHOOSE_LANGUAGE" = "Wählen Sie Ihre bevorzugte Sprache";
+"CONTINUE" = "Weiter";
+
+// MARK: - Intro Screen -
+"PAGE1_TITLE" = "Bilder umwandeln ";
+"PAGE1_LIGHT_TITLE" = "in PDF";
+"PAGE1_INFO" = "Verwandeln Sie Ihre Bilder in Sekundenschnelle in hochwertige PDFs. Schnell, sicher und einfach zu teilen.";
+
+"PAGE2_TITLE" = "Verwalten Sie Ihren";
+"PAGE2_LIGHT_TITLE" = "Speicher";
+"PAGE2_INFO" = "Überwachen und bereinigen Sie Ihren Gerätespeicher, um mehr von dem zu behalten, was wichtig ist.";
+
+"PAGE3_TITLE" = "Erreichen Sie jedes";
+"PAGE3_LIGHT_TITLE" = "Ziel";
+"PAGE3_INFO" = "Verfolgen Sie Ihre Gewohnheiten, Aufgaben und Meilensteine. Bleiben Sie fokussiert und erreichen Sie mehr.";
+
+"PAGE4_TITLE" = "Entdecken Sie ";
+"PAGE4_LIGHT_TITLE" = "Filme & Serien";
+"PAGE4_INFO" = "Hinweis: Entdecken Sie Trailer und Streaming-Details, bevor Sie Ihre Favoriten ansehen.";
+
+"DID_YOU_NOW" = "Haben Sie es";
+"DID_YOU_NOW2" = "bemerkt";
+
+"NEXT" = "Weiter";
+"GET_STATED" = "Loslegen";
+
+// MARK: - Home Screen -
+"All" = "Alle";
+"TOOLS" = "Tools";
+"STORAGE" = "Speicher";
+"TOTAL" = "Gesamt";
+"USED" = "Belegt";
+"FREE" = "Frei";
+"QUICK_TOOL" = "Schnell-Tools";
+"GOAL_TRACKER" = "Ziel-Tracker";
+"GOAL_TRACKER_INFO" = "Ziele setzen, Fortschritt verfolgen und mehr erreichen";
+"IMAGE_TO_PDF" = "Bild zu PDF";
+"IMAGE_TO_PDF_INFO" = "Konvertieren Sie Ihre Bilder mit einem Tipp in PDF.";
+"NOTES" = "Notizen";
+"NOTES_INFO" = "Schreiben, organisieren und sichern Sie Ihre Notizen.";
+"PERCENTAGE_CALCULATOR" = "Prozentrechner";
+"PERCENTAGE_CALCULATOR_INFO" = "Berechnen Sie Prozentsätze einfach und sofort.";
+"PHOTO" = "Foto";
+"VIDEO" = "Video";
+"OTHER" = "Sonstiges";
+
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "Speicherübersicht";
+"STORAGE_DETAIL" = "Speicherdetails";
+"CALCULATING_STORAGE" = "Speichernutzung wird berechnet…";
+"OF_TOTAL_STORAGE" = "vom Gesamtspeicher";
+
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "Ziel-Tracker";
+"TOTAL_GOALS" = "Gesamtziele";
+"COMPLETED" = "Abgeschlossen";
+"IN_PROGRESS" = "In Bearbeitung";
+"MY_GOALS" = "Meine Ziele";
+"YOUR_FIRST_GOAL" = "Setzen Sie Ihr erstes Ziel";
+"KEEP_GOING" = "Weiter so";
+"YOU_MAKING_GREAT_PROGRESS" = "Sie machen tolle Fortschritte";
+"SEE_ALL" = "Alle anzeigen";
+"DONE" = "Fertig";
+
+// MARK: - Goal List -
+"DONE_GOAL" = "Erreichtes Ziel";
+"INPROGRESS_GOAL" = "Laufendes Ziel";
+
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "Neues Ziel hinzufügen";
+"CREATE" = "Erstellen";
+"CHOOSE_CATEGORY" = "Kategorie wählen";
+"GOAL_TITLE" = "Ziel-Titel";
+"EG_RUN" = "z. B. Einen Marathon laufen";
+"DESCRIPTION" = "Beschreibung";
+"DESCRIPTION_INFO" = "Wie sieht Erfolg für dieses Ziel aus?";
+"PRIORITY" = "Priorität";
+"DATES" = "Daten";
+"START_DATE" = "Startdatum";
+"TARGET_DATE" = "Plandatum";
+"WORK" = "Arbeit";
+"PERSONAL" = "Persönlich";
+"HEALTH" = "Gesundheit";
+"STUDY" = "Studium";
+"GYM" = "Fitness studio";
+"SPORTS" = "Sport";
+"HOME" = "Zuhause";
+"MONEY" = "Finanzen";
+"BOOK" = "Buch";
+"GOAL_DETAILS" = "Zieldetails";
+"STATUS" = "Status";
+"ENTER_GOAL_TITLE" = "Bitte geben Sie einen Zieltitel ein";
+"TARGET_DATE_ERROR" = "Das Zieldatum muss am oder nach dem Startdatum liegen";
+"GOAL_NOT_SAVED" = "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.";
+
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "Bild zu PDF";
+"CONVERT_IMAGE_TO_PDF" = "Bilder in PDF umwandeln";
+"CONVERT_IMAGE_TO_PDF_INFO" = "Erstellen Sie in Sekundenschnelle hochwertige PDFs aus Ihren Bildern.";
+"SELECT_IMAGE" = "Bilder auswählen";
+"RECENT_FILE" = "Neueste Dateien";
+"PHOTO_ACCESS_DENIED" = "Foto-Zugriff verweigert";
+"PHOTO_ACCESS_DENIED_INFO" = "Bitte erlauben Sie den Foto-Zugriff in den Einstellungen, um Bilder auszuwählen.";
+"OPEN_SETTING" = "Einstellungen öffnen";
+"MANAGE_ACCESS" = "Zugriff verwalten";
+"LOADING_PHOTOS" = "Fotos werden geladen...";
+"DISSELECT_ALL" = "Alle abwählen";
+"SELECT_ALL" = "Alle auswählen";
+"SELECTED" = "Ausgewählt";
+"CONTINUE" = "Weiter";
+"GENERATING_PDF" = "PDF wird erstellt";
+"DOC_LAYOUT_COMP" = "Dokumentenlayout wird zusammengestellt...";
+"ARRANGE_PAGE" = "Seiten anordnen";
+
+// MARK: - Arrange page
+"NO_PAGE" = "Noch keine Seiten vorhanden";
+"TAP_ADD_IMG" = "Tippen Sie auf 'Bilder hinzufügen', um zu beginnen";
+"ADD_IMAGE" = "Bilder hinzufügen";
+"REMOVE" = "Entfernen";
+"CONVERT_TO_PDF" = "In PDF umwandeln";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF erfolgreich erstellt!";
+"IMAGES" = "Bilder";
+"PAGES" = "Seiten";
+"OPEN_PDF" = "PDF öffnen";
+"SHARE_PDF" = "PDF teilen";
+"SEE_ALL_PDF" = "Gespeicherte PDFs anzeigen";
+"BACK_TO_HOME" = "Zurück zur Startseite";
+
+// MARK: - Notes -
+"NOTES" = "Notizen";
+"NO_NOTES" = "Noch keine Notizen";
+"NO_NOTES_INFO" = "Erstellen Sie Ihre erste Notiz, um loszulegen.";
+"EDIT_NOTES" = "Notizen bearbeiten";
+"NEW_NOTES" = "Neue Notiz";
+"ENTER_NOTE_TITLE" = "Notiztitel eingeben";
+"START_TYPING" = "Mit dem Schreiben beginnen";
+"UPDATE" = "Aktualisieren";
+"DONE" = "Fertig";
+"NO_TITLE" = "OHNE TITEL";
+"EDIT" = "Bearbeiten";
+"SHARE" = "Teilen";
+"DELETE" = "Löschen";
+"NOTES_SHARE" = "Hallo,\nhier sind die wichtigen Notizen für Sie";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "Prozentrechner";
+
+// MARK: - Movies -
+"CELEBRITY" = "Prominente";
+"MOVIES_BIG" = "FILME";
+"TV_SHOW_BIG" = "TV-SERIEN";
+"NEW_RELESE" = "Neuerscheinungen";
+"UPCOMING" = "Demnächst";
+"ON_AIR" = "Im Fernsehen";
+"AIRING_TODAY" = "Heute im TV";
+"WATCH_TRAILER" = "TRAILER ANSEHEN";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "Übersicht";
+"SHOW_LESS" = "Weniger anzeigen";
+"SHOW_MORE" = "Mehr anzeigen";
+"TOP_CAST" = "Hauptbesetzung";
+"TRAILER_CLIPS" = "Trailer & Clips";
+
+// MARK: - Person Detail -
+"ABOUT" = "Über";
+"MOVIE" = "Film";
+"SERIES" = "Serie";
+
+// MARK: - Favourite -
+"FAVOURITE" = "Favoriten";
+"NO_FAVOURITE" = "Hier ist noch nichts";
+"NO_FAVOURITE_INFO" = "Ihre Lieblingsfilme werden hier angezeigt.";
+"NO_FAVOURITE_INFO_SHOW" = "Ihre Lieblings-TV-Serien werden hier angezeigt.";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "Nach Film/TV-Serie suchen";
+"EMPTY_SCREEN" = "Filme & TV-Serien suchen";
+"EMPTY_SCREEN_INFO" = "Finden Sie Ihre Lieblingsfilme oder -serien, indem Sie nach Titel, Schauspieler oder Genre suchen.";
+"NO_SEARCH_FOUND" = "Keine Daten gefunden";
+"NO_SEARCH_FOUND_FOR" = "Keine Daten gefunden für";
+
+// MARK: - Setting -
+"SETTING_INFO" = "Ihre Privatsphäre und Erfahrung sind uns wichtig.";
+"SETTING" = "Einstellungen";
+"RATE_US" = "Bewerten Sie uns";
+"SHARE_APP" = "App teilen";
+"PRIVECY_POLICY" = "Datenschutz-Bestimmungen";
+"TERMS_USE" = "Nutzungsbedingungen";

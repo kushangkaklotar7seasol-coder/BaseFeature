@@ -16,7 +16,7 @@ struct MyGoalScreen: View {
         ZStack {
             
             VStack {
-                DefaultDesign.Header(name: "Goal Tracker")
+                DefaultDesign.Header(name: "GOAL_TRACKER".localized())
                     .padding(.horizontal, 16)
                 
                 if !viewModel.goals.isEmpty {
@@ -32,7 +32,7 @@ struct MyGoalScreen: View {
                                     .font(.system(size: 24, weight: .bold))
                                     .foregroundColor(.lightPurple)
                                 
-                                Text("Total Goals")
+                                Text("TOTAL_GOALS".localized())
                                     .font(.system(size: 12, weight: .medium))
                                     .foregroundColor(.grayColour)
                             }
@@ -50,7 +50,7 @@ struct MyGoalScreen: View {
                                     .font(.system(size: 24, weight: .bold))
                                     .foregroundColor(.greenColour)
                                 
-                                Text("Completed")
+                                Text("COMPLETED".localized())
                                     .font(.system(size: 12, weight: .medium))
                                     .foregroundColor(.grayColour)
                                 
@@ -69,7 +69,7 @@ struct MyGoalScreen: View {
                                     .font(.system(size: 24, weight: .bold))
                                     .foregroundColor(.lightPurple)
                                 
-                                Text("In Progress")
+                                Text("IN_PROGRESS".localized())
                                     .font(.system(size: 12, weight: .medium))
                                     .foregroundColor(.grayColour)
                                 
@@ -82,7 +82,7 @@ struct MyGoalScreen: View {
                     }
                     .padding(.horizontal, 16)
                     
-                    DefaultDesign.SectionHeader(name: "My Goals", onClick: {
+                    DefaultDesign.SectionHeader(name: "MY_GOALS".localized(), onClick: {
                         Router.shared.push(.goalList(displayType: 0))
                     })
                     .padding(.horizontal, 16)
@@ -109,7 +109,7 @@ struct MyGoalScreen: View {
                         .resizable()
                         .frame(width: 100, height: 100, alignment: .center)
                     
-                    Text("Set Your First Goal")
+                    Text("YOUR_FIRST_GOAL".localized())
                         .foregroundColor(.grayColour)
                 }
             }
@@ -146,11 +146,11 @@ struct MyGoalScreen: View {
     private var keepGoing: some View {
             HStack(spacing: 0) {
                 VStack(alignment: .leading) {
-                    Text("Keep going")
+                    Text("KEEP_GOING".localized())
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.whiteColour)
                     
-                    Text("You are making great progress")
+                    Text("YOU_MAKING_GREAT_PROGRESS".localized())
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.grayColour)
                 }

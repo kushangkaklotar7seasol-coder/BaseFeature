@@ -47,7 +47,7 @@ struct AddNoteScreen: View {
                     
                     Spacer()
                     
-                    Text(viewModel.isEdit ? "Edit Notes" : "New Notes")
+                    Text(viewModel.isEdit ? "EDIT_NOTES".localized() : "NEW_NOTES".localized())
                         .font(.system(size: 18, weight: .semibold))
                     
                     Spacer()
@@ -77,7 +77,7 @@ struct AddNoteScreen: View {
                 TextField(
                     "",
                     text: $viewModel.nameTextField,
-                    prompt: Text("Enter Note Title")
+                    prompt: Text("ENTER_NOTE_TITLE".localized())
                         .font(.system(size: 14, weight: .regular))
                         .foregroundStyle(.whiteColour.opacity(0.2))
                 )
@@ -93,9 +93,9 @@ struct AddNoteScreen: View {
                             TextField(
                                 "",
                                 text: $viewModel.notesTextEditor,
-                                prompt: Text("Start Typing")
+                                prompt: Text("START_TYPING".localized())
                                     .font(.system(size: 16, weight: .regular))
-                                    .foregroundStyle(.whiteColour.opacity(0.4)),
+                                    .foregroundStyle(.grayColour.opacity(0.4)),
                                 axis: .vertical
                             )
                             .font(.system(size: 16, weight: .regular))
@@ -118,7 +118,6 @@ struct AddNoteScreen: View {
                             viewModel.notesTextEditor = "• "
                         }
                     }
-                    // iOS 17+ માટે (oldValue, newValue) બંને મળે છે
                     .onChange(of: viewModel.notesTextEditor) { oldValue, newValue in
                         self.handleBulletPoints(oldValue: oldValue, newValue: newValue)
                         
@@ -133,7 +132,7 @@ struct AddNoteScreen: View {
                 // Bottom Action Button
                 if (!viewModel.nameTextField.isEmpty || !viewModel.notesTextEditor.isEmpty) && focusedField == nil {
                     DefaultDesign.FullScreenButton(
-                        name: viewModel.isEdit ? "Update" : "Done",
+                        name: viewModel.isEdit ? "UPDATE" : "DONE",
                         onClick: {
                             viewModel.onSaveButton()
                         }

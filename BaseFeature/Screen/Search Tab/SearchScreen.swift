@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchScreen: View {
     @StateObject var viewModel = SearchViewModel()
+    @EnvironmentObject var localization: LocalizationManager
     @State var selectedSegment: Int = 0
     @FocusState var isTextFieldFocused: Bool
     let columns = [
@@ -38,21 +39,27 @@ struct SearchScreen: View {
                     
                     VStack {
                         HStack {
-                            Image("ic_search")
+                            Image("ic_search_small")
                             
-                            TextField("Search for Movie/TV Show", text: $viewModel.searchTextField)
-                                .foregroundColor(.blackColour)
-                                .focused($isTextFieldFocused)
+                            TextField("", text: $viewModel.searchTextField,
+                                      prompt: Text("SEARCH_PLACEHOLDER".localized())
+                                .font(.system(size: 14, weight: .regular))
+                                .foregroundStyle(.grayColour)
+                            )
+                            .foregroundColor(.blackColour)
+                            .focused($isTextFieldFocused)
                         }
                         .padding()
                         .background(.whiteColour)
                         .cornerRadius(26)
                         .padding(.horizontal, 16)
+                        .id(localization.selectedLanguage)
                         
                         CustomSegmentedControl(preselectedIndex: $selectedSegment, onSelect: { index in
                             viewModel.manageAPICalls(index: index)
                         })
                         .padding(.top, 8)
+                        .id(localization.selectedLanguage)
                     }
                 }
                 .frame(width: screenWidth, height: screenHeight/4.5, alignment: .center)
@@ -94,6 +101,7 @@ struct SearchScreen: View {
                             
                         }
                     }
+                    .id(localization.selectedLanguage)
                     
                 } else {
                     VStack {
@@ -103,12 +111,12 @@ struct SearchScreen: View {
                                     .resizable()
                                     .frame(width: 93, height: 120, alignment: .center)
                                 
-                                Text("Search Movies & TV Shows")
+                                Text("EMPTY_SCREEN".localized())
                                     .font(.system(size: 18, weight: .semibold))
                                     .foregroundColor(.whiteColour)
                                     .multilineTextAlignment(.center)
                                 
-                                Text("Find your favorite movies or series by searching for a title, actor, or genre.")
+                                Text("EMPTY_SCREEN_INFO".localized())
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
                                     .multilineTextAlignment(.center)
@@ -118,12 +126,12 @@ struct SearchScreen: View {
                                     .resizable()
                                     .frame(width: 93, height: 120, alignment: .center)
                                 
-                                Text("No data found")
+                                Text("NO_SEARCH_FOUND".localized())
                                     .font(.system(size: 18, weight: .semibold))
                                     .foregroundColor(.whiteColour)
                                     .multilineTextAlignment(.center)
                                 
-                                Text("\("No data found for") \(viewModel.searchTextField)")
+                                Text("\("NO_SEARCH_FOUND_FOR".localized()) \(viewModel.searchTextField)")
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
                                     .multilineTextAlignment(.center)
@@ -135,6 +143,7 @@ struct SearchScreen: View {
                         .offset(y: -viewModel.keyboardHeight / 3 - 64)
                     }
                     .frame(maxWidth: .infinity)
+                    .id(localization.selectedLanguage)
                 }
                 
                 

@@ -24,7 +24,7 @@ struct SelectImageScreen: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                DefaultDesign.Header(name: "Image to PDF")
+                DefaultDesign.Header(name: "IMAGE_TO_PDF")
                     .padding(.horizontal, 16)
  
                 content
@@ -67,10 +67,10 @@ struct SelectImageScreen: View {
             Image(systemName: "photo.on.rectangle.angled")
                 .font(.system(size: 48))
                 .foregroundColor(.gray)
-            Text("Photo access denied")
+            Text("PHOTO_ACCESS_DENIED".localized())
                 .font(.headline)
                 .foregroundColor(.white)
-            Text("Please allow photo access from Settings to select images.")
+            Text("PHOTO_ACCESS_DENIED_INFO".localized())
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -80,7 +80,7 @@ struct SelectImageScreen: View {
                     UIApplication.shared.open(url)
                 }
             } label: {
-                Text("Open Settings")
+                Text("OPEN_SETTING".localized())
                     .foregroundColor(.white)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 10)
@@ -94,25 +94,25 @@ struct SelectImageScreen: View {
     private var photoGridView: some View {
         VStack(spacing: 0) {
  
-            if photoManager.accessState == .limited {
-                HStack {
-                    Button("Manage Access") {
-                        if let root = UIApplication.rootViewController() {
-                            PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: root)
-                        }
-                    }
-                    .font(.footnote)
-                    .foregroundColor(.purple)
- 
-                    Spacer()
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-            }
+//            if photoManager.accessState == .limited {
+//                HStack {
+//                    Button("MANAGE_ACCESS") {
+//                        if let root = UIApplication.rootViewController() {
+//                            PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: root)
+//                        }
+//                    }
+//                    .font(.footnote)
+//                    .foregroundColor(.purple)
+// 
+//                    Spacer()
+//                }
+//                .padding(.horizontal, 16)
+//                .padding(.top, 8)
+//            }
  
             if photoManager.isLoading {
                 Spacer()
-                ProgressView("Loading photos...")
+                ProgressView("LOADING_PHOTOS".localized())
                     .tint(.white)
                     .foregroundColor(.white)
                 Spacer()
@@ -139,7 +139,7 @@ struct SelectImageScreen: View {
                                     Spacer()
  
                                     // Select all now applies to THIS date's photos only
-                                    Button(photoManager.isAllSelected(in: group) ? "Deselect all" : "Select all") {
+                                    Button(photoManager.isAllSelected(in: group) ? "DISSELECT_ALL".localized() : "SELECT_ALL".localized()) {
                                         photoManager.toggleSelectAll(for: group)
                                     }
                                     .font(.footnote.bold())
@@ -188,7 +188,8 @@ struct SelectImageScreen: View {
             }
  
             HStack {
-                Text("\(photoManager.selectedAssets.count) Selected")
+                let selected = "SELECTED".localized()
+                Text("\(photoManager.selectedAssets.count) \(selected)")
                     .foregroundColor(.whiteColour)
                     .font(.subheadline)
  
@@ -198,7 +199,7 @@ struct SelectImageScreen: View {
 //                    generatePDF()
                     Router.shared.push(.arrangeImage(images: photoManager.selectedAssets))
                 } label: {
-                    Text("Continue")
+                    Text("CONTINUE".localized())
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
                         .padding(.vertical, 12)
@@ -377,12 +378,12 @@ struct ProgressOverlay: View {
                 
                 // Text & Subtitle
                 VStack(spacing: 6) {
-                    Text("Generating PDF")
+                    Text("GENERATING_PDF".localized())
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     
-                    Text("Compiling document layout...")
+                    Text("DOC_LAYOUT_COMP".localized())
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }

@@ -7,216 +7,197 @@
 */
 
 // MARK: - Language Screen -
-"CHOOSE_LANGUAGE" = "Taal Kiezen";
+"LANGUAGE" = "Talen";
 "DONE" = "Klaar";
+"SELECT_LANGUAGE" = "Selecteer taal";
+"CHOOSE_LANGUAGE" = "Kies je voorkeurstaal";
+"CONTINUE" = "Doorgaan";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "Ontdek Verhalen";
-"PAGE1_INFO" = "Ontdek duizenden films met gedetailleerde informatie, beoordelingen, genres en releasedatums.";
-"PAGE2_TITLE" = "Speciaal voor Jou Gemaakt";
-"PAGE2_INFO" = "Blader op genre, populariteit of zoek om films te ontdekken die bij jouw interesses passen.";
-"PAGE3_TITLE" = "Filminzichten";
-"PAGE3_INFO" = "Ontdek beoordelingen, cast, recensies, trailers en alles wat je nodig hebt voordat je gaat kijken.";
-"PAGE4_TITLE" = "Jouw entertainmentgids";
-"PAGE4_INFO" = "Ontdek films, tv-shows, trailers, beoordelingen en waar je ze kunt kijken.";
-"GOOD_TO_KNOW" = "Goed om te weten";
-"GOOD_TO_KNOW_INFO" = "Wij streamen of hosten geen films of tv-shows. Wij bieden informatie, beoordelingen en legale kijkopties.";
+"PAGE1_TITLE" = "Converteer afbeeldingen ";
+"PAGE1_LIGHT_TITLE" = "naar PDF";
+"PAGE1_INFO" = "Zet je afbeeldingen binnen enkele seconden om in hoogwaardige PDF's. Snel, veilig en eenvoudig te delen.";
+
+"PAGE2_TITLE" = "Beheer je";
+"PAGE2_LIGHT_TITLE" = "opslagruimte";
+"PAGE2_INFO" = "Controleer en opschoon de opslagruimte van je apparaat om meer te bewaren van wat belangrijk is.";
+
+"PAGE3_TITLE" = "Bereik al je";
+"PAGE3_LIGHT_TITLE" = "doelen";
+"PAGE3_INFO" = "Houd je gewoonten, taken en mijlpalen bij. Blijf gefocust en bereik meer.";
+
+"PAGE4_TITLE" = "Ontdek ";
+"PAGE4_LIGHT_TITLE" = "films en series";
+"PAGE4_INFO" = "Opmerking: Bekijk trailers en streamingdetails voordat je naar je favorieten kijkt.";
+
+"DID_YOU_NOW" = "Is het je";
+"DID_YOU_NOW2" = "opgevallen";
+
 "NEXT" = "Volgende";
-"GET_STATED" = "Aan de Slag";
+"GET_STATED" = "Aan de slag";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "Welkom terug,";
-"QUICK_DISCOVER" = "Snel Ontdekken";
-"COMPASS" = "Kompas";
-"PHOTO_EDIT" = "Foto-editor";
-"EDIT_PHOTO" = "Foto's Bewerken";
-"NAV_TOOL" = "Navigatietool";
-"PHOTO_CLEANER" = "Foto Opschoner";
-"FIND_DUBLICATE" = "Dubbele Bestanden Zoeken";
-"SOUND_METER" = "Geluidsmeter";
-"MEASURE_NOICE" = "Geluid Meten";
-"SPOTLIGHT_ARTIST" = "Uitgelichte Artiest";
-"NEW_RELEASE" = "Nieuwe Release";
+"All" = "Alles";
+"TOOLS" = "Tools";
+"STORAGE" = "Opslag";
+"TOTAL" = "Totaal";
+"USED" = "Gebruikt";
+"FREE" = "Beschikbaar";
+"QUICK_TOOL" = "Snelle tools";
+"GOAL_TRACKER" = "Doelen tracker";
+"GOAL_TRACKER_INFO" = "Stel doelen, volg voortgang en bereik meer";
+"IMAGE_TO_PDF" = "Afbeelding naar PDF";
+"IMAGE_TO_PDF_INFO" = "Converteer je afbeeldingen in één tik naar PDF.";
+"NOTES" = "Notities";
+"NOTES_INFO" = "Schrijf, organiseer en bewaar je notities veilig.";
+"PERCENTAGE_CALCULATOR" = "Procentrekenmachine";
+"PERCENTAGE_CALCULATOR_INFO" = "Bereken eenvoudig en direct percentages.";
+"PHOTO" = "Foto";
+"VIDEO" = "Video";
+"OTHER" = "Overig";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "Hoge Precisie";
-"CALIBRATING" = "Kalibreren…";
-"LATITUDE" = "Breedtegraad";
-"LONGITUDE" = "Lengtegraad";
-"DIR_N" = "Noord";
-"DIR_NNE" = "Noord-Noordoost";
-"DIR_NE" = "Noordoost";
-"DIR_ENE" = "Oost-Noordoost";
-"DIR_E" = "Oost";
-"DIR_ESE" = "Oost-Zuidoost";
-"DIR_SE" = "Zuidoost";
-"DIR_SSE" = "Zuid-Zuidoost";
-"DIR_S" = "Zuid";
-"DIR_SSW" = "Zuid-Zuidwest";
-"DIR_SW" = "Zuidwest";
-"DIR_WSW" = "West-Zuidwest";
-"DIR_W" = "West";
-"DIR_WNW" = "West-Noordwest";
-"DIR_NW" = "Noordwest";
-"DIR_NNW" = "Noord-Noordwest";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "Opslagoverzicht";
+"STORAGE_DETAIL" = "Opslagdetails";
+"CALCULATING_STORAGE" = "Opslaggebruik berekenen…";
+"OF_TOTAL_STORAGE" = "van totale opslag";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "Dubbele Foto's Gevonden";
-"GROUP" = "Groep";
-"NO_DUBLICATE_PIC" = "Geen Dubbele Foto's Gevonden";
-"NO_DUBLICATE_PIC_INFO" = "Geweldig! Je fotobibliotheek is al opgeruimd. Er zijn geen dubbele foto's gevonden.";
-"SCANING" = "Scannen...";
-"PERMISSION_NOTE" = "We hebben geen toestemming om je fotobibliotheek te controleren.....";
-"DELETE_MEDIA" = "Geselecteerde Media Verwijderen";
-"SELECT_ALL" = "Alles Selecteren";
-"REMOVE_ALL" = "Alles Verwijderen";
-"PHOTO_ACCESS" = "Toegang tot Foto's-app Vereist";
-"ALLOW_PHOTO_ACCESS" = "Sta toegang tot Foto's toe in Instellingen om deze functie te gebruiken.";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "Doelen tracker";
+"TOTAL_GOALS" = "Totaal aantal doelen";
+"COMPLETED" = "Voltooid";
+"IN_PROGRESS" = "In behandeling";
+"MY_GOALS" = "Mijn doelen";
+"YOUR_FIRST_GOAL" = "Stel je eerste doel in";
+"KEEP_GOING" = "Ga zo door";
+"YOU_MAKING_GREAT_PROGRESS" = "Je maakt geweldige vooruitgang";
+"SEE_ALL" = "Alles bekijken";
+"DONE" = "Klaar";
 
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "DECIBEL (dB)";
-"AVG" = "GEMIDDELDE";
-"MIN" = "MINIMUM";
-"MAX" = "MAXIMUM";
-"STOP" = "Stoppen";
-"START" = "Starten";
-"RESTART" = "Resetten";
-"MICROPHONE_ACCESS" = "Toegang tot Microfoon Vereist";
-"OPEN_SETTINGS" = "Instellingen Openen";
-"ALLOW_MICROPHONE_ACCESS" = "Sta toegang tot de microfoon toe in Instellingen om deze functie te gebruiken.";
-"CANCEL" = "Annuleren";
+// MARK: - Goal List -
+"DONE_GOAL" = "Voltooid doel";
+"INPROGRESS_GOAL" = "Lopend doel";
 
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "Biografie";
-"MOVIE" = "Films";
-"TVSHOW" = "Series";
-"BIRTHDAY" = "Verjaardag";
-"BIRTHPLACE" = "Geboorteplaats";
-"AGE" = "Leeftijd";
-"DEPARTMENT" = "Afdeling";
-"PERSONAL_INFO" = "Persoonlijke Informatie";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "Films & Series Zoeken";
-"NEWEARCH_PLACEHOLDER" = "Vind je favoriete films of series door te zoeken op titel, acteur of genre.";
-"NO_SEARCH_DATA" = "Geen gegevens gevonden";
-"NO_SEARCH_DATA_FOUND" = "Geen gegevens gevonden voor";
-"TOP_RATED" = "Best Beoordeeld";
-"MOST_POPULAR" = "Meest Populair";
-"ARRIVING_TODAY" = "Vandaag Te Zien";
-"SEE_ALL" = "Alles Bekijken";
-
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "Hoofdrolspelers";
-"CORE_CREW" = "Kernteam";
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "Nieuw doel toevoegen";
+"CREATE" = "Aanmaken";
+"CHOOSE_CATEGORY" = "Kies categorie";
+"GOAL_TITLE" = "Titel van doel";
+"EG_RUN" = "bijv. Een marathon lopen";
+"DESCRIPTION" = "Beschrijving";
+"DESCRIPTION_INFO" = "Hoe ziet succes eruit voor dit doel?";
+"PRIORITY" = "Prioriteit";
+"DATES" = "Datums";
+"START_DATE" = "Startdatum";
+"TARGET_DATE" = "Einddatum";
+"WORK" = "Werk";
+"PERSONAL" = "Persoonlijk";
+"HEALTH" = "Gezondheid";
+"STUDY" = "Studie";
+"GYM" = "Sportschool";
+"SPORTS" = "Sport";
+"HOME" = "Thuis";
+"MONEY" = "Geld";
+"BOOK" = "Boek";
+"GOAL_DETAILS" = "Doeldetails";
 "STATUS" = "Status";
-"LANGUAGE" = "Taal";
-"RUNTIME" = "Speelduur";
-"REVENUE" = "Opbrengst";
-"SHARE_TEXT1" = "Hé! Bekijk";
-"SHARE_TEXT2" = "dacht dat je deze wel zou willen zien 🎬";
-"OVERVIEW" = "Overzicht";
-"MOVIE_INFO" = "Filminformatie";
-"CREW" = "Crew";
-"POSTERS" = "Posters";
-"VIDEOS" = "Video's";
-"SEASON" = "Seizoen";
-"POSTER" = "Poster";
-"SHOW_MORE" = "Meer tonen...";
-"SHOW_LESS" = "Minder tonen...";
+"ENTER_GOAL_TITLE" = "Voer een doeltitel in";
+"TARGET_DATE_ERROR" = "Einddatum moet op of na de startdatum liggen";
+"GOAL_NOT_SAVED" = "Er is iets misgegaan bij het opslaan. Probeer het opnieuw.";
 
-// MARK: - Like -
-"FAVORITE" = "Favoriet";
-"NO_FAVORITE" = "Hier Nog Niets";
-"NO_MOVIE_TAGLINE" = "Je favoriete films verschijnen hier.";
-"NO_SERIES_TAGLINE" = "Je favoriete series verschijnen hier.";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "Afbeelding naar PDF";
+"CONVERT_IMAGE_TO_PDF" = "Converteer afbeeldingen naar PDF";
+"CONVERT_IMAGE_TO_PDF_INFO" = "Maak binnen enkele seconden hoogwaardige PDF's van je afbeeldingen.";
+"SELECT_IMAGE" = "Selecteer afbeeldingen";
+"RECENT_FILE" = "Recente bestanden";
+"PHOTO_ACCESS_DENIED" = "Toegang tot foto's geweigerd";
+"PHOTO_ACCESS_DENIED_INFO" = "Geef via Instellingen toegang tot foto's om afbeeldingen te kiezen.";
+"OPEN_SETTING" = "Open Instellingen";
+"MANAGE_ACCESS" = "Beheer toegang";
+"LOADING_PHOTOS" = "Foto's laden...";
+"DISSELECT_ALL" = "Alles deselecteren";
+"SELECT_ALL" = "Alles selecteren";
+"SELECTED" = "Geselecteerd";
+"CONTINUE" = "Doorgaan";
+"GENERATING_PDF" = "PDF genereren";
+"DOC_LAYOUT_COMP" = "Documentindeling samenstellen...";
+"ARRANGE_PAGE" = "Pagina's ordenen";
+
+// MARK: - Arrange page
+"NO_PAGE" = "Nog geen pagina's";
+"TAP_ADD_IMG" = "Tik op Afbeeldingen toevoegen om te beginnen";
+"ADD_IMAGE" = "Afbeeldingen toevoegen";
+"REMOVE" = "Verwijderen";
+"CONVERT_TO_PDF" = "Converteren naar PDF";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF succesvol aangemaakt!";
+"IMAGES" = "Afbeeldingen";
+"PAGES" = "Pagina's";
+"OPEN_PDF" = "PDF openen";
+"SHARE_PDF" = "PDF delen";
+"SEE_ALL_PDF" = "Bekijk opgeslagen PDF's";
+"BACK_TO_HOME" = "Terug naar Home";
 
 // MARK: - Notes -
 "NOTES" = "Notities";
-"ADD_NOTES" = "Notities Toevoegen";
-"EDIT_NOTES" = "Notities Bewerken";
-"DELETE_NOTES" = "Notities Verwijderen";
-"NO" = "Nee";
-"DELETE" = "Verwijderen";
-"DELETE_INFO" = "Weet je zeker dat je deze notitie wilt verwijderen?";
-"NO_NOTES" = "Nog Geen Notities";
-"NO_NOTES_INFO" = "Tik op de knop Notitie Toevoegen hieronder om je eerste notitie te maken.";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "Notitietitel";
-"START_TYPING" = "Begin met typen...";
-"UPDATE_NOTE" = "Notitie Bijwerken";
-"SAVE_NOTE" = "Notitie Opslaan";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "Vastgezette Notities";
-"UNPIN" = "Losmaken";
-"PIN" = "Vastzetten";
+"NO_NOTES" = "Nog geen notities";
+"NO_NOTES_INFO" = "Maak je eerste notitie om te beginnen.";
+"EDIT_NOTES" = "Notities bewerken";
+"NEW_NOTES" = "Nieuwe notitie";
+"ENTER_NOTE_TITLE" = "Voer titel van notitie in";
+"START_TYPING" = "Begin met typen";
+"UPDATE" = "Bijwerken";
+"DONE" = "Klaar";
+"NO_TITLE" = "GEEN TITEL";
+"EDIT" = "Bewerken";
 "SHARE" = "Delen";
-"NO_PINNED_NOTES" = "Nog Geen Vastgezette Notities";
-"NO_PINNED_NOTES_INFO" = "Tik op het pin-icoon bij een notitie om deze hier toe te voegen.";
+"DELETE" = "Verwijderen";
+"NOTES_SHARE" = "Hoi,\nHier zijn de belangrijke notities voor jou";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "Procentrekenmachine";
+
+// MARK: - Movies -
+"CELEBRITY" = "Beroemdheid";
+"MOVIES_BIG" = "FILMS";
+"TV_SHOW_BIG" = "TV-SHOWS";
+"NEW_RELESE" = "Nieuwe releases";
+"UPCOMING" = "Binnenkort";
+"ON_AIR" = "Nu te zien";
+"AIRING_TODAY" = "Vandaag op tv";
+"WATCH_TRAILER" = "BEKIJK TRAILER";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "Overzicht";
+"SHOW_LESS" = "Minder tonen";
+"SHOW_MORE" = "Meer tonen";
+"TOP_CAST" = "Hoofdrollen";
+"TRAILER_CLIPS" = "Trailers & Clips";
+
+// MARK: - Person Detail -
+"ABOUT" = "Over";
+"MOVIE" = "Film";
+"SERIES" = "Serie";
+
+// MARK: - Favourite -
+"FAVOURITE" = "Favoriet";
+"NO_FAVOURITE" = "Nog niets hier";
+"NO_FAVOURITE_INFO" = "Je favoriete films verschijnen hier.";
+"NO_FAVOURITE_INFO_SHOW" = "Je favoriete tv-shows verschijnen hier.";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "Zoek naar film/tv-show";
+"EMPTY_SCREEN" = "Zoek films & tv-shows";
+"EMPTY_SCREEN_INFO" = "Vind je favoriete films of series door te zoeken op titel, acteur of genre.";
+"NO_SEARCH_FOUND" = "Geen gegevens gevonden";
+"NO_SEARCH_FOUND_FOR" = "Geen gegevens gevonden voor";
 
 // MARK: - Setting -
+"SETTING_INFO" = "Jouw privacy en ervaring zijn belangrijk voor ons.";
 "SETTING" = "Instellingen";
-"SHARE_APP" = "App Delen";
-"RATE_US" = "Beoordeel Ons";
+"RATE_US" = "Beoordeel ons";
+"SHARE_APP" = "Deel app";
 "PRIVECY_POLICY" = "Privacybeleid";
-"TERMS_USE" = "Gebruiksvoorwaarden";
-"ABOUT_US" = "Over Ons";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "Selecteer een foto om te bewerken";
-"CROP" = "Bijsnijden";
-"FILTER" = "Filter";
-"ADJUST" = "Aanpassen";
-
-"CONTRAST" = "Contrast";
-"LIGHT" = "Licht";
-"DARK" = "Donker";
-"HUE" = "Tint";
-"SATURATION" = "Verzadiging";
-"TEMP" = "Temperatuur";
-"VIGNETTE" = "Vignet";
-
-"ORIGINAL" = "Origineel";
-"SEPIA" = "Sepia";
-"MONO" = "Mono";
-"NORI" = "Noir";
-"FADE" = "Vervagen";
-"CHROME" = "Chrome";
-"VINTAGE" = "Vintage";
-"DRAMATIC" = "Dramatisch";
-"COOL" = "Koel";
-"WARM" = "Warm";
-"BOOST" = "Boost";
-"VIVID" = "Levendig";
-"VIVID_WARM" = "Levendig Warm";
-"VIVID_COOL" = "Levendig Koel";
-"PROCESS" = "Proces";
-"TRANSFER" = "Overdracht";
-"INSTANT" = "Instant";
-"TONAL" = "Tonaal";
-"BLOOM" = "Bloom";
-"GLOOM" = "Somber";
-"SHARPEN" = "Verscherpen";
-"CRYSTALLIZE" = "Kristalliseren";
-"PIXELATE" = "Pixeleren";
-"COMIC" = "Strip";
-"EDGES" = "Randen";
-"POSTERIZE" = "Posteriseren";
-"VIGNETTE" = "Vignet";
-
-"DOWNLOAD_SUCCESS" = "Succesvol Geëxporteerd!";
-"CHECK_PHOTO_APP" = "Foto is succesvol opgeslagen in de Foto's-app!";
-"PERMISSION_ACCESS" = "Toegangsrechten";
-"CANCEL" = "Annuleren";
-"ALLOW_PHOTO_DOWNLOAD" = "Sta toegang tot de fotobibliotheek toe in Instellingen om foto's te exporteren.";
-"OK" = "OK";
-
-"PLAY_TRAILER" = "Trailer afspelen";
-"MANAGE" = "Beheren";
-"CHANGE_SETTING" = "Geef volledige toegang";
-"SELECT_PHOTO_SIMPLE" = "Selecteer foto";
-"YOUR_GIVEN" = "Je hebt toegang gegeven";
-"ACCESS_NUBERS_PHOTO" = "tot een beperkt aantal foto's.";
-"NO_PIC" = "Geen foto's gevonden";
+"TERMS_USE" = "Voorwaarden";

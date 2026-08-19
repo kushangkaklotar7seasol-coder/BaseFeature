@@ -21,20 +21,18 @@ class NewGoalViewModel: ObservableObject {
 
     private let database = GoalDatabaseManager.shared
 
-    /// Validates the form and saves a new goal. Status is always "In Progress" at creation.
-    /// Returns the new goal's database id on success, nil if validation failed.
     @discardableResult
     func createGoal() -> Int64? {
         let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard !trimmedTitle.isEmpty else {
-            validationMessage = "Please enter a goal title"
+            validationMessage = "ENTER_GOAL_TITLE".localized()
             showValidationError = true
             return nil
         }
 
         guard targetDate >= startDate else {
-            validationMessage = "Target date must be on or after the start date"
+            validationMessage = "TARGET_DATE_ERROR".localized()
             showValidationError = true
             return nil
         }
@@ -52,7 +50,7 @@ class NewGoalViewModel: ObservableObject {
         )
 
         guard let newId = database.insertGoal(goal) else {
-            validationMessage = "Something went wrong saving this goal. Please try again."
+            validationMessage = "GOAL_NOT_SAVED".localized()
             showValidationError = true
             return nil
         }

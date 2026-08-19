@@ -40,11 +40,11 @@ struct ArrangePageScreen: View {
     // MARK: - Header: "Next" normally, becomes "Done" while in remove mode
     private var header: some View {
         ZStack {
-            DefaultDesign.Header(name: "Arrange Pages")
+            DefaultDesign.Header(name: "ARRANGE_PAGE")
 
             HStack {
                 Spacer()
-                Button(viewModel.isRemoveMode ? "Done" : "Next") {
+                Button(viewModel.isRemoveMode ? "DONE".localized() : "NEXT".localized()) {
                     if viewModel.isRemoveMode {
                         viewModel.isRemoveMode = false
                     } else {
@@ -65,9 +65,9 @@ struct ArrangePageScreen: View {
             Image(systemName: "photo.stack")
                 .font(.system(size: 40))
                 .foregroundColor(.gray)
-            Text("No pages yet")
+            Text("NO_PAGE".localized())
                 .foregroundColor(.white)
-            Text("Tap Add Images to get started")
+            Text("TAP_ADD_IMG".localized())
                 .font(.footnote)
                 .foregroundColor(.gray)
         }
@@ -133,7 +133,7 @@ struct ArrangePageScreen: View {
                     .background(.grayColour)
                     .cornerRadius(30)
                     
-                    Text("Add Images")
+                    Text("ADD_IMAGE".localized())
                         .font(.caption)
                         .foregroundColor(.whiteColour)
                 }
@@ -155,7 +155,7 @@ struct ArrangePageScreen: View {
                     .background(viewModel.isRemoveMode ? .whiteColour : .grayColour)
                     .cornerRadius(30)
                     
-                    Text("Remove")
+                    Text("REMOVE".localized())
                         .font(.caption)
                         .foregroundColor(.whiteColour)
                 }

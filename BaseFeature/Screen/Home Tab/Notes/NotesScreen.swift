@@ -17,7 +17,7 @@ struct NotesScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Notes")
+                DefaultDesign.Header(name: "NOTES")
                 
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: columns, spacing: 10) {
@@ -63,10 +63,10 @@ struct NotesScreen: View {
                         .resizable()
                         .frame(width: 100, height: 100, alignment: .center)
                     
-                    Text("No Notes Yet")
+                    Text("NO_NOTES".localized())
                         .font(.system(size: 20, weight: .semibold))
                     
-                    Text("Create your first note to get started.")
+                    Text("NO_NOTES_INFO".localized())
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.grayColour)
                 }
@@ -96,7 +96,7 @@ class NotesDesign {
                             .font(.system(size: 14, weight: .bold))
                             .lineLimit(2)
                     } else {
-                        Text("NO TITLE")
+                        Text("NO_TITLE".localized())
                             .font(.system(size: 12, weight: .bold))
                             .foregroundColor(.grayColour)
                     }
@@ -112,7 +112,7 @@ class NotesDesign {
                                     .resizable()
                                     .frame(width: 15, height: 15, alignment: .center)
                                 
-                                Text("Edit")
+                                Text("EDIT".localized())
                             }
                         }
                         
@@ -124,7 +124,7 @@ class NotesDesign {
                                     .resizable()
                                     .frame(width: 15, height: 15, alignment: .center)
                                 
-                                Text("Share")
+                                Text("SHARE".localized())
                             }
                         }
                         
@@ -136,7 +136,7 @@ class NotesDesign {
                                     .resizable()
                                     .frame(width: 15, height: 15, alignment: .center)
                                 
-                                Text("Delete")
+                                Text("DELETE".localized())
                             }
                         }
                         
@@ -165,9 +165,9 @@ class NotesDesign {
         }
         
         func shareText(_ note: Notes) -> String {
+            let notesShare = "NOTES_SHARE".localized()
             return """
-                Hyy,
-                Here is the importent notes for you
+                \(notesShare)
                 "\(note.name)"
                 \(note.notes)
                 """

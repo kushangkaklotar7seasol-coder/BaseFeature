@@ -18,7 +18,7 @@ struct FavouriteScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Favourite")
+                DefaultDesign.Header(name: "FAVOURITE")
                 
                 CustomSegmentedControl(preselectedIndex: $selectedIndex)
                 
@@ -46,11 +46,11 @@ struct FavouriteScreen: View {
                                 .resizable()
                                 .frame(width: 120, height: 120, alignment: .center)
                             
-                            Text("Nothing Here Yet")
+                            Text("NO_FAVOURITE".localized())
                                 .foregroundColor(.whiteColour)
                                 .font(.system(size: 18, weight: .medium))
                             
-                            Text("Your favorite movies will appear here.")
+                            Text("NO_FAVOURITE_INFO".localized())
                                 .foregroundColor(.grayColour)
                                 .font(.system(size: 14, weight: .regular))
                             
@@ -81,11 +81,11 @@ struct FavouriteScreen: View {
                                 .resizable()
                                 .frame(width: 120, height: 120, alignment: .center)
                             
-                            Text("Nothing Here Yet")
+                            Text("NO_FAVOURITE".localized())
                                 .foregroundColor(.whiteColour)
                                 .font(.system(size: 18, weight: .medium))
                             
-                            Text("Your favorite TV shows will appear here.")
+                            Text("NO_FAVOURITE_INFO_SHOW".localized())
                                 .foregroundColor(.grayColour)
                                 .font(.system(size: 14, weight: .regular))
                             Spacer()

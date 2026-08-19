@@ -77,6 +77,29 @@ enum PDFGenerator {
            sizeFormatted: sizeFormatted
        )
    }
+    
+    struct PDFStats {
+        let pageCount: Int
+        let fileSizeBytes: Int64
+
+        var fileSizeMB: Double {
+            Double(fileSizeBytes) / (1024 * 1024)
+        }
+
+        var fileSizeFormatted: String {
+            ByteCountFormatter.string(fromByteCount: fileSizeBytes, countStyle: .file)
+        }
+    }
+
+    static func stats(for url: URL) -> PDFStats? {
+        guard let document = CGPDFDocument(url as CFURL) else { return nil }
+        let pageCount = document.numberOfPages
+
+        let attributes = try? FileManager.default.attributesOfItem(atPath: url.path)
+        let sizeBytes = (attributes?[.size] as? Int64) ?? 0
+
+        return PDFStats(pageCount: pageCount, fileSizeBytes: sizeBytes)
+    }
 }
 
  

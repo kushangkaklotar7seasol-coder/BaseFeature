@@ -237,7 +237,7 @@ class DefaultDesign {
     
     struct SectionHeader: View {
         var name: String = ""
-        var buttonName: String = "See All"
+        var buttonName: String = "SEE_ALL"
         var isShowButton: Bool  = true
         var onClick: (()->Void)?
         
@@ -254,7 +254,7 @@ class DefaultDesign {
                         self.onClick?()
                     } label: {
                         HStack(spacing: 4) {
-                            Text(buttonName)
+                            Text(buttonName.localized())
                                 .font(.system(size: 13, weight: .semibold))
                             
                             Image(systemName: "chevron.right")
@@ -470,7 +470,7 @@ class DefaultDesign {
                         }
                     } label: {
                         HStack(spacing: 5) {
-                            Text(isExpanded ? "Show Less" : "Show More")
+                            Text(isExpanded ? "SHOW_LESS".localized() : "SHOW_MORE".localized())
                                 .font(.system(size: 14, weight: .medium))
                                 .foregroundColor(.whiteColour)
                             

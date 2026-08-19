@@ -14,13 +14,24 @@ struct StorageOverviewScreen: View {
         
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Storage Overview")
+                DefaultDesign.Header(name: "STORAGE_OVERVIEW".localized())
                 
                 HStack {
                     CircularProgressView(progress: storageManager.usedStoragePercent)
+                        .overlay {
+                            VStack {
+                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
+                                    .font(.system(size: 26, weight: .bold))
+                                
+                                Text("USED".localized())
+                                    .font(.system(size: 12, weight: .semibold))
+                                    .foregroundColor(.whiteColour)
+                            }
+                        }
                     
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("\(storageManager.totalSpace) Total")
+                        let total = "TOTAL".localized()
+                        Text("\(storageManager.totalSpace) \(total)")
                             .font(.system(size: 20, weight: .bold))
                             .foregroundColor(.whiteColour)
                         
@@ -28,7 +39,7 @@ struct StorageOverviewScreen: View {
                             HStack {
                                 DefaultDesign.GradientBullet()
                                 
-                                Text("Used")
+                                Text("USED".localized())
                                     .font(.system(size: 10, weight: .semibold))
                                     .foregroundColor(.grayColour)
                             }
@@ -45,7 +56,7 @@ struct StorageOverviewScreen: View {
                             HStack {
                                 DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
                                 
-                                Text("Free")
+                                Text("FREE".localized())
                                     .font(.system(size: 10, weight: .semibold))
                                     .foregroundColor(.grayColour)
                             }
@@ -71,13 +82,13 @@ struct StorageOverviewScreen: View {
     
     private var breakdownSection: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Text("Storage Details")
+            Text("STORAGE_DETAIL".localized())
                 .font(.system(size: 22, weight: .bold))
                 .foregroundColor(.white)
                 .padding(.horizontal, 4)
  
             if storageManager.storageInfo.isEmpty {
-                Text("Calculating storage usage…")
+                Text("CALCULATING_STORAGE".localized())
                     .font(.system(size: 13, weight: .regular))
                     .foregroundColor(.grayColour)
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -110,7 +121,7 @@ struct StorageOverviewScreen: View {
 //                    .background(.whiteColour.opacity(0.08))
 //                    .clipShape(Circle())
  
-                Text(info.name)
+                Text(info.name.localized())
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.whiteColour)
  
@@ -132,8 +143,9 @@ struct StorageOverviewScreen: View {
                 }
             }
             .frame(height: 6)
- 
-            Text(String(format: "%.1f%% of total storage", info.percent))
+            
+            let total = "OF_TOTAL_STORAGE".localized()
+            Text(String(format: "%.1f%% \(total)", info.percent))
                 .font(.system(size: 11, weight: .regular))
                 .foregroundColor(.grayColour)
         }

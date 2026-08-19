@@ -224,12 +224,12 @@ class MovieDetailViewModel: ObservableObject {
     }
     
     func manageLike() {
-//        if self.isLiked {
-//            database.removeMovie(id: movieId ?? 0)
-//        } else {
-//            database.addMovie(MediaItem(adult: false, backdropPath: "", genreIds: [], id: movieId ?? 0, originalLanguage: "", overview: "", popularity: 0.0, posterPath: movieDetail?.posterPath, softcore: false, voteAverage: movieDetail?.voteAverage ?? 0.0, voteCount: 0, title: movieDetail?.title, originalTitle: "", releaseDate: "", video: false, name: movieDetail?.title, originalName: "", firstAirDate: movieDetail?.releaseDate, originCountry: [], character: "", creditId: "", episodeCount: 0, firstCreditAirDate: "", isMovie: self.isMovie ?? true ? 1 : 0))
-//        }
-//        self.isLiked.toggle()
+        if self.isLiked {
+            database.removeMovie(id: movieId ?? 0)
+        } else {
+            database.addMovie(MediaItem(adult: false, backdropPath: "", genreIds: [], id: movieId ?? 0, originalLanguage: "", overview: "", popularity: 0.0, posterPath: movieDetail?.posterPath, softcore: false, voteAverage: movieDetail?.voteAverage ?? 0.0, voteCount: 0, title: movieDetail?.title, originalTitle: "", releaseDate: "", video: false, name: movieDetail?.title, originalName: "", firstAirDate: movieDetail?.releaseDate, originCountry: [], character: "", creditId: "", episodeCount: 0, firstCreditAirDate: "", isMovie: self.isMovie ?? true ? 1 : 0))
+        }
+        self.isLiked.toggle()
     }
     
     func translatedText() -> String {

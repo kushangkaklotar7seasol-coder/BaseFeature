@@ -7,216 +7,197 @@
 */
 
 // MARK: - Language Screen -
-"CHOOSE_LANGUAGE" = "选择语言";
+"LANGUAGE" = "语言";
 "DONE" = "完成";
+"SELECT_LANGUAGE" = "选择语言";
+"CHOOSE_LANGUAGE" = "选择您的首选语言";
+"CONTINUE" = "继续";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "发现精彩故事";
-"PAGE1_INFO" = "探索数千部包含详细信息、评分、类型和上映日期的电影。";
-"PAGE2_TITLE" = "为您量身打造";
-"PAGE2_INFO" = "按类型、热门程度浏览或搜索，探索符合您喜好的电影。";
-"PAGE3_TITLE" = "电影资讯";
-"PAGE3_INFO" = "在观影前探索评分、演员阵容、影评、预告片以及您所需的一切信息。";
-"PAGE4_TITLE" = "您的娱乐指南";
-"PAGE4_INFO" = "探索电影、电视节目、预告片、评分及播放平台。";
-"GOOD_TO_KNOW" = "须知事项";
-"GOOD_TO_KNOW_INFO" = "我们不提供或托管任何电影或电视节目的流媒体服务。我们仅提供相关信息、评分及正版观看渠道。";
+"PAGE1_TITLE" = "将图片转换 ";
+"PAGE1_LIGHT_TITLE" = "为 PDF";
+"PAGE1_INFO" = "几秒钟内将您的图片转换为高质量 PDF。快速、安全且易于分享。";
+
+"PAGE2_TITLE" = "管理您的";
+"PAGE2_LIGHT_TITLE" = "存储空间";
+"PAGE2_INFO" = "监控并清理设备存储空间，留住更多重要内容。";
+
+"PAGE3_TITLE" = "实现每一个";
+"PAGE3_LIGHT_TITLE" = "目标";
+"PAGE3_INFO" = "追踪您的习惯、任务和里程碑。保持专注，成就更多。";
+
+"PAGE4_TITLE" = "探索 ";
+"PAGE4_LIGHT_TITLE" = "影视剧集";
+"PAGE4_INFO" = "提示：在观看喜爱的节目之前，先查看预告片和流媒体播放信息。";
+
+"DID_YOU_NOW" = "您是否";
+"DID_YOU_NOW2" = "注意到";
+
 "NEXT" = "下一步";
-"GET_STATED" = "开始使用";
+"GET_STATED" = "立即开始";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "欢迎回来,";
-"QUICK_DISCOVER" = "快速发现";
-"COMPASS" = "指南针";
-"PHOTO_EDIT" = "照片编辑器";
-"EDIT_PHOTO" = "编辑照片";
-"NAV_TOOL" = "导航工具";
-"PHOTO_CLEANER" = "照片清理";
-"FIND_DUBLICATE" = "查找重复项";
-"SOUND_METER" = "声音分贝仪";
-"MEASURE_NOICE" = "测量噪音";
-"SPOTLIGHT_ARTIST" = "焦点艺人";
-"NEW_RELEASE" = "最新上映";
+"All" = "全部";
+"TOOLS" = "工具";
+"STORAGE" = "存储";
+"TOTAL" = "总量";
+"USED" = "已用";
+"FREE" = "可用";
+"QUICK_TOOL" = "快捷工具";
+"GOAL_TRACKER" = "目标追踪";
+"GOAL_TRACKER_INFO" = "设定目标、追踪进度，实现更多成就";
+"IMAGE_TO_PDF" = "图片转PDF";
+"IMAGE_TO_PDF_INFO" = "一键将图片转换为PDF。";
+"NOTES" = "笔记";
+"NOTES_INFO" = "记录、整理并安全保存您的笔记。";
+"PERCENTAGE_CALCULATOR" = "百分比计算器";
+"PERCENTAGE_CALCULATOR_INFO" = "轻松即时地计算百分比。";
+"PHOTO" = "照片";
+"VIDEO" = "视频";
+"OTHER" = "其他";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "高精度";
-"CALIBRATING" = "校准中…";
-"LATITUDE" = "纬度";
-"LONGITUDE" = "经度";
-"DIR_N" = "北";
-"DIR_NNE" = "北北东";
-"DIR_NE" = "东北";
-"DIR_ENE" = "东北东";
-"DIR_E" = "东";
-"DIR_ESE" = "东南东";
-"DIR_SE" = "东南";
-"DIR_SSE" = "南南东";
-"DIR_S" = "南";
-"DIR_SSW" = "南南西";
-"DIR_SW" = "西南";
-"DIR_WSW" = "西南西";
-"DIR_W" = "西";
-"DIR_WNW" = "西北西";
-"DIR_NW" = "西北";
-"DIR_NNW" = "北北西";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "存储概览";
+"STORAGE_DETAIL" = "存储详情";
+"CALCULATING_STORAGE" = "正在计算存储使用情况…";
+"OF_TOTAL_STORAGE" = "占总存储空间";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "已发现重复照片";
-"GROUP" = "分组";
-"NO_DUBLICATE_PIC" = "未发现重复照片";
-"NO_DUBLICATE_PIC_INFO" = "太棒了!您的照片库已经很干净,未发现重复照片。";
-"SCANING" = "正在扫描...";
-"PERMISSION_NOTE" = "我们没有权限查看您的照片库.....";
-"DELETE_MEDIA" = "删除所选内容";
-"SELECT_ALL" = "全选";
-"REMOVE_ALL" = "全部移除";
-"PHOTO_ACCESS" = "需要访问照片应用的权限";
-"ALLOW_PHOTO_ACCESS" = "请在设置中允许访问照片以使用此功能。";
-
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "分贝 (dB)";
-"AVG" = "平均值";
-"MIN" = "最小值";
-"MAX" = "最大值";
-"STOP" = "停止";
-"START" = "开始";
-"RESTART" = "重置";
-"MICROPHONE_ACCESS" = "需要访问麦克风的权限";
-"OPEN_SETTINGS" = "打开设置";
-"ALLOW_MICROPHONE_ACCESS" = "请在设置中允许访问麦克风以使用此功能。";
-"CANCEL" = "取消";
-
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "个人简介";
-"MOVIE" = "电影";
-"TVSHOW" = "电视剧";
-"BIRTHDAY" = "生日";
-"BIRTHPLACE" = "出生地";
-"AGE" = "年龄";
-"DEPARTMENT" = "职业领域";
-"PERSONAL_INFO" = "个人信息";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "搜索电影和电视剧";
-"NEWEARCH_PLACEHOLDER" = "通过搜索标题、演员或类型来查找您喜爱的电影或剧集。";
-"NO_SEARCH_DATA" = "未找到数据";
-"NO_SEARCH_DATA_FOUND" = "未找到相关数据:";
-"TOP_RATED" = "高分推荐";
-"MOST_POPULAR" = "最受欢迎";
-"ARRIVING_TODAY" = "今日上映";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "目标追踪";
+"TOTAL_GOALS" = "总目标";
+"COMPLETED" = "已完成";
+"IN_PROGRESS" = "进行中";
+"MY_GOALS" = "我的目标";
+"YOUR_FIRST_GOAL" = "设定您的第一个目标";
+"KEEP_GOING" = "继续加油";
+"YOU_MAKING_GREAT_PROGRESS" = "您正在取得重大进展";
 "SEE_ALL" = "查看全部";
+"DONE" = "完成";
 
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "主要演员";
-"CORE_CREW" = "核心制作团队";
+// MARK: - Goal List -
+"DONE_GOAL" = "已完成的目标";
+"INPROGRESS_GOAL" = "进行中的目标";
+
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "添加新目标";
+"CREATE" = "创建";
+"CHOOSE_CATEGORY" = "选择分类";
+"GOAL_TITLE" = "目标标题";
+"EG_RUN" = "例如：跑马拉松";
+"DESCRIPTION" = "描述";
+"DESCRIPTION_INFO" = "达成该目标意味着什么？";
+"PRIORITY" = "优先级";
+"DATES" = "日期";
+"START_DATE" = "开始日期";
+"TARGET_DATE" = "目标日期";
+"WORK" = "工作";
+"PERSONAL" = "个人";
+"HEALTH" = "健康";
+"STUDY" = "学习";
+"GYM" = "健身";
+"SPORTS" = "运动";
+"HOME" = "家庭";
+"MONEY" = "财务";
+"BOOK" = "阅读";
+"GOAL_DETAILS" = "目标详情";
 "STATUS" = "状态";
-"LANGUAGE" = "语言";
-"RUNTIME" = "片长";
-"REVENUE" = "票房收入";
-"SHARE_TEXT1" = "嘿!快看看";
-"SHARE_TEXT2" = "觉得你会喜欢这部 🎬";
-"OVERVIEW" = "简介";
-"MOVIE_INFO" = "电影信息";
-"CREW" = "制作团队";
-"POSTERS" = "海报";
-"VIDEOS" = "视频";
-"SEASON" = "季";
-"POSTER" = "海报";
-"SHOW_MORE" = "展开...";
-"SHOW_LESS" = "收起...";
+"ENTER_GOAL_TITLE" = "请输入目标标题";
+"TARGET_DATE_ERROR" = "目标日期必须在开始日期当天或之后";
+"GOAL_NOT_SAVED" = "保存该目标时出错，请重试。";
 
-// MARK: - Like -
-"FAVORITE" = "收藏";
-"NO_FAVORITE" = "暂无内容";
-"NO_MOVIE_TAGLINE" = "您收藏的电影将显示在此处。";
-"NO_SERIES_TAGLINE" = "您收藏的电视剧将显示在此处。";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "图片转PDF";
+"CONVERT_IMAGE_TO_PDF" = "将图片转换为PDF";
+"CONVERT_IMAGE_TO_PDF_INFO" = "在数秒内用图片生成高质量PDF。";
+"SELECT_IMAGE" = "选择图片";
+"RECENT_FILE" = "最近文件";
+"PHOTO_ACCESS_DENIED" = "照片访问权限被拒绝";
+"PHOTO_ACCESS_DENIED_INFO" = "请在设置中允许照片访问权限以选择图片。";
+"OPEN_SETTING" = "打开设置";
+"MANAGE_ACCESS" = "管理权限";
+"LOADING_PHOTOS" = "正在加载照片...";
+"DISSELECT_ALL" = "取消全选";
+"SELECT_ALL" = "全选";
+"SELECTED" = "已选择";
+"CONTINUE" = "继续";
+"GENERATING_PDF" = "正在生成PDF";
+"DOC_LAYOUT_COMP" = "正在编译文档布局...";
+"ARRANGE_PAGE" = "调整页面顺序";
+
+// MARK: - Arrange page
+"NO_PAGE" = "暂无页面";
+"TAP_ADD_IMG" = "点击“添加图片”开始使用";
+"ADD_IMAGE" = "添加图片";
+"REMOVE" = "移除";
+"CONVERT_TO_PDF" = "转换为PDF";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF 创建成功！";
+"IMAGES" = "图片";
+"PAGES" = "页数";
+"OPEN_PDF" = "打开 PDF";
+"SHARE_PDF" = "分享 PDF";
+"SEE_ALL_PDF" = "查看已保存的 PDF";
+"BACK_TO_HOME" = "返回首页";
 
 // MARK: - Notes -
 "NOTES" = "笔记";
-"ADD_NOTES" = "添加笔记";
-"EDIT_NOTES" = "编辑笔记";
-"DELETE_NOTES" = "删除笔记";
-"NO" = "否";
-"DELETE" = "删除";
-"DELETE_INFO" = "您确定要删除这条笔记吗?";
 "NO_NOTES" = "暂无笔记";
-"NO_NOTES_INFO" = "点击下方的添加笔记按钮创建您的第一条笔记。";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "笔记标题";
-"START_TYPING" = "开始输入...";
-"UPDATE_NOTE" = "更新笔记";
-"SAVE_NOTE" = "保存笔记";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "置顶笔记";
-"UNPIN" = "取消置顶";
-"PIN" = "置顶";
+"NO_NOTES_INFO" = "创建您的第一条笔记以开始使用。";
+"EDIT_NOTES" = "编辑笔记";
+"NEW_NOTES" = "新建笔记";
+"ENTER_NOTE_TITLE" = "输入笔记标题";
+"START_TYPING" = "开始输入";
+"UPDATE" = "更新";
+"DONE" = "完成";
+"NO_TITLE" = "无标题";
+"EDIT" = "编辑";
 "SHARE" = "分享";
-"NO_PINNED_NOTES" = "暂无置顶笔记";
-"NO_PINNED_NOTES_INFO" = "点击任意笔记上的置顶图标即可添加到此处。";
+"DELETE" = "删除";
+"NOTES_SHARE" = "您好，\n这是为您提供的的重要笔记";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "百分比计算器";
+
+// MARK: - Movies -
+"CELEBRITY" = "名人";
+"MOVIES_BIG" = "电影";
+"TV_SHOW_BIG" = "电视节目";
+"NEW_RELESE" = "最新上映";
+"UPCOMING" = "即将上映";
+"ON_AIR" = "连载中";
+"AIRING_TODAY" = "今日播出";
+"WATCH_TRAILER" = "观看预告片";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "概览";
+"SHOW_LESS" = "收起";
+"SHOW_MORE" = "展开";
+"TOP_CAST" = "主要演员";
+"TRAILER_CLIPS" = "预告片与片段";
+
+// MARK: - Person Detail -
+"ABOUT" = "关于";
+"MOVIE" = "电影";
+"SERIES" = "剧集";
+
+// MARK: - Favourite -
+"FAVOURITE" = "收藏";
+"NO_FAVOURITE" = "暂无内容";
+"NO_FAVOURITE_INFO" = "您收藏的电影将显示在这里。";
+"NO_FAVOURITE_INFO_SHOW" = "您收藏的电视节目将显示在这里。";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "搜索电影/电视节目";
+"EMPTY_SCREEN" = "搜索电影和电视节目";
+"EMPTY_SCREEN_INFO" = "通过搜索片名、演员或类型来查找您喜爱的电影或剧集。";
+"NO_SEARCH_FOUND" = "未找到数据";
+"NO_SEARCH_FOUND_FOR" = "未找到相关数据：";
 
 // MARK: - Setting -
+"SETTING_INFO" = "您的隐私和体验对我们非常重要。";
 "SETTING" = "设置";
+"RATE_US" = "评价我们";
 "SHARE_APP" = "分享应用";
-"RATE_US" = "给我们评分";
 "PRIVECY_POLICY" = "隐私政策";
 "TERMS_USE" = "使用条款";
-"ABOUT_US" = "关于我们";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "选择要编辑的照片";
-"CROP" = "裁剪";
-"FILTER" = "滤镜";
-"ADJUST" = "调整";
-
-"CONTRAST" = "对比度";
-"LIGHT" = "亮度";
-"DARK" = "暗度";
-"HUE" = "色相";
-"SATURATION" = "饱和度";
-"TEMP" = "色温";
-"VIGNETTE" = "暗角";
-
-"ORIGINAL" = "原图";
-"SEPIA" = "怀旧棕";
-"MONO" = "单色";
-"NORI" = "黑色电影";
-"FADE" = "褪色";
-"CHROME" = "铬黄";
-"VINTAGE" = "复古";
-"DRAMATIC" = "戏剧感";
-"COOL" = "冷色调";
-"WARM" = "暖色调";
-"BOOST" = "增强";
-"VIVID" = "鲜艳";
-"VIVID_WARM" = "鲜艳暖色";
-"VIVID_COOL" = "鲜艳冷色";
-"PROCESS" = "冲印";
-"TRANSFER" = "转印";
-"INSTANT" = "拍立得";
-"TONAL" = "色调";
-"BLOOM" = "光晕";
-"GLOOM" = "阴郁";
-"SHARPEN" = "锐化";
-"CRYSTALLIZE" = "结晶化";
-"PIXELATE" = "像素化";
-"COMIC" = "漫画";
-"EDGES" = "边缘检测";
-"POSTERIZE" = "色调分离";
-"VIGNETTE" = "暗角";
-
-"DOWNLOAD_SUCCESS" = "导出成功!";
-"CHECK_PHOTO_APP" = "照片已成功保存到照片应用!";
-"PERMISSION_ACCESS" = "权限访问";
-"CANCEL" = "取消";
-"ALLOW_PHOTO_DOWNLOAD" = "请在设置中允许访问照片库以导出照片。";
-"OK" = "确定";
-
-"PLAY_TRAILER" = "播放预告片";
-"MANAGE" = "管理";
-"CHANGE_SETTING" = "允许完全访问";
-"SELECT_PHOTO_SIMPLE" = "选择照片";
-"YOUR_GIVEN" = "你已授予";
-"ACCESS_NUBERS_PHOTO" = "访问所选照片的权限。";
-"NO_PIC" = "未找到照片";

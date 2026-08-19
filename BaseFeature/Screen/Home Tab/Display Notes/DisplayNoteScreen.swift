@@ -13,7 +13,7 @@ struct DisplayNoteScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Notes")
+                DefaultDesign.Header(name: "NOTES")
                 
                 VStack {
                     ScrollView {
@@ -23,7 +23,7 @@ struct DisplayNoteScreen: View {
                                     Text(name)
                                         .font(.system(size: 18, weight: .bold))
                                 } else {
-                                    Text("NO TITLE")
+                                    Text("NO_TITLE".localized())
                                         .font(.system(size: 18, weight: .bold))
                                         .foregroundColor(.grayColour)
                                 }
@@ -39,7 +39,7 @@ struct DisplayNoteScreen: View {
                                                 .resizable()
                                                 .frame(width: 15, height: 15, alignment: .center)
                                             
-                                            Text("Edit")
+                                            Text("EDIT".localized())
                                         }
                                     }
                                     
@@ -53,7 +53,7 @@ struct DisplayNoteScreen: View {
                                                 .resizable()
                                                 .frame(width: 15, height: 15, alignment: .center)
                                             
-                                            Text("Share")
+                                            Text("SHARE".localized())
                                         }
                                     }
                                     
@@ -65,7 +65,7 @@ struct DisplayNoteScreen: View {
                                                 .resizable()
                                                 .frame(width: 15, height: 15, alignment: .center)
                                             
-                                            Text("Delete")
+                                            Text("DELETE".localized())
                                         }
                                     }
                                     
@@ -181,9 +181,9 @@ struct DisplayNoteScreen: View {
     }
     
     func shareText(_ note: Notes) -> String {
+        let notesShare = "NOTES_SHARE".localized()
         return """
-            Hyy,
-            Here is the importent notes for you
+            \(notesShare)
             "\(note.name)"
             \(note.notes)
             """

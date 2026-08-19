@@ -7,216 +7,197 @@
 */
 
 // MARK: - Language Screen -
-"CHOOSE_LANGUAGE" = "भाषा चुनें";
-"DONE" = "पूर्ण";
+"LANGUAGE" = "भाषाएं";
+"DONE" = "हो गया";
+"SELECT_LANGUAGE" = "भाषा चुनें";
+"CHOOSE_LANGUAGE" = "अपनी पसंदीदा भाषा चुनें";
+"CONTINUE" = "जारी रखें";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "कहानियां खोजें";
-"PAGE1_INFO" = "विस्तृत जानकारी, रेटिंग, शैली और रिलीज़ की तारीखों के साथ हजारों फ़िल्मों का पता लगाएं।";
-"PAGE2_TITLE" = "सिर्फ आपके लिए बनाया गया";
-"PAGE2_INFO" = "अपनी पसंद की फ़िल्में खोजने के लिए शैली, लोकप्रियता के आधार पर ब्राउज़ करें या खोजें।";
-"PAGE3_TITLE" = "मूवी जानकारी";
-"PAGE3_INFO" = "देखने से पहले रेटिंग, स्टार कास्ट, समीक्षाएं, ट्रेलर और वह सब कुछ देखें जो आपको चाहिए।";
-"PAGE4_TITLE" = "आपकी मनोरंजन गाइड";
-"PAGE4_INFO" = "फ़िल्में, टीवी शो, ट्रेलर, रेटिंग और उन्हें कहाँ देखें, यह सब खोजें।";
-"GOOD_TO_KNOW" = "जानना उपयोगी है";
-"GOOD_TO_KNOW_INFO" = "हम फ़िल्में या टीवी शो स्ट्रीम या होस्ट नहीं करते हैं। हम जानकारी, रेटिंग और देखने की कानूनी उपलब्धता प्रदान करते हैं।";
-"NEXT" = "अगला";
+"PAGE1_TITLE" = "इमेजेस को ";
+"PAGE1_LIGHT_TITLE" = "PDF में बदलें";
+"PAGE1_INFO" = "अपनी इमेजेस को कुछ ही सेकंड में उच्च गुणवत्ता वाले PDF में बदलें। तेज़, सुरक्षित और साझा करने में आसान।";
+
+"PAGE2_TITLE" = "अपने स्टोरेज को";
+"PAGE2_LIGHT_TITLE" = "प्रबंधित करें";
+"PAGE2_INFO" = "अपने डिवाइस स्टोरेज की निगरानी और सफाई करें ताकि आप ज़रूरी चीज़ों को सहेज कर रख सकें।";
+
+"PAGE3_TITLE" = "हर लक्ष्य को";
+"PAGE3_LIGHT_TITLE" = "हासिल करें";
+"PAGE3_INFO" = "अपनी आदतों, कार्यों और मील के पत्थरों को ट्रैक करें। ध्यान केंद्रित रखें और अधिक हासिल करें।";
+
+"PAGE4_TITLE" = "खोजें ";
+"PAGE4_LIGHT_TITLE" = "फिल्में और शो";
+"PAGE4_INFO" = "नोट: अपने पसंदीदा शो देखने से पहले ट्रेलर और स्ट्रीमिंग विवरण देखें।";
+
+"DID_YOU_NOW" = "क्या आपने";
+"DID_YOU_NOW2" = "ध्यान दिया";
+
+"NEXT" = "आगे बढ़ें";
 "GET_STATED" = "शुरू करें";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "वापसी पर स्वागत है,";
-"QUICK_DISCOVER" = "क्विक डिस्कवर";
-"COMPASS" = "कंपास";
-"PHOTO_EDIT" = "फोटो एडिटर";
-"EDIT_PHOTO" = "फोटो एडिट करें";
-"NAV_TOOL" = "नेविगेशन टूल";
-"PHOTO_CLEANER" = "फोटो क्लीनर";
-"FIND_DUBLICATE" = "डुप्लीकेट खोजें";
-"SOUND_METER" = "साउंड मीटर";
-"MEASURE_NOICE" = "शोर मापें";
-"SPOTLIGHT_ARTIST" = "स्पॉटलाइट आर्टिस्ट";
-"NEW_RELEASE" = "नई रिलीज़";
+"All" = "सभी";
+"TOOLS" = "टूल";
+"STORAGE" = "स्टोरेज";
+"TOTAL" = "कुल";
+"USED" = "उपयोग किया गया";
+"FREE" = "खाली";
+"QUICK_TOOL" = "त्वरित टूल";
+"GOAL_TRACKER" = "लक्ष्य ट्रैकर";
+"GOAL_TRACKER_INFO" = "लक्ष्य निर्धारित करें, प्रगति ट्रैक करें और अधिक हासिल करें";
+"IMAGE_TO_PDF" = "इमेज से पीडीएफ";
+"IMAGE_TO_PDF_INFO" = "एक टैप में अपनी छवियों को पीडीएफ में बदलें।";
+"NOTES" = "नोट्स";
+"NOTES_INFO" = "लिखें, व्यवस्थित करें और अपने नोट्स सुरक्षित रखें।";
+"PERCENTAGE_CALCULATOR" = "प्रतिशत कैलकुलेटर";
+"PERCENTAGE_CALCULATOR_INFO" = "आसानी से और तुरंत प्रतिशत की गणना करें।";
+"PHOTO" = "फ़ोटो";
+"VIDEO" = "वीडियो";
+"OTHER" = "अन्य";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "उच्च सटीकता";
-"CALIBRATING" = "कैलिब्रेट हो रहा है…";
-"LATITUDE" = "अक्षांश";
-"LONGITUDE" = "देशांतर";
-"DIR_N" = "उत्तर";
-"DIR_NNE" = "उत्तर-उत्तरपूर्व";
-"DIR_NE" = "उत्तरपूर्व";
-"DIR_ENE" = "पूर्व-उत्तरपूर्व";
-"DIR_E" = "पूर्व";
-"DIR_ESE" = "पूर्व-दक्षिणपूर्व";
-"DIR_SE" = "दक्षिणपूर्व";
-"DIR_SSE" = "दक्षिण-दक्षिणपूर्व";
-"DIR_S" = "दक्षिण";
-"DIR_SSW" = "दक्षिण-दक्षिणपश्चिम";
-"DIR_SW" = "दक्षिणपश्चिम";
-"DIR_WSW" = "पश्चिम-दक्षिणपश्चिम";
-"DIR_W" = "पश्चिम";
-"DIR_WNW" = "पश्चिम-उत्तरपश्चिम";
-"DIR_NW" = "उत्तरपश्चिम";
-"DIR_NNW" = "उत्तर-उत्तरपश्चिम";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "स्टोरेज विवरण";
+"STORAGE_DETAIL" = "स्टोरेज जानकारी";
+"CALCULATING_STORAGE" = "स्टोरेज उपयोग की गणना की जा रही है…";
+"OF_TOTAL_STORAGE" = "कुल स्टोरेज में से";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "डुप्लीकेट फोटो मिलीं";
-"GROUP" = "समूह";
-"NO_DUBLICATE_PIC" = "कोई डुप्लीकेट मीडिया नहीं मिला";
-"NO_DUBLICATE_PIC_INFO" = "आपके फोन पर कोई डुप्लीकेट आइटम नहीं मिला...";
-"SCANING" = "स्कैन हो रहा है...";
-"PERMISSION_NOTE" = "हमारे पास आपकी फोटो लाइब्रेरी जांचने की अनुमति नहीं है.....";
-"DELETE_MEDIA" = "चयनित मीडिया हटाएं";
-"SELECT_ALL" = "सभी चुनें";
-"REMOVE_ALL" = "सभी हटाएं";
-"PHOTO_ACCESS" = "फोटोज़ ऐप एक्सेस आवश्यक";
-"ALLOW_PHOTO_ACCESS" = "इस फीचर का उपयोग करने के लिए कृपया सेटिंग्स में फोटोज़ एक्सेस की अनुमति दें।";
-
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "डेसिबल (dB)";
-"AVG" = "औसत";
-"MIN" = "न्यूनतम";
-"MAX" = "अधिकतम";
-"STOP" = "रोकें";
-"START" = "शुरू करें";
-"RESTART" = "रीसेट करें";
-"MICROPHONE_ACCESS" = "माइक्रोफ़ोन एक्सेस आवश्यक";
-"OPEN_SETTINGS" = "सेटिंग्स खोलें";
-"ALLOW_MICROPHONE_ACCESS" = "इस फीचर का उपयोग करने के लिए कृपया सेटिंग्स में माइक्रोफ़ोन एक्सेस की अनुमति दें।";
-"CANCEL" = "रद्द करें";
-
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "जीवनी";
-"MOVIE" = "मूवीज़";
-"TVSHOW" = "टीवी शो";
-"BIRTHDAY" = "जन्मदिन";
-"BIRTHPLACE" = "जन्मस्थान";
-"AGE" = "उम्र";
-"DEPARTMENT" = "विभाग";
-"PERSONAL_INFO" = "व्यक्तिगत जानकारी";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "मूवीज़ और टीवी शो खोजें";
-"NEWEARCH_PLACEHOLDER" = "टाइटल, एक्टर या जॉनर खोजकर अपनी पसंदीदा मूवीज़ या सीरीज़ खोजें।";
-"NO_SEARCH_DATA" = "कोई डेटा नहीं मिला";
-"NO_SEARCH_DATA_FOUND" = "इसके लिए कोई डेटा नहीं मिला";
-"TOP_RATED" = "टॉप रेटेड";
-"MOST_POPULAR" = "सबसे लोकप्रिय";
-"ARRIVING_TODAY" = "आज प्रसारित हो रहा है";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "लक्ष्य ट्रैकर";
+"TOTAL_GOALS" = "कुल लक्ष्य";
+"COMPLETED" = "पूरा हुआ";
+"IN_PROGRESS" = "प्रगति पर है";
+"MY_GOALS" = "मेरे लक्ष्य";
+"YOUR_FIRST_GOAL" = "अपना पहला लक्ष्य तय करें";
+"KEEP_GOING" = "आगे बढ़ते रहें";
+"YOU_MAKING_GREAT_PROGRESS" = "आप बेहतरीन प्रगति कर रहे हैं";
 "SEE_ALL" = "सभी देखें";
+"DONE" = "हो गया";
 
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "मुख्य कलाकार";
-"CORE_CREW" = "मुख्य क्रू";
+// MARK: - Goal List -
+"DONE_GOAL" = "पूरा हुआ लक्ष्य";
+"INPROGRESS_GOAL" = "प्रगति पर लक्ष्य";
+
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "नया लक्ष्य जोड़ें";
+"CREATE" = "बनाएं";
+"CHOOSE_CATEGORY" = "श्रेणी चुनें";
+"GOAL_TITLE" = "लक्ष्य का शीर्षक";
+"EG_RUN" = "जैसे, मैराथन दौड़ें";
+"DESCRIPTION" = "विवरण";
+"DESCRIPTION_INFO" = "इस लक्ष्य के लिए सफलता कैसी दिखेगी?";
+"PRIORITY" = "प्राथमिकता";
+"DATES" = "तारीखें";
+"START_DATE" = "प्रारंभ तिथि";
+"TARGET_DATE" = "लक्ष्य तिथि";
+"WORK" = "काम";
+"PERSONAL" = "व्यक्तिगत";
+"HEALTH" = "स्वास्थ्य";
+"STUDY" = "पढ़ाई";
+"GYM" = "जिम";
+"SPORTS" = "खेल";
+"HOME" = "घर";
+"MONEY" = "पैसा";
+"BOOK" = "किताब";
+"GOAL_DETAILS" = "लक्ष्य का विवरण";
 "STATUS" = "स्थिति";
-"LANGUAGE" = "भाषा";
-"RUNTIME" = "अवधि";
-"REVENUE" = "राजस्व";
-"SHARE_TEXT1" = "अरे! इसे देखो";
-"SHARE_TEXT2" = "सोचा तुम्हें यह पसंद आएगा 🎬";
-"OVERVIEW" = "अवलोकन";
-"MOVIE_INFO" = "मूवी जानकारी";
-"CREW" = "क्रू";
-"POSTERS" = "पोस्टर";
-"VIDEOS" = "वीडियो";
-"SEASON" = "सीज़न";
-"POSTER" = "पोस्टर";
-"SHOW_MORE" = "और दिखाएं...";
-"SHOW_LESS" = "कम दिखाएं...";
+"ENTER_GOAL_TITLE" = "कृपया लक्ष्य का शीर्षक दर्ज करें";
+"TARGET_DATE_ERROR" = "लक्ष्य तिथि प्रारंभ तिथि के दिन या उसके बाद की होनी चाहिए";
+"GOAL_NOT_SAVED" = "इस लक्ष्य को सहेजते समय कुछ गलत हो गया। कृपया पुनः प्रयास करें।";
 
-// MARK: - Like -
-"FAVORITE" = "पसंदीदा";
-"NO_FAVORITE" = "अभी तक कुछ नहीं है";
-"NO_MOVIE_TAGLINE" = "आपकी पसंदीदा मूवीज़ यहां दिखाई देंगी।";
-"NO_SERIES_TAGLINE" = "आपके पसंदीदा टीवी शो यहां दिखाई देंगे।";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "इमेज से पीडीएफ";
+"CONVERT_IMAGE_TO_PDF" = "इमेज को पीडीएफ में बदलें";
+"CONVERT_IMAGE_TO_PDF_INFO" = "अपनी इमेज से सेकंडों में उच्च गुणवत्ता वाली पीडीएफ बनाएं।";
+"SELECT_IMAGE" = "इमेज चुनें";
+"RECENT_FILE" = "हाल की फ़ाइलें";
+"PHOTO_ACCESS_DENIED" = "फ़ोटो एक्सेस की अनुमति नहीं है";
+"PHOTO_ACCESS_DENIED_INFO" = "इमेज चुनने के लिए कृपया सेटिंग्स से फ़ोटो एक्सेस की अनुमति दें।";
+"OPEN_SETTING" = "सेटिंग्स खोलें";
+"MANAGE_ACCESS" = "एक्सेस प्रबंधित करें";
+"LOADING_PHOTOS" = "फ़ोटो लोड हो रहे हैं...";
+"DISSELECT_ALL" = "सभी को अनसिलेक्ट करें";
+"SELECT_ALL" = "सभी को चुनें";
+"SELECTED" = "चुने गए";
+"CONTINUE" = "जारी रखें";
+"GENERATING_PDF" = "पीडीएफ बनाई जा रही है";
+"DOC_LAYOUT_COMP" = "दस्तावेज़ लेआउट तैयार किया जा रहा है...";
+"ARRANGE_PAGE" = "पेज व्यवस्थित करें";
+
+// MARK: - Arrange page
+"NO_PAGE" = "अभी कोई पेज नहीं है";
+"TAP_ADD_IMG" = "शुरू करने के लिए 'इमेज जोड़ें' पर टैप करें";
+"ADD_IMAGE" = "इमेज जोड़ें";
+"REMOVE" = "हटाएं";
+"CONVERT_TO_PDF" = "पीडीएफ में बदलें";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "पीडीएफ सफलतापूर्वक बन गई!";
+"IMAGES" = "इमेज";
+"PAGES" = "पेज";
+"OPEN_PDF" = "पीडीएफ खोलें";
+"SHARE_PDF" = "पीडीएफ शेयर करें";
+"SEE_ALL_PDF" = "सहेजी गई पीडीएफ देखें";
+"BACK_TO_HOME" = "होम पर वापस जाएं";
 
 // MARK: - Notes -
 "NOTES" = "नोट्स";
-"ADD_NOTES" = "नोट्स जोड़ें";
+"NO_NOTES" = "अभी कोई नोट्स नहीं हैं";
+"NO_NOTES_INFO" = "शुरू करने के लिए अपना पहला नोट बनाएं।";
 "EDIT_NOTES" = "नोट्स संपादित करें";
-"DELETE_NOTES" = "नोट्स हटाएं";
-"NO" = "नहीं";
-"DELETE" = "हटाएं";
-"DELETE_INFO" = "क्या आप वाकई इस नोट को हटाना चाहते हैं?";
-"NO_NOTES" = "अभी तक कोई नोट्स नहीं";
-"NO_NOTES_INFO" = "अपना पहला नोट बनाने के लिए नीचे दिए गए नोट जोड़ें बटन पर टैप करें।";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "नोट शीर्षक";
-"START_TYPING" = "टाइप करना शुरू करें...";
-"UPDATE_NOTE" = "नोट अपडेट करें";
-"SAVE_NOTE" = "नोट सेव करें";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "पिन किए गए नोट्स";
-"UNPIN" = "अनपिन करें";
-"PIN" = "पिन करें";
+"NEW_NOTES" = "नए नोट्स";
+"ENTER_NOTE_TITLE" = "नोट का शीर्षक दर्ज करें";
+"START_TYPING" = "लिखना शुरू करें";
+"UPDATE" = "अपडेट करें";
+"DONE" = "हो गया";
+"NO_TITLE" = "कोई शीर्षक नहीं";
+"EDIT" = "संपादित करें";
 "SHARE" = "शेयर करें";
-"NO_PINNED_NOTES" = "अभी तक कोई पिन किया गया नोट नहीं";
-"NO_PINNED_NOTES_INFO" = "इसे यहां जोड़ने के लिए किसी भी नोट पर पिन आइकन पर टैप करें।";
+"DELETE" = "हटाएं";
+"NOTES_SHARE" = "नमस्ते,\nयहाँ आपके लिए महत्वपूर्ण नोट्स हैं";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "प्रतिशत कैलकुलेटर";
+
+// MARK: - Movies -
+"CELEBRITY" = "सेलिब्रिटी";
+"MOVIES_BIG" = "फ़िल्में";
+"TV_SHOW_BIG" = "टीवी शो";
+"NEW_RELESE" = "नई रिलीज़";
+"UPCOMING" = "आने वाली फ़िल्में";
+"ON_AIR" = "ऑन एयर";
+"AIRING_TODAY" = "आज प्रसारित होने वाले";
+"WATCH_TRAILER" = "ट्रेलर देखें";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "विवरण";
+"SHOW_LESS" = "कम दिखाएं";
+"SHOW_MORE" = "और दिखाएं";
+"TOP_CAST" = "मुख्य कलाकार";
+"TRAILER_CLIPS" = "ट्रेलर और क्लिप्स";
+
+// MARK: - Person Detail -
+"ABOUT" = "के बारे में";
+"MOVIE" = "फ़िल्म";
+"SERIES" = "सीरीज़";
+
+// MARK: - Favourite -
+"FAVOURITE" = "पसंदीदा";
+"NO_FAVOURITE" = "यहाँ अभी कुछ नहीं है";
+"NO_FAVOURITE_INFO" = "आपकी पसंदीदा फ़िल्में यहाँ दिखाई देंगी।";
+"NO_FAVOURITE_INFO_SHOW" = "आपके पसंदीदा टीवी शो यहाँ दिखाई देंगे।";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "फ़िल्म/टीवी शो खोजें";
+"EMPTY_SCREEN" = "फ़िल्में और टीवी शो खोजें";
+"EMPTY_SCREEN_INFO" = "शीर्षक, कलाकार या शैली खोजकर अपनी पसंदीदा फ़िल्में या सीरीज़ ढूंढें।";
+"NO_SEARCH_FOUND" = "कोई डेटा नहीं मिला";
+"NO_SEARCH_FOUND_FOR" = "इसके लिए कोई डेटा नहीं मिला:";
 
 // MARK: - Setting -
-"SETTING" = "सेटिंग";
+"SETTING_INFO" = "आपकी गोपनीयता और अनुभव हमारे लिए महत्वपूर्ण हैं।";
+"SETTING" = "सेटिंग्स";
+"RATE_US" = "हमें रेटिंग दें";
 "SHARE_APP" = "ऐप शेयर करें";
-"RATE_US" = "हमें रेट करें";
 "PRIVECY_POLICY" = "गोपनीयता नीति";
-"TERMS_USE" = "उपयोग की शर्तें";
-"ABOUT_US" = "हमारे बारे में";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "एडिट के लिए एक फोटो चुनें";
-"CROP" = "क्रॉप";
-"FILTER" = "फ़िल्टर";
-"ADJUST" = "समायोजित करें";
-
-"CONTRAST" = "कंट्रास्ट";
-"LIGHT" = "लाइट";
-"DARK" = "डार्क";
-"HUE" = "ह्यू";
-"SATURATION" = "सैचुरेशन";
-"TEMP" = "टेम्प";
-"VIGNETTE" = "विनेट";
-
-"ORIGINAL" = "ओरिजिनल";
-"SEPIA" = "सीपिया";
-"MONO" = "मोनो";
-"NORI" = "नॉयर";
-"FADE" = "फेड";
-"CHROME" = "क्रोम";
-"VINTAGE" = "विंटेज";
-"DRAMATIC" = "ड्रामैटिक";
-"COOL" = "कूल";
-"WARM" = "वार्म";
-"BOOST" = "बूस्ट";
-"VIVID" = "विविड";
-"VIVID_WARM" = "विविड वार्म";
-"VIVID_COOL" = "विविड कूल";
-"PROCESS" = "प्रोसेस";
-"TRANSFER" = "ट्रांसफर";
-"INSTANT" = "इंस्टेंट";
-"TONAL" = "टोनल";
-"BLOOM" = "ब्लूम";
-"GLOOM" = "ग्लूम";
-"SHARPEN" = "शार्पन";
-"CRYSTALLIZE" = "क्रिस्टलाइज़";
-"PIXELATE" = "पिक्सलेट";
-"COMIC" = "कॉमिक";
-"EDGES" = "एजेस";
-"POSTERIZE" = "पोस्टराइज़";
-"VIGNETTE" = "विनेट";
-
-"DOWNLOAD_SUCCESS" = "सफलतापूर्वक एक्सपोर्ट हो गया!";
-"CHECK_PHOTO_APP" = "फोटो सफलतापूर्वक फोटो ऐप में सेव हो गई!";
-"PERMISSION_ACCESS" = "अनुमति पहुंच";
-"CANCEL" = "रद्द करें";
-"ALLOW_PHOTO_DOWNLOAD" = "फोटो एक्सपोर्ट करने के लिए कृपया सेटिंग्स में फोटो लाइब्रेरी की अनुमति दें।";
-"OK" = "ठीक है";
-
-"PLAY_TRAILER" = "ट्रेलर चलाएं";
-"MANAGE" = "प्रबंधित करें";
-"CHANGE_SETTING" = "पूर्ण पहुँच दें";
-"SELECT_PHOTO_SIMPLE" = "फ़ोटो चुनें";
-"YOUR_GIVEN" = "आपने अनुमति दी है";
-"ACCESS_NUBERS_PHOTO" = "चुनिंदा फ़ोटो तक पहुँचने की।";
-"NO_PIC" = "कोई फ़ोटो नहीं मिला";
+"TERMS_USE" = "नियम एवं शर्तें";

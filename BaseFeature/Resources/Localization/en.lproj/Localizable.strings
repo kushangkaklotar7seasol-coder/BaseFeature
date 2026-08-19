@@ -14,214 +14,191 @@
 "CONTINUE" = "Continue";
 
 // MARK: - Intro Screen -
-"PAGE1_TITLE" = "Discover Stories";
-"PAGE1_INFO" = "Explore thousands of movies with detailed information, ratings, genres, and release dates.";
-"PAGE2_TITLE" = "Made Just for You";
-"PAGE2_INFO" = "Browse by genre, popularity, or search to discover movies that match your interests.";
-"PAGE3_TITLE" = "Movie Insights";
-"PAGE3_INFO" = "Explore ratings, cast, reviews, trailers, and everything you need before watching.";
-"PAGE4_TITLE" = "Your Entertainment Guide";
-"PAGE4_INFO" = "Discover movies, TV Shows, trailers, ratings and where to watch.";
-"GOOD_TO_KNOW" = "Good to know";
-"GOOD_TO_KNOW_INFO" = "We don’t stream or host movies or TV shows. We provide information, ratings and legal viewing availability.";
+"PAGE1_TITLE" = "Convert Images ";
+"PAGE1_LIGHT_TITLE" = "To PDF";
+"PAGE1_INFO" = "Turn your images into high-quality PDFs in seconds. Fast, secure, and easy to share.";
+
+"PAGE2_TITLE" = "Manage Your";
+"PAGE2_LIGHT_TITLE" = "Storage";
+"PAGE2_INFO" = "Monitor and clean your device storage to keep more of what matters";
+
+"PAGE3_TITLE" = "Reach Every";
+"PAGE3_LIGHT_TITLE" = "Goal";
+"PAGE3_INFO" = "Track your habits, tasks, and milestones. Stay focused and achieve more.";
+
+"PAGE4_TITLE" = "Discover ";
+"PAGE4_LIGHT_TITLE" = "Movies & Shows";
+"PAGE4_INFO" = "Note :- Discover trailers and streaming details before watching your favorites.";
+
+"DID_YOU_NOW" = "Did You";
+"DID_YOU_NOW2" = "Notice";
+
 "NEXT" = "Next";
 "GET_STATED" = "Get Started";
 
 // MARK: - Home Screen -
-"WELCOME_BACK" = "Welcome back,";
-"QUICK_DISCOVER" = "Quick Discover";
-"COMPASS" = "Compass";
-"PHOTO_EDIT" = "Photo Editor";
-"EDIT_PHOTO" = "Edit Photos";
-"NAV_TOOL" = "Navigation Tool";
-"PHOTO_CLEANER" = "Photo Cleaner";
-"FIND_DUBLICATE" = "Find Duplicates";
-"SOUND_METER" = "Sound Meter";
-"MEASURE_NOICE" = "Measure Noise";
-"SPOTLIGHT_ARTIST" = "Spotlight Artist";
-"NEW_RELEASE" = "New Release";
+"All" = "All";
+"TOOLS" = "Tools";
+"STORAGE" = "Storage";
+"TOTAL" = "Total";
+"USED" = "Used";
+"FREE" = "Free";
+"QUICK_TOOL" = "Quick Tools";
+"GOAL_TRACKER" = "Goal Tracker";
+"GOAL_TRACKER_INFO" = "Set goals, track progress and achieve more";
+"IMAGE_TO_PDF" = "Image to PDF";
+"IMAGE_TO_PDF_INFO" = "Convert your images to PDF in one tap.";
+"NOTES" = "Notes";
+"NOTES_INFO" = "Write, organize and keep your notes safe.";
+"PERCENTAGE_CALCULATOR" = "Percentage Calculator";
+"PERCENTAGE_CALCULATOR_INFO" = "Calculate percentages easily and instantly.";
+"PHOTO" = "Photo";
+"VIDEO" = "Video";
+"OTHER" = "Other";
 
-// MARK: - Compass Screen -
-"HIGH_PRECISION" = "High Precision";
-"CALIBRATING" = "Calibrating…";
-"LATITUDE" = "Latitude";
-"LONGITUDE" = "Longitude";
-"DIR_N" = "North";
-"DIR_NNE" = "North-Northeast";
-"DIR_NE" = "Northeast";
-"DIR_ENE" = "East-Northeast";
-"DIR_E" = "East";
-"DIR_ESE" = "East-Southeast";
-"DIR_SE" = "Southeast";
-"DIR_SSE" = "South-Southeast";
-"DIR_S" = "South";
-"DIR_SSW" = "South-Southwest";
-"DIR_SW" = "Southwest";
-"DIR_WSW" = "West-Southwest";
-"DIR_W" = "West";
-"DIR_WNW" = "West-Northwest";
-"DIR_NW" = "Northwest";
-"DIR_NNW" = "North-Northwest";
+// MARK: - Storge Overview -
+"STORAGE_OVERVIEW" = "Storage Overview";
+"STORAGE_DETAIL" = "Storage Details";
+"CALCULATING_STORAGE" = "Calculating storage usage…";
+"OF_TOTAL_STORAGE" = "of total storage";
 
-// MARK: - Photo Cleaner Screen -
-"DUBLICATE_PHOTO_FOUND" = "Duplicate Photos Found";
-"GROUP" = "Group";
-"NO_DUBLICATE_PIC" = "No Duplicate Photos Found";
-"NO_DUBLICATE_PIC_INFO" = "Great! Your photo library is already clean. No duplicate photos were found.";
-"SCANING" = "Scanning...";
-"PERMISSION_NOTE" = "We don't have permission to check your photo library.....";
-"DELETE_MEDIA" = "Delete Selected Media";
-"SELECT_ALL" = "Select All";
-"REMOVE_ALL" = "Remove All";
-"PHOTO_ACCESS" = "Photos app Access Needed";
-"ALLOW_PHOTO_ACCESS" = "Please allow Photos access in Settings to use this feature.";
-
-// MARK: - Sound Meter Screen -
-"DECIBELS" = "DECIBELS (dB)";
-"AVG" = "AVERAGE";
-"MIN" = "MINIMUM";
-"MAX" = "MAXIMUM";
-"STOP" = "Stop";
-"START" = "Start";
-"RESTART" = "Reset";
-"MICROPHONE_ACCESS" = "Microphone Access Needed";
-"OPEN_SETTINGS" = "Open Settings";
-"ALLOW_MICROPHONE_ACCESS" = "Please allow microphone access in Settings to use this feature.";
-"CANCEL" = "Cancel";
-
-// MARK: - Artist Detail -
-"BIOGRAPHY" = "Biography";
-"MOVIE" = "Movies";
-"TVSHOW" = "TV Shows";
-"BIRTHDAY" = "Birthday";
-"BIRTHPLACE" = "Birthplace";
-"AGE" = "Age";
-"DEPARTMENT" = "Department";
-"PERSONAL_INFO" = "Personal info";
-
-// MARK: - Search Screen -
-"SEARCH_MEDIA" = "Search Movies & TV Shows";
-"NEWEARCH_PLACEHOLDER" = "Find your favorite movies or series by searching for a title, actor, or genre.";
-"NO_SEARCH_DATA" = "No data found";
-"NO_SEARCH_DATA_FOUND" = "No data found for";
-"TOP_RATED" = "Top Rated";
-"MOST_POPULAR" = "Most Popular";
-"ARRIVING_TODAY" = "Airing Today";
+// MARK: - Goal Tracker -
+"GOAL_TRACKER" = "Goal Tracker";
+"TOTAL_GOALS" = "Total Goals";
+"COMPLETED" = "Completed";
+"IN_PROGRESS" = "In Progress";
+"MY_GOALS" = "My Goals";
+"YOUR_FIRST_GOAL" = "Set Your First Goal";
+"KEEP_GOING" = "Keep going";
+"YOU_MAKING_GREAT_PROGRESS" = "You are making great progress";
 "SEE_ALL" = "See All";
+"DONE" = "Done";
 
-// MARK: - Movie Detail screen -
-"TOP_CAST" = "Top Cast";
-"CORE_CREW" = "Core Crew";
+// MARK: - Goal List -
+"DONE_GOAL" = "Done Goal";
+"INPROGRESS_GOAL" = "In Progress Goal";
+
+// MARK: - New Goal -
+"ADD_NEW_GOAL" = "Add New Goal";
+"CREATE" = "Create";
+"CHOOSE_CATEGORY" = "Choose Category";
+"GOAL_TITLE" = "Goal Title";
+"EG_RUN" = "e.g., Run a Marathon";
+"DESCRIPTION" = "Description";
+"DESCRIPTION_INFO" = "What does success look like for this goal?";
+"PRIORITY" = "Priority";
+"DATES" = "Dates";
+"START_DATE" = "Start Date";
+"TARGET_DATE" = "Target Date";
+"WORK" = "Work";
+"PERSONAL" = "Personal";
+"HEALTH" = "Health";
+"STUDY" = "Study";
+"GYM" = "Gym";
+"SPORTS" = "Sports";
+"HOME" = "Home";
+"MONEY" = "Money";
+"BOOK" = "Book";
+"GOAL_DETAILS" = "Goals Details";
 "STATUS" = "Status";
-"LANGUAGE" = "Language";
-"RUNTIME" = "Runtime";
-"REVENUE" = "Revenue";
-"SHARE_TEXT1" = "Hey! Check out";
-"SHARE_TEXT2" = "thought you'd like this one 🎬";
-"OVERVIEW" = "Overview";
-"MOVIE_INFO" = "Movie info";
-"CREW" = "Crew";
-"POSTERS" = "Posters";
-"VIDEOS" = "Videos";
-"SEASON" = "Season";
-"POSTER" = "Poster";
-"SHOW_MORE" = "Show more...";
-"SHOW_LESS" = "Show less...";
+"ENTER_GOAL_TITLE" = "Please enter a goal title";
+"TARGET_DATE_ERROR" = "Target date must be on or after the start date";
+"GOAL_NOT_SAVED" = "Something went wrong saving this goal. Please try again.";
 
-// MARK: - Like -
-"FAVORITE" = "Favorite";
-"NO_FAVORITE" = "Nothing Here Yet";
-"NO_MOVIE_TAGLINE" = "Your favorite movies will appear here.";
-"NO_SERIES_TAGLINE" = "Your favorite TV shows will appear here.";
+// MARK: - Image to PDF
+"IMAGE_TO_PDF" = "Image to PDF";
+"CONVERT_IMAGE_TO_PDF" = "Convert Images to PDF";
+"CONVERT_IMAGE_TO_PDF_INFO" = "Create high quality PDF from your images in seconds.";
+"SELECT_IMAGE" = "Select Images";
+"RECENT_FILE" = "Recent Files";
+"PHOTO_ACCESS_DENIED" = "Photo access denied";
+"PHOTO_ACCESS_DENIED_INFO" = "Please allow photo access from Settings to select images.";
+"OPEN_SETTING" = "Open Settings";
+"MANAGE_ACCESS" = "Manage Access";
+"LOADING_PHOTOS" = "Loading photos...";
+"DISSELECT_ALL" = "Deselect all";
+"SELECT_ALL" = "Select all";
+"SELECTED" = "Selected";
+"CONTINUE" = "Continue";
+"GENERATING_PDF" = "Generating PDF";
+"DOC_LAYOUT_COMP" = "Compiling document layout...";
+"ARRANGE_PAGE" = "Arrange Pages";
+
+// MARK: - Arrange page
+"NO_PAGE" = "No pages yet";
+"TAP_ADD_IMG" = "Tap Add Images to get started";
+"ADD_IMAGE" = "Add Images";
+"REMOVE" = "Remove";
+"CONVERT_TO_PDF" = "Convert To PDF";
+"ADD_IMAGE" = "Add Images";
+
+// MARK: - PDF CREATED -
+"PDF_CREATED_SUCCESS" = "PDF Created Successfully!";
+"IMAGES" = "Images";
+"PAGES" = "Pages";
+"OPEN_PDF" = "Open PDF";
+"SHARE_PDF" = "Share PDF";
+"SEE_ALL_PDF" = "See Saved PDF";
+"BACK_TO_HOME" = "Back To Home";
 
 // MARK: - Notes -
 "NOTES" = "Notes";
-"ADD_NOTES" = "Add Notes";
-"EDIT_NOTES" = "Edit Notes";
-"DELETE_NOTES" = "Delete Notes";
-"NO" = "No";
-"DELETE" = "Delete";
-"DELETE_INFO" = "Are you sure, you wants to delete this note?";
 "NO_NOTES" = "No Notes Yet";
-"NO_NOTES_INFO" = "Tap the Add Note button below to create your first note.";
-
-// MARK: - Add Note -
-"NOTE_TITLE" = "Note Title";
-"START_TYPING" = "Start typing...";
-"UPDATE_NOTE" = "Update Note";
-"SAVE_NOTE" = "Save Note";
+"NO_NOTES_INFO" = "Create your first note to get started.";
+"EDIT_NOTES" = "Edit Notes";
+"NEW_NOTES" = "New Notes";
+"ENTER_NOTE_TITLE" = "Enter Note Title";
+"START_TYPING" = "Start Typing";
 "UPDATE" = "Update";
-"SAVE" = "Save";
-
-// MARK: - Pinned Notes -
-"PINNED_NOTES" = "Pinned Notes";
-"UNPIN" = "Unpin";
-"PIN" = "Pin";
+"DONE" = "Done";
+"NO_TITLE" = "NO TITLE";
+"EDIT" = "Edit";
 "SHARE" = "Share";
-"NO_PINNED_NOTES" = "No Pinned Notes Yet";
-"NO_PINNED_NOTES_INFO" = "Tap the pin icon on any note to add it here.";
+"DELETE" = "Delete";
+"NOTES_SHARE" = "Hyy,\nHere is the importent notes for you";
+
+// MARK: - Percentage Calculator -
+"PERCENTAGE_CALCULATOR" = "Percentage Calculator";
+
+// MARK: - Movies -
+"CELEBRITY" = "Celebrity";
+"MOVIES_BIG" = "MOVIES";
+"TV_SHOW_BIG" = "TV SHOW";
+"NEW_RELESE" = "New Relese";
+"UPCOMING" = "Upcoming";
+"ON_AIR" = "On AIR";
+"AIRING_TODAY" = "Airing Today";
+"WATCH_TRAILER" = "WATCH TRAILER";
+
+// MARK: - Movie Detail -
+"OVERVIEW" = "Overview";
+"SHOW_LESS" = "Show Less";
+"SHOW_MORE" = "Show More";
+"TOP_CAST" = "Top Cast";
+"TRAILER_CLIPS" = "Trailers & Clips";
+
+// MARK: - Person Detail -
+"ABOUT" = "About";
+"MOVIE" = "Movie";
+"SERIES" = "Series";
+
+// MARK: - Favourite -
+"FAVOURITE" = "Favourite";
+"NO_FAVOURITE" = "Nothing Here Yet";
+"NO_FAVOURITE_INFO" = "Your favorite movies will appear here.";
+"NO_FAVOURITE_INFO_SHOW" = "Your favorite TV shows will appear here.";
+
+// MARK: - Search placeholder -
+"SEARCH_PLACEHOLDER" = "Search for Movie/TV Show";
+"EMPTY_SCREEN" = "Search Movies & TV Shows";
+"EMPTY_SCREEN_INFO" = "Find your favorite movies or series by searching for a title, actor, or genre.";
+"NO_SEARCH_FOUND" = "No data found";
+"NO_SEARCH_FOUND_FOR" = "No data found for";
 
 // MARK: - Setting -
+"SETTING_INFO" = "Your privacy and experience matter to us.";
 "SETTING" = "Setting";
-"SHARE_APP" = "Share App";
 "RATE_US" = "Rate Us";
+"SHARE_APP" = "Share App";
 "PRIVECY_POLICY" = "Privacy Policy";
-"TERMS_USE" = "Terms of Use";
-"ABOUT_US" = "About Us";
-
-// MARK: - Photo Edit -
-"SELECT_PHOTO" = "Select a photo for edit";
-"CROP" = "Crop";
-"FILTER" = "Filter";
-"ADJUST" = "Adjust";
-
-"CONTRAST" = "Contrast";
-"LIGHT" = "Light";
-"DARK" = "Dark";
-"HUE" = "HUE";
-"SATURATION" = "Saturation";
-"TEMP" = "Temp";
-"VIGNETTE" = "Vignette";
-
-"ORIGINAL" = "Original";
-"SEPIA" = "Sepia";
-"MONO" = "Mono";
-"NORI" = "Noir";
-"FADE" = "Fade";
-"CHROME" = "Chrome";
-"VINTAGE" = "Vintage";
-"DRAMATIC" = "Dramatic";
-"COOL" = "Cool";
-"WARM" = "Warm";
-"BOOST" = "Boost";
-"VIVID" = "Vivid";
-"VIVID_WARM" = "Vivid Warm";
-"VIVID_COOL" = "Vivid Cool";
-"PROCESS" = "Process";
-"TRANSFER" = "Transfer";
-"INSTANT" = "Instant";
-"TONAL" = "Tonal";
-"BLOOM" = "Bloom";
-"GLOOM" = "Gloom";
-"SHARPEN" = "Sharpen";
-"CRYSTALLIZE" = "Crystallize";
-"PIXELATE" = "Pixelate";
-"COMIC" = "Comic";
-"EDGES" = "Edges";
-"POSTERIZE" = "Posterize";
-"VIGNETTE" = "Vignette";
-
-"DOWNLOAD_SUCCESS" = "Export Successfully!";
-"CHECK_PHOTO_APP" = "Photo is save to photos app successfully!";
-"PERMISSION_ACCESS" = "Permission Access";
-"CANCEL" = "Cancel";
-"ALLOW_PHOTO_DOWNLOAD" = "Please allow photo library access in Settings to export photos.";
-"OK" = "OK";
-
-"PLAY_TRAILER" = "Play Trailer";
-"MANAGE" = "Manage";
-"CHANGE_SETTING" = "Give Full Access";
-"SELECT_PHOTO_SIMPLE" = "Select Photo";
-"YOUR_GIVEN" = "You've given";
-"ACCESS_NUBERS_PHOTO" = "access to a select number of photos.";
-"NO_PIC" = "No Photos Found";
+"TERMS_USE" = "Terms";

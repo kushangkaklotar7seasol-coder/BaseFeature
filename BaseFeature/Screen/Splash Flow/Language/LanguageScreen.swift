@@ -84,12 +84,16 @@ struct LanguageScreen: View {
                 .edgesIgnoringSafeArea(.bottom)
                 
                 DefaultDesign.FullScreenButton(name: "CONTINUE", onClick: {
+                    localization.changeLanguage(languageCode: viewModel.selectedLanguage?.code ?? "en")
                     viewModel.onDoneButtonClick()
                 })
             }
             .padding(.horizontal, 16)
         }
         .defaultPage()
+        .onAppear {
+            viewModel.selectedLanguage = UserdefaultManager.shared.getLanguage() ?? LanguageItem(code: "en")
+        }
     }
 }
 

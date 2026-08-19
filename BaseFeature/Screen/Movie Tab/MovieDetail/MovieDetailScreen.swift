@@ -19,7 +19,7 @@ struct MovieDetailScreen: View {
                     TopView
                     
                     if let overView = viewModel.movieDetail?.overview, overView != "" {
-                        DefaultDesign.SectionHeader(name: "Overview", isShowButton: false)
+                        DefaultDesign.SectionHeader(name: "OVERVIEW", isShowButton: false)
                             .padding(.horizontal, 16)
                         
                         DefaultDesign.ExpandableTextView(text: overView)
@@ -65,7 +65,7 @@ struct MovieDetailScreen: View {
                     }
                     
                     if let cast = viewModel.movieCredits?.cast {
-                        DefaultDesign.SectionHeader(name: "Top Cast") {
+                        DefaultDesign.SectionHeader(name: "TOP_CAST") {
                             Router.shared.push(.castCrewListing(cast: cast, header: "\(viewModel.movieDetail?.title ?? viewModel.movieDetail?.name ?? "")"))
                         }
                         .padding(.horizontal, 16)
@@ -86,7 +86,7 @@ struct MovieDetailScreen: View {
                     }
                     
                     if let video = viewModel.movieVideo?.results, !video.isEmpty {
-                        DefaultDesign.SectionHeader(name: "Trailers & Clips") {
+                        DefaultDesign.SectionHeader(name: "TRAILER_CLIPS") {
                             Router.shared.push(.videoListing(videos: video, header: "\(viewModel.movieDetail?.title ?? viewModel.movieDetail?.name ?? "")"))
                         }
                         .padding(.horizontal, 16)
@@ -146,7 +146,7 @@ struct MovieDetailScreen: View {
                     WebView(url: URL(string: viewModel.youtubeUrl)!)
                         .toolbar {
                             ToolbarItem(placement: .topBarTrailing) {
-                                Button("Done") {
+                                Button("DONE".localized()) {
                                     viewModel.isYoutubeVideo = false
                                 }
                             }
@@ -248,14 +248,15 @@ private extension MovieDetailScreen {
                     // Bottom Actions Row
                     HStack(spacing: 12) {
                         if isYoutubeEnabled {
-                            DefaultDesign.FullScreenButton(name: "WATCH TRAILER", onClick: {
+                            DefaultDesign.FullScreenButton(name: "WATCH_TRAILER", onClick: {
                                 viewModel.setTrailer()
                                 viewModel.isYoutubeVideo = true
                             })
                         }
                         
-                        DefaultDesign.IconButton(icon: "ic_heart", onClick: {
-                            print("Like")
+                        DefaultDesign.IconButton(icon: viewModel.isLiked ? "ic_Heart_fill" : "ic_heart", onClick: {
+                            Utility.addHaptics()
+                            viewModel.manageLike()
                         })
                     }
                 }

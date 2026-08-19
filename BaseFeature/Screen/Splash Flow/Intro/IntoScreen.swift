@@ -44,10 +44,11 @@ struct IntoScreen: View {
             VStack {
                 if  selectedIndex == viewModel.information.count - 1 {
                     ZStack {
-                        Text("Did You")
+                        Text("DID_YOU_NOW".localized())
                             .font(.system(size: 32, weight: .bold))
                             .foregroundColor(.whiteColour)
-                        + Text(" Notice?")
+                        + Text(" ")
+                        + Text("DID_YOU_NOW2".localized())
                             .foregroundColor(.lightPurple)
                             .font(.system(size: 32, weight: .bold))
                     }
@@ -59,16 +60,16 @@ struct IntoScreen: View {
                 
                 Spacer()
                 
-                Text(viewModel.information[selectedIndex].name)
+                Text(viewModel.information[selectedIndex].name.localized())
                     .foregroundColor(.whiteColour)
                     .font(.system(size: 30, weight: .bold))
-                    
-               + Text(" \(viewModel.information[selectedIndex].name2)")
+                + Text(" ")
+                + Text(" \(viewModel.information[selectedIndex].name2.localized())")
                     .foregroundColor(.lightPurple)
                     .font(.system(size: 30, weight: .bold))
                     
                 
-                Text(viewModel.information[selectedIndex].info)
+                Text(viewModel.information[selectedIndex].info.localized())
                     .font(.system(size: 15, weight: .regular))
                     .foregroundColor(.grayColour)
                     .multilineTextAlignment(.center)
@@ -110,7 +111,7 @@ struct IntoScreen: View {
                 }
                 .padding(.bottom, 24)
                 
-                DefaultDesign.FullScreenButton(name: selectedIndex == viewModel.information.count - 1 ? "Get Stated" : "Next") {
+                DefaultDesign.FullScreenButton(name: selectedIndex == viewModel.information.count - 1 ? "GET_STATED" : "NEXT") {
                     if selectedIndex < viewModel.information.count - 1 {
                         selectedIndex += 1
                         withAnimation(.easeInOut(duration: 0.35)) {

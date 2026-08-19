@@ -23,7 +23,7 @@ struct RotateImage: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "Image to PDF")
+                DefaultDesign.Header(name: "IMAGE_TO_PDF")
 
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: columns, spacing: 12) {
@@ -39,7 +39,7 @@ struct RotateImage: View {
                     .padding(.bottom, 16)
                 }
 
-                DefaultDesign.FullScreenButton(name: "Convert To PDF", onClick: {
+                DefaultDesign.FullScreenButton(name: "CONVERT_TO_PDF", onClick: {
                     generatePDF()
                 })
                 .disabled(viewModel.selectedAssets.isEmpty)
@@ -60,7 +60,7 @@ struct RotateImage: View {
 
     private func generatePDF() {
         isGeneratingPDF = true
-        viewModel.generateFinalPDF { url in
+        viewModel.generateFinalPDF { url, stats in
             isGeneratingPDF = false
             if url != nil {
                 Router.shared.push(.pdfCreated(url: url, images: viewModel.selectedAssets))
@@ -193,7 +193,7 @@ struct AddImagesCard: View {
                     .background(.whiteColour)
                     .cornerRadius(30)
                     
-                    Text("Add Images")
+                    Text("ADD_IMAGE".localized())
                         .font(.caption)
                         .foregroundColor(.whiteColour)
                 }

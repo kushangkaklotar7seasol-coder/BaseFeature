@@ -12,6 +12,7 @@ import Combine
 struct MovieScreen: View {
     @StateObject var viewModel = MovieViewModel()
     @State var selectedSegment: Int = 0
+    @EnvironmentObject var localization: LocalizationManager
     
     var body: some View {
         ZStack {
@@ -21,6 +22,7 @@ struct MovieScreen: View {
                     
                     CustomSegmentedControl(preselectedIndex: $selectedSegment)
                         .padding(.top, 8)
+                        .id(localization.selectedLanguage)
                     
                     if selectedSegment == 0 {
                         if let bunch = viewModel.moviesBunchUpcoming {
@@ -28,6 +30,7 @@ struct MovieScreen: View {
                                 Router.shared.push(.movieListing(movieBunch: bunch))
                             })
                             .padding(.top, 24)
+                            .id(localization.selectedLanguage)
                         }
                     } else {
                         if let bunch = viewModel.moviesBunchOnAir {
@@ -35,15 +38,17 @@ struct MovieScreen: View {
                                 Router.shared.push(.movieListing(movieBunch: bunch))
                             })
                             .padding(.top, 24)
+                            .id(localization.selectedLanguage)
                         }
                     }
                     
                     if let array = viewModel.celebrity?.results {
-                        DefaultDesign.SectionHeader(name: "Celebrity") {
+                        DefaultDesign.SectionHeader(name: "CELEBRITY") {
                             Router.shared.push(.personListing(personDetail: viewModel.celebrity))
                         }
                         .padding(.horizontal, 16)
                         .padding(.top, 24)
+                        .id(localization.selectedLanguage)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
@@ -62,7 +67,7 @@ struct MovieScreen: View {
                                 Router.shared.push(.movieListing(movieBunch: bunch))
                             })
                             .padding(.top, 24)
-                            //.id(localization.selectedLanguage)
+                            .id(localization.selectedLanguage)
                         }
                     } else {
                         if let bunch = viewModel.moviesBunchAiringToday {
@@ -70,7 +75,7 @@ struct MovieScreen: View {
                                 Router.shared.push(.movieListing(movieBunch: bunch))
                             })
                             .padding(.top, 24)
-                            //.id(localization.selectedLanguage)
+                            .id(localization.selectedLanguage)
                         }
                     }
                     
@@ -196,7 +201,7 @@ class HomeDesign {
                         Spacer()
                         
                         VStack(alignment: .leading, spacing: 12) {
-                            HStack {
+//                            HStack {
                                 HStack(spacing: 4) {
                                     Image(systemName: "star.fill")
                                         .foregroundColor(.yellow)
@@ -211,48 +216,61 @@ class HomeDesign {
                                 .background(Color.white.opacity(0.2))
                                 .clipShape(Capsule())
                                 
-                                Spacer()
+//                                Spacer()
                                 
-                                Button {
-                                    Utility.addHaptics()
-                                    if self.isLiked {
-                                        database.removeMovie(id: viewModel.topRatedMovie[selectedIndex].id)
-                                    } else {
-//                                        database.addMovie(viewModel.topRatedMovie[selectedIndex])
-                                    }
-                                } label: {
-                                    Image(isLiked ? "ic_Heart_fill" : "ic_heart")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(.white)
-                                        .frame(width: 44, height: 44)
-                                        .background(.iconBackgroundColour)
-                                        .cornerRadius(12)
-                                }
-                            }
+//                                Button {
+//                                    Utility.addHaptics()
+//                                    if self.isLiked {
+//                                        database.removeMovie(id: viewModel.topRatedMovie[selectedIndex].id)
+//                                    } else {
+////                                        database.addMovie(viewModel.topRatedMovie[selectedIndex])
+//                                    }
+//                                } label: {
+//                                    Image(isLiked ? "ic_Heart_fill" : "ic_heart")
+//                                        .font(.system(size: 18))
+//                                        .foregroundColor(.white)
+//                                        .frame(width: 44, height: 44)
+//                                        .background(.iconBackgroundColour)
+//                                        .cornerRadius(12)
+//                                }
+//                            }
                             
                             // Movie Title
-                            HStack {
+//                            HStack {
                                 Text(currentItem.title)
                                     .font(.system(size: 26, weight: .bold))
                                     .foregroundColor(.white)
-                                    .lineLimit(1)
+                                    .lineLimit(3)
                                 
-                                Spacer()
+//                                Spacer()
                                 
-                                let realCount = min(viewModel.topRatedMovie.prefix(5).count, 5)
-                                
-                                let currentPageIndex = selectedIndex % (realCount > 0 ? realCount : 1)
-                                
-                                HStack(spacing: 6) {
-                                    ForEach(0..<realCount, id: \.self) { idx in
-                                        Capsule()
-                                            .fill(idx == currentPageIndex ? .leftTorightGradient : .grayGradient)
-                                            .frame(width: idx == currentPageIndex ? 24 : 8, height: 8)
-                                    }
-                                }
-                            }
+//                                let realCount = min(viewModel.topRatedMovie.prefix(5).count, 5)
+//                                
+//                                let currentPageIndex = selectedIndex % (realCount > 0 ? realCount : 1)
+//                                
+//                                HStack(spacing: 6) {
+//                                    ForEach(0..<realCount, id: \.self) { idx in
+//                                        Capsule()
+//                                            .fill(idx == currentPageIndex ? .leftTorightGradient : .grayGradient)
+//                                            .frame(width: idx == currentPageIndex ? 24 : 8, height: 8)
+//                                    }
+//                                }
+//                            }
                         }
                         .padding(.horizontal, 16)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        let realCount = min(viewModel.topRatedMovie.prefix(5).count, 5)
+                        
+                        let currentPageIndex = selectedIndex % (realCount > 0 ? realCount : 1)
+                        
+                        HStack(spacing: 6) {
+                            ForEach(0..<realCount, id: \.self) { idx in
+                                Capsule()
+                                    .fill(idx == currentPageIndex ? .leftTorightGradient : .grayGradient)
+                                    .frame(width: idx == currentPageIndex ? 24 : 8, height: 8)
+                            }
+                        }
                         .padding(.bottom, 20)
                     }
                 }

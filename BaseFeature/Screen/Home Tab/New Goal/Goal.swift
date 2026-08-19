@@ -6,15 +6,15 @@ enum GoalCategory: String, CaseIterable, Codable {
 
     var title: String {
         switch self {
-        case .work: return "Work"
-        case .personal: return "Personal"
-        case .health: return "Health"
-        case .study: return "Study"
-        case .gym: return "Gym"
-        case .sports: return "Sports"
-        case .home: return "Home"
-        case .money: return "Money"
-        case .book: return "Book"
+        case .work: return "WORK"
+        case .personal: return "PERSONAL"
+        case .health: return "HEALTH"
+        case .study: return "STUDY"
+        case .gym: return "GYM"
+        case .sports: return "SPORTS"
+        case .home: return "HOME"
+        case .money: return "MONEY"
+        case .book: return "BOOK"
         }
     }
 
@@ -74,8 +74,8 @@ enum GoalStatus: String, CaseIterable, Codable {
 
     var title: String {
         switch self {
-        case .inProgress: return "In Progress"
-        case .done: return "Done"
+        case .inProgress: return "IN_PROGRESS".localized()
+        case .done: return "DONE".localized()
         }
     }
 }

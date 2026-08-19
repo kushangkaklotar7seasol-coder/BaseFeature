@@ -24,13 +24,13 @@ class GoalListViewModel: ObservableObject {
         switch type {
         case 1:
             self.goals = allGoals.filter { $0.status == .done }
-            self.header = "Done Goal"
+            self.header = "DONE_GOAL"
         case 2:
             self.goals = allGoals.filter { $0.status == .inProgress }
-            self.header = "In Progress"
+            self.header = "INPROGRESS_GOAL"
         default: // nil or 0 -> All Goals
             self.goals = allGoals
-            self.header = "My Goals"
+            self.header = "MY_GOALS"
         }
     }
 }
