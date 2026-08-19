@@ -11,6 +11,7 @@ struct IntoScreen: View {
     @StateObject var viewModel = IntroViewModel()
     @State var scrollPosition: Int? = 0
     @State var selectedIndex: Int = 0
+    @State private var refreshID = UUID()
     
     var body: some View {
         ZStack {
@@ -18,14 +19,45 @@ struct IntoScreen: View {
                 LazyHStack(spacing: 0) {
                     ForEach(viewModel.information.indices, id: \.self) { index in
                         let item = viewModel.information[index]
-                        
-                        Image(item.image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: screenWidth,
-                                   height: screenHeight)
-                            .clipped()
-                            .id(index)
+                        if Device.isiPadLandscape {
+                            HStack {
+                                Image(item.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: screenWidth/2, height: screenHeight)
+                                    .clipped()
+                                    .id(index)
+                                
+                                Spacer()
+                                
+                                VStack {
+                                    Text(viewModel.information[selectedIndex].name.localized())
+                                        .foregroundColor(.whiteColour)
+                                        .font(.system(size: 34, weight: .bold))
+                                    + Text(" ")
+                                    + Text("\(viewModel.information[selectedIndex].name2.localized())")
+                                        .foregroundColor(.lightPurple)
+                                        .font(.system(size: 34, weight: .bold))
+                                        
+                                    Text(viewModel.information[selectedIndex].info.localized())
+                                        .font(.system(size: 18, weight: .regular))
+                                        .foregroundColor(.grayColour)
+                                        .multilineTextAlignment(.center)
+                                        .padding(.bottom, 10)
+                                }
+                                
+                                Spacer()
+                            }
+                            .frame(width: screenWidth, height: screenHeight)
+                        } else {
+                            Image(item.image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: screenWidth,
+                                       height: screenHeight)
+                                .clipped()
+                                .id(index)
+                        }
                     }
                 }
                 .scrollTargetLayout()
@@ -60,21 +92,22 @@ struct IntoScreen: View {
                 
                 Spacer()
                 
-                Text(viewModel.information[selectedIndex].name.localized())
-                    .foregroundColor(.whiteColour)
-                    .font(.system(size: 30, weight: .bold))
-                + Text(" ")
-                + Text(" \(viewModel.information[selectedIndex].name2.localized())")
-                    .foregroundColor(.lightPurple)
-                    .font(.system(size: 30, weight: .bold))
+                if !Device.isiPadLandscape {
+                    Text(viewModel.information[selectedIndex].name.localized())
+                        .foregroundColor(.whiteColour)
+                        .font(.system(size: 30, weight: .bold))
+                    + Text(" ")
+                    + Text("\(viewModel.information[selectedIndex].name2.localized())")
+                        .foregroundColor(.lightPurple)
+                        .font(.system(size: 30, weight: .bold))
                     
-                
-                Text(viewModel.information[selectedIndex].info.localized())
-                    .font(.system(size: 15, weight: .regular))
-                    .foregroundColor(.grayColour)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 10)
-                
+                    
+                    Text(viewModel.information[selectedIndex].info.localized())
+                        .font(.system(size: 15, weight: .regular))
+                        .foregroundColor(.grayColour)
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom, 10)
+                }
 //                if  selectedIndex == viewModel.information.count - 1 {
 //                    VStack(alignment: .leading) {
 //                        HStack {
