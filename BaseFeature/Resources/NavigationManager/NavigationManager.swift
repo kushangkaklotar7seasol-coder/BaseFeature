@@ -59,8 +59,8 @@ func destination(for route: Route) -> some View {
         MyGoalScreen()
     case .newGoal:
         NewGoalScreen()
-    case .goalList:
-        GoalListScreen()
+    case .goalList(let displayType):
+        GoalListScreen(viewModel: GoalListViewModel(type: displayType))
     case .goalDetail(goal: let goal):
         GoalDetailScreen(viewModel: GoalDetailViewModel(goal: goal))
     }
@@ -91,7 +91,7 @@ enum Route: Hashable {
     case pdfCreated(url: URL?, images: [PHAsset])
     case myGoal
     case newGoal
-    case goalList
+    case goalList(displayType: Int)
     case goalDetail(goal: Goal)
 }
 

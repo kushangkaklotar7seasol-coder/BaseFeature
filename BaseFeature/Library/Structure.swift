@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct OnBordingInfo {
     let id: Int
@@ -37,4 +38,5 @@ struct StrogeInfo {
     var image: String
     var storage: String
     var percent: Double
+    var gradient: LinearGradient
 }

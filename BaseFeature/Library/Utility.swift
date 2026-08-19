@@ -65,5 +65,26 @@ class Utility {
             UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
         }
     }
+    
+    class func formattedDueText(for date: Date) -> String {
+        let calendar = Calendar.current
+ 
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "h:mm a"
+        let timeString = timeFormatter.string(from: date)
+ 
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d"
+ 
+        if calendar.isDateInToday(date) {
+            return "Due Today, \(timeString)"
+        } else if calendar.isDateInTomorrow(date) {
+            return "Due Tomorrow, \(timeString)"
+        } else if date < Date() {
+            return "Overdue, \(dateFormatter.string(from: date))"
+        } else {
+            return "Due \(dateFormatter.string(from: date)), \(timeString)"
+        }
+    }
 }
 

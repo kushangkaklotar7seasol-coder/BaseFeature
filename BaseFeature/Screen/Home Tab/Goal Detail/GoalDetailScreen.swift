@@ -21,34 +21,119 @@ struct GoalDetailScreen: View {
                     GoalCardView(goal: goal)
                 }
                 
-                VStack {
-                    HStack {
-                        Text("Status")
-                        
-                        Spacer()
-                        
-                        Menu("\(viewModel.goal?.priority.rawValue ?? "Nil")") {
-                            ForEach(GoalPriority.allCases, id: \.self) { level in
-                                Button(level.title) {
-                                    if let goal = viewModel.goal {
-                                        goalViewModel.changePriority(for: goal, to: level)
-                                        viewModel.goal?.priority = level
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        if let myGoal = viewModel.goal {
+                            HStack {
+                                Text("Status")
+                                    .font(.system(size: 16, weight: .semibold))
+                                
+                                Spacer()
+                                
+                                Menu {
+                                    ForEach(GoalStatus.allCases, id: \.self) { level in
+                                        Button(level.title) {
+                                            print(level.title)
+                                            goalViewModel.toggleStatus(for: myGoal)
+                                            viewModel.goal?.status = level
+                                        }
+                                    }
+                                } label: {
+                                    HStack(spacing: 4) {
+                                        Text(viewModel.goal?.status.title ?? "")
+                                        Image(systemName: "chevron.down")
+                                            .font(.caption)
                                     }
                                 }
-//                                .background(level.priority.badgeBackgroundColor)
+                                .padding(10)
+                                .background(.whiteColour.opacity(0.5))
+                                .cornerRadius(8)
                             }
                         }
-                        .padding(5)
-                        .background(viewModel.goal?.priority == .high ? .red : viewModel.goal?.priority == .medium ? .yellow : .green)
-                        .cornerRadius(5)
+                        
+                        Divider()
+                            .padding(.vertical)
+                        
+                        if let statedDate = viewModel.goal?.startDate {
+                            HStack {
+                                Text("Start Date")
+                                    .font(.system(size: 16, weight: .semibold))
+                                
+                                Spacer()
+                                
+                                Text(Utility.formattedDueText(for: statedDate))
+                                    .font(.subheadline)
+                                    .foregroundColor(.grayColour)
+                            }
+                        }
+                        
+                        Divider()
+                            .padding(.vertical)
+                        
+                        if let targetDate = viewModel.goal?.targetDate {
+                            HStack {
+                                Text("Start Date")
+                                    .font(.system(size: 16, weight: .semibold))
+                                
+                                Spacer()
+                                
+                                Text(Utility.formattedDueText(for: targetDate))
+                                    .font(.subheadline)
+                                    .foregroundColor(.grayColour)
+                            }
+                        }
+                        
+                        Divider()
+                            .padding(.vertical)
+                        
+                        HStack {
+                            Text("Priority")
+                                .font(.system(size: 16, weight: .semibold))
+                            
+                            Spacer()
+                            
+                            Menu {
+                                ForEach(GoalPriority.allCases, id: \.self) { level in
+                                    Button(level.title) {
+                                        if let goal = viewModel.goal {
+                                            goalViewModel.changePriority(for: goal, to: level)
+                                            viewModel.goal?.priority = level
+                                        }
+                                    }
+                                }
+                            } label: {
+                                HStack(spacing: 4) {
+                                    Text(viewModel.goal?.priority.rawValue ?? "")
+                                    Image(systemName: "chevron.down")
+                                        .font(.caption)
+                                }
+                            }
+                            .padding(10)
+                            .foregroundColor(viewModel.goal?.priority == .high ? .redColour : viewModel.goal?.priority == .medium ? .yellowColour : .greenColour)
+                            .background(viewModel.goal?.priority == .high ? .redColour.opacity(0.18) : viewModel.goal?.priority == .medium ? .yellowColour.opacity(0.18) : .greenColour.opacity(0.18))
+                            .cornerRadius(8)
+                        }
+                        
+                        if let desc = viewModel.goal?.description {
+                            Divider()
+                                .padding(.vertical)
+                            
+                            VStack(alignment: .leading) {
+                                Text("Description")
+                                    .font(.system(size: 16, weight: .semibold))
+                                
+                                Text(desc)
+                                    .foregroundColor(.grayColour)
+                                    .font(.system(size: 14, weight: .regular))
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     }
+                    .padding()
+                    .background(.whiteColour.opacity(0.08))
+                    .cornerRadius(12)
+                    .padding(.horizontal, 16)
                 }
-                .padding()
-                .background(.whiteColour.opacity(0.08))
-                .cornerRadius(12)
-                .padding(.horizontal, 16)
-                
-                Spacer()
             }
         }
         .defaultPage()

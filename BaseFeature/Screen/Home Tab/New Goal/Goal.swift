@@ -56,9 +56,9 @@ enum GoalPriority: String, CaseIterable, Codable {
     
     var badgeTextColor: Color {
         switch self {
-        case .high: return Color(red: 1, green: 0.42, blue: 0.42)
-        case .medium: return Color(red: 1, green: 0.75, blue: 0.35)
-        case .low: return Color(red: 0.45, green: 0.85, blue: 0.55)
+        case .high: return .redColour
+        case .medium: return .yellowColour
+        case .low: return .greenColour
         }
     }
  

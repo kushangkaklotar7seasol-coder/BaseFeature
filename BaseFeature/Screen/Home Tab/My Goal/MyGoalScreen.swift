@@ -23,8 +23,67 @@ struct MyGoalScreen: View {
                     keepGoing
                         .padding(.horizontal, 16)
                     
+                    HStack {
+                        Button {
+                            Router.shared.push(.goalList(displayType: 0))
+                        } label: {
+                            VStack {
+                                Text("\(viewModel.totalCount ?? 0)")
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.lightPurple)
+                                
+                                Text("Total Goals")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.grayColour)
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .background(.iconBackgroundColour)
+                            .cornerRadius(12)
+                        }
+                        
+                        Button {
+                            Router.shared.push(.goalList(displayType: 1))
+                        } label: {
+                            VStack {
+                                Text("\(viewModel.doneCount ?? 0)")
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.greenColour)
+                                
+                                Text("Completed")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.grayColour)
+                                
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .background(.iconBackgroundColour)
+                            .cornerRadius(12)
+                        }
+                        
+                        Button {
+                            Router.shared.push(.goalList(displayType: 2))
+                        } label: {
+                            VStack {
+                                Text("\(viewModel.inProgressCount ?? 0)")
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.lightPurple)
+                                
+                                Text("In Progress")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.grayColour)
+                                
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .background(.iconBackgroundColour)
+                            .cornerRadius(12)
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    
                     DefaultDesign.SectionHeader(name: "My Goals", onClick: {
-                        Router.shared.push(.goalList)
+                        Router.shared.push(.goalList(displayType: 0))
                     })
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
@@ -141,7 +200,7 @@ struct GoalCardView: View {
                     HStack(spacing: 6) {
                         Image(systemName: "calendar")
                             .font(.caption)
-                        Text(formattedDueText(for: goal.targetDate))
+                        Text(Utility.formattedDueText(for: goal.targetDate))
                             .font(.subheadline)
                     }
                     .foregroundColor(.gray)
@@ -189,26 +248,5 @@ struct GoalCardView: View {
 //                Label("Delete", systemImage: "trash")
 //            }
 //        }
-    }
- 
-    private func formattedDueText(for date: Date) -> String {
-        let calendar = Calendar.current
- 
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "h:mm a"
-        let timeString = timeFormatter.string(from: date)
- 
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d"
- 
-        if calendar.isDateInToday(date) {
-            return "Due Today, \(timeString)"
-        } else if calendar.isDateInTomorrow(date) {
-            return "Due Tomorrow, \(timeString)"
-        } else if date < Date() {
-            return "Overdue, \(dateFormatter.string(from: date))"
-        } else {
-            return "Due \(dateFormatter.string(from: date)), \(timeString)"
-        }
     }
 }

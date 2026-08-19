@@ -251,26 +251,26 @@ func storageCard(info: StrogeInfo) -> some View {
             
             Text(info.storage)
                 .font(.system(size: 12, weight: .regular))
-            
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .fill(.grayColour.opacity(0.5))
-                    .frame(height: 8)
-                    .cornerRadius(8)
-                
-                Rectangle()
-                    .fill(
-                        LinearGradient(colors: [.lightPurple, .purpleColour], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    )
-                    .frame(width: info.percent, height: 8)
-                    .cornerRadius(8)
+              
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(.grayColour.opacity(0.5))
+ 
+                    Capsule()
+                        .fill(info.gradient)
+                        .frame(width: geo.size.width * CGFloat(info.percent / 100))
+                }
             }
             .frame(height: 8)
-            .cornerRadius(8)
         }
     }
     .padding(6)
     .frame(maxWidth: .infinity, minHeight: 130)
-    .background(.whiteColour.opacity(0.08))
+    .background(.iconBackgroundColour)
     .cornerRadius(12)
+    .overlay {
+        RoundedRectangle(cornerRadius: 12)
+            .strokeBorder(.whiteColour.opacity(0.2))
+    }
 }

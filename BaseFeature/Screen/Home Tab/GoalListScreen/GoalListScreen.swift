@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct GoalListScreen: View {
-    @StateObject var viewModel = GoalListViewModel()
+    @StateObject var viewModel: GoalListViewModel
     @StateObject var goalListViewModel = GoalsListViewModel()
     
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "My Goal")
+                DefaultDesign.Header(name: viewModel.header)
                     .padding(.horizontal, 16)
                 
                 ScrollView(showsIndicators: false) {
@@ -35,5 +35,5 @@ struct GoalListScreen: View {
 }
 
 #Preview {
-    GoalListScreen()
+    GoalListScreen(viewModel: GoalListViewModel())
 }

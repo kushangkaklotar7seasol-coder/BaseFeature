@@ -6,91 +6,61 @@
 //
 
 import SwiftUI
-// MARK: - Data Model
-struct StorageItem: Identifiable {
-    let id = UUID()
-    let title: String
-    let iconName: String
-    let sizeText: String
-    let progress: Double // Value between 0.0 and 1.0
-    let gradientColors: [Color]
-}
 
 struct StorageOverviewScreen: View {
-    @State private var progress: Double = 0.77
     @StateObject var storageManager = StorageManager()
     
     var body: some View {
         
         ZStack {
             VStack {
-                
                 DefaultDesign.Header(name: "Storage Overview")
                 
                 HStack {
-                    CircularProgressView(progress: progress)
+                    CircularProgressView(progress: storageManager.usedStoragePercent)
                     
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("128 GB Total")
+                        Text("\(storageManager.totalSpace) Total")
                             .font(.system(size: 20, weight: .bold))
                             .foregroundColor(.whiteColour)
                         
-                            VStack(alignment: .leading, spacing: 3) {
-                                HStack {
-                                    DefaultDesign.GradientBullet()
-                                    
-                                    Text("Used")
-                                        .font(.system(size: 10, weight: .semibold))
-                                        .foregroundColor(.grayColour)
-                                }
+                        VStack(alignment: .leading, spacing: 3) {
+                            HStack {
+                                DefaultDesign.GradientBullet()
                                 
-                                HStack {
-                                    DefaultDesign.CustomBullet(Color: .clear)
-                                    
-                                    Text("50 GB")
-                                        .font(.system(size: 14, weight: .semibold))
-                                }
+                                Text("Used")
+                                    .font(.system(size: 10, weight: .semibold))
+                                    .foregroundColor(.grayColour)
                             }
                             
-                            VStack(alignment: .leading, spacing: 3) {
-                                HStack {
-                                    DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
-                                    
-                                    Text("Free")
-                                        .font(.system(size: 10, weight: .semibold))
-                                        .foregroundColor(.grayColour)
-                                }
+                            HStack {
+                                DefaultDesign.CustomBullet(Color: .clear)
                                 
-                                HStack {
-                                    DefaultDesign.CustomBullet(Color: .clear)
-                                    
-                                    Text("100 GB")
-                                        .font(.system(size: 14, weight: .semibold))
-                                }
+                                Text(storageManager.usedSpace)
+                                    .font(.system(size: 14, weight: .semibold))
                             }
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            HStack {
+                                DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
+                                
+                                Text("Free")
+                                    .font(.system(size: 10, weight: .semibold))
+                                    .foregroundColor(.grayColour)
+                            }
+                            
+                            HStack {
+                                DefaultDesign.CustomBullet(Color: .clear)
+                                
+                                Text(storageManager.freeSpace)
+                                    .font(.system(size: 14, weight: .semibold))
+                            }
+                        }
                     }
                 }
                 
-                ZStack {
-                    VStack(alignment: .leading, spacing: 16) {
-                        
-                        // Section Title
-                        Text("Storage Details")
-                            .font(.system(size: 22, weight: .bold))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 4)
-                        
-                        // Storage Card Container
-                        VStack(spacing: 20) {
-                            ForEach(storageManager.storageInfo, id: \.id) { info in
-                                storageRowView(item: info)
-                            }
-                        }
-                        .padding(20)
-                        .background(Color("#1A1528")) // Inner card background
-                        .cornerRadius(20)
-                    }
-                }
+                breakdownSection
                 
                 Spacer()
             }
@@ -99,65 +69,78 @@ struct StorageOverviewScreen: View {
         .defaultPage()
     }
     
-    @ViewBuilder
-        private func storageRowView(item: StrogeInfo) -> some View {
-            HStack(spacing: 16) {
-                
-                // Icon with Gradient Background
-                ZStack {
-                    RoundedRectangle(cornerRadius: 14)
-                        .fill(
-                            LinearGradient(
-                                colors: [],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
-                        .frame(width: 50, height: 50)
-                    
-                    Image(item.image)
-                        .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                }
-                
-                // Title, Size & Custom Progress Bar
-                VStack(spacing: 8) {
-                    HStack {
-                        Text(item.name)
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundColor(.white)
+    private var breakdownSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Storage Details")
+                .font(.system(size: 22, weight: .bold))
+                .foregroundColor(.white)
+                .padding(.horizontal, 4)
+ 
+            if storageManager.storageInfo.isEmpty {
+                Text("Calculating storage usage…")
+                    .font(.system(size: 13, weight: .regular))
+                    .foregroundColor(.grayColour)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.vertical, 24)
+            } else {
+                VStack(spacing: 0) {
+                    ForEach(storageManager.storageInfo.indices, id: \.self) { index in
+                        let info = storageManager.storageInfo[index]
                         
-                        Spacer()
+                        if index != 0 {
+                            Divider()
+                        }
                         
-                        Text("item.sizeText")
-                            .font(.system(size: 14, weight: .regular))
-                            .foregroundColor(Color.white.opacity(0.6))
+                        breakdownRow(info: info)
                     }
-                    
-                    // Custom Progress Bar with Gradient
-//                    GeometryReader { geometry in
-//                        ZStack(alignment: .leading) {
-//                            // Background Track
-//                            Capsule()
-//                                .fill(Color.white.opacity(0.1))
-//                                .frame(height: 4)
-//                            
-//                            // Active Progress Track
-//                            Capsule()
-//                                .fill(
-//                                    LinearGradient(
-//                                        colors: item.gradientColors,
-//                                        startPoint: .leading,
-//                                        endPoint: .trailing
-//                                    )
-//                                )
-//                                .frame(width: geometry.size.width * CGFloat(item.progress), height: 4)
-//                        }
-//                    }
-                    .frame(height: 4)
                 }
+                .background(.whiteColour.opacity(0.05))
+                .cornerRadius(14)
             }
         }
+    }
+ 
+    private func breakdownRow(info: StrogeInfo) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Image(info.image)
+                    .resizable()
+                    .frame(width: 40, height: 40)
+//                    .padding(8)
+//                    .background(.whiteColour.opacity(0.08))
+//                    .clipShape(Circle())
+ 
+                Text(info.name)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.whiteColour)
+ 
+                Spacer()
+ 
+                Text(info.storage)
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundColor(.grayColour)
+            }
+ 
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(.whiteColour.opacity(0.12))
+ 
+                    Capsule()
+                        .fill(info.gradient)
+                        .frame(width: geo.size.width * CGFloat(info.percent / 100))
+                }
+            }
+            .frame(height: 6)
+ 
+            Text(String(format: "%.1f%% of total storage", info.percent))
+                .font(.system(size: 11, weight: .regular))
+                .foregroundColor(.grayColour)
+        }
+        .padding(14)
+//        .background(.whiteColour.opacity(0.05))
+//        .cornerRadius(14)
+    }
 }
 
 #Preview {
