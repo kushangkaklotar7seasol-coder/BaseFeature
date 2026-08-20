@@ -201,3 +201,22 @@
 "SHARE_APP" = "アプリを共有";
 "PRIVECY_POLICY" = "プライバシーポリシー";
 "TERMS_USE" = "利用規約";
+
+"YOUR_FIRST_GOAL_HEADER" = "現在の目標が見つかりません";
+"YOUR_FIRST_GOAL" = "追加（+）をタップして新しい目標を作成しましょう！";
+"DELETE_GOAL" = "目標を削除しますか？";
+"DELETE_GOAL_INFO" = "本当にこの目標を削除してもよろしいですか？";
+"CANCEL" = "キャンセル";
+"DELETE" = "削除";
+"RENAME" = "名前を変更";
+"DELETE_PDF" = "PDFを削除しますか？";
+"DELETE_PDF_INFO" = "本当にこのPDFを削除してもよろしいですか？\n削除するとデバイス上で二度と表示されなくなります！";
+"RENAME_PDF" = "PDFの名前を変更";
+"ADD_PDF_NAME" = "PDF名を入力";
+"ASSIGNMENT.PDF" = "課題.pdf";
+"SAVE" = "保存";
+"NAME_NOT_EMPTY" = "名前を入力してください";
+"PDF_WITN_NAME_EXIST" = "この名前のPDFは既に存在します。";
+"NOT_ABLE_SAVE" = "保存できませんでした。";
+"GIVE_US_FULL_ACCESS" = "より快適にご利用いただくために、フルアクセスを許可してください";
+"NO_PHOTOS_FOUND" = "写真が見つかりません";

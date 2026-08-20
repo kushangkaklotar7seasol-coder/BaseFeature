@@ -12,6 +12,8 @@ struct RotateImage: View {
     @State private var showAddImagesSheet = false
     @State private var isGeneratingPDF = false
     @State private var showShareSheet = false
+    @State private var showRenameAlert = false
+    @State private var userInput = "Document_\(Int(Date().timeIntervalSince1970)).pdf"
     
     var onConvert: (([PHAsset]) -> Void)? = nil
 
@@ -40,7 +42,7 @@ struct RotateImage: View {
                 }
 
                 DefaultDesign.FullScreenButton(name: "CONVERT_TO_PDF", onClick: {
-                    generatePDF()
+                    self.showRenameAlert = true
                 })
                 .disabled(viewModel.selectedAssets.isEmpty)
             }
@@ -56,11 +58,37 @@ struct RotateImage: View {
                 viewModel.addAssets(newAssets)
             }
         }
+        .alert("ADD_PDF_NAME".localized(), isPresented: $showRenameAlert) {
+            TextField("ASSIGNMENT.PDF", text: $userInput)
+                .textInputAutocapitalization(.words)
+            
+            Button("SAVE".localized()) {
+                generatePDF(name: userInput)
+            }
+            .disabled(userInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            
+            Button("CANCEL".localized(), role: .cancel) { }
+        }
     }
 
-    private func generatePDF() {
+    private func generatePDF(name: String) {
+        var finalName = name
+        
+        if finalName.lowercased().hasSuffix(".pdf") == false {
+            finalName += ".pdf"
+        }
+        
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let destinationURL = documentsURL.appendingPathComponent(finalName)
+        
+        if FileManager.default.fileExists(atPath: destinationURL.path) {
+            Toast.shared.show(message: "PDF_WITN_NAME_EXIST".localized(), type: .error)
+            return
+        }
+        
         isGeneratingPDF = true
-        viewModel.generateFinalPDF { url, stats in
+        
+        viewModel.generateFinalPDF(fileName: finalName) { url, stats in
             isGeneratingPDF = false
             if url != nil {
                 Router.shared.push(.pdfCreated(url: url, images: viewModel.selectedAssets))

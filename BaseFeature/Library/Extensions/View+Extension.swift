@@ -17,7 +17,8 @@ extension View {
                     Image("img_background")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: screenWidth, height: screenHeight)
+//                        .frame(width: screenWidth, height: screenHeight)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .clipped()
                         .edgesIgnoringSafeArea(.all)
                     
@@ -35,8 +36,10 @@ extension View {
             .foregroundColor(.whiteColour)
     }
     
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    func hideKeyboardOnTap() -> some View {
+        self.onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
     
     func shimmer() -> some View {

@@ -43,12 +43,15 @@ struct NewGoalScreen: View {
                     .padding(.top, 8)
                     .padding(.bottom, 16)
                 }
+                .scrollDismissesKeyboard(.immediately)
             }
         }
+        .contentShape(Rectangle())
         .defaultPage()
         .alert(viewModel.validationMessage, isPresented: $viewModel.showValidationError) {
             Button("OK", role: .cancel) {}
         }
+        .hideKeyboardOnTap()
     }
 
     // MARK: - Choose Category
@@ -235,7 +238,7 @@ struct DateBox: View {
         }
         .sheet(isPresented: $showPicker) {
             VStack {
-                DatePicker("", selection: $date, displayedComponents: .date)
+                DatePicker("", selection: $date, in: Date()..., displayedComponents: .date)
                     .datePickerStyle(.graphical)
                     .padding()
 

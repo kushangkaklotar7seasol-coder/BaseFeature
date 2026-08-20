@@ -201,3 +201,22 @@
 "SHARE_APP" = "Partilhar aplicação";
 "PRIVECY_POLICY" = "Política de Privacidade";
 "TERMS_USE" = "Termos e Condições";
+
+"YOUR_FIRST_GOAL_HEADER" = "Nenhuma meta atual encontrada";
+"YOUR_FIRST_GOAL" = "Clique em adicionar (+) para criar sua nova meta!";
+"DELETE_GOAL" = "Excluir meta?";
+"DELETE_GOAL_INFO" = "Tem certeza de que deseja excluir esta meta?";
+"CANCEL" = "Cancelar";
+"DELETE" = "Excluir";
+"RENAME" = "Renomear";
+"DELETE_PDF" = "Excluir PDF?";
+"DELETE_PDF_INFO" = "Tem certeza de que deseja excluir este PDF?\nVocê não o verá novamente no seu dispositivo!";
+"RENAME_PDF" = "Renomear PDF";
+"ADD_PDF_NAME" = "Adicionar nome do PDF";
+"ASSIGNMENT.PDF" = "Trabalho.pdf";
+"SAVE" = "Salvar";
+"NAME_NOT_EMPTY" = "O nome não pode ficar em branco";
+"PDF_WITN_NAME_EXIST" = "Já existe um PDF com este nome.";
+"NOT_ABLE_SAVE" = "Não foi possível salvar.";
+"GIVE_US_FULL_ACCESS" = "Para uma melhor experiência, nos dê acesso total";
+"NO_PHOTOS_FOUND" = "Nenhuma foto encontrada";

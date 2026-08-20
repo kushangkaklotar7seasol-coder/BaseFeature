@@ -201,3 +201,22 @@
 "SHARE_APP" = "Del appen";
 "PRIVECY_POLICY" = "Privatlivspolitik";
 "TERMS_USE" = "Vilkår";
+
+"YOUR_FIRST_GOAL_HEADER" = "Intet aktuelt mål fundet";
+"YOUR_FIRST_GOAL" = "Klik på tilføj (+) for at oprette dit nye mål!";
+"DELETE_GOAL" = "Slet mål?";
+"DELETE_GOAL_INFO" = "Er du sikker på, at du vil slette dette mål?";
+"CANCEL" = "Annuller";
+"DELETE" = "Slet";
+"RENAME" = "Omdøb";
+"DELETE_PDF" = "Slet PDF?";
+"DELETE_PDF_INFO" = "Er du sikker på, at du vil slette denne PDF?\nDu vil ikke kunne se denne PDF på din enhed igen!";
+"RENAME_PDF" = "Omdøb PDF";
+"ADD_PDF_NAME" = "Tilføj PDF-navn";
+"ASSIGNMENT.PDF" = "Opgave.pdf";
+"SAVE" = "Gem";
+"NAME_NOT_EMPTY" = "Navnet må ikke være tomt";
+"PDF_WITN_NAME_EXIST" = "Der findes allerede en PDF med dette navn.";
+"NOT_ABLE_SAVE" = "Kunne ikke gemme.";
+"GIVE_US_FULL_ACCESS" = "Giv os fuld adgang for en bedre oplevelse";
+"NO_PHOTOS_FOUND" = "Ingen fotos fundet";

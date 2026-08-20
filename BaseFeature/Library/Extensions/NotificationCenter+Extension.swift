@@ -8,6 +8,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let didReceiveData = Notification.Name("LOCATION_PERMISSION")
-    
+    static let imagesArranged = Notification.Name("imagesArranged")
 }

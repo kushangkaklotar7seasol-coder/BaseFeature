@@ -201,3 +201,22 @@
 "SHARE_APP" = "Partager l'application";
 "PRIVECY_POLICY" = "Politique de confidentialité";
 "TERMS_USE" = "Conditions d'utilisation";
+
+"YOUR_FIRST_GOAL_HEADER" = "Aucun objectif actuel trouvé";
+"YOUR_FIRST_GOAL" = "Cliquez sur ajouter (+) pour créer votre nouveau projet !";
+"DELETE_GOAL" = "Supprimer l'objectif ?";
+"DELETE_GOAL_INFO" = "Voulez-vous vraiment supprimer cet objectif ?";
+"CANCEL" = "Annuler";
+"DELETE" = "Supprimer";
+"RENAME" = "Renommer";
+"DELETE_PDF" = "Supprimer le PDF ?";
+"DELETE_PDF_INFO" = "Voulez-vous vraiment supprimer ce PDF ?\nVous ne pourrez plus le voir sur votre appareil !";
+"RENAME_PDF" = "Renommer le PDF";
+"ADD_PDF_NAME" = "Ajouter un nom au PDF";
+"ASSIGNMENT.PDF" = "Devoir.pdf";
+"SAVE" = "Enregistrer";
+"NAME_NOT_EMPTY" = "Le nom ne doit pas être vide";
+"PDF_WITN_NAME_EXIST" = "Un PDF portant ce nom existe déjà.";
+"NOT_ABLE_SAVE" = "Impossible d'enregistrer.";
+"GIVE_US_FULL_ACCESS" = "Pour une meilleure expérience, donnez-nous un accès complet";
+"NO_PHOTOS_FOUND" = "Aucune photo trouvée";

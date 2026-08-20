@@ -13,7 +13,9 @@ struct RectntPDFScreen: View {
             VStack {
                 DefaultDesign.Header(name: "RECENT_FILE")
                 
-                AllPDFView()
+                AllPDFView(isShowHeader: false, lastPDFDeleted: {
+                    Router.shared.pop()
+                })
             }
             .padding(.horizontal, 16)
         }

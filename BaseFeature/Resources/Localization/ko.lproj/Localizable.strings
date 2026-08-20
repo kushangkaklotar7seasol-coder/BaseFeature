@@ -201,3 +201,22 @@
 "SHARE_APP" = "앱 공유하기";
 "PRIVECY_POLICY" = "개인정보 처리방침";
 "TERMS_USE" = "이용약관";
+
+"YOUR_FIRST_GOAL_HEADER" = "현재 목표를 찾을 수 없습니다";
+"YOUR_FIRST_GOAL" = "추가(+)를 눌러 새 목표를 만들어 보세요!";
+"DELETE_GOAL" = "목표를 삭제하시겠습니까?";
+"DELETE_GOAL_INFO" = "이 목표를 삭제하시겠습니까?";
+"CANCEL" = "취소";
+"DELETE" = "삭제";
+"RENAME" = "이름 변경";
+"DELETE_PDF" = "PDF를 삭제하시겠습니까?";
+"DELETE_PDF_INFO" = "이 PDF를 삭제하시겠습니까?\n삭제하면 기기에서 이 PDF를 다시 볼 수 없습니다!";
+"RENAME_PDF" = "PDF 이름 변경";
+"ADD_PDF_NAME" = "PDF 이름 입력";
+"ASSIGNMENT.PDF" = "과제.pdf";
+"SAVE" = "저장";
+"NAME_NOT_EMPTY" = "이름은 비워둘 수 없습니다";
+"PDF_WITN_NAME_EXIST" = "이 이름의 PDF가 이미 존재합니다.";
+"NOT_ABLE_SAVE" = "저장할 수 없습니다.";
+"GIVE_US_FULL_ACCESS" = "더 나은 환경을 위해 전체 접근 권한을 허용해 주세요";
+"NO_PHOTOS_FOUND" = "사진을 찾을 수 없습니다";

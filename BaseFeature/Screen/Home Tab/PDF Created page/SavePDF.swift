@@ -12,7 +12,8 @@ func savePDFToDocuments(from tempURL: URL, fileName: String = "Document.pdf") ->
     do {
         // Overwrite if a file with the same name already exists
         if FileManager.default.fileExists(atPath: destinationURL.path) {
-            try FileManager.default.removeItem(at: destinationURL)
+//            try FileManager.default.removeItem(at: destinationURL)
+            return nil
         }
         try FileManager.default.copyItem(at: tempURL, to: destinationURL)
         return destinationURL

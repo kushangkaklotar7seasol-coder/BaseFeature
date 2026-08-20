@@ -157,17 +157,17 @@ struct SearchScreen: View {
             isTextFieldFocused = false
         }
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
-                    if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-                        withAnimation(.easeOut(duration: 0.25)) {
-                            viewModel.keyboardHeight = keyboardFrame.height
-                        }
-                    }
+            if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    viewModel.keyboardHeight = keyboardFrame.height
                 }
-                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-                    withAnimation(.easeOut(duration: 0.25)) {
-                        viewModel.keyboardHeight = 0
-                    }
-                }
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+            withAnimation(.easeOut(duration: 0.25)) {
+                viewModel.keyboardHeight = 0
+            }
+        }
     }
     
     func loadMoreIfNeeded(currentItem: Int) {

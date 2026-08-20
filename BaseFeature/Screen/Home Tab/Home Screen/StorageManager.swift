@@ -116,17 +116,26 @@ class StorageManager: ObservableObject {
                      let precent = Double(totalPhotosBytes) / Double(self.usedSize) * 100
                      self.storageInfo.append(StrogeInfo(id: 0, name: "PHOTO", image: "ic_photo", storage: photosSize, percent: precent,
                                                         gradient: LinearGradient(colors: [.lightPurple, .purpleColour], startPoint: .topLeading, endPoint: .bottomTrailing)))
+                 } else {
+                     self.storageInfo.append(StrogeInfo(id: 0, name: "PHOTO", image: "ic_photo", storage: "0 KB", percent: 0,
+                                                        gradient: LinearGradient(colors: [.lightPurple, .purpleColour], startPoint: .topLeading, endPoint: .bottomTrailing)))
                  }
                  
                  if totalVideosBytes > 0 {
                      let precent = Double(totalVideosBytes) / Double(self.usedSize) * 100
                      self.storageInfo.append(StrogeInfo(id: 1, name: "VIDEO", image: "ic_video", storage: videosSize, percent: precent,
                                                         gradient: LinearGradient(colors: [.lightBabyPinkColour, .darkBabyPinkColour], startPoint: .topLeading, endPoint: .bottomTrailing)))
+                 } else {
+                     self.storageInfo.append(StrogeInfo(id: 1, name: "VIDEO", image: "ic_video", storage: "0 KB", percent: 0,
+                                                        gradient: LinearGradient(colors: [.lightBabyPinkColour, .darkBabyPinkColour], startPoint: .topLeading, endPoint: .bottomTrailing)))
                  }
                  
                  if other > 0 {
                      let precent = Double(other) / Double(self.usedSize) * 100
                      self.storageInfo.append(StrogeInfo(id: 2, name: "OTHER", image: "ic_documents", storage: otherSize, percent: precent,
+                                                        gradient: LinearGradient(colors: [.lightYellowColour, .orangeColour], startPoint: .topLeading, endPoint: .bottomTrailing)))
+                 } else {
+                     self.storageInfo.append(StrogeInfo(id: 2, name: "OTHER", image: "ic_documents", storage: "0 KB", percent: 0,
                                                         gradient: LinearGradient(colors: [.lightYellowColour, .orangeColour], startPoint: .topLeading, endPoint: .bottomTrailing)))
                  }
              }

@@ -14,7 +14,10 @@ struct SelectImageScreen: View {
     @State private var generatedPDFURL: URL?
     @State private var isGeneratingPDF = false
     @State private var showShareSheet = false
- 
+    var onComplete: (([PHAsset]) -> Void)?
+    @State var isShowPhotoPicker: Bool = false
+    @State var selectedItems: [PhotosPickerItem] = []     // ← Array banao (multiple)
+    
     private let columns = [
         GridItem(.flexible(), spacing: 4),
         GridItem(.flexible(), spacing: 4),
@@ -26,7 +29,12 @@ struct SelectImageScreen: View {
             VStack(spacing: 0) {
                 DefaultDesign.Header(name: "IMAGE_TO_PDF")
                     .padding(.horizontal, 16)
- 
+                
+                if photoManager.accessState == .limited {
+                    limitedAccessView
+                        .padding(.horizontal, 16)
+                }
+                
                 content
             }
  
@@ -43,8 +51,102 @@ struct SelectImageScreen: View {
                 ShareSheet(activityItems: [url])
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .imagesArranged)) { notification in
+            if let arrangedImages = notification.object as? [PHAsset] {
+                photoManager.selectedAssets = []
+                photoManager.selectedAssets = arrangedImages
+            }
+        }
+//        .sheet(isPresented: $isShowPhotoPicker) {
+//            PhotoPickerView { newAssets in
+//                photoManager.selectedAssets.append(contentsOf: newAssets)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+//                    Router.shared.push(.arrangeImage(images: photoManager.selectedAssets))
+//                }
+//            }
+//        }
+        .photosPicker(
+            isPresented: $isShowPhotoPicker,
+            selection: $selectedItems,          // Array binding
+            maxSelectionCount: 0,                         // 0 = unlimited
+            matching: .images,
+            photoLibrary: .shared()
+        )
+        .onChange(of: selectedItems) { oldValue, newItems in
+            guard !newItems.isEmpty else { return }
+            
+            self.convertToPHAssets(items: newItems)
+        }
+        
     }
- 
+    
+    private var limitedAccessView: some View {
+        HStack(spacing: 16) {
+            Text("GIVE_US_FULL_ACCESS".localized())
+                .font(.system(size: 14, weight: .semibold))
+                .font(.headline)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+            
+            Spacer()
+            
+            Button {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                Text("OPEN_SETTING".localized())
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 10)
+                    .background(Color.purple)
+                    .cornerRadius(8)
+            }
+        }
+        .frame(maxWidth: .infinity)
+    }
+    
+    func getPHAssets(
+        from items: [PhotosPickerItem],
+        completion: (([PHAsset]) -> Void)?
+    ) {
+        let identifiers = items.compactMap { $0.itemIdentifier }
+
+        print("PhotosPickerItem count:", items.count)
+        print("Identifiers:", identifiers)
+
+        guard !identifiers.isEmpty else {
+            completion?([])
+            return
+        }
+
+        let result = PHAsset.fetchAssets(
+            withLocalIdentifiers: identifiers,
+            options: nil
+        )
+
+        print("PHAsset count:", result.count)
+
+        var assets: [PHAsset] = []
+
+        result.enumerateObjects { asset, _, _ in
+            print("FOUND:", asset.localIdentifier)
+            assets.append(asset)
+        }
+
+        completion?(assets)
+    }
+    
+    func convertToPHAssets(items: [PhotosPickerItem]) {
+        guard !items.isEmpty else { return }
+        
+        self.getPHAssets(from: items, completion: { photos in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                Router.shared.push(.arrangeImage(images: photos))
+            }
+        })
+    }
+    
     // MARK: - Content depending on access state
     @ViewBuilder
     private var content: some View {
@@ -127,46 +229,61 @@ struct SelectImageScreen: View {
                 let columnsCount: CGFloat = 3
                 let itemSize = (screenWidth - (horizontalPadding * 2) - (cellSpacing * (columnsCount - 1))) / columnsCount
  
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 16) {
-                        ForEach(photoManager.groupedAssets) { group in
-                            VStack(alignment: .leading, spacing: 8) {
-                                HStack {
-                                    Text(formattedDate(group.date))
-                                        .font(.subheadline.bold())
-                                        .foregroundColor(.white)
- 
-                                    Spacer()
- 
-                                    // Select all now applies to THIS date's photos only
-                                    Button(photoManager.isAllSelected(in: group) ? "DISSELECT_ALL".localized() : "SELECT_ALL".localized()) {
-                                        photoManager.toggleSelectAll(for: group)
+                if !photoManager.groupedAssets.isEmpty {
+                    
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: 16) {
+                            ForEach(photoManager.groupedAssets) { group in
+                                VStack(alignment: .leading, spacing: 8) {
+                                    HStack {
+                                        Text(formattedDate(group.date))
+                                            .font(.subheadline.bold())
+                                            .foregroundColor(.white)
+                                        
+                                        Spacer()
+                                        
+                                        // Select all now applies to THIS date's photos only
+                                        Button(photoManager.isAllSelected(in: group) ? "DISSELECT_ALL".localized() : "SELECT_ALL".localized()) {
+                                            photoManager.toggleSelectAll(for: group)
+                                        }
+                                        .font(.footnote.bold())
+                                        .foregroundColor(.lightPurple)
                                     }
-                                    .font(.footnote.bold())
-                                    .foregroundColor(.lightPurple)
-                                }
-                                .padding(.horizontal, 16)
- 
-                                LazyVGrid(columns: columns, spacing: cellSpacing) {
-                                    ForEach(group.assets, id: \.localIdentifier) { asset in
-                                        PhotoThumbnailView(
-                                            asset: asset,
-                                            itemSize: itemSize,
-                                            isSelected: photoManager.isSelected(asset),
-                                            photoManager: photoManager
-                                        )
-                                        .id(asset.localIdentifier)
-                                        .contentShape(Rectangle())
-                                        .onTapGesture {
-                                            photoManager.toggleSelection(asset)
+                                    .padding(.horizontal, 16)
+                                    
+                                    LazyVGrid(columns: columns, spacing: cellSpacing) {
+                                        ForEach(group.assets, id: \.localIdentifier) { asset in
+                                            PhotoThumbnailView(
+                                                asset: asset,
+                                                itemSize: itemSize,
+                                                isSelected: photoManager.isSelected(asset),
+                                                photoManager: photoManager
+                                            )
+                                            .id(asset.localIdentifier)
+                                            .contentShape(Rectangle())
+                                            .onTapGesture {
+                                                photoManager.toggleSelection(asset)
+                                            }
                                         }
                                     }
+                                    .padding(.horizontal, 16)
                                 }
-                                .padding(.horizontal, 16)
                             }
                         }
+                        .padding(.bottom, 140)
                     }
-                    .padding(.bottom, 140)
+                } else {
+                    Spacer()
+                    
+                    Image("ic_no_favourite")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100, alignment: .center)
+                    
+                    Text("NO_PHOTOS_FOUND".localized())
+                        .padding(.top, 15)
+                    
+                    Spacer()
                 }
             }
  

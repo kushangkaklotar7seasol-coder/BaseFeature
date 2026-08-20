@@ -31,6 +31,10 @@ class ArrangePageViewModel: ObservableObject {
 
     func remove(_ asset: PHAsset) {
         selectedAssets.removeAll { $0 == asset }
+        if selectedAssets.count <= 0 {
+            NotificationCenter.default.post(name: .imagesArranged, object: [])
+            Router.shared.pop()
+        }
     }
 
     func toggleRemoveMode() {

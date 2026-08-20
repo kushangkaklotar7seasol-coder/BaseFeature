@@ -40,22 +40,43 @@ struct ArrangePageScreen: View {
     // MARK: - Header: "Next" normally, becomes "Done" while in remove mode
     private var header: some View {
         ZStack {
-            DefaultDesign.Header(name: "ARRANGE_PAGE")
-
             HStack {
-                Spacer()
-                Button(viewModel.isRemoveMode ? "DONE".localized() : "NEXT".localized()) {
-                    if viewModel.isRemoveMode {
-                        viewModel.isRemoveMode = false
-                    } else {
-                        onNext?(viewModel.selectedAssets)
-                        Router.shared.push(.rotateImage(images: viewModel.selectedAssets))
+                HStack {
+                    Button {
+                        NotificationCenter.default.post(name: .imagesArranged, object: viewModel.selectedAssets)
+                        Router.shared.pop()
+                    } label: {
+                        Image("ic_back")
+                            .resizable()
+                            .frame(width: 32, height: 32, alignment: .center)
                     }
+                    Spacer()
                 }
-                .font(.subheadline.bold())
-                .foregroundColor(.purple)
-                .padding(.trailing, 16)
-                .disabled(!viewModel.isRemoveMode && viewModel.selectedAssets.isEmpty)
+                .frame(width: 55)
+                
+                Spacer()
+                
+                Text("ARRANGE_PAGE".localized())
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.whiteColour)
+                
+                Spacer()
+                
+                ZStack {
+                    Button(viewModel.isRemoveMode ? "DONE".localized() : "NEXT".localized()) {
+                        if viewModel.isRemoveMode {
+                            viewModel.isRemoveMode = false
+                        } else {
+                            onNext?(viewModel.selectedAssets)
+                            Router.shared.push(.rotateImage(images: viewModel.selectedAssets))
+                        }
+                    }
+                    .font(.subheadline.bold())
+                    .foregroundColor(.purple)
+                    .padding(.trailing, 16)
+                    .disabled(!viewModel.isRemoveMode && viewModel.selectedAssets.isEmpty)
+                }
+                .frame(width: 55, height: 30, alignment: .center)
             }
         }
     }
@@ -76,13 +97,9 @@ struct ArrangePageScreen: View {
 
     // MARK: - Reorderable / removable list
     private var list: some View {
-        // onDelete is only attached while in remove mode, so the system red minus
-        // control (leading edge) only shows up then. onMove stays attached always,
-        // so the drag handle (trailing edge) is always available, matching the reference UI.
-        let deleteAction: ((IndexSet) -> Void)? = viewModel.isRemoveMode
-            ? { offsets in viewModel.remove(at: offsets) }
-            : nil
-
+        // In remove mode, each row shows its own minus icon that deletes on a
+        // single tap — no system swipe/confirm step. Reordering (drag handle)
+        // still works in both modes.
         return List {
             ForEach(Array(viewModel.selectedAssets.enumerated()), id: \.element.localIdentifier) { index, asset in
                 ArrangePageRow(
@@ -101,12 +118,17 @@ struct ArrangePageScreen: View {
                 .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
             }
             .onMove(perform: viewModel.move)
-            .onDelete(perform: deleteAction)
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
         .environment(\.editMode, .constant(.active))
         .padding(.top)
+        .onChange(of: viewModel.selectedAssets.count) { newCount in
+            // All images removed -> go back automatically
+            if newCount == 0 {
+                Router.shared.pop()
+            }
+        }
     }
 
     private var rowBackground: some View {
@@ -183,7 +205,16 @@ struct ArrangePageRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            if !isRemoveMode {
+            if isRemoveMode {
+                Button {
+                    viewModel.remove(asset)
+                } label: {
+                    Image(systemName: "minus.circle.fill")
+                        .font(.system(size: 22))
+                        .foregroundColor(.red)
+                }
+                .buttonStyle(.plain)
+            } else {
                 Text("\(index + 1)")
                     .foregroundColor(.whiteColour)
                     .font(.system(size: 18, weight: .regular))

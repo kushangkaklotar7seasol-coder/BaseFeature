@@ -68,7 +68,6 @@
 "COMPLETED" = "Completed";
 "IN_PROGRESS" = "In Progress";
 "MY_GOALS" = "My Goals";
-"YOUR_FIRST_GOAL" = "Set Your First Goal";
 "KEEP_GOING" = "Keep going";
 "YOU_MAKING_GREAT_PROGRESS" = "You are making great progress";
 "SEE_ALL" = "See All";
@@ -202,3 +201,22 @@
 "SHARE_APP" = "Share App";
 "PRIVECY_POLICY" = "Privacy Policy";
 "TERMS_USE" = "Terms";
+
+"YOUR_FIRST_GOAL_HEADER" = "No Current goal found";
+"YOUR_FIRST_GOAL" = "Click add(+) to create your new goal!";
+"DELETE_GOAL" = "Delete Goal?";
+"DELETE_GOAL_INFO" = "Are you sure you wants to delete this goal?";
+"CANCEL" = "Cancel";
+"DELETE" = "Delete";
+"RENAME" = "Rename";
+"DELETE_PDF" = "Delete PDF?";
+"DELETE_PDF_INFO" = "Are you sure you wants to delete this PDF?\nYou will not visible this pdf again in your device!";
+"RENAME_PDF" = "Rename PDF";
+"ADD_PDF_NAME" = "Add PDF Name";
+"ASSIGNMENT.PDF" = "Assignment.pdf";
+"SAVE" = "Save";
+"NAME_NOT_EMPTY" = "Name not should be empty";
+"PDF_WITN_NAME_EXIST" = "A PDF with this name already exists.";
+"NOT_ABLE_SAVE" = "Not able to save.";
+"GIVE_US_FULL_ACCESS" = "For better experience give us fill access";
+"NO_PHOTOS_FOUND" = "No Photos Found";

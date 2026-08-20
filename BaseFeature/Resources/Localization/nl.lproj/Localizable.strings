@@ -201,3 +201,22 @@
 "SHARE_APP" = "Deel app";
 "PRIVECY_POLICY" = "Privacybeleid";
 "TERMS_USE" = "Voorwaarden";
+
+"YOUR_FIRST_GOAL_HEADER" = "Geen huidig doel gevonden";
+"YOUR_FIRST_GOAL" = "Klik op toevoegen (+) om je nieuwe doel aan te maken!";
+"DELETE_GOAL" = "Doel verwijderen?";
+"DELETE_GOAL_INFO" = "Weet je zeker dat je dit doel wilt verwijderen?";
+"CANCEL" = "Annuleren";
+"DELETE" = "Verwijderen";
+"RENAME" = "Naam wijzigen";
+"DELETE_PDF" = "PDF verwijderen?";
+"DELETE_PDF_INFO" = "Weet je zeker dat je deze PDF wilt verwijderen?\nJe zult deze PDF niet meer op je apparaat zien!";
+"RENAME_PDF" = "PDF-naam wijzigen";
+"ADD_PDF_NAME" = "PDF-naam toevoegen";
+"ASSIGNMENT.PDF" = "Opdracht.pdf";
+"SAVE" = "Opslaan";
+"NAME_NOT_EMPTY" = "Naam mag niet leeg zijn";
+"PDF_WITN_NAME_EXIST" = "Er bestaat al een PDF met deze naam.";
+"NOT_ABLE_SAVE" = "Kan niet opslaan.";
+"GIVE_US_FULL_ACCESS" = "Geef ons volledige toegang voor een betere ervaring";
+"NO_PHOTOS_FOUND" = "Geen foto's gevonden";

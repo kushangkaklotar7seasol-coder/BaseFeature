@@ -98,7 +98,7 @@ class CalculatorViewModel: ObservableObject {
     }
 
     private func deleteLast() {
-        guard isTypingNumber, !displayValue.isEmpty, displayValue != "Error" else { return }
+        guard !displayValue.isEmpty, displayValue != "Error" else { return }//isTypingNumber,
         displayValue.removeLast()
         if displayValue.isEmpty || displayValue == "-" {
             displayValue = "0"

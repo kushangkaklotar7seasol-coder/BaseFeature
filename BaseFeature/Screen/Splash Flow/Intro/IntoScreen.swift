@@ -40,7 +40,7 @@ struct IntoScreen: View {
                                         .font(.system(size: 34, weight: .bold))
                                         
                                     Text(viewModel.information[selectedIndex].info.localized())
-                                        .font(.system(size: 18, weight: .regular))
+                                        .font(.system(size: 20, weight: .regular))
                                         .foregroundColor(.grayColour)
                                         .multilineTextAlignment(.center)
                                         .padding(.bottom, 10)
@@ -66,6 +66,7 @@ struct IntoScreen: View {
             .scrollTargetBehavior(.paging)
             .scrollPosition(id: $scrollPosition)
             .ignoresSafeArea()
+            .id(refreshID)
             .onChange(of: scrollPosition) { _, newValue in
                 if let newValue {
                     selectedIndex = newValue
@@ -108,31 +109,6 @@ struct IntoScreen: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 10)
                 }
-//                if  selectedIndex == viewModel.information.count - 1 {
-//                    VStack(alignment: .leading) {
-//                        HStack {
-//                            Image("ic_info_empty")
-//                                .resizable()
-//                                .frame(width: 24, height: 24)
-//                            
-//                            Text("Strings.goodToKnow")
-//                                .font(.system(size: 18, weight: .medium))
-//                        }
-//                        
-//                        Text("Strings.goodToKnowInfo")
-//                            .font(.system(size: 14))
-//                            .foregroundColor(.grayColour)
-//                    }
-//                    .padding(20)
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .cornerRadius(24)
-//                    .overlay {
-//                        RoundedRectangle(cornerRadius: 24)
-//                            .strokeBorder(.whiteColour.opacity(0.2))
-//                    }
-//                    .padding(.bottom, 10)
-//                    .padding(.top, 10)
-//                }
                 
                 HStack(spacing: 8) {
                     ForEach(viewModel.information.indices, id: \.self) { index in
@@ -158,10 +134,13 @@ struct IntoScreen: View {
                 .padding(.bottom,40)
             }
             .padding(.horizontal,16)
+            .id(refreshID)
         }
         .defaultPage()
         .background(.blackColour)
-
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
 }
 

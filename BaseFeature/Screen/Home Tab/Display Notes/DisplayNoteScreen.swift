@@ -20,8 +20,12 @@ struct DisplayNoteScreen: View {
                         VStack(alignment: .leading) {
                             HStack {
                                 if let name = viewModel.notes?.name, name != "" {
-                                    Text(name)
-                                        .font(.system(size: 18, weight: .bold))
+//                                    Text(name)
+//                                        .font(.system(size: 18, weight: .bold))
+                                    
+                                    SelectableText(text: name, font: .systemFont(ofSize: 18, weight: .bold))
+                                        .fixedSize(horizontal: false, vertical: true)
+                                    
                                 } else {
                                     Text("NO_TITLE".localized())
                                         .font(.system(size: 18, weight: .bold))
@@ -84,9 +88,13 @@ struct DisplayNoteScreen: View {
                             }
                             
                             if let note = viewModel.notes?.notes {
-                                Text(note)
-                                    .font(.system(size: 12, weight: .regular))
+//                                Text(note)
+//                                    .font(.system(size: 12, weight: .regular))
+//                                    .padding(.top, 1)
+                                
+                                SelectableText(text: note, font: .systemFont(ofSize: 12, weight: .regular))
                                     .padding(.top, 1)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                         }
 
@@ -192,4 +200,32 @@ struct DisplayNoteScreen: View {
 
 #Preview {
     DisplayNoteScreen(viewModel: DisplayNotesViewModel())
+}
+
+struct SelectableText: UIViewRepresentable {
+    let text: String
+    let font: UIFont
+    
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        textView.text = text
+        textView.font = font
+        textView.isEditable = false
+        textView.isSelectable = true
+        textView.backgroundColor = .clear
+        textView.textContainerInset = .zero
+        textView.textContainer.lineFragmentPadding = 0
+        textView.isScrollEnabled = false
+        
+        // Layout fix
+        textView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        textView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        
+        return textView
+    }
+    
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+        uiView.font = font
+    }
 }

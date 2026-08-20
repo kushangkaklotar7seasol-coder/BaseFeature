@@ -14,11 +14,66 @@ struct GoalDetailScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                DefaultDesign.Header(name: "GOAL_DETAILS")
-                    .padding(.horizontal, 16)
+                DefaultDesign.Header(name: "GOAL_DETAILS", showBackbutton: true, secondButton: "DELETE", secondbuttonForegroundColour: .redColour, onSecondButtonClick: {
+                    AlertManager.shared.show(
+                        title: "DELETE_GOAL".localized(),
+                        message: "DELETE_GOAL_INFO".localized(),
+                        buttons: [
+                            AlertButtonModel(title: "CANCEL".localized(), role: .cancel),
+                            AlertButtonModel(title: "DELETE".localized(), role: .destructive) {
+                                if let goal = viewModel.goal {
+                                    goalViewModel.deleteGoal(goal)
+                                    Router.shared.pop()
+                                }
+                            }
+                        ]
+                    )
+                })
+                .padding(.horizontal, 16)
                 
                 if let goal = viewModel.goal {
-                    GoalCardView(goal: goal)
+                    VStack(alignment: .leading, spacing: 16) {
+                        HStack(alignment: .top, spacing: 12) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 14)
+                                    .fill(goal.category.color)
+                                    .frame(width: 52, height: 52)
+                                
+                                Image(goal.category.icon)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(goal.title)
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .lineLimit(1)
+                                
+                                HStack(spacing: 6) {
+                                    Image(systemName: "calendar")
+                                        .font(.caption)
+                                    Text(Utility.formattedDueText(for: goal.targetDate))
+                                        .font(.subheadline)
+                                }
+                                .foregroundColor(.gray)
+                                
+                                Text(goal.priority.title)
+                                    .font(.caption.bold())
+                                    .foregroundColor(goal.priority.badgeTextColor)
+                                    .padding(.horizontal, 14)
+                                    .padding(.vertical, 6)
+                                    .background(goal.priority.badgeBackgroundColor)
+                                    .cornerRadius(20)
+                            }
+                            
+                            Spacer()
+                        }
+                        .padding(14)
+                    }
+                    .background(Color.white.opacity(0.08))
+                    .cornerRadius(12)
+                    .padding(.horizontal, 16)
                 }
                 
                 ScrollView(showsIndicators: false) {

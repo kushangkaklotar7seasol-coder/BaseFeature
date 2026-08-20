@@ -12,6 +12,7 @@ struct HomeScreen: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var storageManager = StorageManager()
     @EnvironmentObject var localization: LocalizationManager
+    @State private var refreshID = UUID()
     
     var columns: [GridItem] {
         let count = Device.isIpad ? 4 : 2
@@ -70,6 +71,8 @@ struct HomeScreen: View {
                             HStack(spacing: 10) {
                                 VStack {
                                     CircularProgressView(progress: storageManager.usedStoragePercent)
+                                        .frame(maxWidth: Device.isiPadLandscape ? screenWidth/3 : .infinity)
+                                        .id(refreshID)
                                         .overlay {
                                             VStack {
                                                 Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
@@ -88,7 +91,7 @@ struct HomeScreen: View {
                                                 DefaultDesign.GradientBullet()
                                                 
                                                 Text("USED".localized())
-                                                    .font(.system(size: 10, weight: .semibold))
+                                                    .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
                                                     .foregroundColor(.grayColour)
                                             }
                                             
@@ -96,18 +99,19 @@ struct HomeScreen: View {
                                                 DefaultDesign.CustomBullet(Color: .clear)
                                                 
                                                 Text(storageManager.usedSpace)
-                                                    .font(.system(size: 12, weight: .semibold))
+                                                    .font(.system(size: Device.isIpad ? 24 : 12, weight: .semibold))
                                             }
                                         }
                                         
                                         Spacer()
+                                            .frame(maxWidth: Device.isIpad ? 50 : 10)
                                         
                                         VStack(alignment: .leading, spacing: 3) {
                                             HStack {
                                                 DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
                                                 
                                                 Text("FREE".localized())
-                                                    .font(.system(size: 10, weight: .semibold))
+                                                    .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
                                                     .foregroundColor(.grayColour)
                                             }
                                             
@@ -115,7 +119,7 @@ struct HomeScreen: View {
                                                 DefaultDesign.CustomBullet(Color: .clear)
                                                 
                                                 Text(storageManager.freeSpace)
-                                                    .font(.system(size: 12, weight: .semibold))
+                                                    .font(.system(size: Device.isIpad ? 24 : 12, weight: .semibold))
                                             }
                                         }
                                         
@@ -151,6 +155,12 @@ struct HomeScreen: View {
                             }
                             .padding(.horizontal, 12)
                             .padding(.bottom)
+                            
+                            if storageManager.photoStatus == .limited {
+                                limitedAccessView
+                                    .padding(.horizontal, 12)
+                                    .padding(.bottom)
+                            }
                         }
                     }
                     .background(.whiteColour.opacity(0.08))
@@ -174,7 +184,11 @@ struct HomeScreen: View {
                     .id(localization.selectedLanguage)
                     
                     var toolwidth: CGFloat {
-                        return (screenWidth-36)/2
+                        if Device.isIpad {
+                            return (screenWidth-36)/4
+                        } else {
+                            return (screenWidth-36)/2
+                        }
                     }
                     
                     LazyVGrid(columns: columns) {
@@ -235,6 +249,9 @@ struct HomeScreen: View {
             .padding(.horizontal, 16)
         }
         .defaultPage()
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
     
     private var deniedAccessView: some View {
@@ -257,6 +274,36 @@ struct HomeScreen: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private var limitedAccessView: some View {
+        VStack {
+            Divider()
+            
+            HStack(spacing: 16) {
+                Text("GIVE_US_FULL_ACCESS".localized())
+                    .font(.system(size: 14, weight: .semibold))
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+                
+                Button {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
+                    Text("OPEN_SETTING".localized())
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 10)
+                        .background(Color.purple)
+                        .cornerRadius(8)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
 }
 

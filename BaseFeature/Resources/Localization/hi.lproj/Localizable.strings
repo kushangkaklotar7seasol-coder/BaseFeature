@@ -201,3 +201,22 @@
 "SHARE_APP" = "ऐप शेयर करें";
 "PRIVECY_POLICY" = "गोपनीयता नीति";
 "TERMS_USE" = "नियम एवं शर्तें";
+
+"YOUR_FIRST_GOAL_HEADER" = "कोई वर्तमान लक्ष्य नहीं मिला";
+"YOUR_FIRST_GOAL" = "नया लक्ष्य बनाने के लिए जोड़ें (+) पर क्लिक करें!";
+"DELETE_GOAL" = "लक्ष्य हटाएं?";
+"DELETE_GOAL_INFO" = "क्या आप निश्चित रूप से इस लक्ष्य को हटाना चाहते हैं?";
+"CANCEL" = "रद्द करें";
+"DELETE" = "हटाएं";
+"RENAME" = "नाम बदलें";
+"DELETE_PDF" = "PDF हटाएं?";
+"DELETE_PDF_INFO" = "क्या आप निश्चित रूप से इस PDF को हटाना चाहते हैं?\nयह PDF आपके डिवाइस में फिर कभी दिखाई नहीं देगी!";
+"RENAME_PDF" = "PDF का नाम बदलें";
+"ADD_PDF_NAME" = "PDF नाम जोड़ें";
+"ASSIGNMENT.PDF" = "Assignment.pdf";
+"SAVE" = "सहेजें";
+"NAME_NOT_EMPTY" = "नाम खाली नहीं होना चाहिए";
+"PDF_WITN_NAME_EXIST" = "इस नाम से एक PDF पहले से मौजूद है।";
+"NOT_ABLE_SAVE" = "सहेजने में असमर्थ।";
+"GIVE_US_FULL_ACCESS" = "बेहतर अनुभव के लिए हमें पूर्ण एक्सेस दें";
+"NO_PHOTOS_FOUND" = "कोई फोटो नहीं मिली";

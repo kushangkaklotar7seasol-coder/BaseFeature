@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Photos
 
 struct StorageOverviewScreen: View {
     @StateObject var storageManager = StorageManager()
@@ -16,68 +17,125 @@ struct StorageOverviewScreen: View {
             VStack {
                 DefaultDesign.Header(name: "STORAGE_OVERVIEW".localized())
                 
-                HStack {
-                    CircularProgressView(progress: storageManager.usedStoragePercent)
-                        .overlay {
-                            VStack {
-                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
-                                    .font(.system(size: 26, weight: .bold))
-                                
-                                Text("USED".localized())
-                                    .font(.system(size: 12, weight: .semibold))
-                                    .foregroundColor(.whiteColour)
+                ScrollView(showsIndicators: false) {
+                    HStack {
+                        CircularProgressView(progress: storageManager.usedStoragePercent)
+                            .overlay {
+                                VStack {
+                                    Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
+                                        .font(.system(size: 26, weight: .bold))
+                                    
+                                    Text("USED".localized())
+                                        .font(.system(size: 12, weight: .semibold))
+                                        .foregroundColor(.whiteColour)
+                                }
                             }
-                        }
-                    
-                    VStack(alignment: .leading, spacing: 16) {
-                        let total = "TOTAL".localized()
-                        Text("\(storageManager.totalSpace) \(total)")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.whiteColour)
                         
-                        VStack(alignment: .leading, spacing: 3) {
-                            HStack {
-                                DefaultDesign.GradientBullet()
+                        VStack(alignment: .leading, spacing: 16) {
+                            let total = "TOTAL".localized()
+                            Text("\(storageManager.totalSpace) \(total)")
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(.whiteColour)
+                            
+                            VStack(alignment: .leading, spacing: 3) {
+                                HStack {
+                                    DefaultDesign.GradientBullet()
+                                    
+                                    Text("USED".localized())
+                                        .font(.system(size: 10, weight: .semibold))
+                                        .foregroundColor(.grayColour)
+                                }
                                 
-                                Text("USED".localized())
-                                    .font(.system(size: 10, weight: .semibold))
-                                    .foregroundColor(.grayColour)
+                                HStack {
+                                    DefaultDesign.CustomBullet(Color: .clear)
+                                    
+                                    Text(storageManager.usedSpace)
+                                        .font(.system(size: 14, weight: .semibold))
+                                }
                             }
                             
-                            HStack {
-                                DefaultDesign.CustomBullet(Color: .clear)
+                            VStack(alignment: .leading, spacing: 3) {
+                                HStack {
+                                    DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
+                                    
+                                    Text("FREE".localized())
+                                        .font(.system(size: 10, weight: .semibold))
+                                        .foregroundColor(.grayColour)
+                                }
                                 
-                                Text(storageManager.usedSpace)
-                                    .font(.system(size: 14, weight: .semibold))
-                            }
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 3) {
-                            HStack {
-                                DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
-                                
-                                Text("FREE".localized())
-                                    .font(.system(size: 10, weight: .semibold))
-                                    .foregroundColor(.grayColour)
-                            }
-                            
-                            HStack {
-                                DefaultDesign.CustomBullet(Color: .clear)
-                                
-                                Text(storageManager.freeSpace)
-                                    .font(.system(size: 14, weight: .semibold))
+                                HStack {
+                                    DefaultDesign.CustomBullet(Color: .clear)
+                                    
+                                    Text(storageManager.freeSpace)
+                                        .font(.system(size: 14, weight: .semibold))
+                                }
                             }
                         }
                     }
+                    
+                    if storageManager.photoStatus == .authorized || storageManager.photoStatus == .limited {
+                        if storageManager.photoStatus == .limited {
+                            limitedAccessView
+                        }
+                        breakdownSection
+                    } else {
+                        deniedAccessView
+                    }
                 }
-                
-                breakdownSection
-                
-                Spacer()
             }
             .padding(.horizontal, 16)
         }
         .defaultPage()
+    }
+    
+    private var deniedAccessView: some View {
+        VStack(spacing: 16) {
+            Text("PHOTO_ACCESS_DENIED".localized())
+                .font(.headline)
+                .foregroundColor(.white)
+            
+            Button {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                Text("OPEN_SETTING".localized())
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 10)
+                    .background(Color.purple)
+                    .cornerRadius(8)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private var limitedAccessView: some View {
+        VStack {
+            HStack(spacing: 16) {
+                Text("GIVE_US_FULL_ACCESS".localized())
+                    .font(.system(size: 14, weight: .semibold))
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+                
+                Button {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
+                    Text("OPEN_SETTING".localized())
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 10)
+                        .background(Color.purple)
+                        .cornerRadius(8)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
     
     private var breakdownSection: some View {

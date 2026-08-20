@@ -19,13 +19,14 @@ struct MyGoalScreen: View {
                 DefaultDesign.Header(name: "GOAL_TRACKER".localized())
                     .padding(.horizontal, 16)
                 
-                if !viewModel.goals.isEmpty {
                     keepGoing
                         .padding(.horizontal, 16)
                     
                     HStack {
                         Button {
-                            Router.shared.push(.goalList(displayType: 0))
+                            if viewModel.totalCount ?? 0 > 0 {
+                                Router.shared.push(.goalList(displayType: 0))
+                            }
                         } label: {
                             VStack {
                                 Text("\(viewModel.totalCount ?? 0)")
@@ -43,7 +44,9 @@ struct MyGoalScreen: View {
                         }
                         
                         Button {
-                            Router.shared.push(.goalList(displayType: 1))
+                            if viewModel.doneCount ?? 0 > 0 {
+                                Router.shared.push(.goalList(displayType: 1))
+                            }
                         } label: {
                             VStack {
                                 Text("\(viewModel.doneCount ?? 0)")
@@ -62,7 +65,9 @@ struct MyGoalScreen: View {
                         }
                         
                         Button {
-                            Router.shared.push(.goalList(displayType: 2))
+                            if viewModel.inProgressCount ?? 0 > 0 {
+                                Router.shared.push(.goalList(displayType: 2))
+                            }
                         } label: {
                             VStack {
                                 Text("\(viewModel.inProgressCount ?? 0)")
@@ -82,6 +87,7 @@ struct MyGoalScreen: View {
                     }
                     .padding(.horizontal, 16)
                     
+                if !viewModel.goals.isEmpty {
                     DefaultDesign.SectionHeader(name: "MY_GOALS".localized(), onClick: {
                         Router.shared.push(.goalList(displayType: 0))
                     })
@@ -91,28 +97,42 @@ struct MyGoalScreen: View {
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 14) {
                             ForEach(viewModel.goals) { goal in
-                                GoalCardView(goal: goal)
+                                GoalCardView(goal: goal, viewModel: goalListViewModel, onDelete: {
+                                    viewModel.getGoals()
+                                })
                             }
                         }
                         .padding(.bottom, 80)
                     }
-                    
+                } else {
+                    VStack(spacing: 8) {
+                        Spacer()
+                        Image("ic_goal_red")
+                            .resizable()
+                            .frame(width: 100, height: 100, alignment: .center)
+                        
+                        Text("YOUR_FIRST_GOAL_HEADER".localized())
+                        
+                        Text("YOUR_FIRST_GOAL".localized())//
+                            .foregroundColor(.grayColour)
+                        Spacer()
+                    }
                 }
                 
                 Spacer()
             }
             .edgesIgnoringSafeArea(.bottom)
             
-            if viewModel.goals.isEmpty {
-                VStack(spacing: 16) {
-                    Image("ic_goal_red")
-                        .resizable()
-                        .frame(width: 100, height: 100, alignment: .center)
-                    
-                    Text("YOUR_FIRST_GOAL".localized())
-                        .foregroundColor(.grayColour)
-                }
-            }
+//            if viewModel.goals.isEmpty {
+//                VStack(spacing: 16) {
+//                    Image("ic_goal_red")
+//                        .resizable()
+//                        .frame(width: 100, height: 100, alignment: .center)
+//                    
+//                    Text("YOUR_FIRST_GOAL".localized())
+//                        .foregroundColor(.grayColour)
+//                }
+//            }
             
             VStack {
                 Spacer()
@@ -176,7 +196,9 @@ struct MyGoalScreen: View {
 
 struct GoalCardView: View {
     let goal: Goal
-//    @ObservedObject var viewModel: GoalsListViewModel
+    var isOnTapWork: Bool = true
+    @ObservedObject var viewModel: GoalsListViewModel
+    var onDelete: (()->Void)
  
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -215,6 +237,33 @@ struct GoalCardView: View {
                 }
  
                 Spacer()
+                
+                VStack {
+                    Spacer()
+                    Menu {
+                        Button(role: .destructive) {
+                            AlertManager.shared.show(
+                                title: "DELETE_GOAL".localized(),
+                                message: "DELETE_GOAL_INFO".localized(),
+                                buttons: [
+                                    AlertButtonModel(title: "CANCEL".localized(), role: .cancel),
+                                    AlertButtonModel(title: "DELETE".localized(), role: .destructive) {
+                                        viewModel.deleteGoal(goal)
+                                        self.onDelete()
+                                    }
+                                ]
+                            )
+                        } label: {
+                            Label("DELETE".localized(), systemImage: "trash")
+                        }
+                    } label: {
+                        Image("ic_more")
+                            .resizable()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .contentShape(Rectangle())
+                    }
+                    Spacer()
+                }
             }
             .padding(14)
         }
@@ -222,7 +271,9 @@ struct GoalCardView: View {
         .cornerRadius(12)
         .padding(.horizontal, 16)
         .onTapGesture {
-            Router.shared.push(.goalDetail(goal: goal))
+            if isOnTapWork {
+                Router.shared.push(.goalDetail(goal: goal))
+            }
         }
 //        .contextMenu {
 //            Button {

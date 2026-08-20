@@ -59,7 +59,8 @@ class DefaultDesign {
     struct Header: View {
         let name: String
         var showBackbutton: Bool = true
-        let secondButton: String = ""
+        var secondButton: String = ""
+        var secondbuttonForegroundColour: Color = .lightPurple
         var onSecondButtonClick: (()->Void)?
         
         var body: some View {
@@ -92,7 +93,7 @@ class DefaultDesign {
                         self.onSecondButtonClick?()
                     } label: {
                         Text(secondButton.localized())
-                            .foregroundColor(.lightPurple)
+                            .foregroundColor(secondbuttonForegroundColour)
                     }
                 }
                 .frame(width: 55, height: 30, alignment: .center)

@@ -45,14 +45,14 @@ struct ImageToPDFScreen: View {
                 }
                 .padding(.top)
                 
-                if !self.fetchSavedPDFs().isEmpty {
-                    DefaultDesign.SectionHeader(name: "RECENT_FILE", onClick: {
-                        Router.shared.push(.recentpdf)
-                    })
-                    .padding(.top, 10)
+//                if !self.fetchSavedPDFs().isEmpty {
+//                    DefaultDesign.SectionHeader(name: "RECENT_FILE", onClick: {
+//                        Router.shared.push(.recentpdf)
+//                    })
+//                    .padding(.top, 10)
                     
                     AllPDFView()
-                }
+//                }
                 Spacer()
             }
             .padding(.horizontal, 16)

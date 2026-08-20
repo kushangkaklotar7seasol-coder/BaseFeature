@@ -201,3 +201,22 @@
 "SHARE_APP" = "分享应用";
 "PRIVECY_POLICY" = "隐私政策";
 "TERMS_USE" = "使用条款";
+
+"YOUR_FIRST_GOAL_HEADER" = "未找到当前目标";
+"YOUR_FIRST_GOAL" = "点击添加(+)以创建您的新目标！";
+"DELETE_GOAL" = "删除目标？";
+"DELETE_GOAL_INFO" = "您确定要删除此目标吗？";
+"CANCEL" = "取消";
+"DELETE" = "删除";
+"RENAME" = "重命名";
+"DELETE_PDF" = "删除 PDF？";
+"DELETE_PDF_INFO" = "您确定要删除此 PDF 吗？\n删除后您将无法在设备上再次看到此 PDF！";
+"RENAME_PDF" = "重命名 PDF";
+"ADD_PDF_NAME" = "添加 PDF 名称";
+"ASSIGNMENT.PDF" = "作业.pdf";
+"SAVE" = "保存";
+"NAME_NOT_EMPTY" = "名称不能为空";
+"PDF_WITN_NAME_EXIST" = "已存在同名的 PDF。";
+"NOT_ABLE_SAVE" = "无法保存。";
+"GIVE_US_FULL_ACCESS" = "为了获得更好的体验，请允许完整访问权限";
+"NO_PHOTOS_FOUND" = "未找到照片";

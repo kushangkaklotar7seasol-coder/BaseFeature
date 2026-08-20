@@ -64,7 +64,7 @@ struct MovieDetailScreen: View {
                         }
                     }
                     
-                    if let cast = viewModel.movieCredits?.cast {
+                    if let cast = viewModel.movieCredits?.cast, !cast.isEmpty {
                         DefaultDesign.SectionHeader(name: "TOP_CAST") {
                             Router.shared.push(.castCrewListing(cast: cast, header: "\(viewModel.movieDetail?.title ?? viewModel.movieDetail?.name ?? "")"))
                         }
@@ -172,6 +172,12 @@ private extension MovieDetailScreen {
             ZStack(alignment: .bottom) {
                 KFImage(URL(string: imageUrl + (viewModel.movieDetail?.backdropPath ?? "")))
                     .resizable()
+                    .placeholder({ Progress in
+                        Image("ic_no_person")
+                            .resizable()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(.grayColour)
+                    })
                     .scaledToFill()
                     .frame(width: screenWidth, height: pagerHeight)
                     .clipped()

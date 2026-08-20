@@ -27,6 +27,7 @@ struct BaseFeatureApp: App {
                 .environmentObject(localization)
             }
             .toastManager()
+            .withGlobalAlert()
         }
     }
 }

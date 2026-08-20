@@ -17,13 +17,29 @@ struct GoalListScreen: View {
                 DefaultDesign.Header(name: viewModel.header.localized())
                     .padding(.horizontal, 16)
                 
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 14) {
-                        ForEach(viewModel.goals) { goal in
-                            GoalCardView(goal: goal)
+                if !viewModel.goals.isEmpty {
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 14) {
+                            ForEach(viewModel.goals) { goal in
+                                GoalCardView(goal: goal, viewModel: goalListViewModel, onDelete: {
+                                    viewModel.getGoals()
+                                })
+                            }
                         }
+                        .padding(.bottom, 80)
                     }
-                    .padding(.bottom, 80)
+                }
+                
+                Spacer()
+            }
+            
+            if viewModel.goals.isEmpty {
+                VStack(spacing: 8) {
+                    Image("ic_goal_red")
+                        .resizable()
+                        .frame(width: 100, height: 100, alignment: .center)
+                    
+                    Text("No goal found")
                 }
             }
         }
