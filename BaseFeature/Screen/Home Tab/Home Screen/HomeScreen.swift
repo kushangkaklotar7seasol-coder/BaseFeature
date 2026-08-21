@@ -45,12 +45,12 @@ struct HomeScreen: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text("STORAGE".localized())
-                                        .font(.system(size: 20, weight: .bold))
+                                        .font(.system(size: Device.isIpad ? 26 : 20, weight: .bold))
                                         .foregroundColor(.whiteColour)
                                     
                                     let total = "TOTAL".localized()
                                     Text("\(storageManager.totalSpace) \(total)")
-                                        .font(.system(size: 14, weight: .regular))
+                                        .font(.system(size: Device.isIpad ? 20 : 14, weight: .regular))
                                         .foregroundColor(.grayColour)
                                 }
                                 
@@ -76,10 +76,10 @@ struct HomeScreen: View {
                                         .overlay {
                                             VStack {
                                                 Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
-                                                    .font(.system(size: 22, weight: .bold))
+                                                    .font(.system(size: Device.isIpad ? 32 : 22, weight: .bold))
                                                 
                                                 Text("USED".localized())
-                                                    .font(.system(size: 12, weight: .semibold))
+                                                    .font(.system(size: Device.isIpad ? 24 : 12, weight: .semibold))
                                                     .foregroundColor(.whiteColour)
                                             }
                                         }
@@ -133,21 +133,21 @@ struct HomeScreen: View {
                                 
                                 if storageManager.photoStatus == .authorized || storageManager.photoStatus == .limited {
                                     ZStack {
-                                    VStack(spacing: 5) {
-                                        // Pehla 2 items - 2 column grid
-                                        LazyVGrid(columns: storageColumns, spacing: 5) {
-                                            ForEach(storageManager.storageInfo.prefix(2), id: \.id) { info in
-                                                storageCard(info: info)
+                                        VStack(spacing: 5) {
+                                            // Pehla 2 items - 2 column grid
+                                            LazyVGrid(columns: storageColumns, spacing: 5) {
+                                                ForEach(storageManager.storageInfo.prefix(2), id: \.id) { info in
+                                                    storageCard(info: info)
+                                                }
+                                            }
+                                            
+                                            // 3rd item - full width
+                                            if let lastItem = storageManager.storageInfo.dropFirst(2).first {
+                                                storageCard(info: lastItem)
+                                                    .frame(maxWidth: .infinity)
                                             }
                                         }
-                                        
-                                        // 3rd item - full width
-                                        if let lastItem = storageManager.storageInfo.dropFirst(2).first {
-                                            storageCard(info: lastItem)
-                                                .frame(maxWidth: .infinity)
-                                        }
                                     }
-                                }
                                     .frame(maxWidth: (screenWidth-60)/2)
                                 } else {
                                     deniedAccessView
@@ -193,7 +193,7 @@ struct HomeScreen: View {
                     
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.quickTool, id: \.id) { tool in
-                            ZStack {
+                            ZStack(alignment: .top) {
                                 VStack(alignment: .leading) {
                                     ZStack {
                                         Image(tool.image)
@@ -214,7 +214,7 @@ struct HomeScreen: View {
                                         .foregroundColor(.grayColour)
                                 }
                                 .padding(8)
-                                .frame(width: toolwidth, height: 130, alignment: .center)
+                                .frame(width: toolwidth, height: 130, alignment: .topLeading)
                                 
                                 VStack {
                                     HStack {
@@ -313,7 +313,7 @@ struct HomeScreen: View {
 
 struct CircularProgressView: View {
     var progress: Double
-    var lineWidth: CGFloat = 18
+    var lineWidth: CGFloat = Device.isIpad ? 26 : 18
 
     var body: some View {
         ZStack {
@@ -341,14 +341,14 @@ func storageCard(info: StrogeInfo) -> some View {
             Image(info.image)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 28, height: 28, alignment: .center)
+                .frame(width: Device.isIpad ? 32 : 28, height:Device.isIpad ? 32 : 28, alignment: .center)
             
             Text(info.name.localized())
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: Device.isIpad ? 18 : 14, weight: .semibold))
                 .padding(.top, 2)
             
             Text(info.storage)
-                .font(.system(size: 12, weight: .regular))
+                .font(.system(size: Device.isIpad ? 16: 12, weight: .regular))
               
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
@@ -360,7 +360,7 @@ func storageCard(info: StrogeInfo) -> some View {
                         .frame(width: geo.size.width * CGFloat(info.percent / 100))
                 }
             }
-            .frame(height: 8)
+            .frame(height: Device.isIpad ? 10 : 8)
         }
     }
     .padding(6)

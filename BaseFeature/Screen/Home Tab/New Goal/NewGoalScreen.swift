@@ -247,7 +247,7 @@ struct DateBox: View {
                 })
                 .padding(.horizontal, 16)
             }
-            .presentationDetents([.medium, .large])
+            .presentationDetents( Device.isIpad ? [.large] : [.medium, .large])
         }
     }
 }

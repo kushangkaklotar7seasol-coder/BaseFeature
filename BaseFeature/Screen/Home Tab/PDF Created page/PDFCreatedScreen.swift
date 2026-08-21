@@ -15,14 +15,27 @@ struct PDFCreatedScreen: View {
     @State var generatedPDFURL: URL?
     @State var pdfInformation: PDFSummary?
     @State var selectedAssets: [PHAsset] = []
+    @State private var refreshID = UUID()
     
     var body: some View {
+        
+        var lottieSize: CGFloat {
+            if Device.isiPadPortrait {
+                return screenWidth/2
+            } else if Device.isiPadLandscape {
+                return screenWidth/3
+            } else {
+                return screenWidth-100
+            }
+        }
+        
         ZStack {
             VStack {
                 LottieView(animation: .named("pdf_loading_lottie"))
                     .looping()
                     .resizable()
-                    .frame(width: screenWidth-100, height: screenWidth-100)
+                    .frame(width: lottieSize, height: lottieSize)
+                    .id(refreshID)
                 
                 VStack(spacing: 16) {
                     Text("PDF_CREATED_SUCCESS".localized())
@@ -121,6 +134,9 @@ struct PDFCreatedScreen: View {
         }
         .onDisappear() {
             isSwipeBackenable = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
         }
     }
 }

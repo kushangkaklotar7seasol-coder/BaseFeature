@@ -17,13 +17,18 @@ struct SelectImageScreen: View {
     var onComplete: (([PHAsset]) -> Void)?
     @State var isShowPhotoPicker: Bool = false
     @State var selectedItems: [PhotosPickerItem] = []     // ← Array banao (multiple)
+    @State private var refreshID = UUID()
     
-    private let columns = [
-        GridItem(.flexible(), spacing: 4),
-        GridItem(.flexible(), spacing: 4),
-        GridItem(.flexible(), spacing: 4)
-    ]
- 
+//    private let columns = [
+//        GridItem(.flexible(), spacing: 4),
+//        GridItem(.flexible(), spacing: 4),
+//        GridItem(.flexible(), spacing: 4)
+//    ]
+    var columns: [GridItem] {
+        let count = Device.isiPadPortrait ? 5 : Device.isiPadLandscape ? 6 : 3
+        return Array(repeating: GridItem(.flexible(), spacing: 4), count: count)
+    }
+    
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
@@ -226,7 +231,7 @@ struct SelectImageScreen: View {
                 // that's what was causing the neighbouring/below image to get selected.
                 let horizontalPadding: CGFloat = 16
                 let cellSpacing: CGFloat = 4
-                let columnsCount: CGFloat = 3
+                let columnsCount: CGFloat = Device.isiPadPortrait ? 5 : Device.isiPadLandscape ? 6 : 3
                 let itemSize = (screenWidth - (horizontalPadding * 2) - (cellSpacing * (columnsCount - 1))) / columnsCount
  
                 if !photoManager.groupedAssets.isEmpty {
@@ -272,6 +277,7 @@ struct SelectImageScreen: View {
                         }
                         .padding(.bottom, 140)
                     }
+                    .id(refreshID)
                 } else {
                     Spacer()
                     
@@ -288,6 +294,9 @@ struct SelectImageScreen: View {
             }
  
             bottomBar
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
         }
     }
  
@@ -427,7 +436,7 @@ struct SelectedThumbnailView: View {
                 Image(uiImage: thumbnail)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 60, height: 60)
+                    .frame(width: Device.isIpad ? 90 : 60, height: Device.isIpad ? 90 : 60)
                     .clipped()
                     .cornerRadius(6)
                     .overlay(content: {
@@ -437,7 +446,7 @@ struct SelectedThumbnailView: View {
             } else {
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
-                    .frame(width: 60, height: 60)
+                    .frame(width: Device.isIpad ? 90 : 60, height: Device.isIpad ? 90 : 60)
                     .cornerRadius(6)
             }
  
@@ -450,7 +459,7 @@ struct SelectedThumbnailView: View {
             }
             .offset(x: 4, y: -4)
         }
-        .frame(width: 70, height: 70)
+        .frame(width: Device.isIpad ? 100 : 70, height: Device.isIpad ? 100 : 70)
         .onAppear {
             photoManager.requestThumbnail(for: asset, size: CGSize(width: 120, height: 120)) { image in
                 self.thumbnail = image

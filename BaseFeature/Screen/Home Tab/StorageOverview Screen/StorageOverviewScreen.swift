@@ -10,6 +10,7 @@ import Photos
 
 struct StorageOverviewScreen: View {
     @StateObject var storageManager = StorageManager()
+    @State private var refreshID = UUID()
     
     var body: some View {
         
@@ -20,16 +21,18 @@ struct StorageOverviewScreen: View {
                 ScrollView(showsIndicators: false) {
                     HStack {
                         CircularProgressView(progress: storageManager.usedStoragePercent)
+                            .frame(maxWidth: Device.isiPadPortrait ? screenHeight/2.5 : Device.isiPadLandscape ? screenWidth/3 : .infinity)
                             .overlay {
                                 VStack {
                                     Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
-                                        .font(.system(size: 26, weight: .bold))
+                                        .font(.system(size: Device.isIpad ? 32 : 26, weight: .bold))
                                     
                                     Text("USED".localized())
-                                        .font(.system(size: 12, weight: .semibold))
+                                        .font(.system(size: Device.isIpad ? 20 : 12, weight: .semibold))
                                         .foregroundColor(.whiteColour)
                                 }
                             }
+                            .id(refreshID)
                         
                         VStack(alignment: .leading, spacing: 16) {
                             let total = "TOTAL".localized()
@@ -42,7 +45,7 @@ struct StorageOverviewScreen: View {
                                     DefaultDesign.GradientBullet()
                                     
                                     Text("USED".localized())
-                                        .font(.system(size: 10, weight: .semibold))
+                                        .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
                                         .foregroundColor(.grayColour)
                                 }
                                 
@@ -50,7 +53,7 @@ struct StorageOverviewScreen: View {
                                     DefaultDesign.CustomBullet(Color: .clear)
                                     
                                     Text(storageManager.usedSpace)
-                                        .font(.system(size: 14, weight: .semibold))
+                                        .font(.system(size: Device.isIpad ? 24 : 14, weight: .semibold))
                                 }
                             }
                             
@@ -59,7 +62,7 @@ struct StorageOverviewScreen: View {
                                     DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
                                     
                                     Text("FREE".localized())
-                                        .font(.system(size: 10, weight: .semibold))
+                                        .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
                                         .foregroundColor(.grayColour)
                                 }
                                 
@@ -67,7 +70,7 @@ struct StorageOverviewScreen: View {
                                     DefaultDesign.CustomBullet(Color: .clear)
                                     
                                     Text(storageManager.freeSpace)
-                                        .font(.system(size: 14, weight: .semibold))
+                                        .font(.system(size: Device.isIpad ? 24 : 14, weight: .semibold))
                                 }
                             }
                         }
@@ -86,6 +89,9 @@ struct StorageOverviewScreen: View {
             .padding(.horizontal, 16)
         }
         .defaultPage()
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
     
     private var deniedAccessView: some View {

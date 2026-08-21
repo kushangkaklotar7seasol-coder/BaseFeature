@@ -14,13 +14,13 @@ struct RotateImage: View {
     @State private var showShareSheet = false
     @State private var showRenameAlert = false
     @State private var userInput = "Document_\(Int(Date().timeIntervalSince1970)).pdf"
-    
+    @State private var refreshID = UUID()
     var onConvert: (([PHAsset]) -> Void)? = nil
-
-    private let columns = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12)
-    ]
+    
+    var columns: [GridItem] {
+        let count = Device.isiPadPortrait ? 4 : Device.isiPadLandscape ? 5 : 2
+        return Array(repeating: GridItem(.flexible(), spacing: 12), count: count)
+    }
 
     var body: some View {
         ZStack {
@@ -39,6 +39,7 @@ struct RotateImage: View {
                     }
                     .padding(.top, 8)
                     .padding(.bottom, 16)
+                    .id(refreshID)
                 }
 
                 DefaultDesign.FullScreenButton(name: "CONVERT_TO_PDF", onClick: {
@@ -68,6 +69,9 @@ struct RotateImage: View {
             .disabled(userInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             
             Button("CANCEL".localized(), role: .cancel) { }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
         }
     }
 
@@ -108,7 +112,13 @@ struct RotateAssetCard: View {
     @State private var subtitle: String = ""
 
     var cardWidth: CGFloat {
-        return (screenWidth-40)/2
+        if Device.isiPadPortrait {
+            return (screenWidth-40)/4
+        } else if Device.isiPadLandscape {
+            return (screenWidth-40)/5
+        } else {
+            return (screenWidth-40)/2
+        }
     }
     
     var cardHeight: CGFloat {
@@ -199,7 +209,13 @@ struct AddImagesCard: View {
     var onTap: () -> Void
     
     var cardWidth: CGFloat {
-        return (screenWidth-40)/2
+        if Device.isiPadPortrait {
+            return (screenWidth-40)/4
+        } else if Device.isiPadLandscape {
+            return (screenWidth-40)/5
+        } else {
+            return (screenWidth-40)/2
+        }
     }
     
     var cardHeight: CGFloat {

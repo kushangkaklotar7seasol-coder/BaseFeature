@@ -229,18 +229,18 @@ struct ArrangePageRow: View {
                 Image(uiImage: thumbnail)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 60, height: 60)
+                    .frame(width: Device.isIpad ? 120 : 60, height: Device.isIpad ? 120 : 60)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             } else {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.gray.opacity(0.2))
-                    .frame(width: 60, height: 60)
+                    .frame(width: Device.isIpad ? 120 : 60, height: Device.isIpad ? 120 : 60)
             }
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(filename)
                     .font(.subheadline.bold())
-                    .lineLimit(1)
+                    .lineLimit(2)
                 
                 Text(subtitle)
                     .font(.caption)
