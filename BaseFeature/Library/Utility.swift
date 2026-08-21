@@ -36,11 +36,16 @@ class Utility {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
-    class func shareText(_ text: String) {
-        
+    class func shareText(_ text: String, from view: UIView? = nil) {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let rootViewController = windowScene.windows.first?.rootViewController else {
+              let rootVC = windowScene.windows.first?.rootViewController else {
             return
+        }
+        
+        // Top most controller
+        var topVC = rootVC
+        while let presented = topVC.presentedViewController {
+            topVC = presented
         }
         
         let activityVC = UIActivityViewController(
@@ -48,7 +53,24 @@ class Utility {
             applicationActivities: nil
         )
         
-        rootViewController.present(activityVC, animated: true)
+        // iPad support
+        if let popover = activityVC.popoverPresentationController {
+            if let sourceView = view {
+                popover.sourceView = sourceView
+                popover.sourceRect = sourceView.bounds
+            } else {
+                popover.sourceView = topVC.view
+                popover.sourceRect = CGRect(
+                    x: topVC.view.bounds.midX,
+                    y: topVC.view.bounds.midY,
+                    width: 0,
+                    height: 0
+                )
+                popover.permittedArrowDirections = []
+            }
+        }
+        
+        topVC.present(activityVC, animated: true, completion: nil)
     }
     
     class func addHaptics(){

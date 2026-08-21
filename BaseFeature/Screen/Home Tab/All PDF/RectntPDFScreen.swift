@@ -52,9 +52,6 @@ struct RectntPDFScreen: View {
         .onAppear() {
             UINavigationController.isSwipeBackenable = isSimpleBack
         }
-//        .onDisappear {
-//            UINavigationController.isSwipeBackenable = true
-//        }
     }
 }
 

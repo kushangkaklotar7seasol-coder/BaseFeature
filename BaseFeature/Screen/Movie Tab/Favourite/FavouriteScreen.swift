@@ -10,6 +10,7 @@ import SwiftUI
 struct FavouriteScreen: View {
     @StateObject var viewModel = FavouriteViewModel()
     @State var selectedIndex = 0
+    @State private var refreshID = UUID()
     var columns: [GridItem] {
         let count = Device.isiPadPortrait ? 4 : Device.isiPadLandscape ? 5 : 2
         return Array(repeating: GridItem(.flexible(), spacing: 15), count: count)
@@ -37,6 +38,7 @@ struct FavouriteScreen: View {
                                     .id(movie.id)
                                 }
                             }
+                            .id(refreshID)
                         }
                         
                     } else {
@@ -72,6 +74,7 @@ struct FavouriteScreen: View {
                                     .id(movie.id)
                                 }
                             }
+                            .id(refreshID)
                         }
                         
                     } else {
@@ -99,6 +102,9 @@ struct FavouriteScreen: View {
         }
         .defaultPage()
         .edgesIgnoringSafeArea(.bottom)
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
 }
 

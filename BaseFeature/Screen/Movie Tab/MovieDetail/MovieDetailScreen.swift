@@ -11,19 +11,23 @@ import WebKit
 
 struct MovieDetailScreen: View {
     @StateObject var viewModel = MovieDetailViewModel()
+    @State private var refreshID = UUID()
     
     var body: some View {
         ZStack {
             ScrollView(showsIndicators: false) {
                 VStack {
                     TopView
+                        .id(refreshID)
                     
                     if let overView = viewModel.movieDetail?.overview, overView != "" {
                         DefaultDesign.SectionHeader(name: "OVERVIEW", isShowButton: false)
                             .padding(.horizontal, 16)
+                            .id(refreshID)
                         
                         DefaultDesign.ExpandableTextView(text: overView)
                             .padding(.horizontal, 16)
+                            .id(refreshID)
                     }
                     
                     if let director = viewModel.directorDetail {
@@ -156,6 +160,9 @@ struct MovieDetailScreen: View {
                 }
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
 }
 
@@ -167,7 +174,13 @@ private extension MovieDetailScreen {
     
     var TopView: some View {
         ZStack(alignment: .bottom) {
-            var pagerHeight: CGFloat { screenHeight / 2.2 }
+            var pagerHeight: CGFloat {
+                if Device.isLandscape {
+                    return screenHeight / 2
+                } else {
+                   return screenHeight / 2.2
+                }
+            }
             
             ZStack(alignment: .bottom) {
                 KFImage(URL(string: imageUrl + (viewModel.movieDetail?.backdropPath ?? "")))
@@ -179,7 +192,7 @@ private extension MovieDetailScreen {
                             .background(.grayColour)
                     })
                     .scaledToFill()
-                    .frame(width: screenWidth, height: pagerHeight)
+                    .frame(width: Device.isiPadLandscape ? screenWidth-400 : screenWidth, height: pagerHeight)
                     .clipped()
                 
                 LinearGradient(
@@ -194,7 +207,7 @@ private extension MovieDetailScreen {
                 )
                 .frame(height: pagerHeight * 0.55)
             }
-            .frame(width: screenWidth, height: pagerHeight)
+            .frame(width: Device.isiPadLandscape ? screenWidth-400 : screenWidth, height: pagerHeight)
             
             
             VStack {

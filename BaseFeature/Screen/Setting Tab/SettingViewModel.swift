@@ -35,13 +35,37 @@ class SettingViewModel: ObservableObject {
     
     // MARK: - Actions
     func shareApp() {
-        let url = URL(string: AppInfo.shareApp)!
-        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        guard let url = URL(string: AppInfo.shareApp) else { return }
         
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let root = scene.windows.first?.rootViewController {
-            root.present(activityVC, animated: true)
+        let activityVC = UIActivityViewController(
+            activityItems: [url],
+            applicationActivities: nil
+        )
+        
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let root = scene.windows.first?.rootViewController else {
+            return
         }
+        
+        // Top-most controller find karo
+        var topController = root
+        while let presented = topController.presentedViewController {
+            topController = presented
+        }
+        
+        // iPad mate popover setup (aa compulsory che)
+        if let popover = activityVC.popoverPresentationController {
+            popover.sourceView = topController.view
+            popover.sourceRect = CGRect(
+                x: topController.view.bounds.midX,
+                y: topController.view.bounds.midY,
+                width: 0,
+                height: 0
+            )
+            popover.permittedArrowDirections = []
+        }
+        
+        topController.present(activityVC, animated: true)
     }
     
     func rateApp() {

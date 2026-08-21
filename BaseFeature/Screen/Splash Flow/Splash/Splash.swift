@@ -434,12 +434,12 @@ class DefaultDesign {
         }
     }
     
-    
     struct ExpandableTextView: View {
         let text: String
         
         @State private var isExpanded = false
         @State private var isTruncated = false
+        @State private var fullHeight: CGFloat = 0
         
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
@@ -448,23 +448,28 @@ class DefaultDesign {
                     .lineLimit(isExpanded ? nil : 3)
                     .multilineTextAlignment(.leading)
                     .background(
+                        // Only measure full height (never changes)
                         Text(text)
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
                             .hidden()
                             .background(
-                                GeometryReader { fullGeometry in
+                                GeometryReader { geo in
                                     Color.clear
                                         .onAppear {
-                                            checkTruncation(fullHeight: fullGeometry.size.height)
+                                            fullHeight = geo.size.height
+                                            checkTruncation()
+                                        }
+                                        .onChange(of: geo.size.height) { _, newHeight in
+                                            fullHeight = newHeight
+                                            checkTruncation()
                                         }
                                 }
                             )
                     )
-                    .animation(.easeInOut, value: isExpanded)
+                    .animation(.easeInOut(duration: 0.25), value: isExpanded)
                 
                 if isTruncated {
-                    
                     Button {
                         withAnimation {
                             isExpanded.toggle()
@@ -477,23 +482,93 @@ class DefaultDesign {
                             
                             Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                                 .resizable()
-                                .frame(width: 12, height: 8, alignment: .center)
+                                .frame(width: 12, height: 8)
                         }
                     }
                 }
             }
-            .onChange(of: text) { _ in
+            .onChange(of: text) { _, _ in
                 isExpanded = false
                 isTruncated = false
+                fullHeight = 0
             }
         }
         
-        private func checkTruncation(fullHeight: CGFloat) {
-            let lineHeight = UIFont.systemFont(ofSize: 17).lineHeight
-            let calculatedTruncated = fullHeight > lineHeight * 3.2
-            if calculatedTruncated != isTruncated {
-                isTruncated = calculatedTruncated
+        private func checkTruncation() {
+            guard fullHeight > 0 else { return }
+            
+            // 3 line ni approximate height
+            let font = UIFont.systemFont(ofSize: 17)
+            let threeLineHeight = font.lineHeight * 3 + 6
+            
+            let shouldTruncate = fullHeight > threeLineHeight
+            
+            // Only set once (important)
+            if shouldTruncate && !isTruncated {
+                isTruncated = true
             }
         }
     }
+    
+//    struct ExpandableTextView: View {
+//        let text: String
+//        
+//        @State private var isExpanded = false
+//        @State private var isTruncated = false
+//        
+//        var body: some View {
+//            VStack(alignment: .leading, spacing: 4) {
+//                Text(text)
+//                    .foregroundColor(.gray)
+//                    .lineLimit(isExpanded ? nil : 3)
+//                    .multilineTextAlignment(.leading)
+//                    .background(
+//                        Text(text)
+//                            .lineLimit(nil)
+//                            .fixedSize(horizontal: false, vertical: true)
+//                            .hidden()
+//                            .background(
+//                                GeometryReader { fullGeometry in
+//                                    Color.clear
+//                                        .onAppear {
+//                                            checkTruncation(fullHeight: fullGeometry.size.height)
+//                                        }
+//                                }
+//                            )
+//                    )
+//                    .animation(.easeInOut, value: isExpanded)
+//                
+//                if isTruncated {
+//                    
+//                    Button {
+//                        withAnimation {
+//                            isExpanded.toggle()
+//                        }
+//                    } label: {
+//                        HStack(spacing: 5) {
+//                            Text(isExpanded ? "SHOW_LESS".localized() : "SHOW_MORE".localized())
+//                                .font(.system(size: 14, weight: .medium))
+//                                .foregroundColor(.whiteColour)
+//                            
+//                            Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+//                                .resizable()
+//                                .frame(width: 12, height: 8, alignment: .center)
+//                        }
+//                    }
+//                }
+//            }
+//            .onChange(of: text) { _ in
+//                isExpanded = false
+//                isTruncated = false
+//            }
+//        }
+//        
+//        private func checkTruncation(fullHeight: CGFloat) {
+//            let lineHeight = UIFont.systemFont(ofSize: 17).lineHeight
+//            let calculatedTruncated = fullHeight > lineHeight * 3.2
+//            if calculatedTruncated != isTruncated {
+//                isTruncated = calculatedTruncated
+//            }
+//        }
+//    }
 }

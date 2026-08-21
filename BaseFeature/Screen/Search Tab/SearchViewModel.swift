@@ -19,7 +19,7 @@ class SearchViewModel: ObservableObject {
     @Published var series: [MediaItem] = []
     
     private var cancellables = Set<AnyCancellable>()
-    @Published var selectedIndex: Int = 0
+    @Published var selectedSegment: Int = 0
     
     @Published var keyboardHeight: CGFloat = 0
     @Published var isKeyboardVisible: Bool = false
@@ -59,7 +59,7 @@ class SearchViewModel: ObservableObject {
         self.seriesResponse = nil
         self.series = []
         
-        if self.selectedIndex == 0 {
+        if self.selectedSegment == 0 {
             self.moviesSearchAPI(text: text.trimmingCharacters(in: .whitespacesAndNewlines))
         } else {
             self.searchSeriesAPI(text: text.trimmingCharacters(in: .whitespacesAndNewlines))
@@ -71,11 +71,11 @@ class SearchViewModel: ObservableObject {
         
         if index == 0 {
             if movies.isEmpty {
-                    self.moviesSearchAPI(text: self.searchTextField.trimmingCharacters(in: .whitespacesAndNewlines))
+                self.moviesSearchAPI(text: self.searchTextField.trimmingCharacters(in: .whitespacesAndNewlines))
             }
         } else {
             if series.isEmpty {
-                    self.searchSeriesAPI(text: self.searchTextField.trimmingCharacters(in: .whitespacesAndNewlines))
+                self.searchSeriesAPI(text: self.searchTextField.trimmingCharacters(in: .whitespacesAndNewlines))
             }
         }
     }

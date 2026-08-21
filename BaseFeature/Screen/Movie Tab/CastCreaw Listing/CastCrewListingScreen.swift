@@ -10,6 +10,7 @@ import SwiftUI
 struct CastCrewListingScreen: View {
     var cast: [CastMember] = []
     var header: String = ""
+    @State private var refreshID = UUID()
     
     var columns: [GridItem] {
         let count = Device.isiPadPortrait ? 5 : Device.isiPadLandscape ? 6 : 3
@@ -30,11 +31,14 @@ struct CastCrewListingScreen: View {
                             }
                         }
                         .padding(.horizontal)
+                        .id(refreshID)
                 }
             }
         }
         .defaultPage()
-
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
 }
 

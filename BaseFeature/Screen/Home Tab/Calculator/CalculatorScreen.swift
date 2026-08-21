@@ -110,7 +110,7 @@ struct CalculatorScreen: View {
 struct CalculatorButtonView: View {
     let type: CalculatorButtonType
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
             Group {
@@ -139,7 +139,17 @@ struct CalculatorButtonView: View {
                     }
                 }
             )
-            .clipShape(Circle())
+            .modifier(ButtonShapeModifier())
+        }
+    }
+}
+
+struct ButtonShapeModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        if Device.isIpad {
+            content.clipShape(RoundedRectangle(cornerRadius: 68))
+        } else {
+            content.clipShape(Circle())
         }
     }
 }

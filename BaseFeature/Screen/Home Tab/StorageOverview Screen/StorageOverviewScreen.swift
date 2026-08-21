@@ -9,7 +9,8 @@ import SwiftUI
 import Photos
 
 struct StorageOverviewScreen: View {
-    @StateObject var storageManager = StorageManager()
+//    @StateObject var storageManager = StorageManager()
+    @EnvironmentObject var storageManager: StorageManager
     @State private var refreshID = UUID()
     
     var body: some View {
@@ -24,7 +25,7 @@ struct StorageOverviewScreen: View {
                         .frame(maxWidth: Device.isiPadPortrait ? screenHeight/2.5 : Device.isiPadLandscape ? screenWidth/3 : .infinity)
                         .overlay {
                             VStack {
-                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
+                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent * 100))
                                     .font(.system(size: Device.isIpad ? 32 : 26, weight: .bold))
                                 
                                 Text("USED".localized())

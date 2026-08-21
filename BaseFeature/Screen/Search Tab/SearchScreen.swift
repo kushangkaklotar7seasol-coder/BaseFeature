@@ -10,12 +10,17 @@ import SwiftUI
 struct SearchScreen: View {
     @StateObject var viewModel = SearchViewModel()
     @EnvironmentObject var localization: LocalizationManager
-    @State var selectedSegment: Int = 0
+//    @State var selectedSegment: Int = 0
     @FocusState var isTextFieldFocused: Bool
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+//    let columns = [
+//        GridItem(.flexible()),
+//        GridItem(.flexible())
+//    ]
+    @State private var refreshID = UUID()
+    var columns: [GridItem] {
+        let count = Device.isiPadPortrait ? 4 : Device.isiPadLandscape ? 5 : 2
+        return Array(repeating: GridItem(.flexible(), spacing: 15), count: count)
+    }
     
     var body: some View {
         ZStack {
@@ -48,6 +53,24 @@ struct SearchScreen: View {
                             )
                             .foregroundColor(.blackColour)
                             .focused($isTextFieldFocused)
+                            .overlay(
+                                HStack {
+                                    Spacer()
+                                    if !viewModel.searchTextField.isEmpty {
+                                        Button(action: {
+                                            self.viewModel.searchTextField = ""
+                                            viewModel.movies = []
+                                            viewModel.series = []
+                                            viewModel.moviesResponse = nil
+                                            viewModel.seriesResponse = nil
+                                        }) {
+                                            Image(systemName: "multiply.circle.fill")
+                                                .foregroundColor(.gray)
+                                                .padding(.trailing, 8)
+                                        }
+                                    }
+                                }
+                            )
                         }
                         .padding()
                         .background(.whiteColour)
@@ -55,7 +78,7 @@ struct SearchScreen: View {
                         .padding(.horizontal, 16)
                         .id(localization.selectedLanguage)
                         
-                        CustomSegmentedControl(preselectedIndex: $selectedSegment, onSelect: { index in
+                        CustomSegmentedControl(preselectedIndex: $viewModel.selectedSegment, onSelect: { index in
                             viewModel.manageAPICalls(index: index)
                         })
                         .padding(.top, 8)
@@ -66,11 +89,11 @@ struct SearchScreen: View {
                 .background(LinearGradient(colors: [.darkBabyPinkColour.opacity(0.5), .lightPurple.opacity(0.5)], startPoint: .leading, endPoint: .trailing))
                 
                 
-                let array = viewModel.selectedIndex == 0 ? viewModel.movies : viewModel.series
+                let array = viewModel.selectedSegment == 0 ? viewModel.movies : viewModel.series
                 
                 if !array.isEmpty {
                     VStack {
-                        if viewModel.selectedIndex == 0 {
+                        if viewModel.selectedSegment == 0 {
                             ScrollView(showsIndicators: false) {
                                 LazyVGrid(columns: columns) {
                                     ForEach(array.indices, id: \.self) { index in
@@ -83,6 +106,7 @@ struct SearchScreen: View {
                                 .padding(.vertical, 20)
                             }
                             .scrollDismissesKeyboard(.immediately)
+                            .id(refreshID)
                         } else {
                             ScrollView(showsIndicators: false) {
                                 
@@ -98,7 +122,7 @@ struct SearchScreen: View {
                                 
                             }
                             .scrollDismissesKeyboard(.immediately)
-                            
+                            .id(refreshID)
                         }
                     }
                     .id(localization.selectedLanguage)
@@ -143,6 +167,7 @@ struct SearchScreen: View {
                         .offset(y: -viewModel.keyboardHeight / 3 - 64)
                     }
                     .frame(maxWidth: .infinity)
+                    .id(refreshID)
                     .id(localization.selectedLanguage)
                 }
                 
@@ -168,10 +193,13 @@ struct SearchScreen: View {
                 viewModel.keyboardHeight = 0
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
     
     func loadMoreIfNeeded(currentItem: Int) {
-        if viewModel.selectedIndex == 0 {
+        if viewModel.selectedSegment == 0 {
             guard !viewModel.isLoading, currentItem == viewModel.movies.count - 5 else { return }
             viewModel.moviesSearchAPI(text: viewModel.searchTextField, isFromPagination: true)
         } else {

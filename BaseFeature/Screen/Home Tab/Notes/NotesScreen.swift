@@ -9,10 +9,15 @@ import SwiftUI
 
 struct NotesScreen: View {
     @StateObject var viewModel = NotesViewModel()
-    let columns = [
-       GridItem(.flexible()),
-       GridItem(.flexible())
-   ]
+//    let columns = [
+//       GridItem(.flexible()),
+//       GridItem(.flexible())
+//   ]
+    var columns: [GridItem] {
+        let count = Device.isiPadPortrait ? 4 : Device.isiPadLandscape ? 5 : 2
+        return Array(repeating: GridItem(.flexible(), spacing: 15), count: count)
+    }
+    @State private var refreshID = UUID()
     
     var body: some View {
         ZStack {
@@ -32,6 +37,7 @@ struct NotesScreen: View {
                             }
                         }
                     }
+                    .id(refreshID)
                 }
             }
             .padding(.horizontal, 16)
@@ -76,6 +82,9 @@ struct NotesScreen: View {
         .onAppear() {
             viewModel.loadNotes()
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
     }
 }
 
@@ -87,6 +96,24 @@ class NotesDesign {
     struct NoteCard: View {
         var notes: Notes
         var onDelete: (()->Void?)
+        
+        var cardWidth: CGFloat {
+            if Device.isiPadPortrait {
+                return (screenWidth-46)/4
+            } else if Device.isiPadLandscape {
+                return (screenWidth-46)/5
+            } else {
+                return (screenWidth-46)/2
+            }
+        }
+        
+        var cardHeight: CGFloat {
+            if Device.isiPadLandscape {
+                return screenHeight/3
+            } else {
+                return screenHeight/4
+            }
+        }
         
         var body: some View {
             VStack(alignment: .leading) {
@@ -167,7 +194,7 @@ class NotesDesign {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
-            .frame(width: (screenWidth-46)/2, height: screenHeight/4, alignment: .top)
+            .frame(width: cardWidth, height: cardHeight, alignment: .top)
             .background(.whiteColour.opacity(0.05))
             .cornerRadius(12)
 

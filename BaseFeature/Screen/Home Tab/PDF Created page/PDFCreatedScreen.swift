@@ -100,7 +100,6 @@ struct PDFCreatedScreen: View {
                 
                 Button {
                     Router.shared.popToRoot()
-//                    Router.shared.popToScreen(to: .imageToPDF)
                     UINavigationController.isSwipeBackenable = true
                 } label: {
                     HStack(spacing: 5) {
@@ -138,9 +137,6 @@ struct PDFCreatedScreen: View {
                 self.pdfInformation = PDFGenerator.getPDFSummary(pdfURL: url)
             }
         }
-//        .onDisappear {
-//            UINavigationController.isSwipeBackenable = true 
-//        }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             refreshID = UUID()
         }

@@ -11,6 +11,7 @@ import SwiftUI
 struct BaseFeatureApp: App {
     @StateObject private var localization = LocalizationManager.shared
     @StateObject private var router = Router.shared
+    @StateObject private var storageManager = StorageManager.shared
     
     var body: some Scene {
         WindowGroup {
@@ -25,6 +26,7 @@ struct BaseFeatureApp: App {
                 }
                 .environment(\.locale, Locale(identifier: localization.selectedLanguage))
                 .environmentObject(localization)
+                .environmentObject(storageManager)
             }
             .toastManager()
             .withGlobalAlert()

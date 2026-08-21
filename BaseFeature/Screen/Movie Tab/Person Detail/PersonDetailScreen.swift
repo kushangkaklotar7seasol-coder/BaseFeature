@@ -10,6 +10,7 @@ import Kingfisher
 
 struct PersonDetailScreen: View {
     @StateObject var viewModel: PersonDetailViewModel
+    @State private var refreshID = UUID()
     
     var body: some View {
         ZStack {
@@ -50,12 +51,15 @@ struct PersonDetailScreen: View {
                             .frame(minWidth: screenWidth, alignment: .center)
                             .padding(.horizontal)
                         }
+                        .id(refreshID)
                         
                         if let about = viewModel.celebrityDetail?.biography, about != "" {
                             VStack(spacing: 12) {
                                 DefaultDesign.SectionHeader(name: "ABOUT", isShowButton: false)
+                                    .id(refreshID)
                                 
                                 DefaultDesign.ExpandableTextView(text: about)
+                                    .id(refreshID)
                             }
                             .padding(.top, 16)
                             .padding(.horizontal, 16)
@@ -93,6 +97,10 @@ struct PersonDetailScreen: View {
             }
         }
         .defaultPage()
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
+        }
+
     }
 }
 

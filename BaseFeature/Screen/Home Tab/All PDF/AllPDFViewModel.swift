@@ -148,74 +148,79 @@ struct AllPDFView: View {
                 
                 ScrollView(showsIndicators: false) {
                     ForEach(viewModel.pdfs, id: \.self) { url in
-                        HStack {
+                        Button {
+                            viewModel.generatedPDFURL = url
+                            viewModel.showPreview = true
+                        } label: {
                             HStack {
-                                Image("ic_pdf_red")
-                                    .resizable()
-                                    .frame(width: 40, height: 40, alignment: .center)
-                                
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text(url.lastPathComponent)
-                                        .font(.system(size: 14, weight: .medium))
-                                        .foregroundColor(.whiteColour)
-                                        .lineLimit(1)
+                                HStack {
+                                    Image("ic_pdf_red")
+                                        .resizable()
+                                        .frame(width: 40, height: 40, alignment: .center)
                                     
-                                    Text(viewModel.pdfSubtitle(for: url))
-                                        .font(.system(size: 12, weight: .medium))
-                                        .foregroundColor(.grayColour)
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text(url.lastPathComponent)
+                                            .font(.system(size: 14, weight: .medium))
+                                            .foregroundColor(.whiteColour)
+                                            .lineLimit(1)
+                                        
+                                        Text(viewModel.pdfSubtitle(for: url))
+                                            .font(.system(size: 12, weight: .medium))
+                                            .foregroundColor(.grayColour)
+                                    }
                                 }
-                            }
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                viewModel.generatedPDFURL = url
-                                viewModel.showPreview = true
-                            }
-                            
-                            Spacer()
-                            
-                            Menu {
-                                Button {
-                                    viewModel.pdfToRename = url
-                                    self.userInput = url.lastPathComponent
-                                    self.showAlert = true
-                                } label: {
-                                    Label("RENAME".localized(), systemImage: "pencil.tip.crop.circle")
-                                }
+                                .contentShape(Rectangle())
+//                                .onTapGesture {
+//                                    viewModel.generatedPDFURL = url
+//                                    viewModel.showPreview = true
+//                                }
                                 
-                                Button {
-                                    viewModel.pdfToShare = url
-                                    viewModel.showShareSheet = true
-                                } label: {
-                                    Label("SHARE".localized(), systemImage: "square.and.arrow.up")
-                                }
+                                Spacer()
                                 
-                                Button(role: .destructive) {
-                                    AlertManager.shared.show(
-                                        title: "DELETE_PDF".localized(),
-                                        message: "DELETE_PDF_INFO".localized(),
-                                        buttons: [
-                                            AlertButtonModel(title: "CANCEL".localized(), role: .cancel),
-                                            AlertButtonModel(title: "DELETE".localized(), role: .destructive) {
-                                                viewModel.deletePDF(at: url)
-                                                if viewModel.pdfs.count <= 0 {
-                                                    self.lastPDFDeleted?()
+                                Menu {
+                                    Button {
+                                        viewModel.pdfToRename = url
+                                        self.userInput = url.lastPathComponent
+                                        self.showAlert = true
+                                    } label: {
+                                        Label("RENAME".localized(), systemImage: "pencil.tip.crop.circle")
+                                    }
+                                    
+                                    Button {
+                                        viewModel.pdfToShare = url
+                                        viewModel.showShareSheet = true
+                                    } label: {
+                                        Label("SHARE".localized(), systemImage: "square.and.arrow.up")
+                                    }
+                                    
+                                    Button(role: .destructive) {
+                                        AlertManager.shared.show(
+                                            title: "DELETE_PDF".localized(),
+                                            message: "DELETE_PDF_INFO".localized(),
+                                            buttons: [
+                                                AlertButtonModel(title: "CANCEL".localized(), role: .cancel),
+                                                AlertButtonModel(title: "DELETE".localized(), role: .destructive) {
+                                                    viewModel.deletePDF(at: url)
+                                                    if viewModel.pdfs.count <= 0 {
+                                                        self.lastPDFDeleted?()
+                                                    }
                                                 }
-                                            }
-                                        ]
-                                    )
+                                            ]
+                                        )
+                                    } label: {
+                                        Label("DELETE".localized(), systemImage: "trash")
+                                    }
                                 } label: {
-                                    Label("DELETE".localized(), systemImage: "trash")
+                                    Image("ic_more")
+                                        .resizable()
+                                        .frame(width: 25, height: 25, alignment: .center)
+                                        .contentShape(Rectangle())
                                 }
-                            } label: {
-                                Image("ic_more")
-                                    .resizable()
-                                    .frame(width: 25, height: 25, alignment: .center)
-                                    .contentShape(Rectangle())
                             }
+                            .padding()
+                            .background(.whiteColour.opacity(0.08))
+                            .cornerRadius(12)
                         }
-                        .padding()
-                        .background(.whiteColour.opacity(0.08))
-                        .cornerRadius(12)
                     }
                 }
             }

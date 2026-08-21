@@ -10,7 +10,8 @@ import Photos
 
 struct HomeScreen: View {
     @StateObject var viewModel = HomeViewModel()
-    @StateObject var storageManager = StorageManager()
+//    @StateObject var storageManager = StorageManager()
+    @EnvironmentObject var storageManager: StorageManager
     @EnvironmentObject var localization: LocalizationManager
     @State private var refreshID = UUID()
     
@@ -75,7 +76,7 @@ struct HomeScreen: View {
                                         .id(refreshID)
                                         .overlay {
                                             VStack {
-                                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
+                                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent * 100))
                                                     .font(.system(size: Device.isIpad ? 32 : 22, weight: .bold))
                                                 
                                                 Text("USED".localized())
@@ -132,23 +133,32 @@ struct HomeScreen: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 
                                 if storageManager.photoStatus == .authorized || storageManager.photoStatus == .limited {
-                                    ZStack {
-                                        VStack(spacing: 5) {
-                                            // Pehla 2 items - 2 column grid
-                                            LazyVGrid(columns: storageColumns, spacing: 5) {
-                                                ForEach(storageManager.storageInfo.prefix(2), id: \.id) { info in
-                                                    storageCard(info: info)
+                                    if !storageManager.storageInfo.isEmpty {
+                                        ZStack {
+                                            VStack(spacing: 5) {
+                                                // Pehla 2 items - 2 column grid
+                                                LazyVGrid(columns: storageColumns, spacing: 5) {
+                                                    ForEach(storageManager.storageInfo.prefix(2), id: \.id) { info in
+                                                        storageCard(info: info)
+                                                    }
+                                                }
+                                                
+                                                // 3rd item - full width
+                                                if let lastItem = storageManager.storageInfo.dropFirst(2).first {
+                                                    storageCard(info: lastItem)
+                                                        .frame(maxWidth: .infinity)
                                                 }
                                             }
-                                            
-                                            // 3rd item - full width
-                                            if let lastItem = storageManager.storageInfo.dropFirst(2).first {
-                                                storageCard(info: lastItem)
-                                                    .frame(maxWidth: .infinity)
-                                            }
                                         }
+                                        .frame(maxWidth: (screenWidth-60)/2)
+                                    } else {
+                                        ZStack {
+                                            
+                                        }
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                        .shimmer()
+                                        .cornerRadius(20)
                                     }
-                                    .frame(maxWidth: (screenWidth-60)/2)
                                 } else {
                                     deniedAccessView
                                 }
@@ -185,7 +195,7 @@ struct HomeScreen: View {
                     
                     var toolwidth: CGFloat {
                         if Device.isIpad {
-                            return (screenWidth-36)/4
+                            return (screenWidth-50)/4
                         } else {
                             return (screenWidth-36)/2
                         }
@@ -214,7 +224,8 @@ struct HomeScreen: View {
                                         .foregroundColor(.grayColour)
                                 }
                                 .padding(8)
-                                .frame(width: toolwidth, height: 130, alignment: .topLeading)
+                                .frame(height: 130, alignment: .topLeading)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
                                 
                                 VStack {
                                     HStack {
@@ -234,7 +245,7 @@ struct HomeScreen: View {
                                 }
                                 .padding(8)
                             }
-                            .frame(width: toolwidth, height: 130, alignment: .center)
+                            .frame(height: 130, alignment: .center)
                             .background(.whiteColour.opacity(0.08))
                             .cornerRadius(12)
                             .onTapGesture {
@@ -243,6 +254,7 @@ struct HomeScreen: View {
                         }
                     }
                     .padding(.bottom)
+                    .id(refreshID)
                     .id(localization.selectedLanguage)
                 }
             }

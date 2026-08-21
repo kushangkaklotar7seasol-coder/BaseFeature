@@ -17,30 +17,10 @@ struct VideoListingScreen: View {
     var header: String = ""
     
     @State private var selectedVideo: SelectedVideo? = nil
-    
+    @State private var refreshID = UUID()
     var columns: [GridItem] {
         let count = Device.isiPadPortrait ? 3 : Device.isiPadLandscape ? 4 : 2
         return Array(repeating: GridItem(.flexible(), spacing: 15), count: count)
-    }
-    var posterWidth: CGFloat {
-        
-        if Device.isiPadLandscape {
-            return (screenWidth-32)/4.1
-        } else if Device.isIpad {
-            return (screenWidth-32)/3.1
-        } else {
-            return (screenWidth-32)/2.1
-        }
-    }
-    
-    var posterHeight: CGFloat {
-        if Device.isiPadLandscape {
-            return (screenWidth-32)/3.7
-        } else if Device.isIpad {
-            return (screenWidth-32)/2.7
-        } else {
-            return (screenWidth-32)/1.7
-        }
     }
     
     var body: some View {
@@ -82,7 +62,7 @@ struct VideoListingScreen: View {
                         }
                     }
                 }
-//                .id(refreshID)
+                .id(refreshID)
 
             }
             .padding(.horizontal, 16)
@@ -101,6 +81,9 @@ struct VideoListingScreen: View {
                         }
                     }
             }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            refreshID = UUID()
         }
     }
 }
