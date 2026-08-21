@@ -62,7 +62,17 @@ struct DisplayNoteScreen: View {
                                     }
                                     
                                     Button {
-                                        viewModel.deleteNote()
+                                        AlertManager.shared.show(
+                                            title: "DELETE_NOTE".localized(),
+                                            message: "DELETE_NOTE_INFO".localized(),
+                                            buttons: [
+                                                AlertButtonModel(title: "CANCEL".localized(), role: .cancel),
+                                                AlertButtonModel(title: "DELETE".localized(), role: .destructive) {
+                                                    viewModel.deleteNote()
+                                                }
+                                            ]
+                                        )
+                                        
                                     } label: {
                                         HStack {
                                             Image(systemName: "trash.fill")
@@ -93,8 +103,8 @@ struct DisplayNoteScreen: View {
 //                                    .padding(.top, 1)
                                 
                                 SelectableText(text: note, font: .systemFont(ofSize: 12, weight: .regular))
-                                    .padding(.top, 1)
                                     .fixedSize(horizontal: false, vertical: true)
+                                    .padding(.top, 1)
                             }
                         }
 
@@ -217,9 +227,9 @@ struct SelectableText: UIViewRepresentable {
         textView.textContainer.lineFragmentPadding = 0
         textView.isScrollEnabled = false
         
-        // Layout fix
-        textView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        // Important for layout
         textView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        textView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         return textView
     }
@@ -227,5 +237,12 @@ struct SelectableText: UIViewRepresentable {
     func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.text = text
         uiView.font = font
+    }
+    
+    // ------ Most Important Part ------
+    func sizeThatFits(_ proposal: ProposedViewSize, uiView: UITextView, context: Context) -> CGSize? {
+        let width = proposal.width ?? UIScreen.main.bounds.width
+        let size = uiView.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
+        return CGSize(width: width, height: size.height)
     }
 }

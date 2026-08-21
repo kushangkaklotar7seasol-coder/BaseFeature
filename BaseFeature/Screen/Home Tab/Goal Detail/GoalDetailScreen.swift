@@ -101,7 +101,9 @@ struct GoalDetailScreen: View {
                                     }
                                 }
                                 .padding(10)
-                                .background(.whiteColour.opacity(0.5))
+//                                .background(.whiteColour.opacity(0.5))
+                                .foregroundColor(viewModel.goal?.status == .inProgress ? .softBlueColour : .cyan)
+                                .background(viewModel.goal?.status == .inProgress ? .softBlueColour.opacity(0.18) : .cyan.opacity(0.18))
                                 .cornerRadius(8)
                             }
                         }

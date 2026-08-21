@@ -15,75 +15,72 @@ struct StorageOverviewScreen: View {
     var body: some View {
         
         ZStack {
-            VStack {
+            VStack(spacing: 0) {
                 DefaultDesign.Header(name: "STORAGE_OVERVIEW".localized())
                 
-                ScrollView(showsIndicators: false) {
-                    HStack {
-                        CircularProgressView(progress: storageManager.usedStoragePercent)
-                            .frame(maxWidth: Device.isiPadPortrait ? screenHeight/2.5 : Device.isiPadLandscape ? screenWidth/3 : .infinity)
-                            .overlay {
-                                VStack {
-                                    Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
-                                        .font(.system(size: Device.isIpad ? 32 : 26, weight: .bold))
-                                    
-                                    Text("USED".localized())
-                                        .font(.system(size: Device.isIpad ? 20 : 12, weight: .semibold))
-                                        .foregroundColor(.whiteColour)
-                                }
-                            }
-                            .id(refreshID)
-                        
-                        VStack(alignment: .leading, spacing: 16) {
-                            let total = "TOTAL".localized()
-                            Text("\(storageManager.totalSpace) \(total)")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.whiteColour)
-                            
-                            VStack(alignment: .leading, spacing: 3) {
-                                HStack {
-                                    DefaultDesign.GradientBullet()
-                                    
-                                    Text("USED".localized())
-                                        .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
-                                        .foregroundColor(.grayColour)
-                                }
+                // Top part (circular progress + used/free)
+                HStack {
+                    CircularProgressView(progress: storageManager.usedStoragePercent)
+                        .frame(maxWidth: Device.isiPadPortrait ? screenHeight/2.5 : Device.isiPadLandscape ? screenWidth/3 : .infinity)
+                        .overlay {
+                            VStack {
+                                Text(String(format: "%.1f%%", storageManager.usedStoragePercent))
+                                    .font(.system(size: Device.isIpad ? 32 : 26, weight: .bold))
                                 
-                                HStack {
-                                    DefaultDesign.CustomBullet(Color: .clear)
-                                    
-                                    Text(storageManager.usedSpace)
-                                        .font(.system(size: Device.isIpad ? 24 : 14, weight: .semibold))
-                                }
-                            }
-                            
-                            VStack(alignment: .leading, spacing: 3) {
-                                HStack {
-                                    DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
-                                    
-                                    Text("FREE".localized())
-                                        .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
-                                        .foregroundColor(.grayColour)
-                                }
-                                
-                                HStack {
-                                    DefaultDesign.CustomBullet(Color: .clear)
-                                    
-                                    Text(storageManager.freeSpace)
-                                        .font(.system(size: Device.isIpad ? 24 : 14, weight: .semibold))
-                                }
+                                Text("USED".localized())
+                                    .font(.system(size: Device.isIpad ? 20 : 12, weight: .semibold))
+                                    .foregroundColor(.whiteColour)
                             }
                         }
-                    }
+                        .id(refreshID)
                     
-                    if storageManager.photoStatus == .authorized || storageManager.photoStatus == .limited {
-                        if storageManager.photoStatus == .limited {
-                            limitedAccessView
+                    VStack(alignment: .leading, spacing: 16) {
+                        let total = "TOTAL".localized()
+                        Text("\(storageManager.totalSpace) \(total)")
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(.whiteColour)
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            HStack {
+                                DefaultDesign.GradientBullet()
+                                Text("USED".localized())
+                                    .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
+                                    .foregroundColor(.grayColour)
+                            }
+                            
+                            HStack {
+                                DefaultDesign.CustomBullet(Color: .clear)
+                                Text(storageManager.usedSpace)
+                                    .font(.system(size: Device.isIpad ? 24 : 14, weight: .semibold))
+                            }
                         }
-                        breakdownSection
-                    } else {
-                        deniedAccessView
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            HStack {
+                                DefaultDesign.CustomBullet(Color: .purpleColour.opacity(0.5))
+                                Text("FREE".localized())
+                                    .font(.system(size: Device.isIpad ? 18 : 10, weight: .semibold))
+                                    .foregroundColor(.grayColour)
+                            }
+                            
+                            HStack {
+                                DefaultDesign.CustomBullet(Color: .clear)
+                                Text(storageManager.freeSpace)
+                                    .font(.system(size: Device.isIpad ? 24 : 14, weight: .semibold))
+                            }
+                        }
                     }
+                }
+                .padding(.bottom, 20)
+                
+                // ===== Lower part (fills remaining screen) =====
+                if storageManager.photoStatus == .authorized || storageManager.photoStatus == .limited {
+                    if storageManager.photoStatus == .limited {
+                        limitedAccessView
+                    }
+                    breakdownSection
+                } else {
+                    deniedAccessView
                 }
             }
             .padding(.horizontal, 16)
@@ -150,13 +147,18 @@ struct StorageOverviewScreen: View {
                 .font(.system(size: 22, weight: .bold))
                 .foregroundColor(.white)
                 .padding(.horizontal, 4)
- 
+            //
             if storageManager.storageInfo.isEmpty {
-                Text("CALCULATING_STORAGE".localized())
-                    .font(.system(size: 13, weight: .regular))
-                    .foregroundColor(.grayColour)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 24)
+                VStack(spacing: 16) {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .scaleEffect(1.3)
+                    
+                    Text("CALCULATING_STORAGE".localized())
+                        .font(.system(size: 13, weight: .regular))
+                        .foregroundColor(.grayColour)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 VStack(spacing: 0) {
                     ForEach(storageManager.storageInfo.indices, id: \.self) { index in
@@ -171,8 +173,11 @@ struct StorageOverviewScreen: View {
                 }
                 .background(.whiteColour.opacity(0.05))
                 .cornerRadius(14)
+                
+                Spacer()
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
  
     private func breakdownRow(info: StrogeInfo) -> some View {

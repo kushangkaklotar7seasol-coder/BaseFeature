@@ -220,3 +220,5 @@
 "NOT_ABLE_SAVE" = "Speichern nicht möglich.";
 "GIVE_US_FULL_ACCESS" = "Für ein besseres Erlebnis gewähren Sie uns bitte vollen Zugriff";
 "NO_PHOTOS_FOUND" = "Keine Fotos gefunden";
+"DELETE_NOTE" = "Notizen löschen";
+"DELETE_NOTE_INFO" = "Sind Sie sicher, dass Sie diese Notiz löschen möchten?";

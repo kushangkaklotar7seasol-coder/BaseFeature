@@ -220,3 +220,5 @@
 "NOT_ABLE_SAVE" = "저장할 수 없습니다.";
 "GIVE_US_FULL_ACCESS" = "더 나은 환경을 위해 전체 접근 권한을 허용해 주세요";
 "NO_PHOTOS_FOUND" = "사진을 찾을 수 없습니다";
+"DELETE_NOTE" = "노트 삭제";
+"DELETE_NOTE_INFO" = "이 노트를 삭제하시겠습니까?";

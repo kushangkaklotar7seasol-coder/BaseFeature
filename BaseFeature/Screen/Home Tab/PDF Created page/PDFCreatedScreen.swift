@@ -77,9 +77,13 @@ struct PDFCreatedScreen: View {
                         }
                         
                         Button {
-                            Router.shared.push(.recentpdf)
+                            Router.shared.push(.recentpdf(simpleBack: false))
                         } label: {
                             HStack {
+                                Image("ic_pdf_white")
+                                    .resizable()
+                                    .frame(width: 20, height: 20, alignment: .center)
+                                
                                 Text("SEE_ALL_PDF".localized())
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(.grayColour)
@@ -96,6 +100,8 @@ struct PDFCreatedScreen: View {
                 
                 Button {
                     Router.shared.popToRoot()
+//                    Router.shared.popToScreen(to: .imageToPDF)
+                    UINavigationController.isSwipeBackenable = true
                 } label: {
                     HStack(spacing: 5) {
                         Image(systemName: "arrow.left")
@@ -127,14 +133,14 @@ struct PDFCreatedScreen: View {
             }
         })
         .onAppear() {
-            isSwipeBackenable = false
+            UINavigationController.isSwipeBackenable = false
             if let url = self.generatedPDFURL {
                 self.pdfInformation = PDFGenerator.getPDFSummary(pdfURL: url)
             }
         }
-        .onDisappear() {
-            isSwipeBackenable = true
-        }
+//        .onDisappear {
+//            UINavigationController.isSwipeBackenable = true 
+//        }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             refreshID = UUID()
         }

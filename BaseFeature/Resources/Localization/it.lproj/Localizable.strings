@@ -220,3 +220,5 @@
 "NOT_ABLE_SAVE" = "Impossibile salvare.";
 "GIVE_US_FULL_ACCESS" = "Per un'esperienza migliore, concedici l'accesso completo";
 "NO_PHOTOS_FOUND" = "Nessuna foto trovata";
+"DELETE_NOTE" = "Elimina note";
+"DELETE_NOTE_INFO" = "Sei sicuro di voler eliminare questa nota?";

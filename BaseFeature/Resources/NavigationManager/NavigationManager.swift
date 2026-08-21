@@ -63,8 +63,8 @@ func destination(for route: Route) -> some View {
         GoalListScreen(viewModel: GoalListViewModel(type: displayType))
     case .goalDetail(goal: let goal):
         GoalDetailScreen(viewModel: GoalDetailViewModel(goal: goal))
-    case .recentpdf:
-        RectntPDFScreen()
+    case .recentpdf(let simpleBack):
+        RectntPDFScreen(isSimpleBack: simpleBack)
     }
 }
 
@@ -95,12 +95,12 @@ enum Route: Hashable {
     case newGoal
     case goalList(displayType: Int)
     case goalDetail(goal: Goal)
-    case recentpdf
+    case recentpdf(simpleBack: Bool)
 }
 
 final class Router: ObservableObject {
     static let shared = Router()
-    @Published var path = NavigationPath()
+    @Published var path: [Route] = []
     @Published var rootRoute: Route = .splash
     
     func push(_ route: Route) {
@@ -113,6 +113,10 @@ final class Router: ObservableObject {
         }
     }
     
+    func popLast(_ count: Int) {
+        path.removeLast(min(count, path.count))
+    }
+    
     func popToRoot() {
         path.removeLast(path.count)
     }
@@ -121,9 +125,51 @@ final class Router: ObservableObject {
         path.removeLast(path.count)
         rootRoute = route
     }
+    
+    func popToScreen(to route: Route) {
+        guard let index = path.lastIndex(of: route) else {
+            print("Route not found in path — no action taken")
+            return
+        }
+        path.removeLast(path.count - index - 1)
+    }
 }
 
-var isSwipeBackenable = true
+//final class Router: ObservableObject {
+//    static let shared = Router()
+//    @Published var path = NavigationPath()
+//    @Published var rootRoute: Route = .splash
+//    
+//    func push(_ route: Route) {
+//        path.append(route)
+//    }
+//    
+//    func pop() {
+//        if !path.isEmpty {
+//            path.removeLast()
+//        }
+//    }
+//    
+//    func popToRoot() {
+//        path.removeLast(path.count)
+//    }
+//    
+//    func updateRoot(_ route: Route) {
+//        path.removeLast(path.count)
+//        rootRoute = route
+//    }
+//}
+
+//var isSwipeBackenable = true
+
+extension UINavigationController {
+    private static var _isSwipeBackEnabled = true
+    
+    static var isSwipeBackenable: Bool {
+        get { _isSwipeBackEnabled }
+        set { _isSwipeBackEnabled = newValue }
+    }
+}
 
 extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
     
@@ -133,10 +179,32 @@ extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
     }
     
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if isSwipeBackenable {
+        if UINavigationController.isSwipeBackenable {
             return viewControllers.count > 1
         }
-        
         return false
+    }
+}
+
+struct SwipeBackController: UIViewControllerRepresentable {
+    let isEnabled: Bool
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        UIViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        DispatchQueue.main.async {
+            UINavigationController.isSwipeBackenable = isEnabled
+        }
+    }
+}
+
+extension View {
+    func swipeBackEnabled(_ enabled: Bool) -> some View {
+        self.background(
+            SwipeBackController(isEnabled: enabled)
+                .frame(width: 0, height: 0)
+        )
     }
 }

@@ -220,3 +220,5 @@
 "NOT_ABLE_SAVE" = "保存できませんでした。";
 "GIVE_US_FULL_ACCESS" = "より快適にご利用いただくために、フルアクセスを許可してください";
 "NO_PHOTOS_FOUND" = "写真が見つかりません";
+"DELETE_NOTE" = "メモを削除";
+"DELETE_NOTE_INFO" = "本当にこのメモを削除してもよろしいですか？";

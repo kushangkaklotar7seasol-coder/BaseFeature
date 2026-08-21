@@ -63,7 +63,7 @@ struct SearchScreen: View {
                     }
                 }
                 .frame(width: screenWidth, height: screenHeight/4.5, alignment: .center)
-                .background(.strongPrimeGradient)
+                .background(LinearGradient(colors: [.darkBabyPinkColour.opacity(0.5), .lightPurple.opacity(0.5)], startPoint: .leading, endPoint: .trailing))
                 
                 
                 let array = viewModel.selectedIndex == 0 ? viewModel.movies : viewModel.series

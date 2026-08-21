@@ -129,7 +129,16 @@ class NotesDesign {
                         }
                         
                         Button {
-                            self.onDelete()
+                            AlertManager.shared.show(
+                                title: "DELETE_NOTE".localized(),
+                                message: "DELETE_NOTE_INFO".localized(),
+                                buttons: [
+                                    AlertButtonModel(title: "CANCEL".localized(), role: .cancel),
+                                    AlertButtonModel(title: "DELETE".localized(), role: .destructive) {
+                                        self.onDelete()
+                                    }
+                                ]
+                            )
                         } label: {
                             HStack {
                                 Image(systemName: "trash.fill")

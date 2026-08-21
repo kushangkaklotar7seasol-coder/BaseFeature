@@ -141,7 +141,7 @@ struct AllPDFView: View {
             if !viewModel.pdfs.isEmpty {
                 if isShowHeader {
                     DefaultDesign.SectionHeader(name: "RECENT_FILE", onClick: {
-                        Router.shared.push(.recentpdf)
+                        Router.shared.push(.recentpdf(simpleBack: true))
                     })
                     .padding(.top, 10)
                 }

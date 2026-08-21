@@ -220,3 +220,5 @@
 "NOT_ABLE_SAVE" = "Kaydedilemedi.";
 "GIVE_US_FULL_ACCESS" = "Daha iyi bir deneyim için bize tam erişim verin";
 "NO_PHOTOS_FOUND" = "Fotoğraf Bulunamadı";
+"DELETE_NOTE" = "Notları Sil";
+"DELETE_NOTE_INFO" = "Bu notu silmek istediğinizden emin misiniz?";

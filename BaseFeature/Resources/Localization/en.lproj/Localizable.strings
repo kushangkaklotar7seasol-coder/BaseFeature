@@ -220,3 +220,5 @@
 "NOT_ABLE_SAVE" = "Not able to save.";
 "GIVE_US_FULL_ACCESS" = "For better experience give us fill access";
 "NO_PHOTOS_FOUND" = "No Photos Found";
+"DELETE_NOTE" = "Delete notes";
+"DELETE_NOTE_INFO" = "Are you sure you wants to delete this notes?";
