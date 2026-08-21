@@ -69,13 +69,13 @@ struct CalculatorScreen: View {
                 // Display
                 VStack(alignment: .trailing, spacing: 6) {
                     Text(viewModel.operatorIndicator)
-                        .font(.system(size: 18, weight: .medium))
+                        .font(.system(size: Device.isIpad ? 28 : 18, weight: .medium))
                         .foregroundColor(.gray)
                         .opacity(viewModel.operatorIndicator.isEmpty ? 0 : 1)
                         .frame(height: 18)
 
                     Text(viewModel.displayValue)
-                        .font(.system(size: 64, weight: .regular))
+                        .font(.system(size:  Device.isIpad ? 88 : 64, weight: .regular))
                         .foregroundColor(.white)
                         .lineLimit(1)
                         .minimumScaleFactor(0.4)
@@ -127,7 +127,7 @@ struct CalculatorButtonView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 68)
+            .frame(height: Device.isIpad ? 108 : 68)
             .background(
                 Group {
                     if type.isOperator {
